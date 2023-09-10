@@ -1,5 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Data;
+using LaundryPOS.Models;
+using LaundryPOS.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,11 @@ namespace LaundryPOS.DAL
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
+        // Temporary
+        private IBaseRepository<Employee> _employeeRepo;
+
+        public IBaseRepository<Employee> EmployeeRepo =>
+            _employeeRepo ??= new BaseRepository<Employee>(_context);
 
         public UnitOfWork(ApplicationDbContext context)
         {
