@@ -1,10 +1,13 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.DAL;
 using LaundryPOS.Data;
+using LaundryPOS.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.Configuration;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 
 namespace LaundryPOS
@@ -17,18 +20,29 @@ namespace LaundryPOS
         [STAThread]
         static void Main()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"]
-                .ConnectionString;
-            var serviceProvider = new ServiceCollection()
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)))
-                .AddScoped<IUnitOfWork, UnitOfWork>()
-                .BuildServiceProvider();
-
-            var unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            IConfiguration configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .Build();
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1(unitOfWork));
+
+            IHost host = Host.CreateDefaultBuilder()
+                .ConfigureServices((context, services) =>
+                {
+                    var CONNECTION_STRING = context.Configuration.GetConnectionString("MySqlServer");
+                    //const string CONNECTION_STRING = "SqlServer";
+                    services.AddDbContext<ApplicationDbContext>(options =>
+                    {
+                        options.UseMySql(CONNECTION_STRING, ServerVersion.AutoDetect(CONNECTION_STRING));
+                        //options.UseSqlServer(context.Configuration.GetConnectionString(CONNECTION_STRING));
+                    }, ServiceLifetime.Scoped);
+
+                    services.AddScoped<IUnitOfWork, UnitOfWork>();
+                    services.AddScoped<LoginForm>();
+                }).Build();
+
+            var form = host.Services.GetService<LoginForm>();
+            Application.Run(form);
         }
     }
 }

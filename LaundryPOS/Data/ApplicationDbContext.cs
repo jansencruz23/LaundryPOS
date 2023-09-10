@@ -16,8 +16,8 @@ namespace LaundryPOS.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Service> Services { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<PendingTransaction> PendingTransactions { get; set; }
+        //public DbSet<Service> Services { get; set; }
+        //public DbSet<Transaction> Transactions { get; set; }
+        //public DbSet<PendingTransaction> PendingTransactions { get; set; }
     }
 }

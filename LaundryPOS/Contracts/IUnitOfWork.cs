@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaundryPOS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace LaundryPOS.Contracts
 {
     public interface IUnitOfWork
     {
+        IEmployeeRepository EmployeeRepo { get; }
+        Task SaveAsync();
     }
 }

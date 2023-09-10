@@ -17,10 +17,6 @@ namespace LaundryPOS.Models
         [StringLength(100, MinimumLength = 5)]
         public string Username { get; set; }
 
-        [Required]
-        [StringLength(100, MinimumLength = 5)]
-        public string Password { get; set; }
-
         public string HashedPassword { get; set; }
 
         public string Salt { get; set; }
@@ -28,20 +24,20 @@ namespace LaundryPOS.Models
         [Required]
         [StringLength(100, MinimumLength = 1)]
 
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = "firstname";
 
         [Required]
         [StringLength(100, MinimumLength = 1)]
 
-        public string LastName { get; set; }
+        public string LastName { get; set; } = "lastname";
 
         public int Age { get; set; }
 
-        public string PicPath { get; set; }
+        public string? PicPath { get; set; }
 
         public DateTime BirthDate { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
 
         
         public void SetPassword(string password)
