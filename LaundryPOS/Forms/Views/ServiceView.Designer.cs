@@ -40,7 +40,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnFile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -89,10 +88,6 @@
             this.txtName.Size = new System.Drawing.Size(200, 36);
             this.txtName.TabIndex = 2;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // btnFile
             // 
             this.btnFile.CustomizableEdges = customizableEdges5;
@@ -108,7 +103,8 @@
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnFile.Size = new System.Drawing.Size(200, 45);
             this.btnFile.TabIndex = 4;
-            this.btnFile.Text = "guna2GradientButton1";
+            this.btnFile.Text = "Select Image";
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // txtPath
             // 
@@ -129,6 +125,7 @@
             this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtPath.Size = new System.Drawing.Size(200, 36);
             this.txtPath.TabIndex = 5;
+            this.txtPath.Visible = false;
             // 
             // btnSave
             // 
@@ -145,7 +142,7 @@
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnSave.Size = new System.Drawing.Size(200, 45);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "guna2GradientButton1";
+            this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvService
@@ -189,7 +186,6 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private OpenFileDialog openFileDialog1;
         private Guna.UI2.WinForms.Guna2GradientButton btnFile;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;

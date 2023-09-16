@@ -1,6 +1,5 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using System.Security.Cryptography.X509Certificates;
 
 namespace LaundryPOS
 {
@@ -18,6 +17,7 @@ namespace LaundryPOS
         {
             var employee = new Employee();
             employee.Username = txtUsername.Text;
+            employee.PicPath = txtPath.Text;
             employee.SetPassword(txtPassword.Text);
 
             await CreateEmployee(employee);
@@ -27,6 +27,19 @@ namespace LaundryPOS
         {
             _unitOfWork.EmployeeRepo.Insert(employee);
             await _unitOfWork.SaveAsync();
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            using var file = new OpenFileDialog();
+            file.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico|All Files|*.*";
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txtPath.Text = file.FileName;
+            }
         }
     }
 }

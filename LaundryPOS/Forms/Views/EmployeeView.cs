@@ -39,14 +39,45 @@ namespace LaundryPOS.Forms.Views
             var employeeList = await _unitOfWork.EmployeeRepo.Get();
             dgvService.DataSource = employeeList;
 
+            HideUnwantedColumns();
+            ConfigureImageColumn();
+            HandleImageColumnFormatting();
+        }
+
+        private void HideUnwantedColumns()
+        {
             dgvService.Columns[nameof(Employee.EmployeeId)].Visible = false;
             dgvService.Columns[nameof(Employee.PicPath)].Visible = false;
             dgvService.Columns[nameof(Employee.HashedPassword)].Visible = false;
             dgvService.Columns[nameof(Employee.Salt)].Visible = false;
             dgvService.Columns[nameof(Employee.IsActive)].Visible = false;
+        }
 
-            // For image
-            // dgvService.Columns.Add(nameof(Service.Name), nameof(Service.Name));
+        private void ConfigureImageColumn()
+        {
+            var imageColumn = new DataGridViewImageColumn
+            {
+                HeaderText = "Image",
+                Name = "Image",
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+            dgvService.Columns.Add(imageColumn);
+            dgvService.Columns["Image"].DisplayIndex = 0;
+        }
+
+        private void HandleImageColumnFormatting()
+        {
+            dgvService.CellFormatting += (sender, e) =>
+            {
+                if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
+                {
+                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Service;
+                    var imagePath = rowData?.PicPath;
+                    e.Value = !string.IsNullOrEmpty(imagePath)
+                        ? Image.FromFile(imagePath)
+                        : null;
+                }
+            };
         }
 
         private async Task RefreshData()

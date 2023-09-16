@@ -21,16 +21,17 @@ namespace LaundryPOS.Forms.Views
             _unitOfWork = unitOfWork;
             InitializeComponent();
             InitializeAsync();
+            ConfigureImageColumn();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
             var service = new Service();
             service.Name = txtName.Text;
+            service.PicPath = txtPath.Text;
 
-            double price;
-            if (!double.TryParse(txtPrice.Text, out price))
-            { 
+            if (!double.TryParse(txtPrice.Text, out double price))
+            {
                 MessageBox.Show("Invalid Price");
             }
             else
@@ -38,6 +39,7 @@ namespace LaundryPOS.Forms.Views
                 service.Price = price;
                 await CreateService(service);
                 await RefreshData();
+                ClearText();
             }
         }
 
@@ -54,14 +56,46 @@ namespace LaundryPOS.Forms.Views
 
         private async Task DisplayServices()
         {
-            var serviceList = await _unitOfWork.ServiceRepo.Get();
+            var serviceList = await _unitOfWork.ServiceRepo
+                .Get(orderBy: s => s.OrderByDescending(s => s.ServiceId));
             dgvService.DataSource = serviceList;
 
+            HideUnwantedColumns();
+            HandleImageColumnFormatting();
+        }
+
+        private void HideUnwantedColumns()
+        {
             dgvService.Columns[nameof(Service.ServiceId)].Visible = false;
             dgvService.Columns[nameof(Service.PicPath)].Visible = false;
+        }
 
-            // For image
-            // dgvService.Columns.Add(nameof(Service.Name), nameof(Service.Name));
+        private void ConfigureImageColumn()
+        {
+            var imageColumn = new DataGridViewImageColumn
+            {
+                HeaderText = "Image",
+                Name = "Image",
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+
+            dgvService.Columns.Add(imageColumn);
+            dgvService.Columns["Image"].DisplayIndex = 0;
+        }
+
+        private void HandleImageColumnFormatting()
+        {
+            dgvService.CellFormatting += (sender, e) =>
+            {
+                if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
+                {
+                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Service;
+                    var imagePath = rowData?.PicPath;
+                    e.Value = !string.IsNullOrEmpty(imagePath) 
+                        ? Image.FromFile(imagePath) 
+                        : null;
+                }
+            };
         }
 
         private async Task RefreshData()
@@ -73,6 +107,26 @@ namespace LaundryPOS.Forms.Views
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ((AdminForm)ParentForm!).DisplayEmployeeView();
+        }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            using var file = new OpenFileDialog();
+            file.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico|All Files|*.*";
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txtPath.Text = file.FileName;
+            }
+        }
+
+        private void ClearText()
+        {
+            txtName.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+            txtPath.Text = string.Empty;
         }
     }
 }
