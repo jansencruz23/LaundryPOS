@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.itemsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.cartPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // itemsPanel
@@ -39,11 +40,21 @@
             this.itemsPanel.Size = new System.Drawing.Size(526, 412);
             this.itemsPanel.TabIndex = 0;
             // 
+            // cartPanel
+            // 
+            this.cartPanel.AutoScroll = true;
+            this.cartPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.cartPanel.Location = new System.Drawing.Point(720, 71);
+            this.cartPanel.Name = "cartPanel";
+            this.cartPanel.Size = new System.Drawing.Size(200, 327);
+            this.cartPanel.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 487);
+            this.Controls.Add(this.cartPanel);
             this.Controls.Add(this.itemsPanel);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
@@ -55,5 +66,6 @@
         #endregion
 
         private FlowLayoutPanel itemsPanel;
+        private FlowLayoutPanel cartPanel;
     }
 }

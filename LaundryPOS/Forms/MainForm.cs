@@ -15,7 +15,7 @@ namespace LaundryPOS.Forms
     public partial class MainForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private List<Item> items;
+        private List<ItemControl> items;
 
         public MainForm(IUnitOfWork unitOfWork)
         {
@@ -31,7 +31,7 @@ namespace LaundryPOS.Forms
 
             foreach (var service in services)
             {
-                items.Add(new Item(service));
+                items.Add(new ItemControl(service));
             }
 
             foreach (var item in items)

@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class Item : UserControl
+    public partial class ItemControl : UserControl
     {
         private readonly Service _service;
 
-        public Item(Service service)
+        public ItemControl(Service service)
         {
             _service = service;
             InitializeComponent();
@@ -45,7 +45,10 @@ namespace LaundryPOS.Forms.Views
         private void Control_Click(object sender, EventArgs e)
         {
             InvokeOnClick(this, EventArgs.Empty);
-            MessageBox.Show(_service.Name);
+            var quantityForm = new QuantityForm();
+            quantityForm.ShowDialog();
+            int quantity = quantityForm.Quantity;
+            MessageBox.Show(quantity + "");
         }
     }
 }

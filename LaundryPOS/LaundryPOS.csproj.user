@@ -10,13 +10,19 @@
     <Compile Update="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\QuantityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\CartControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\Views\EmployeeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\Item.cs">
+    <Compile Update="Forms\Views\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\Views\ServiceView.cs">
