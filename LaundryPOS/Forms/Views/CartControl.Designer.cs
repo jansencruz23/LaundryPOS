@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.btnQuantity = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnRemove = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblName = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.btnQuantity.ForeColor = System.Drawing.Color.White;
             this.btnQuantity.Location = new System.Drawing.Point(5, 6);
             this.btnQuantity.Name = "btnQuantity";
-            this.btnQuantity.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            this.btnQuantity.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.btnQuantity.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnQuantity.Size = new System.Drawing.Size(61, 59);
             this.btnQuantity.TabIndex = 0;
@@ -63,11 +63,12 @@
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(241, 19);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnRemove.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnRemove.Size = new System.Drawing.Size(34, 35);
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Q";
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // lblName
             // 

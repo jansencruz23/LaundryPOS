@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Models;
+﻿using LaundryPOS.CustomEventArgs;
+using LaundryPOS.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,13 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class CartControl : UserControl
     {
+        public event EventHandler<CartItemEventArgs> RemoveFromCartClicked;
         private readonly Service _service;
         private int _quantity;
 
         public double SubTotal { get => _service.Price * _quantity; }
+        public Service Service { get => _service;  }
+        public int Quantity { get => _quantity; set { _quantity = value; } }
 
         public CartControl(Service service, int quantity)
         {
@@ -26,12 +30,17 @@ namespace LaundryPOS.Forms.Views
             InitializeCartItem();
         }
 
-        private void InitializeCartItem()
+        public void InitializeCartItem()
         {
             lblName.Text = _service.Name;
             lblPrice.Text = _service.Price.ToString();
             lblSubTotal.Text = SubTotal.ToString();
             btnQuantity.Text = _quantity.ToString();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            RemoveFromCartClicked?.Invoke(this, new CartItemEventArgs(_service, _quantity));
         }
     }
 }

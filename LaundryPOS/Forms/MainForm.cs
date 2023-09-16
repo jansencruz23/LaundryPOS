@@ -28,8 +28,26 @@ namespace LaundryPOS.Forms
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
         {
+            foreach (var control in cartPanel.Controls)
+            {
+                if (control is CartControl existingCartItem &&
+                    existingCartItem.Service.ServiceId == e.Service.ServiceId)
+                {
+                    existingCartItem.Quantity += e.Quantity;
+                    existingCartItem.InitializeCartItem();
+
+                    return;
+                }
+            }
+
             var cartItem = new CartControl(e.Service, e.Quantity);
+            cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
             cartPanel.Controls.Add(cartItem);
+        }
+
+        private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
+        {
+            cartPanel.Controls.Remove(sender as CartControl);
         }
 
         private async void DisplayServices()
