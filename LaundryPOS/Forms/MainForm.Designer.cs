@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.itemsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // itemsPanel
+            // 
+            this.itemsPanel.AutoScroll = true;
+            this.itemsPanel.Location = new System.Drawing.Point(188, 71);
+            this.itemsPanel.Name = "itemsPanel";
+            this.itemsPanel.Size = new System.Drawing.Size(526, 412);
+            this.itemsPanel.TabIndex = 0;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(924, 487);
+            this.Controls.Add(this.itemsPanel);
+            this.Name = "MainForm";
+            this.RightToLeftLayout = true;
             this.Text = "MainForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private FlowLayoutPanel itemsPanel;
     }
 }

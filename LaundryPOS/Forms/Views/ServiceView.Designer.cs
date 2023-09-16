@@ -45,7 +45,9 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvService = new System.Windows.Forms.DataGridView();
             this.btnEmployee = new System.Windows.Forms.Button();
+            this.imgIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPrice
@@ -59,7 +61,7 @@
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(293, 109);
+            this.txtPrice.Location = new System.Drawing.Point(453, 102);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
@@ -79,7 +81,7 @@
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(293, 67);
+            this.txtName.Location = new System.Drawing.Point(453, 60);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -98,10 +100,10 @@
             this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(293, 193);
+            this.btnFile.Location = new System.Drawing.Point(218, 220);
             this.btnFile.Name = "btnFile";
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnFile.Size = new System.Drawing.Size(200, 45);
+            this.btnFile.Size = new System.Drawing.Size(163, 45);
             this.btnFile.TabIndex = 4;
             this.btnFile.Text = "Select Image";
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
@@ -117,7 +119,7 @@
             this.txtPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPath.Location = new System.Drawing.Point(293, 151);
+            this.txtPath.Location = new System.Drawing.Point(453, 144);
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
@@ -137,7 +139,7 @@
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(293, 244);
+            this.btnSave.Location = new System.Drawing.Point(453, 237);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnSave.Size = new System.Drawing.Size(200, 45);
@@ -164,10 +166,20 @@
             this.btnEmployee.UseVisualStyleBackColor = true;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
+            // imgIcon
+            // 
+            this.imgIcon.Location = new System.Drawing.Point(218, 60);
+            this.imgIcon.Name = "imgIcon";
+            this.imgIcon.Size = new System.Drawing.Size(163, 154);
+            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgIcon.TabIndex = 9;
+            this.imgIcon.TabStop = false;
+            // 
             // ServiceView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.imgIcon);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.dgvService);
             this.Controls.Add(this.btnSave);
@@ -178,6 +190,7 @@
             this.Name = "ServiceView";
             this.Size = new System.Drawing.Size(757, 612);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,5 +204,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private DataGridView dgvService;
         private Button btnEmployee;
+        private PictureBox imgIcon;
     }
 }

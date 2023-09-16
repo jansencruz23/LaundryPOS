@@ -88,3 +88,5 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.ServiceView.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.EmployeeView.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.MainForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.Item.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\default.png

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaundryPOS.Contracts;
+using LaundryPOS.Forms.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,30 @@ namespace LaundryPOS.Forms
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly IUnitOfWork _unitOfWork;
+        private List<Item> items;
+
+        public MainForm(IUnitOfWork unitOfWork)
         {
+            _unitOfWork = unitOfWork;
+            items = new();
             InitializeComponent();
+            DisplayServices();
+        }
+
+        private async void DisplayServices()
+        {
+            var services = await _unitOfWork.ServiceRepo.Get();
+
+            foreach (var service in services)
+            {
+                items.Add(new Item(service));
+            }
+
+            foreach (var item in items)
+            {
+                itemsPanel.Controls.Add(item);
+            }
         }
     }
 }

@@ -119,6 +119,7 @@ namespace LaundryPOS.Forms.Views
             if (file.ShowDialog() == DialogResult.OK)
             {
                 txtPath.Text = file.FileName;
+                imgIcon.Image = Image.FromFile(file.FileName);
             }
         }
 

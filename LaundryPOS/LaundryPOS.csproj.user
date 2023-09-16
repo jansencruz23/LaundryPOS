@@ -16,6 +16,9 @@
     <Compile Update="Forms\Views\EmployeeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\ServiceView.cs">
       <SubType>UserControl</SubType>
     </Compile>
