@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaundryPOS.Contracts;
+using LaundryPOS.Forms.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace LaundryPOS.Forms
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private readonly IUnitOfWork _unitOfWork;
+
+        public AdminForm(IUnitOfWork unitOfWorK)
         {
+            _unitOfWork = unitOfWorK;
             InitializeComponent();
+            servicePanel.Controls.Add(new ServiceView(_unitOfWork));
         }
     }
 }

@@ -15,9 +15,13 @@ namespace LaundryPOS.DAL
         private readonly ApplicationDbContext _context;
         // Temporary
         private IEmployeeRepository _employeeRepo;
+        private IBaseRepository<Service> _serviceRepo;
 
         public IEmployeeRepository EmployeeRepo =>
             _employeeRepo ??= new EmployeeRepository(_context);
+
+        public IBaseRepository<Service> ServiceRepo =>
+            _serviceRepo ??= new BaseRepository<Service>(_context);
 
         public UnitOfWork(ApplicationDbContext context)
         {

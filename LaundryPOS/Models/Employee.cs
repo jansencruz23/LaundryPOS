@@ -11,7 +11,7 @@ namespace LaundryPOS.Models
 {
     public class Employee
     {
-        public int Id { get; set; }
+        public int EmployeeId { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 5)]

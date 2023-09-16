@@ -10,6 +10,7 @@ namespace LaundryPOS.Contracts
     public interface IUnitOfWork
     {
         IEmployeeRepository EmployeeRepo { get; }
+        IBaseRepository<Service> ServiceRepo { get; }
         Task SaveAsync();
     }
 }

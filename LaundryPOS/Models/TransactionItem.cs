@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LaundryPOS.Models
 {
-    public class TransactionService
+    public class TransactionItem
     {
-        public int TransactionServiceId { get; set; }
+        public int TransactionItemId { get; set; }
 
         public Service Service { get; set; }
         
