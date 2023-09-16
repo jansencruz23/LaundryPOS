@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.Views;
 using System;
 using System.Collections.Generic;
@@ -25,19 +26,24 @@ namespace LaundryPOS.Forms
             DisplayServices();
         }
 
+        private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
+        {
+            var cartItem = new CartControl(e.Service, e.Quantity);
+            cartPanel.Controls.Add(cartItem);
+        }
+
         private async void DisplayServices()
         {
             var services = await _unitOfWork.ServiceRepo.Get();
 
-            foreach (var service in services)
-            {
-                items.Add(new ItemControl(service));
-            }
+            items.AddRange(services
+                .Select(service => new ItemControl(service)));
 
-            foreach (var item in items)
+            items.ForEach(item =>
             {
+                item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
-            }
+            });
         }
     }
 }

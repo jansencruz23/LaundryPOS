@@ -48,6 +48,7 @@
             this.cartPanel.Name = "cartPanel";
             this.cartPanel.Size = new System.Drawing.Size(200, 327);
             this.cartPanel.TabIndex = 1;
+            this.cartPanel.WrapContents = false;
             // 
             // MainForm
             // 

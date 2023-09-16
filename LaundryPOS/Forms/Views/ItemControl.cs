@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Models;
+﻿using LaundryPOS.CustomEventArgs;
+using LaundryPOS.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,13 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class ItemControl : UserControl
     {
+        public event EventHandler<CartItemEventArgs> AddToCartClicked;
         private readonly Service _service;
 
         public ItemControl(Service service)
         {
             _service = service;
+
             InitializeComponent();
             InitializeService();
             WireAllControls(this);
@@ -47,8 +50,8 @@ namespace LaundryPOS.Forms.Views
             InvokeOnClick(this, EventArgs.Empty);
             var quantityForm = new QuantityForm();
             quantityForm.ShowDialog();
-            int quantity = quantityForm.Quantity;
-            MessageBox.Show(quantity + "");
+            var quantity = quantityForm.Quantity;
+            AddToCartClicked?.Invoke(this, new CartItemEventArgs(_service, quantity));
         }
     }
 }
