@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaundryPOS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230916060222_EmployeeId")]
-    partial class EmployeeId
+    [Migration("20230916074120_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

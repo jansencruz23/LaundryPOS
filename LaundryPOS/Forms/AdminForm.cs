@@ -22,5 +22,16 @@ namespace LaundryPOS.Forms
             InitializeComponent();
             servicePanel.Controls.Add(new ServiceView(_unitOfWork));
         }
+
+        private void ChangePanelContent(UserControl newContent)
+        {
+            servicePanel.Controls.Clear();
+            servicePanel.Controls.Add(newContent);
+        }
+
+        public void DisplayEmployeeView()
+        {
+            ChangePanelContent(new EmployeeView(_unitOfWork));
+        }
     }
 }

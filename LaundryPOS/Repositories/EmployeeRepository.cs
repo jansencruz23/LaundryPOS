@@ -18,7 +18,9 @@ namespace LaundryPOS.Repositories
 
         public async Task<Employee> GetEmployeeByUsername(string username)
         {
-            return await _context.Employees.SingleOrDefaultAsync(e => e.Username.Equals(username));
+            return await _context.Employees
+                .AsNoTracking()
+                .SingleOrDefaultAsync(e => e.Username.Equals(username));
         }
     }
 }

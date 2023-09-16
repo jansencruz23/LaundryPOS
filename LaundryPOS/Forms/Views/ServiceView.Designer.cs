@@ -45,6 +45,7 @@
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvService = new System.Windows.Forms.DataGridView();
+            this.btnEmployee = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,10 +157,21 @@
             this.dgvService.Size = new System.Drawing.Size(577, 82);
             this.dgvService.TabIndex = 7;
             // 
+            // btnEmployee
+            // 
+            this.btnEmployee.Location = new System.Drawing.Point(52, 151);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnEmployee.TabIndex = 8;
+            this.btnEmployee.Text = "button1";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
+            // 
             // ServiceView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.dgvService);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPath);
@@ -182,5 +194,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
         private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private DataGridView dgvService;
+        private Button btnEmployee;
     }
 }

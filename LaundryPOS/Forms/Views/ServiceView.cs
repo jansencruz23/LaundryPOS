@@ -54,7 +54,7 @@ namespace LaundryPOS.Forms.Views
 
         private async Task DisplayServices()
         {
-            IEnumerable<Service> serviceList = await _unitOfWork.ServiceRepo.Get();
+            var serviceList = await _unitOfWork.ServiceRepo.Get();
             dgvService.DataSource = serviceList;
 
             dgvService.Columns[nameof(Service.ServiceId)].Visible = false;
@@ -68,6 +68,11 @@ namespace LaundryPOS.Forms.Views
         {
             dgvService.DataSource = null;
             await DisplayServices();
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ((AdminForm)ParentForm!).DisplayEmployeeView();
         }
     }
 }

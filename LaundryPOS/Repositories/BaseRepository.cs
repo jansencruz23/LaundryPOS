@@ -43,7 +43,7 @@ namespace LaundryPOS.Repositories
             }
             else
             {
-                return await query.ToListAsync();
+                return await query.AsNoTracking().ToListAsync();
             }
         }
 
