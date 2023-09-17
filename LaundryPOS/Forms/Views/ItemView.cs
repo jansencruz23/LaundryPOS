@@ -30,7 +30,7 @@ namespace LaundryPOS.Forms.Views
             service.Name = txtName.Text;
             service.PicPath = txtPath.Text;
 
-            if (!double.TryParse(txtPrice.Text, out double price) ||
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock))
             {
                 MessageBox.Show("Invalid Input!");

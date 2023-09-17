@@ -13,7 +13,7 @@ namespace LaundryPOS.Forms.Views
 
         public int Quantity { get; set; }
 
-        public double SubTotal { get => Item.Price * Quantity; }
+        public decimal SubTotal { get => Item.Price * Quantity; }
 
         public CartItem(Item item, int quantity)
         {

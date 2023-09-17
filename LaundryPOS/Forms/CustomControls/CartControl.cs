@@ -27,9 +27,9 @@ namespace LaundryPOS.Forms.Views
         public void InitializeCartItem()
         {
             lblName.Text = CartItem.Item.Name;
-            lblPrice.Text = CartItem.Item.Price.ToString();
+            lblPrice.Text = $"{CartItem.Item.Price:#,###.00}";
             btnQuantity.Text = CartItem.Quantity.ToString();
-            lblSubTotal.Text = CartItem.SubTotal.ToString();
+            lblSubTotal.Text = $"{CartItem.SubTotal:#,###.00}";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

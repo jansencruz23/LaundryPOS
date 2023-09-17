@@ -4,10 +4,19 @@
     <Compile Update="Forms\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\CustomControls\CartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\CustomControls\OrderPaymentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\QuantityForm.cs">
@@ -16,13 +25,10 @@
     <Compile Update="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Views\CartControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Forms\Views\EmployeeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\ItemControl.cs">
+    <Compile Update="Forms\CustomControls\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\Views\ItemView.cs">

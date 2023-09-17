@@ -20,7 +20,7 @@ namespace LaundryPOS.Forms
         private readonly List<ItemControl> items;
         private readonly Order orders = new();
 
-        private double Total { get; set; } = default;
+        private decimal Total { get; set; } = default;
 
         public MainForm(IUnitOfWork unitOfWork)
         {
@@ -86,11 +86,19 @@ namespace LaundryPOS.Forms
             lblTotal.Text = $"{Total:#,###.00}";
         }
 
+        private void ClearCart()
+        {
+            orders.Items.Clear();
+            Total = default;
+            UpdateTotalDisplay();
+            cartPanel.Controls.Clear();
+        }
+
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            string orderList = "";
-            orders.Items.ForEach(o => orderList += " " + o.Item.Name + " " + o.SubTotal + " " + o.Quantity + "\n");
-            MessageBox.Show(orderList);
+            var paymentForm = new PaymentForm(orders, Total);
+            paymentForm.ShowDialog();
+            ClearCart();
         }
     }
 }

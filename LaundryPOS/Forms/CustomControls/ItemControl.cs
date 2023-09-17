@@ -29,7 +29,7 @@ namespace LaundryPOS.Forms.Views
         private void InitializeService()
         {
             lblName.Text = _item.Name;
-            lblPrice.Text = _item.Price.ToString();
+            lblPrice.Text = $"{_item.Price:#,###.00}";
             lblStock.Text = _item.Stock.ToString();
             imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(_item.PicPath) ? _item.PicPath : "./default.png");
         }
