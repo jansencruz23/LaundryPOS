@@ -10,10 +10,17 @@ namespace LaundryPOS.Models
     {
         public int TransactionItemId { get; set; }
 
+        public int TransactionId { get; set; }
+
+        public int ItemId { get; set; }
+
         public Item Item { get; set; }
         
         public int Quantity { get; set; }
 
         public decimal SubTotal { get; set; }
+
+        // Navigation Property
+        public Transaction Transaction { get; set; }
     }
 }

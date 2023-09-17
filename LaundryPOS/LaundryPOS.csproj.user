@@ -39,6 +39,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Update="DAL\DataSets\ItemDataSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="DAL\DataSets\ShopInfoDataSet.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -47,7 +47,7 @@ namespace LaundryPOS.Forms.Views
 
         public async Task CreateService(Item service)
         {
-            _unitOfWork.ServiceRepo.Insert(service);
+            _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
         }
 
@@ -58,7 +58,7 @@ namespace LaundryPOS.Forms.Views
 
         private async Task DisplayServices()
         {
-            var serviceList = await _unitOfWork.ServiceRepo
+            var serviceList = await _unitOfWork.ItemRepo
                 .Get(orderBy: s => s.OrderByDescending(s => s.ItemId));
             dgvService.DataSource = serviceList;
 

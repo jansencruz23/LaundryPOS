@@ -39,14 +39,25 @@ namespace LaundryPOS.Forms
             lblTotal.Text = $"{_total:#,###.00}";
         }
 
-        private void btnPay_Click(object sender, EventArgs e)
+        private async void btnPay_Click(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtAmount.Text, out decimal amount))
             {
                 if (amount >= _total)
                 {
-                    var receiptForm = new ReceiptForm(_orders, _total);
-                    receiptForm.ShowDialog();
+                    try
+                    {
+                        var transaction = CreateTransaction(amount);
+                        _unitOfWork.TransactionRepo.Insert(transaction);
+                        await _unitOfWork.SaveAsync();
+
+                        var receiptForm = new ReceiptForm(_unitOfWork, _orders, _total);
+                        receiptForm.ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                    }
                 }
                 else
                 {
@@ -54,5 +65,21 @@ namespace LaundryPOS.Forms
                 }
             }
         }
+
+        private Transaction CreateTransaction(decimal amount) => new()
+        {
+            EmployeeId = 1, // Replace
+            TransactionDate = DateTime.Now,
+            TotalAmount = _total,
+            AmountPaid = amount,
+            Change = amount - _total,
+            IsCompleted = true,
+            Items = _orders.Items.Select(order => new TransactionItem
+            {
+                ItemId = order.Item.ItemId,
+                Quantity = order.Quantity,
+                SubTotal = order.SubTotal
+            }).ToList()
+        };
     }
 }

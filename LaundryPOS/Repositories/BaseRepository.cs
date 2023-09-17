@@ -28,18 +28,18 @@ namespace LaundryPOS.Repositories
 
             if (filter != null)
             {
-                query = query.Where(filter);
+                query = query.Where(filter).AsNoTracking();
             }
 
             foreach (var property in includeProperties.Split(
                 new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                query = query.Include(property);
+                query = query.Include(property).AsNoTracking();
             }
 
             if (orderBy != null)
             {
-                return await orderBy(query).ToListAsync();
+                return await (orderBy(query)).AsNoTracking().ToListAsync();
             }
             else
             {

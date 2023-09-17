@@ -20,17 +20,17 @@ namespace LaundryPOS.DAL.DataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ShopInfoDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ItemDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ShopInfoDataSet : global::System.Data.DataSet {
+    public partial class ItemDataSet : global::System.Data.DataSet {
         
-        private AppSettingsDataTable tableAppSettings;
+        private ItemsDataTable tableItems;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ShopInfoDataSet() {
+        public ItemDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace LaundryPOS.DAL.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected ShopInfoDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ItemDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace LaundryPOS.DAL.DataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AppSettings"] != null)) {
-                    base.Tables.Add(new AppSettingsDataTable(ds.Tables["AppSettings"]));
+                if ((ds.Tables["Items"] != null)) {
+                    base.Tables.Add(new ItemsDataTable(ds.Tables["Items"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace LaundryPOS.DAL.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AppSettingsDataTable AppSettings {
+        public ItemsDataTable Items {
             get {
-                return this.tableAppSettings;
+                return this.tableItems;
             }
         }
         
@@ -127,7 +127,7 @@ namespace LaundryPOS.DAL.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ShopInfoDataSet cln = ((ShopInfoDataSet)(base.Clone()));
+            ItemDataSet cln = ((ItemDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace LaundryPOS.DAL.DataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AppSettings"] != null)) {
-                    base.Tables.Add(new AppSettingsDataTable(ds.Tables["AppSettings"]));
+                if ((ds.Tables["Items"] != null)) {
+                    base.Tables.Add(new ItemsDataTable(ds.Tables["Items"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace LaundryPOS.DAL.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAppSettings = ((AppSettingsDataTable)(base.Tables["AppSettings"]));
+            this.tableItems = ((ItemsDataTable)(base.Tables["Items"]));
             if ((initTable == true)) {
-                if ((this.tableAppSettings != null)) {
-                    this.tableAppSettings.InitVars();
+                if ((this.tableItems != null)) {
+                    this.tableItems.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace LaundryPOS.DAL.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ShopInfoDataSet";
+            this.DataSetName = "ItemDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ShopInfoDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ItemDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAppSettings = new AppSettingsDataTable();
-            base.Tables.Add(this.tableAppSettings);
+            this.tableItems = new ItemsDataTable();
+            base.Tables.Add(this.tableItems);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeAppSettings() {
+        private bool ShouldSerializeItems() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace LaundryPOS.DAL.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ShopInfoDataSet ds = new ShopInfoDataSet();
+            ItemDataSet ds = new ItemDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,29 @@ namespace LaundryPOS.DAL.DataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void AppSettingsRowChangeEventHandler(object sender, AppSettingsRowChangeEvent e);
+        public delegate void ItemsRowChangeEventHandler(object sender, ItemsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AppSettingsDataTable : global::System.Data.TypedTableBase<AppSettingsRow> {
+        public partial class ItemsDataTable : global::System.Data.TypedTableBase<ItemsRow> {
             
-            private global::System.Data.DataColumn columnAppSettingsId;
+            private global::System.Data.DataColumn columnItemId;
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnTheme;
+            private global::System.Data.DataColumn columnPrice;
             
-            private global::System.Data.DataColumn columnPhoneNumber;
+            private global::System.Data.DataColumn columnPicPath;
             
-            private global::System.Data.DataColumn columnAddress;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnStock;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsDataTable() {
-                this.TableName = "AppSettings";
+            public ItemsDataTable() {
+                this.TableName = "Items";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +300,7 @@ namespace LaundryPOS.DAL.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AppSettingsDataTable(global::System.Data.DataTable table) {
+            internal ItemsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,16 +317,16 @@ namespace LaundryPOS.DAL.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected AppSettingsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ItemsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AppSettingsIdColumn {
+            public global::System.Data.DataColumn ItemIdColumn {
                 get {
-                    return this.columnAppSettingsId;
+                    return this.columnItemId;
                 }
             }
             
@@ -344,41 +340,25 @@ namespace LaundryPOS.DAL.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ThemeColumn {
+            public global::System.Data.DataColumn PriceColumn {
                 get {
-                    return this.columnTheme;
+                    return this.columnPrice;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PhoneNumberColumn {
+            public global::System.Data.DataColumn PicPathColumn {
                 get {
-                    return this.columnPhoneNumber;
+                    return this.columnPicPath;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
+            public global::System.Data.DataColumn StockColumn {
                 get {
-                    return this.columnAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
+                    return this.columnStock;
                 }
             }
             
@@ -393,58 +373,56 @@ namespace LaundryPOS.DAL.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRow this[int index] {
+            public ItemsRow this[int index] {
                 get {
-                    return ((AppSettingsRow)(this.Rows[index]));
+                    return ((ItemsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AppSettingsRowChangeEventHandler AppSettingsRowChanging;
+            public event ItemsRowChangeEventHandler ItemsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AppSettingsRowChangeEventHandler AppSettingsRowChanged;
+            public event ItemsRowChangeEventHandler ItemsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AppSettingsRowChangeEventHandler AppSettingsRowDeleting;
+            public event ItemsRowChangeEventHandler ItemsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event AppSettingsRowChangeEventHandler AppSettingsRowDeleted;
+            public event ItemsRowChangeEventHandler ItemsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddAppSettingsRow(AppSettingsRow row) {
+            public void AddItemsRow(ItemsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRow AddAppSettingsRow(string Name, int Theme, string PhoneNumber, string Address, string Email, string Description) {
-                AppSettingsRow rowAppSettingsRow = ((AppSettingsRow)(this.NewRow()));
+            public ItemsRow AddItemsRow(string Name, decimal Price, string PicPath, int Stock) {
+                ItemsRow rowItemsRow = ((ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
-                        Theme,
-                        PhoneNumber,
-                        Address,
-                        Email,
-                        Description};
-                rowAppSettingsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAppSettingsRow);
-                return rowAppSettingsRow;
+                        Price,
+                        PicPath,
+                        Stock};
+                rowItemsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowItemsRow);
+                return rowItemsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRow FindByAppSettingsId(int AppSettingsId) {
-                return ((AppSettingsRow)(this.Rows.Find(new object[] {
-                            AppSettingsId})));
+            public ItemsRow FindByItemId(int ItemId) {
+                return ((ItemsRow)(this.Rows.Find(new object[] {
+                            ItemId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AppSettingsDataTable cln = ((AppSettingsDataTable)(base.Clone()));
+                ItemsDataTable cln = ((ItemsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,79 +430,71 @@ namespace LaundryPOS.DAL.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AppSettingsDataTable();
+                return new ItemsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnAppSettingsId = base.Columns["AppSettingsId"];
+                this.columnItemId = base.Columns["ItemId"];
                 this.columnName = base.Columns["Name"];
-                this.columnTheme = base.Columns["Theme"];
-                this.columnPhoneNumber = base.Columns["PhoneNumber"];
-                this.columnAddress = base.Columns["Address"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnPrice = base.Columns["Price"];
+                this.columnPicPath = base.Columns["PicPath"];
+                this.columnStock = base.Columns["Stock"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnAppSettingsId = new global::System.Data.DataColumn("AppSettingsId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppSettingsId);
+                this.columnItemId = new global::System.Data.DataColumn("ItemId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemId);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnTheme = new global::System.Data.DataColumn("Theme", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTheme);
-                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhoneNumber);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.columnPicPath = new global::System.Data.DataColumn("PicPath", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPicPath);
+                this.columnStock = new global::System.Data.DataColumn("Stock", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStock);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnAppSettingsId}, true));
-                this.columnAppSettingsId.AutoIncrement = true;
-                this.columnAppSettingsId.AutoIncrementSeed = -1;
-                this.columnAppSettingsId.AutoIncrementStep = -1;
-                this.columnAppSettingsId.AllowDBNull = false;
-                this.columnAppSettingsId.ReadOnly = true;
-                this.columnAppSettingsId.Unique = true;
+                                this.columnItemId}, true));
+                this.columnItemId.AutoIncrement = true;
+                this.columnItemId.AutoIncrementSeed = -1;
+                this.columnItemId.AutoIncrementStep = -1;
+                this.columnItemId.AllowDBNull = false;
+                this.columnItemId.ReadOnly = true;
+                this.columnItemId.Unique = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 2147483647;
-                this.columnTheme.AllowDBNull = false;
-                this.columnPhoneNumber.MaxLength = 2147483647;
-                this.columnAddress.MaxLength = 2147483647;
-                this.columnEmail.MaxLength = 2147483647;
-                this.columnDescription.MaxLength = 2147483647;
+                this.columnPrice.AllowDBNull = false;
+                this.columnPicPath.MaxLength = 2147483647;
+                this.columnStock.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRow NewAppSettingsRow() {
-                return ((AppSettingsRow)(this.NewRow()));
+            public ItemsRow NewItemsRow() {
+                return ((ItemsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AppSettingsRow(builder);
+                return new ItemsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AppSettingsRow);
+                return typeof(ItemsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AppSettingsRowChanged != null)) {
-                    this.AppSettingsRowChanged(this, new AppSettingsRowChangeEvent(((AppSettingsRow)(e.Row)), e.Action));
+                if ((this.ItemsRowChanged != null)) {
+                    this.ItemsRowChanged(this, new ItemsRowChangeEvent(((ItemsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,8 +502,8 @@ namespace LaundryPOS.DAL.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AppSettingsRowChanging != null)) {
-                    this.AppSettingsRowChanging(this, new AppSettingsRowChangeEvent(((AppSettingsRow)(e.Row)), e.Action));
+                if ((this.ItemsRowChanging != null)) {
+                    this.ItemsRowChanging(this, new ItemsRowChangeEvent(((ItemsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -541,8 +511,8 @@ namespace LaundryPOS.DAL.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AppSettingsRowDeleted != null)) {
-                    this.AppSettingsRowDeleted(this, new AppSettingsRowChangeEvent(((AppSettingsRow)(e.Row)), e.Action));
+                if ((this.ItemsRowDeleted != null)) {
+                    this.ItemsRowDeleted(this, new ItemsRowChangeEvent(((ItemsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,14 +520,14 @@ namespace LaundryPOS.DAL.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AppSettingsRowDeleting != null)) {
-                    this.AppSettingsRowDeleting(this, new AppSettingsRowChangeEvent(((AppSettingsRow)(e.Row)), e.Action));
+                if ((this.ItemsRowDeleting != null)) {
+                    this.ItemsRowDeleting(this, new ItemsRowChangeEvent(((ItemsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveAppSettingsRow(AppSettingsRow row) {
+            public void RemoveItemsRow(ItemsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -566,7 +536,7 @@ namespace LaundryPOS.DAL.DataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ShopInfoDataSet ds = new ShopInfoDataSet();
+                ItemDataSet ds = new ItemDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -584,7 +554,7 @@ namespace LaundryPOS.DAL.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AppSettingsDataTable";
+                attribute2.FixedValue = "ItemsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -628,25 +598,25 @@ namespace LaundryPOS.DAL.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AppSettingsRow : global::System.Data.DataRow {
+        public partial class ItemsRow : global::System.Data.DataRow {
             
-            private AppSettingsDataTable tableAppSettings;
+            private ItemsDataTable tableItems;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal AppSettingsRow(global::System.Data.DataRowBuilder rb) : 
+            internal ItemsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAppSettings = ((AppSettingsDataTable)(this.Table));
+                this.tableItems = ((ItemsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int AppSettingsId {
+            public int ItemId {
                 get {
-                    return ((int)(this[this.tableAppSettings.AppSettingsIdColumn]));
+                    return ((int)(this[this.tableItems.ItemIdColumn]));
                 }
                 set {
-                    this[this.tableAppSettings.AppSettingsIdColumn] = value;
+                    this[this.tableItems.ItemIdColumn] = value;
                 }
             }
             
@@ -654,134 +624,61 @@ namespace LaundryPOS.DAL.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Name {
                 get {
-                    return ((string)(this[this.tableAppSettings.NameColumn]));
+                    return ((string)(this[this.tableItems.NameColumn]));
                 }
                 set {
-                    this[this.tableAppSettings.NameColumn] = value;
+                    this[this.tableItems.NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Theme {
+            public decimal Price {
                 get {
-                    return ((int)(this[this.tableAppSettings.ThemeColumn]));
+                    return ((decimal)(this[this.tableItems.PriceColumn]));
                 }
                 set {
-                    this[this.tableAppSettings.ThemeColumn] = value;
+                    this[this.tableItems.PriceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PhoneNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableAppSettings.PhoneNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PhoneNumber\' in table \'AppSettings\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppSettings.PhoneNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Address {
+            public string PicPath {
                 get {
                     try {
-                        return ((string)(this[this.tableAppSettings.AddressColumn]));
+                        return ((string)(this[this.tableItems.PicPathColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'AppSettings\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PicPath\' in table \'Items\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAppSettings.AddressColumn] = value;
+                    this[this.tableItems.PicPathColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Email {
+            public int Stock {
                 get {
-                    try {
-                        return ((string)(this[this.tableAppSettings.EmailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Email\' in table \'AppSettings\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableItems.StockColumn]));
                 }
                 set {
-                    this[this.tableAppSettings.EmailColumn] = value;
+                    this[this.tableItems.StockColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Description {
-                get {
-                    try {
-                        return ((string)(this[this.tableAppSettings.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'AppSettings\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppSettings.DescriptionColumn] = value;
-                }
+            public bool IsPicPathNull() {
+                return this.IsNull(this.tableItems.PicPathColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPhoneNumberNull() {
-                return this.IsNull(this.tableAppSettings.PhoneNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPhoneNumberNull() {
-                this[this.tableAppSettings.PhoneNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAddressNull() {
-                return this.IsNull(this.tableAppSettings.AddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAddressNull() {
-                this[this.tableAppSettings.AddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEmailNull() {
-                return this.IsNull(this.tableAppSettings.EmailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEmailNull() {
-                this[this.tableAppSettings.EmailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableAppSettings.DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableAppSettings.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetPicPathNull() {
+                this[this.tableItems.PicPathColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -789,22 +686,22 @@ namespace LaundryPOS.DAL.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class AppSettingsRowChangeEvent : global::System.EventArgs {
+        public class ItemsRowChangeEvent : global::System.EventArgs {
             
-            private AppSettingsRow eventRow;
+            private ItemsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRowChangeEvent(AppSettingsRow row, global::System.Data.DataRowAction action) {
+            public ItemsRowChangeEvent(ItemsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AppSettingsRow Row {
+            public ItemsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -820,7 +717,7 @@ namespace LaundryPOS.DAL.DataSets {
         }
     }
 }
-namespace LaundryPOS.DAL.DataSets.ShopInfoDataSetTableAdapters {
+namespace LaundryPOS.DAL.DataSets.ItemDataSetTableAdapters {
     
     
     /// <summary>
@@ -832,7 +729,7 @@ namespace LaundryPOS.DAL.DataSets.ShopInfoDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AppSettingsTableAdapter : global::System.ComponentModel.Component {
+    public partial class ItemsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -846,7 +743,7 @@ namespace LaundryPOS.DAL.DataSets.ShopInfoDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public AppSettingsTableAdapter() {
+        public ItemsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -943,47 +840,44 @@ namespace LaundryPOS.DAL.DataSets.ShopInfoDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AppSettings";
-            tableMapping.ColumnMappings.Add("AppSettingsId", "AppSettingsId");
+            tableMapping.DataSetTable = "Items";
+            tableMapping.ColumnMappings.Add("ItemId", "ItemId");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Theme", "Theme");
-            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
-            tableMapping.ColumnMappings.Add("Address", "Address");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Price", "Price");
+            tableMapping.ColumnMappings.Add("PicPath", "PicPath");
+            tableMapping.ColumnMappings.Add("Stock", "Stock");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[AppSettings] WHERE (([AppSettingsId] = @Original_AppSettingsId" +
-                ") AND ([Theme] = @Original_Theme))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Items] WHERE (([ItemId] = @Original_ItemId) AND ([Price] = @Or" +
+                "iginal_Price) AND ([Stock] = @Original_Stock))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppSettingsId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppSettingsId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Theme", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Theme", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[AppSettings] ([Name], [Theme], [PhoneNumber], [Address], [Email], [Description]) VALUES (@Name, @Theme, @PhoneNumber, @Address, @Email, @Description);
-SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM AppSettings WHERE (AppSettingsId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Items] ([Name], [Price], [PicPath], [Stock]) VALUES (@Name, @P" +
+                "rice, @PicPath, @Stock);\r\nSELECT ItemId, Name, Price, PicPath, Stock FROM Items " +
+                "WHERE (ItemId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Theme", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Theme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PicPath", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PicPath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AppSettings] SET [Name] = @Name, [Theme] = @Theme, [PhoneNumber] = @PhoneNumber, [Address] = @Address, [Email] = @Email, [Description] = @Description WHERE (([AppSettingsId] = @Original_AppSettingsId) AND ([Theme] = @Original_Theme));
-SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM AppSettings WHERE (AppSettingsId = @AppSettingsId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Items] SET [Name] = @Name, [Price] = @Price, [PicPath] = @PicPath, [Stock] = @Stock WHERE (([ItemId] = @Original_ItemId) AND ([Price] = @Original_Price) AND ([Stock] = @Original_Stock));
+SELECT ItemId, Name, Price, PicPath, Stock FROM Items WHERE (ItemId = @ItemId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Theme", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Theme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppSettingsId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppSettingsId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Theme", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Theme", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppSettingsId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AppSettingsId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PicPath", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PicPath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ItemId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ItemId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,8 +894,7 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM " +
-                "dbo.AppSettings";
+            this._commandCollection[0].CommandText = "SELECT ItemId, Name, Price, PicPath, Stock FROM dbo.Items";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1009,7 +902,7 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ShopInfoDataSet.AppSettingsDataTable dataTable) {
+        public virtual int Fill(ItemDataSet.ItemsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1022,9 +915,9 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ShopInfoDataSet.AppSettingsDataTable GetData() {
+        public virtual ItemDataSet.ItemsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ShopInfoDataSet.AppSettingsDataTable dataTable = new ShopInfoDataSet.AppSettingsDataTable();
+            ItemDataSet.ItemsDataTable dataTable = new ItemDataSet.ItemsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1032,15 +925,15 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ShopInfoDataSet.AppSettingsDataTable dataTable) {
+        public virtual int Update(ItemDataSet.ItemsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ShopInfoDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "AppSettings");
+        public virtual int Update(ItemDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Items");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1062,9 +955,10 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_AppSettingsId, int Original_Theme) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_AppSettingsId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Theme));
+        public virtual int Delete(int Original_ItemId, decimal Original_Price, int Original_Stock) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ItemId));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_Price));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Stock));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1085,38 +979,21 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int Theme, string PhoneNumber, string Address, string Email, string Description) {
+        public virtual int Insert(string Name, decimal Price, string PicPath, int Stock) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Theme));
-            if ((PhoneNumber == null)) {
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(Price));
+            if ((PicPath == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PhoneNumber));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PicPath));
             }
-            if ((Address == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Address));
-            }
-            if ((Email == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Email));
-            }
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Description));
-            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Stock));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1137,41 +1014,25 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Theme, string PhoneNumber, string Address, string Email, string Description, int Original_AppSettingsId, int Original_Theme, int AppSettingsId) {
+        public virtual int Update(string Name, decimal Price, string PicPath, int Stock, int Original_ItemId, decimal Original_Price, int Original_Stock, int ItemId) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Theme));
-            if ((PhoneNumber == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(Price));
+            if ((PicPath == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PhoneNumber));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PicPath));
             }
-            if ((Address == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Address));
-            }
-            if ((Email == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Email));
-            }
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_AppSettingsId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Theme));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(AppSettingsId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Stock));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ItemId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_Price));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Stock));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ItemId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1192,8 +1053,8 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int Theme, string PhoneNumber, string Address, string Email, string Description, int Original_AppSettingsId, int Original_Theme) {
-            return this.Update(Name, Theme, PhoneNumber, Address, Email, Description, Original_AppSettingsId, Original_Theme, Original_AppSettingsId);
+        public virtual int Update(string Name, decimal Price, string PicPath, int Stock, int Original_ItemId, decimal Original_Price, int Original_Stock) {
+            return this.Update(Name, Price, PicPath, Stock, Original_ItemId, Original_Price, Original_Stock, Original_ItemId);
         }
     }
     
@@ -1209,7 +1070,7 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         
         private UpdateOrderOption _updateOrder;
         
-        private AppSettingsTableAdapter _appSettingsTableAdapter;
+        private ItemsTableAdapter _itemsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1231,12 +1092,12 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AppSettingsTableAdapter AppSettingsTableAdapter {
+        public ItemsTableAdapter ItemsTableAdapter {
             get {
-                return this._appSettingsTableAdapter;
+                return this._itemsTableAdapter;
             }
             set {
-                this._appSettingsTableAdapter = value;
+                this._itemsTableAdapter = value;
             }
         }
         
@@ -1259,9 +1120,9 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._appSettingsTableAdapter != null) 
-                            && (this._appSettingsTableAdapter.Connection != null))) {
-                    return this._appSettingsTableAdapter.Connection;
+                if (((this._itemsTableAdapter != null) 
+                            && (this._itemsTableAdapter.Connection != null))) {
+                    return this._itemsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1276,7 +1137,7 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._appSettingsTableAdapter != null)) {
+                if ((this._itemsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1288,14 +1149,14 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(ShopInfoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ItemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appSettingsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AppSettings.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._appSettingsTableAdapter.Update(updatedRows));
+                    result = (result + this._itemsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1307,13 +1168,13 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(ShopInfoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ItemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appSettingsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AppSettings.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Items.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._appSettingsTableAdapter.Update(addedRows));
+                    result = (result + this._itemsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1325,13 +1186,13 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(ShopInfoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ItemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._appSettingsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AppSettings.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._appSettingsTableAdapter.Update(deletedRows));
+                    result = (result + this._itemsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1367,15 +1228,15 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(ShopInfoDataSet dataSet) {
+        public virtual int UpdateAll(ItemDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._appSettingsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._appSettingsTableAdapter.Connection) == false))) {
+            if (((this._itemsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._itemsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1411,13 +1272,13 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._appSettingsTableAdapter != null)) {
-                    revertConnections.Add(this._appSettingsTableAdapter, this._appSettingsTableAdapter.Connection);
-                    this._appSettingsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._appSettingsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._appSettingsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._appSettingsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._appSettingsTableAdapter.Adapter);
+                if ((this._itemsTableAdapter != null)) {
+                    revertConnections.Add(this._itemsTableAdapter, this._itemsTableAdapter.Connection);
+                    this._itemsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._itemsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._itemsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._itemsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._itemsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1478,9 +1339,9 @@ SELECT AppSettingsId, Name, Theme, PhoneNumber, Address, Email, Description FROM
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._appSettingsTableAdapter != null)) {
-                    this._appSettingsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._appSettingsTableAdapter]));
-                    this._appSettingsTableAdapter.Transaction = null;
+                if ((this._itemsTableAdapter != null)) {
+                    this._itemsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._itemsTableAdapter]));
+                    this._itemsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

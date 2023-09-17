@@ -178,7 +178,7 @@ namespace LaundryPOS.Migrations
                     b.Property<decimal>("SubTotal")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("TransactionId")
+                    b.Property<int>("TransactionId")
                         .HasColumnType("int");
 
                     b.HasKey("TransactionItemId");
@@ -209,11 +209,15 @@ namespace LaundryPOS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LaundryPOS.Models.Transaction", null)
+                    b.HasOne("LaundryPOS.Models.Transaction", "Transaction")
                         .WithMany("Items")
-                        .HasForeignKey("TransactionId");
+                        .HasForeignKey("TransactionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Item");
+
+                    b.Navigation("Transaction");
                 });
 
             modelBuilder.Entity("LaundryPOS.Models.Transaction", b =>

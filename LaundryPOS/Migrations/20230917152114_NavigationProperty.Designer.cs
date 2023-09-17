@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LaundryPOS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230917082552_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230917152114_NavigationProperty")]
+    partial class NavigationProperty
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -181,7 +181,7 @@ namespace LaundryPOS.Migrations
                     b.Property<decimal>("SubTotal")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("TransactionId")
+                    b.Property<int>("TransactionId")
                         .HasColumnType("int");
 
                     b.HasKey("TransactionItemId");
@@ -212,11 +212,15 @@ namespace LaundryPOS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LaundryPOS.Models.Transaction", null)
+                    b.HasOne("LaundryPOS.Models.Transaction", "Transaction")
                         .WithMany("Items")
-                        .HasForeignKey("TransactionId");
+                        .HasForeignKey("TransactionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Item");
+
+                    b.Navigation("Transaction");
                 });
 
             modelBuilder.Entity("LaundryPOS.Models.Transaction", b =>

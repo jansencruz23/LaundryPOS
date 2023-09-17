@@ -31,6 +31,36 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Name">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Name.Value, "ItemDataSet")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Name</rd:DefaultName>
+        <Top>1.51958in</Top>
+        <Left>0.66542in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>5.48958in</Height>
     <Style />
@@ -59,7 +89,110 @@
       </ConnectionProperties>
       <rd:DataSourceID>e317f0fb-cb3e-40a6-92ea-b41b2a77183d</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="Sample">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>1c201d3a-462d-4d50-a3f2-3d24ff0a262e</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="EmployeeDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>bbf7c148-90c8-4917-9c2b-5208b3cc6b0a</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ItemDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>4203cfb0-8cb3-4f91-8146-ca9a7a3c115d</rd:DataSourceID>
+    </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="ShopInfoDataSet">
+      <Query>
+        <DataSourceName>ShopInfoDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="AppSettingsId">
+          <DataField>AppSettingsId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Theme">
+          <DataField>Theme</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PhoneNumber">
+          <DataField>PhoneNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ShopInfoDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\DAL\DataSets\ShopInfoDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>AppSettings</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>AppSettingsTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ItemDataSet">
+      <Query>
+        <DataSourceName>ItemDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ItemId">
+          <DataField>ItemId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Price">
+          <DataField>Price</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="PicPath">
+          <DataField>PicPath</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Stock">
+          <DataField>Stock</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ItemDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\DAL\DataSets\ItemDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Items</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ItemsTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>31091cce-96fc-44fa-89d5-68b887f287ae</rd:ReportID>
 </Report>

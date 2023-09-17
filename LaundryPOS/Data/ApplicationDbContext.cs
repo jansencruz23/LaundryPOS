@@ -20,5 +20,18 @@ namespace LaundryPOS.Data
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionItem> TransactionItems { get; set; }
         public DbSet<AppSettings> AppSettings { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.Employee)
+                .WithMany()
+                .HasForeignKey(t => t.EmployeeId);
+
+            modelBuilder.Entity<TransactionItem>()
+                .HasOne(ti => ti.Transaction)
+                .WithMany(t => t.Items)
+                .HasForeignKey(ti => ti.TransactionId);
+        }
     }
 }

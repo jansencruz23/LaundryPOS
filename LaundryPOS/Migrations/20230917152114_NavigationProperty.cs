@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LaundryPOS.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class NavigationProperty : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -96,10 +96,10 @@ namespace LaundryPOS.Migrations
                 {
                     TransactionItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    TransactionId = table.Column<int>(type: "int", nullable: false),
                     ItemId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TransactionId = table.Column<int>(type: "int", nullable: true)
+                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,7 +114,8 @@ namespace LaundryPOS.Migrations
                         name: "FK_TransactionItems_Transactions_TransactionId",
                         column: x => x.TransactionId,
                         principalTable: "Transactions",
-                        principalColumn: "TransactionId");
+                        principalColumn: "TransactionId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

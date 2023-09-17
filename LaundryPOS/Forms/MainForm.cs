@@ -66,7 +66,7 @@ namespace LaundryPOS.Forms
 
         private async void DisplayServices()
         {
-            var services = await _unitOfWork.ServiceRepo.Get();
+            var services = await _unitOfWork.ItemRepo.Get();
             items.AddRange(services
                 .Select(service => new ItemControl(service)));
 
