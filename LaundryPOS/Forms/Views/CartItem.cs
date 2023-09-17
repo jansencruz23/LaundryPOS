@@ -10,6 +10,7 @@ namespace LaundryPOS.Forms.Views
     public class CartItem
     {
         public Item Item { get; }
+
         public int Quantity { get; set; }
 
         public double SubTotal { get => Item.Price * Quantity; }

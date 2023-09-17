@@ -18,7 +18,7 @@ namespace LaundryPOS.Forms
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly List<ItemControl> items;
-        private Order order = new();
+        private readonly Order orders = new();
 
         private double Total { get; set; } = default;
 
@@ -38,7 +38,7 @@ namespace LaundryPOS.Forms
 
             if (existingCartItem != null)
             {
-                existingCartItem.CartItem.Quantity += e.CartItem.Quantity;
+                existingCartItem.CartItem.Quantity = e.CartItem.Quantity;
                 existingCartItem.InitializeCartItem();
             }
             else
@@ -46,23 +46,26 @@ namespace LaundryPOS.Forms
                 var cartItem = new CartControl(e.CartItem);
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
                 cartPanel.Controls.Add(cartItem);
+                orders.Items.Add(e.CartItem);
             }
 
-            Total += e.CartItem.SubTotal;
+            UpdateTotalValue();
             UpdateTotalDisplay();
         }
 
         private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
         {
-            cartPanel.Controls.Remove(sender as CartControl);
-            Total -= e.CartItem.SubTotal;
+            var cartControl = sender as CartControl;
+            cartPanel.Controls.Remove(cartControl);
+            orders.Items.Remove(e.CartItem);
+
+            UpdateTotalValue();
             UpdateTotalDisplay();
         }
 
         private async void DisplayServices()
         {
             var services = await _unitOfWork.ServiceRepo.Get();
-
             items.AddRange(services
                 .Select(service => new ItemControl(service)));
 
@@ -73,9 +76,21 @@ namespace LaundryPOS.Forms
             });
         }
 
+        private void UpdateTotalValue()
+        {
+            Total = orders.Items.Sum(order => order.SubTotal);
+        }
+
         private void UpdateTotalDisplay()
         {
             lblTotal.Text = $"{Total:#,###.00}";
+        }
+
+        private void btnPayNow_Click(object sender, EventArgs e)
+        {
+            string orderList = "";
+            orders.Items.ForEach(o => orderList += " " + o.Item.Name + " " + o.SubTotal + " " + o.Quantity + "\n");
+            MessageBox.Show(orderList);
         }
     }
 }
