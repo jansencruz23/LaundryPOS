@@ -15,11 +15,11 @@ namespace LaundryPOS.Forms.Views
     public partial class ItemControl : UserControl
     {
         public event EventHandler<CartItemEventArgs> AddToCartClicked;
-        private readonly Item _service;
+        private readonly Item _item;
 
-        public ItemControl(Item service)
+        public ItemControl(Item item)
         {
-            _service = service;
+            _item = item;
 
             InitializeComponent();
             InitializeService();
@@ -28,9 +28,10 @@ namespace LaundryPOS.Forms.Views
 
         private void InitializeService()
         {
-            lblName.Text = _service.Name;
-            lblPrice.Text = _service.Price.ToString();
-            imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(_service.PicPath) ? _service.PicPath : "./default.png");
+            lblName.Text = _item.Name;
+            lblPrice.Text = _item.Price.ToString();
+            lblStock.Text = _item.Stock.ToString();
+            imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(_item.PicPath) ? _item.PicPath : "./default.png");
         }
 
         private void WireAllControls(Control control)
@@ -48,10 +49,14 @@ namespace LaundryPOS.Forms.Views
         private void Control_Click(object sender, EventArgs e)
         {
             InvokeOnClick(this, EventArgs.Empty);
+
             var quantityForm = new QuantityForm();
             quantityForm.ShowDialog();
             var quantity = quantityForm.Quantity;
-            AddToCartClicked?.Invoke(this, new CartItemEventArgs(_service, quantity));
+
+            AddToCartClicked?.Invoke(this, 
+                new CartItemEventArgs(
+                    new CartItem(_item, quantity)));
         }
     }
 }

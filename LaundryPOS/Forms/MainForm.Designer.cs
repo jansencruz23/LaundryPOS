@@ -30,6 +30,7 @@
         {
             this.itemsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.cartPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // itemsPanel
@@ -50,17 +51,28 @@
             this.cartPanel.TabIndex = 1;
             this.cartPanel.WrapContents = false;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(836, 416);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(38, 15);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 487);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.cartPanel);
             this.Controls.Add(this.itemsPanel);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "MainForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +80,6 @@
 
         private FlowLayoutPanel itemsPanel;
         private FlowLayoutPanel cartPanel;
+        private Label lblTotal;
     }
 }

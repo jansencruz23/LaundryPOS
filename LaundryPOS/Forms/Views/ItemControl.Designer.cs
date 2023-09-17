@@ -36,6 +36,7 @@
             this.imgIcon = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.lblStock);
             this.guna2Panel1.Controls.Add(this.imgIcon);
             this.guna2Panel1.Controls.Add(this.lblPrice);
             this.guna2Panel1.Controls.Add(this.lblName);
@@ -86,12 +88,21 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "label1";
             // 
-            // Item
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(149, 13);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(38, 15);
+            this.lblStock.TabIndex = 3;
+            this.lblStock.Text = "label1";
+            // 
+            // ItemControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "Item";
+            this.Name = "ItemControl";
             this.Size = new System.Drawing.Size(207, 153);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -106,5 +117,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
         private Label lblPrice;
         private Label lblName;
+        private Label lblStock;
     }
 }

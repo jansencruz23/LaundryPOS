@@ -16,7 +16,7 @@ namespace LaundryPOS.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Item> Services { get; set; }
+        public DbSet<Item> Items { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionItem> TransactionItems { get; set; }
     }

@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnFile = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -46,6 +48,7 @@
             this.dgvService = new System.Windows.Forms.DataGridView();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.imgIcon = new System.Windows.Forms.PictureBox();
+            this.txtStock = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +122,7 @@
             this.txtPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPath.Location = new System.Drawing.Point(453, 144);
+            this.txtPath.Location = new System.Drawing.Point(453, 186);
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
@@ -175,10 +178,31 @@
             this.imgIcon.TabIndex = 9;
             this.imgIcon.TabStop = false;
             // 
-            // ServiceView
+            // txtStock
+            // 
+            this.txtStock.CustomizableEdges = customizableEdges11;
+            this.txtStock.DefaultText = "";
+            this.txtStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtStock.Location = new System.Drawing.Point(453, 144);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.PasswordChar = '\0';
+            this.txtStock.PlaceholderText = "";
+            this.txtStock.SelectedText = "";
+            this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.txtStock.Size = new System.Drawing.Size(200, 36);
+            this.txtStock.TabIndex = 10;
+            // 
+            // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.imgIcon);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.dgvService);
@@ -187,7 +211,7 @@
             this.Controls.Add(this.btnFile);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
-            this.Name = "ServiceView";
+            this.Name = "ItemView";
             this.Size = new System.Drawing.Size(757, 612);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
@@ -205,5 +229,6 @@
         private DataGridView dgvService;
         private Button btnEmployee;
         private PictureBox imgIcon;
+        private Guna.UI2.WinForms.Guna2TextBox txtStock;
     }
 }

@@ -18,6 +18,10 @@ namespace LaundryPOS.Models
 
         public decimal TotalAmount { get; set; }
 
+        public decimal AmountPaid { get; set; }
+
+        public decimal Change { get; set; }
+
         public bool IsCompleted { get; set; }
     }
 }

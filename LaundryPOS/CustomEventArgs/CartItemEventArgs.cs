@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Models;
+﻿using LaundryPOS.Forms.Views;
+using LaundryPOS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,11 @@ namespace LaundryPOS.CustomEventArgs
 {
     public class CartItemEventArgs : EventArgs
     {
-        public Item Service { get; set; }
-        public int Quantity { get; set; }
+        public CartItem CartItem { get; set; }
 
-        public CartItemEventArgs(Item service, int quantity)
+        public CartItemEventArgs(CartItem cartItem)
         {
-            Service = service;
-            Quantity = quantity;
+            CartItem = cartItem;
         }
     }
 }

@@ -30,13 +30,15 @@ namespace LaundryPOS.Forms.Views
             service.Name = txtName.Text;
             service.PicPath = txtPath.Text;
 
-            if (!double.TryParse(txtPrice.Text, out double price))
+            if (!double.TryParse(txtPrice.Text, out double price) ||
+                !int.TryParse(txtStock.Text, out int stock))
             {
-                MessageBox.Show("Invalid Price");
+                MessageBox.Show("Invalid Input!");
             }
             else
             {
                 service.Price = price;
+                service.Stock = stock;
                 await CreateService(service);
                 await RefreshData();
                 ClearText();
