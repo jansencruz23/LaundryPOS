@@ -71,7 +71,7 @@ namespace LaundryPOS.Forms.Views
             {
                 if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Service;
+                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Item;
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)

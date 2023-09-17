@@ -31,7 +31,7 @@ namespace LaundryPOS.Forms
             foreach (var control in cartPanel.Controls)
             {
                 if (control is CartControl existingCartItem &&
-                    existingCartItem.Service.ServiceId == e.Service.ServiceId)
+                    existingCartItem.Service.ItemId == e.Service.ItemId)
                 {
                     existingCartItem.Quantity += e.Quantity;
                     existingCartItem.InitializeCartItem();
@@ -45,7 +45,7 @@ namespace LaundryPOS.Forms
             cartPanel.Controls.Add(cartItem);
         }
 
-        private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
+        private void CartControl_RemoveFromCartClicked(object sender, EventArgs e)
         {
             cartPanel.Controls.Remove(sender as CartControl);
         }

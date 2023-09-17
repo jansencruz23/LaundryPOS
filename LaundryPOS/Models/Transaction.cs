@@ -12,7 +12,7 @@ namespace LaundryPOS.Models
 
         public Employee Employee { get; set; }
 
-        public List<TransactionItem> Services { get; set; }
+        public List<TransactionItem> Items { get; set; }
 
         public DateTime TransactionDate { get; set; }
 

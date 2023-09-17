@@ -12,7 +12,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace LaundryPOS
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.

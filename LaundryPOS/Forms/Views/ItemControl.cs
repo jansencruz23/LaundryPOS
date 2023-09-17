@@ -15,9 +15,9 @@ namespace LaundryPOS.Forms.Views
     public partial class ItemControl : UserControl
     {
         public event EventHandler<CartItemEventArgs> AddToCartClicked;
-        private readonly Service _service;
+        private readonly Item _service;
 
-        public ItemControl(Service service)
+        public ItemControl(Item service)
         {
             _service = service;
 

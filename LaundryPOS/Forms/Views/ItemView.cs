@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class ServiceView : UserControl
+    public partial class ItemView : UserControl
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiceView(IUnitOfWork unitOfWork)
+        public ItemView(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var service = new Service();
+            var service = new Item();
             service.Name = txtName.Text;
             service.PicPath = txtPath.Text;
 
@@ -43,7 +43,7 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        public async Task CreateService(Service service)
+        public async Task CreateService(Item service)
         {
             _unitOfWork.ServiceRepo.Insert(service);
             await _unitOfWork.SaveAsync();
@@ -57,7 +57,7 @@ namespace LaundryPOS.Forms.Views
         private async Task DisplayServices()
         {
             var serviceList = await _unitOfWork.ServiceRepo
-                .Get(orderBy: s => s.OrderByDescending(s => s.ServiceId));
+                .Get(orderBy: s => s.OrderByDescending(s => s.ItemId));
             dgvService.DataSource = serviceList;
 
             HideUnwantedColumns();
@@ -66,8 +66,8 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            dgvService.Columns[nameof(Service.ServiceId)].Visible = false;
-            dgvService.Columns[nameof(Service.PicPath)].Visible = false;
+            dgvService.Columns[nameof(Item.ItemId)].Visible = false;
+            dgvService.Columns[nameof(Item.PicPath)].Visible = false;
         }
 
         private void ConfigureImageColumn()
@@ -89,7 +89,7 @@ namespace LaundryPOS.Forms.Views
             {
                 if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Service;
+                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Item;
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath) 
                         ? Image.FromFile(imagePath) 

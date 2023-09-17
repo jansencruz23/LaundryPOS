@@ -10,7 +10,7 @@ namespace LaundryPOS.Models
     {
         public int TransactionItemId { get; set; }
 
-        public Service Service { get; set; }
+        public Item Item { get; set; }
         
         public int Quantity { get; set; }
 

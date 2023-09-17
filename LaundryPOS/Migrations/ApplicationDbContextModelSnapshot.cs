@@ -65,9 +65,9 @@ namespace LaundryPOS.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("LaundryPOS.Models.Service", b =>
+            modelBuilder.Entity("LaundryPOS.Models.Item", b =>
                 {
-                    b.Property<int>("ServiceId")
+                    b.Property<int>("ItemId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -81,7 +81,10 @@ namespace LaundryPOS.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double");
 
-                    b.HasKey("ServiceId");
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.HasKey("ItemId");
 
                     b.ToTable("Services");
                 });
@@ -117,10 +120,10 @@ namespace LaundryPOS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity")
+                    b.Property<int>("ItemId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ServiceId")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<decimal>("SubTotal")
@@ -131,7 +134,7 @@ namespace LaundryPOS.Migrations
 
                     b.HasKey("TransactionItemId");
 
-                    b.HasIndex("ServiceId");
+                    b.HasIndex("ItemId");
 
                     b.HasIndex("TransactionId");
 
@@ -151,22 +154,22 @@ namespace LaundryPOS.Migrations
 
             modelBuilder.Entity("LaundryPOS.Models.TransactionItem", b =>
                 {
-                    b.HasOne("LaundryPOS.Models.Service", "Service")
+                    b.HasOne("LaundryPOS.Models.Item", "Item")
                         .WithMany()
-                        .HasForeignKey("ServiceId")
+                        .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LaundryPOS.Models.Transaction", null)
-                        .WithMany("Services")
+                        .WithMany("Items")
                         .HasForeignKey("TransactionId");
 
-                    b.Navigation("Service");
+                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("LaundryPOS.Models.Transaction", b =>
                 {
-                    b.Navigation("Services");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

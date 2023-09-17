@@ -14,15 +14,15 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class CartControl : UserControl
     {
-        public event EventHandler<CartItemEventArgs> RemoveFromCartClicked;
-        private readonly Service _service;
+        public event EventHandler RemoveFromCartClicked;
+        private readonly Item _service;
         private int _quantity;
 
         public double SubTotal { get => _service.Price * _quantity; }
-        public Service Service { get => _service;  }
+        public Item Service { get => _service;  }
         public int Quantity { get => _quantity; set { _quantity = value; } }
 
-        public CartControl(Service service, int quantity)
+        public CartControl(Item service, int quantity)
         {
             _service = service;
             _quantity = quantity;

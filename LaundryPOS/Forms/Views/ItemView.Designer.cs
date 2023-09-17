@@ -1,6 +1,6 @@
 ﻿namespace LaundryPOS.Forms.Views
 {
-    partial class ServiceView
+    partial class ItemView
     {
         /// <summary> 
         /// Required designer variable.

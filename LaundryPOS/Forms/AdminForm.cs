@@ -20,7 +20,7 @@ namespace LaundryPOS.Forms
         {
             _unitOfWork = unitOfWorK;
             InitializeComponent();
-            servicePanel.Controls.Add(new ServiceView(_unitOfWork));
+            servicePanel.Controls.Add(new ItemView(_unitOfWork));
         }
 
         private void ChangePanelContent(UserControl newContent)

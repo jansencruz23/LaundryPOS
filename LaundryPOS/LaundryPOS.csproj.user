@@ -25,7 +25,7 @@
     <Compile Update="Forms\Views\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\ServiceView.cs">
+    <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

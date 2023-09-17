@@ -47,17 +47,18 @@ namespace LaundryPOS.Migrations
                 name: "Services",
                 columns: table => new
                 {
-                    ServiceId = table.Column<int>(type: "int", nullable: false)
+                    ItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Price = table.Column<double>(type: "double", nullable: false),
                     PicPath = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Stock = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Services", x => x.ServiceId);
+                    table.PrimaryKey("PK_Services", x => x.ItemId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -90,7 +91,7 @@ namespace LaundryPOS.Migrations
                 {
                     TransactionItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ServiceId = table.Column<int>(type: "int", nullable: false),
+                    ItemId = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     SubTotal = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     TransactionId = table.Column<int>(type: "int", nullable: true)
@@ -99,10 +100,10 @@ namespace LaundryPOS.Migrations
                 {
                     table.PrimaryKey("PK_TransactionItems", x => x.TransactionItemId);
                     table.ForeignKey(
-                        name: "FK_TransactionItems_Services_ServiceId",
-                        column: x => x.ServiceId,
+                        name: "FK_TransactionItems_Services_ItemId",
+                        column: x => x.ItemId,
                         principalTable: "Services",
-                        principalColumn: "ServiceId",
+                        principalColumn: "ItemId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TransactionItems_Transactions_TransactionId",
@@ -113,9 +114,9 @@ namespace LaundryPOS.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TransactionItems_ServiceId",
+                name: "IX_TransactionItems_ItemId",
                 table: "TransactionItems",
-                column: "ServiceId");
+                column: "ItemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TransactionItems_TransactionId",
