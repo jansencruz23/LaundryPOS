@@ -22,6 +22,9 @@
     <Compile Update="Forms\QuantityForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,5 +37,10 @@
     <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DAL\DataSets\ShopInfoDataSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

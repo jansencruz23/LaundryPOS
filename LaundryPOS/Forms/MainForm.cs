@@ -17,6 +17,7 @@ namespace LaundryPOS.Forms
     public partial class MainForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly Employee _employee;
         private readonly List<ItemControl> items;
         private readonly Order orders = new();
 
@@ -96,7 +97,7 @@ namespace LaundryPOS.Forms
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            var paymentForm = new PaymentForm(orders, Total);
+            var paymentForm = new PaymentForm(orders, Total, _unitOfWork);
             paymentForm.ShowDialog();
             ClearCart();
         }

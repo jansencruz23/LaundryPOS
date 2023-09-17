@@ -29,12 +29,12 @@ namespace LaundryPOS
             IHost host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    var CONNECTION_STRING = context.Configuration.GetConnectionString("MySqlServer");
-                    //const string CONNECTION_STRING = "SqlServer";
+                    //var CONNECTION_STRING = context.Configuration.GetConnectionString("MySqlServer");
+                    const string CONNECTION_STRING = "SqlServer";
                     services.AddDbContext<ApplicationDbContext>(options =>
                     {
-                        options.UseMySql(CONNECTION_STRING, ServerVersion.AutoDetect(CONNECTION_STRING));
-                        //options.UseSqlServer(context.Configuration.GetConnectionString(CONNECTION_STRING));
+                        //options.UseMySql(CONNECTION_STRING, ServerVersion.AutoDetect(CONNECTION_STRING));
+                        options.UseSqlServer(context.Configuration.GetConnectionString(CONNECTION_STRING));
                     }, ServiceLifetime.Scoped);
 
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
