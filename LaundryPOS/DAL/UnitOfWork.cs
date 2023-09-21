@@ -16,10 +16,10 @@ namespace LaundryPOS.DAL
         private readonly ApplicationDbContext _context;
         // Temporary
         private IEmployeeRepository _employeeRepo;
+        private IBaseRepository<Transaction> _transactionRepo;
+        private ITransactionItemRepository _transactionItemRepo;
         private IBaseRepository<Item> _serviceRepo;
         private IBaseRepository<AppSettings> _appSettingsRepo;
-        private IBaseRepository<Transaction> _transactionRepo;
-        private IBaseRepository<TransactionItem> _transactionItemRepo;
 
         public IEmployeeRepository EmployeeRepo =>
             _employeeRepo ??= new EmployeeRepository(_context);
@@ -33,8 +33,8 @@ namespace LaundryPOS.DAL
         public IBaseRepository<Transaction> TransactionRepo =>
             _transactionRepo ??= new BaseRepository<Transaction>(_context);
 
-        public IBaseRepository<TransactionItem> TransactionItemRepo =>
-            _transactionItemRepo ??= new BaseRepository<TransactionItem>(_context);
+        public ITransactionItemRepository TransactionItemRepo =>
+            _transactionItemRepo ??= new TransactionItemRepository(_context);
 
         public UnitOfWork(ApplicationDbContext context)
         {

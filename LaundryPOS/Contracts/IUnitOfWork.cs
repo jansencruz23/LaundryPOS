@@ -13,7 +13,7 @@ namespace LaundryPOS.Contracts
         IBaseRepository<Item> ItemRepo { get; }
         IBaseRepository<AppSettings> AppSettingsRepo { get; }
         IBaseRepository<Transaction> TransactionRepo { get; }
-        IBaseRepository<TransactionItem> TransactionItemRepo { get; }
+        ITransactionItemRepository TransactionItemRepo { get; }
         Task SaveAsync();
     }
 }

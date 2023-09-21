@@ -20,14 +20,18 @@ namespace LaundryPOS.Forms
         private readonly ReceiptDataService _dataService;
         private readonly Order _orders;
         private readonly decimal _total;
+        private readonly Transaction _transaction;
 
         public ReceiptForm(IUnitOfWork unitOfWork, 
-            Order orders, decimal total)
+            Order orders, decimal total,
+            Transaction transaction)
         {
             _unitOfWork = unitOfWork;
             _orders = orders;
             _total = total;
             _dataService = new();
+            _transaction = transaction;
+
             InitializeComponent();
             InitializeReport();
         }
@@ -38,12 +42,17 @@ namespace LaundryPOS.Forms
 
             var appSettingsData = await _unitOfWork.AppSettingsRepo.Get();
             var itemData = await _unitOfWork.ItemRepo.Get();
-            ReportDataSource dataSource = new ReportDataSource("ShopInfoDataSet", appSettingsData);
-            ReportDataSource dataSource2 = new ReportDataSource("ItemDataSet", itemData);
+            var transactionData = await _unitOfWork.TransactionItemRepo.GetTransactionItems(_transaction.TransactionId);
+
+            ReportDataSource appSettingsDataSource = new ReportDataSource("ShopInfoDataSet", appSettingsData);
+            ReportDataSource itemDataSource = new ReportDataSource("ItemDataSet", itemData);
+            ReportDataSource transactionDataSource = new ReportDataSource("TransactionItemsDataSet", transactionData);
             
             reportViewer.LocalReport.ReportPath = "Reports/Receipt.rdlc";
-            reportViewer.LocalReport.DataSources.Add(dataSource);
-            reportViewer.LocalReport.DataSources.Add(dataSource2);
+            reportViewer.LocalReport.DataSources.Add(appSettingsDataSource);
+            reportViewer.LocalReport.DataSources.Add(itemDataSource);
+            reportViewer.LocalReport.DataSources.Add(transactionDataSource);
+
             reportViewer.RefreshReport();
         }
     }

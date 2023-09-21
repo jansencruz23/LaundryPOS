@@ -48,5 +48,8 @@
     <None Update="DAL\DataSets\ShopInfoDataSet.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="DAL\DataSets\TransactionDataSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

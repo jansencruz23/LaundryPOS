@@ -51,7 +51,7 @@ namespace LaundryPOS.Forms
                         _unitOfWork.TransactionRepo.Insert(transaction);
                         await _unitOfWork.SaveAsync();
 
-                        var receiptForm = new ReceiptForm(_unitOfWork, _orders, _total);
+                        var receiptForm = new ReceiptForm(_unitOfWork, _orders, _total, transaction);
                         receiptForm.ShowDialog();
                     }
                     catch (Exception ex)
