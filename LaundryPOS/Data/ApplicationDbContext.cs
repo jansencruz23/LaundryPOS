@@ -20,6 +20,7 @@ namespace LaundryPOS.Data
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionItem> TransactionItems { get; set; }
         public DbSet<AppSettings> AppSettings { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

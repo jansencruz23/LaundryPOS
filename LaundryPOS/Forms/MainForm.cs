@@ -148,12 +148,9 @@ namespace LaundryPOS.Forms
         private void btnViewUnpaid_Click(object sender, EventArgs e)
         {
             Hide();
-
-        }
-
-        private void cartPanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            var form = new UnpaidForm(_unitOfWork, _themeManager);
+            form.FormClosed += (s, args) => Close();
+            form.Show();
         }
     }
 }

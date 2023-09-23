@@ -20,6 +20,7 @@ namespace LaundryPOS.DAL
         private ITransactionItemRepository _transactionItemRepo;
         private IItemRepository _itemRepo;
         private IBaseRepository<AppSettings> _appSettingsRepo;
+        private IBaseRepository<Category> _categoryRepo;
 
         public IEmployeeRepository EmployeeRepo =>
             _employeeRepo ??= new EmployeeRepository(_context);
@@ -32,6 +33,9 @@ namespace LaundryPOS.DAL
 
         public IBaseRepository<Transaction> TransactionRepo =>
             _transactionRepo ??= new BaseRepository<Transaction>(_context);
+
+        public IBaseRepository<Category> CategoryRepo =>
+            _categoryRepo ??= new BaseRepository<Category>(_context);
 
         public ITransactionItemRepository TransactionItemRepo =>
             _transactionItemRepo ??= new TransactionItemRepository(_context);

@@ -57,6 +57,7 @@
             this.btnViewUnpaid.Size = new System.Drawing.Size(75, 45);
             this.btnViewUnpaid.TabIndex = 11;
             this.btnViewUnpaid.Text = "VIEW UNPAID";
+            this.btnViewUnpaid.Click += new System.EventHandler(this.btnViewUnpaid_Click);
             // 
             // itemsPanel
             // 
@@ -81,6 +82,7 @@
             this.btnPayLater.Size = new System.Drawing.Size(94, 45);
             this.btnPayLater.TabIndex = 10;
             this.btnPayLater.Text = "PAY LATER";
+            this.btnPayLater.Click += new System.EventHandler(this.btnPayLater_Click);
             // 
             // cartPanel
             // 
@@ -107,6 +109,7 @@
             this.btnPayNow.Size = new System.Drawing.Size(84, 45);
             this.btnPayNow.TabIndex = 9;
             this.btnPayNow.Text = "PAY NOW";
+            this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
             // 
             // lblTotal
             // 

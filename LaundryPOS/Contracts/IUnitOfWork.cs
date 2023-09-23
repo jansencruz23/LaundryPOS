@@ -14,6 +14,7 @@ namespace LaundryPOS.Contracts
         IItemRepository ItemRepo { get; }
         IBaseRepository<AppSettings> AppSettingsRepo { get; }
         IBaseRepository<Transaction> TransactionRepo { get; }
+        IBaseRepository<Category> CategoryRepo { get; }
         Task SaveAsync();
     }
 }
