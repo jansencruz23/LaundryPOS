@@ -12,10 +12,16 @@ namespace LaundryPOS.Models
 
         public string Name { get; set; }
 
+        public int? CategoryId { get; set; }
+
         public decimal Price { get; set; }
 
         public string? PicPath { get; set; }
 
         public int Stock { get; set; }
+
+        // Navigation Property/
+
+        public Category? Category { get; set; }
     }
 }

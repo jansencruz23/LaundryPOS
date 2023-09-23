@@ -42,7 +42,7 @@ namespace LaundryPOS.Forms
 
                     Form form = userRole == "admin"
                         ? new AdminForm(_unitOfWork, _themeManager)
-                        : new MainForm(_unitOfWork, _themeManager);
+                        : new MainForm(_unitOfWork, _themeManager, employee);
                     form.FormClosed += (s, args) => Close();
                     form.Show();
                 }

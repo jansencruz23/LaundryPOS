@@ -17,15 +17,17 @@ namespace LaundryPOS.Forms
     public partial class PaymentForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly Employee _employee;
         private readonly Order _orders;
         private readonly decimal _total;
 
         public PaymentForm(Order orders, decimal total,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork, Employee employee)
         {
             _orders = orders;
             _total = total;
             _unitOfWork = unitOfWork;
+            _employee = employee;
 
             InitializeComponent();
             InitializeOrders();
@@ -69,7 +71,7 @@ namespace LaundryPOS.Forms
 
         private Transaction CreateTransaction(decimal amount) => new()
         {
-            EmployeeId = 1, // Replace
+            EmployeeId = _employee.EmployeeId,
             TransactionDate = DateTime.Now,
             TotalAmount = _total,
             AmountPaid = amount,

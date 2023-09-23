@@ -40,7 +40,7 @@ namespace LaundryPOS
                     }, ServiceLifetime.Scoped);
 
                     services.AddMemoryCache();
-                    services.AddSingleton<ThemeManager>();
+                    services.AddScoped<ThemeManager>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<LoginForm>();
                 }).Build();

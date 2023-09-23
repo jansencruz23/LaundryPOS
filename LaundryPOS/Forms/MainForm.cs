@@ -26,11 +26,14 @@ namespace LaundryPOS.Forms
         private decimal Total { get; set; } = default;
 
         public MainForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            Employee employee)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _employee = employee;
             items = new();
+
             InitializeComponent();
             DisplayItems();
             ApplyTheme();
@@ -102,7 +105,7 @@ namespace LaundryPOS.Forms
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            var paymentForm = new PaymentForm(orders, Total, _unitOfWork);
+            var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee);
             paymentForm.ShowDialog();
             ClearCart();
         }
@@ -110,6 +113,47 @@ namespace LaundryPOS.Forms
         private async void ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
+        }
+
+        private async void btnPayLater_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var transaction = CreateTransaction();
+                _unitOfWork.TransactionRepo.Insert(transaction);
+                await _unitOfWork.SaveAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private Transaction CreateTransaction() => new()
+        {
+            EmployeeId = _employee.EmployeeId,
+            TransactionDate = DateTime.Now,
+            TotalAmount = Total,
+            AmountPaid = default,
+            Change = default,
+            IsCompleted = false,
+            Items = orders.Items.Select(order => new TransactionItem
+            {
+                ItemId = order.Item.ItemId,
+                Quantity = order.Quantity,
+                SubTotal = order.SubTotal
+            }).ToList()
+        };
+
+        private void btnViewUnpaid_Click(object sender, EventArgs e)
+        {
+            Hide();
+
+        }
+
+        private void cartPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

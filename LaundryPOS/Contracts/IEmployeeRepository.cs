@@ -11,7 +11,6 @@ namespace LaundryPOS.Contracts
     {
         Task<Employee> GetEmployeeByUsername(string username);
         Task<IEnumerable<Employee>> GetTransactedEmployee(int transactionId);
-
         Task<Employee> GetAdmin();
     }
 }

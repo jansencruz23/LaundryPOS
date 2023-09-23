@@ -46,6 +46,9 @@
     <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\UnpaidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="DAL\DataSets\ItemDataSet.xsd">
