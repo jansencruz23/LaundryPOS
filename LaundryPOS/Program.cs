@@ -39,12 +39,13 @@ namespace LaundryPOS
                         options.UseSqlServer(context.Configuration.GetConnectionString(CONNECTION_STRING));
                     }, ServiceLifetime.Scoped);
 
+                    services.AddMemoryCache();
                     services.AddSingleton<ThemeManager>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
-                    services.AddScoped<AdminForm>();
+                    services.AddScoped<LoginForm>();
                 }).Build();
 
-            var form = host.Services.GetService<AdminForm>();
+            var form = host.Services.GetService<LoginForm>();
             Application.Run(form);
         }
     }

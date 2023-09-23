@@ -30,5 +30,11 @@ namespace LaundryPOS.Repositories
                 .Select(t => t.Employee)
                 .ToListAsync();
         }
+
+        public async Task<Employee> GetAdmin()
+        {
+            return await _context.Employees
+                .FirstOrDefaultAsync(e => e.UserRole.Equals("admin"));
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             InitializeComponent();
+            ApplyTheme();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace LaundryPOS.Forms
 
                     Form form = userRole == "admin"
                         ? new AdminForm(_unitOfWork, _themeManager)
-                        : new MainForm(_unitOfWork);
+                        : new MainForm(_unitOfWork, _themeManager);
                     form.FormClosed += (s, args) => Close();
                     form.Show();
                 }
@@ -69,6 +70,11 @@ namespace LaundryPOS.Forms
             }
 
             return false;
+        }
+
+        private async void ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnLogin);
         }
     }
 }

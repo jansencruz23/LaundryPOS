@@ -2,6 +2,7 @@
 using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +18,22 @@ namespace LaundryPOS.Forms
     public partial class MainForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
         private readonly List<ItemControl> items;
         private readonly Order orders = new();
 
         private decimal Total { get; set; } = default;
 
-        public MainForm(IUnitOfWork unitOfWork)
+        public MainForm(IUnitOfWork unitOfWork,
+            ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
             items = new();
             InitializeComponent();
-            DisplayServices();
+            DisplayItems();
+            ApplyTheme();
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -64,13 +69,13 @@ namespace LaundryPOS.Forms
             UpdateTotalDisplay();
         }
 
-        private async void DisplayServices()
+        private async void DisplayItems()
         {
-            var services = await _unitOfWork.ItemRepo.Get();
-            items.AddRange(services
-                .Select(service => new ItemControl(service)));
+            var items = await _unitOfWork.ItemRepo.Get();
+            this.items.AddRange(items
+                .Select(item => new ItemControl(item)));
 
-            items.ForEach(item =>
+            this.items.ForEach(item =>
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
@@ -100,6 +105,11 @@ namespace LaundryPOS.Forms
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork);
             paymentForm.ShowDialog();
             ClearCart();
+        }
+
+        private async void ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnPayNow);
         }
     }
 }

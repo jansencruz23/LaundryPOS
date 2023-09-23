@@ -1,5 +1,6 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,18 @@ namespace LaundryPOS.Forms.Views
     public partial class ItemView : UserControl
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
 
-        public ItemView(IUnitOfWork unitOfWork)
+        public ItemView(IUnitOfWork unitOfWork,
+            ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
+
             InitializeComponent();
             InitializeAsync();
             ConfigureImageColumn();
+            ApplyTheme();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -130,6 +136,12 @@ namespace LaundryPOS.Forms.Views
             txtName.Text = string.Empty;
             txtPrice.Text = string.Empty;
             txtPath.Text = string.Empty;
+        }
+
+        private async void ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnSave);
+            await _themeManager.ApplyThemeToButton(btnFile);
         }
     }
 }
