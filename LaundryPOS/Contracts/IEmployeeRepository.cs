@@ -10,5 +10,6 @@ namespace LaundryPOS.Contracts
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
         Task<Employee> GetEmployeeByUsername(string username);
+        Task<IEnumerable<Employee>> GetTransactedEmployee(int transactionId);
     }
 }

@@ -18,14 +18,14 @@ namespace LaundryPOS.DAL
         private IEmployeeRepository _employeeRepo;
         private IBaseRepository<Transaction> _transactionRepo;
         private ITransactionItemRepository _transactionItemRepo;
-        private IBaseRepository<Item> _serviceRepo;
+        private IItemRepository _itemRepo;
         private IBaseRepository<AppSettings> _appSettingsRepo;
 
         public IEmployeeRepository EmployeeRepo =>
             _employeeRepo ??= new EmployeeRepository(_context);
 
-        public IBaseRepository<Item> ItemRepo =>
-            _serviceRepo ??= new BaseRepository<Item>(_context);
+        public IItemRepository ItemRepo =>
+            _itemRepo ??= new ItemRepository(_context);
 
         public IBaseRepository<AppSettings> AppSettingsRepo =>
             _appSettingsRepo ??= new BaseRepository<AppSettings>(_context);

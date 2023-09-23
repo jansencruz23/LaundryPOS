@@ -13,8 +13,6 @@ namespace LaundryPOS.Models
         public int TransactionId { get; set; }
 
         public int ItemId { get; set; }
-
-        public Item Item { get; set; }
         
         public int Quantity { get; set; }
 
@@ -22,5 +20,7 @@ namespace LaundryPOS.Models
 
         // Navigation Property
         public Transaction Transaction { get; set; }
+
+        public Item Item { get; set; }
     }
 }

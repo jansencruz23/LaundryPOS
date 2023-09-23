@@ -22,5 +22,13 @@ namespace LaundryPOS.Repositories
                 .AsNoTracking()
                 .SingleOrDefaultAsync(e => e.Username.Equals(username));
         }
+
+        public async Task<IEnumerable<Employee>> GetTransactedEmployee(int transactionId)
+        {
+            return await _context.Transactions
+                .Where(t => t.TransactionId == transactionId)
+                .Select(t => t.Employee)
+                .ToListAsync();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Models;
 using System;
@@ -19,7 +20,7 @@ namespace LaundryPOS.Forms
         private readonly Order _orders;
         private readonly decimal _total;
 
-        public PaymentForm(Order orders, decimal total, 
+        public PaymentForm(Order orders, decimal total,
             IUnitOfWork unitOfWork)
         {
             _orders = orders;
@@ -81,5 +82,18 @@ namespace LaundryPOS.Forms
                 SubTotal = order.SubTotal
             }).ToList()
         };
+
+        private void btnNumber_Click(object sender, EventArgs e)
+        {
+            var button = sender as Guna2Button;
+            var number = button!.Text;
+
+            if (number.Equals(".") && txtAmount.Text.Contains('.'))
+            {
+                return;
+            }
+
+            txtAmount.Text += number;
+        }
     }
 }
