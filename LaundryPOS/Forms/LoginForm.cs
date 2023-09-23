@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,18 +24,47 @@ namespace LaundryPOS.Forms
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            var username = txtUsername.Text;
-            var password = txtPassword.Text;
-            var employee = await _unitOfWork.EmployeeRepo.GetEmployeeByUsername(username);
+            try
+            {
+                var username = txtUsername.Text;
+                var password = txtPassword.Text;
 
-            if (employee != null && employee.ValidatePassword(password))
-            {
-                MessageBox.Show("Sucesful");
+                var employee = await _unitOfWork.EmployeeRepo.GetEmployeeByUsername(username);
+
+                if (IsValidUser(employee, password, out string userRole))
+                {
+                    Hide();
+
+                    Form form = userRole == "admin"
+                        ? new AdminForm(_unitOfWork)
+                        : new MainForm(_unitOfWork);
+                    form.FormClosed += (s, args) => Close();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.");
+                }
+
+                txtPassword.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("wong");
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private bool IsValidUser(Employee employee, string password, out string userRole)
+        {
+            userRole = null!;
+
+            if (employee != null & employee!.ValidatePassword(password))
+            {
+                userRole = employee.UserRole;
+                return true;
+            }
+
+            return false;
         }
     }
 }

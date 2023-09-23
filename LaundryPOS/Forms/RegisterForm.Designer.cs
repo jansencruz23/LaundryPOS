@@ -40,9 +40,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnRegister = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnFile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnFile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -85,45 +85,9 @@
             this.txtPassword.Size = new System.Drawing.Size(200, 36);
             this.txtPassword.TabIndex = 1;
             // 
-            // btnRegister
-            // 
-            this.btnRegister.CustomizableEdges = customizableEdges5;
-            this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegister.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(117, 237);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnRegister.Size = new System.Drawing.Size(200, 45);
-            this.btnRegister.TabIndex = 2;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnFile
-            // 
-            this.btnFile.CustomizableEdges = customizableEdges7;
-            this.btnFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(117, 186);
-            this.btnFile.Name = "btnFile";
-            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnFile.Size = new System.Drawing.Size(200, 45);
-            this.btnFile.TabIndex = 3;
-            this.btnFile.Text = "Select Image";
-            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
-            // 
             // txtPath
             // 
-            this.txtPath.CustomizableEdges = customizableEdges9;
+            this.txtPath.CustomizableEdges = customizableEdges5;
             this.txtPath.DefaultText = "";
             this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -137,19 +101,53 @@
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
             this.txtPath.SelectedText = "";
-            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.txtPath.Size = new System.Drawing.Size(200, 36);
             this.txtPath.TabIndex = 4;
             this.txtPath.Visible = false;
+            // 
+            // btnFile
+            // 
+            this.btnFile.CustomizableEdges = customizableEdges7;
+            this.btnFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFile.ForeColor = System.Drawing.Color.White;
+            this.btnFile.Location = new System.Drawing.Point(117, 186);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btnFile.Size = new System.Drawing.Size(200, 45);
+            this.btnFile.TabIndex = 5;
+            this.btnFile.Text = "SELECT IMAGE";
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.CustomizableEdges = customizableEdges9;
+            this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegister.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(117, 237);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.btnRegister.Size = new System.Drawing.Size(200, 45);
+            this.btnRegister.TabIndex = 6;
+            this.btnRegister.Text = "REGISTER";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnFile);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Name = "RegisterForm";
@@ -162,8 +160,8 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private Guna.UI2.WinForms.Guna2GradientButton btnRegister;
-        private Guna.UI2.WinForms.Guna2GradientButton btnFile;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
+        private Guna.UI2.WinForms.Guna2Button btnFile;
+        private Guna.UI2.WinForms.Guna2Button btnRegister;
     }
 }

@@ -12,7 +12,7 @@ namespace LaundryPOS.Models
         
         public string Name { get; set; }
 
-        public Theme Theme { get; set; }
+        public string Theme { get; set; }
 
         public string? PhoneNumber { get; set; }
 

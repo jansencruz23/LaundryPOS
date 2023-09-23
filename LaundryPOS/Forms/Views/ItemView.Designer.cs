@@ -42,13 +42,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnFile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvService = new System.Windows.Forms.DataGridView();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.imgIcon = new System.Windows.Forms.PictureBox();
             this.txtStock = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnFile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.SuspendLayout();
@@ -93,27 +93,9 @@
             this.txtName.Size = new System.Drawing.Size(200, 36);
             this.txtName.TabIndex = 2;
             // 
-            // btnFile
-            // 
-            this.btnFile.CustomizableEdges = customizableEdges5;
-            this.btnFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(218, 220);
-            this.btnFile.Name = "btnFile";
-            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnFile.Size = new System.Drawing.Size(163, 45);
-            this.btnFile.TabIndex = 4;
-            this.btnFile.Text = "Select Image";
-            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
-            // 
             // txtPath
             // 
-            this.txtPath.CustomizableEdges = customizableEdges7;
+            this.txtPath.CustomizableEdges = customizableEdges5;
             this.txtPath.DefaultText = "";
             this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -127,28 +109,10 @@
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
             this.txtPath.SelectedText = "";
-            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.txtPath.Size = new System.Drawing.Size(200, 36);
             this.txtPath.TabIndex = 5;
             this.txtPath.Visible = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.CustomizableEdges = customizableEdges9;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(453, 237);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.btnSave.Size = new System.Drawing.Size(200, 45);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvService
             // 
@@ -180,7 +144,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.CustomizableEdges = customizableEdges11;
+            this.txtStock.CustomizableEdges = customizableEdges7;
             this.txtStock.DefaultText = "";
             this.txtStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -194,21 +158,55 @@
             this.txtStock.PasswordChar = '\0';
             this.txtStock.PlaceholderText = "";
             this.txtStock.SelectedText = "";
-            this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtStock.Size = new System.Drawing.Size(200, 36);
             this.txtStock.TabIndex = 10;
+            // 
+            // btnFile
+            // 
+            this.btnFile.CustomizableEdges = customizableEdges9;
+            this.btnFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFile.ForeColor = System.Drawing.Color.White;
+            this.btnFile.Location = new System.Drawing.Point(218, 220);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.btnFile.Size = new System.Drawing.Size(163, 45);
+            this.btnFile.TabIndex = 11;
+            this.btnFile.Text = "SELECT IMAGE";
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.CustomizableEdges = customizableEdges11;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(453, 228);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.btnSave.Size = new System.Drawing.Size(200, 45);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.imgIcon);
             this.Controls.Add(this.btnEmployee);
             this.Controls.Add(this.dgvService);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
             this.Name = "ItemView";
@@ -223,12 +221,12 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2GradientButton btnFile;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
         private DataGridView dgvService;
         private Button btnEmployee;
         private PictureBox imgIcon;
         private Guna.UI2.WinForms.Guna2TextBox txtStock;
+        private Guna.UI2.WinForms.Guna2Button btnFile;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
     }
 }

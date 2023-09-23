@@ -40,6 +40,8 @@ namespace LaundryPOS.Models
 
         public bool IsActive { get; set; } = true;
 
+        public string UserRole { get; set; } = "user";
+
         
         public void SetPassword(string password)
         {

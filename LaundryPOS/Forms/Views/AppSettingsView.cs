@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms.Suite;
 using LaundryPOS.Contracts;
+using LaundryPOS.Helpers;
 using LaundryPOS.Models;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using System;
@@ -18,45 +19,43 @@ namespace LaundryPOS.Forms.Views
     {
         private const int FIRST_VALUE = 1;
         private readonly IUnitOfWork _unitOfWork;
+        private string theme = "#000";
 
         public AppSettingsView(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
             InitializeComponent();
-            InitializeThemes();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (Enum.TryParse(cbTheme.SelectedValue!.ToString(), out Theme theme))
-            {
-                var appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_VALUE);
+            var appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_VALUE);
 
-                if (appSettings != null)
-                {
-                    UpdateAppSettings(appSettings, theme);
-                }
-                else
-                {
-                    appSettings = CreateNewAppSettings(theme);
-                    _unitOfWork.AppSettingsRepo.Insert(appSettings);
-                }
-                
-                await _unitOfWork.SaveAsync();
+            if (appSettings != null)
+            {
+                UpdateAppSettings(appSettings);
             }
             else
             {
-                MessageBox.Show("Invalid theme selection");
+                appSettings = CreateNewAppSettings();
+                _unitOfWork.AppSettingsRepo.Insert(appSettings);
+            }
+
+            await _unitOfWork.SaveAsync();
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            var colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                var selectedColor = colorDialog.Color;
+                theme = ColorTranslator.ToHtml(selectedColor);
             }
         }
 
-        private void InitializeThemes()
-        {
-            var themes = Enum.GetValues(typeof(Theme)) as Theme[];
-            cbTheme.DataSource = themes;
-        }
-
-        private AppSettings CreateNewAppSettings(Theme theme) => new()
+        private AppSettings CreateNewAppSettings() => new()
         {
             Name = txtName.Text,
             Address = txtAddress.Text,
@@ -66,7 +65,7 @@ namespace LaundryPOS.Forms.Views
             Theme = theme
         };
 
-        private void UpdateAppSettings(AppSettings appSettings, Theme theme)
+        private void UpdateAppSettings(AppSettings appSettings)
         {
             appSettings.Name = txtName.Text;
             appSettings.Address = txtAddress.Text;

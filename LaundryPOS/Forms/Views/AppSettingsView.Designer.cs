@@ -46,9 +46,10 @@
             this.txtNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.cbTheme = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.colorPicker = new System.Windows.Forms.ColorDialog();
+            this.btnColor = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // txtName
@@ -62,7 +63,7 @@
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(256, 75);
+            this.txtName.Location = new System.Drawing.Point(99, 60);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -82,7 +83,7 @@
             this.txtNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumber.Location = new System.Drawing.Point(256, 117);
+            this.txtNumber.Location = new System.Drawing.Point(99, 102);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.PasswordChar = '\0';
             this.txtNumber.PlaceholderText = "";
@@ -102,7 +103,7 @@
             this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(256, 159);
+            this.txtAddress.Location = new System.Drawing.Point(99, 144);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderText = "";
@@ -122,7 +123,7 @@
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(256, 201);
+            this.txtEmail.Location = new System.Drawing.Point(99, 186);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
@@ -131,44 +132,9 @@
             this.txtEmail.Size = new System.Drawing.Size(200, 36);
             this.txtEmail.TabIndex = 4;
             // 
-            // btnSave
-            // 
-            this.btnSave.CustomizableEdges = customizableEdges9;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(256, 285);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.btnSave.Size = new System.Drawing.Size(200, 45);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "guna2GradientButton1";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbTheme
-            // 
-            this.cbTheme.BackColor = System.Drawing.Color.Transparent;
-            this.cbTheme.CustomizableEdges = customizableEdges11;
-            this.cbTheme.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTheme.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTheme.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTheme.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbTheme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbTheme.ItemHeight = 30;
-            this.cbTheme.Location = new System.Drawing.Point(476, 159);
-            this.cbTheme.Name = "cbTheme";
-            this.cbTheme.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.cbTheme.Size = new System.Drawing.Size(140, 36);
-            this.cbTheme.TabIndex = 6;
-            // 
             // txtDescription
             // 
-            this.txtDescription.CustomizableEdges = customizableEdges13;
+            this.txtDescription.CustomizableEdges = customizableEdges9;
             this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -177,21 +143,55 @@
             this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(256, 243);
+            this.txtDescription.Location = new System.Drawing.Point(99, 228);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
-            this.txtDescription.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.txtDescription.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.txtDescription.Size = new System.Drawing.Size(200, 36);
             this.txtDescription.TabIndex = 3;
+            // 
+            // btnColor
+            // 
+            this.btnColor.CustomizableEdges = customizableEdges11;
+            this.btnColor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnColor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnColor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnColor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnColor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnColor.ForeColor = System.Drawing.Color.White;
+            this.btnColor.Location = new System.Drawing.Point(398, 60);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.btnColor.Size = new System.Drawing.Size(180, 45);
+            this.btnColor.TabIndex = 6;
+            this.btnColor.Text = "CHOOSE COLOR";
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.CustomizableEdges = customizableEdges13;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(99, 281);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.btnSave.Size = new System.Drawing.Size(200, 45);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AppSettingsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cbTheme);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnColor);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtAddress);
@@ -209,8 +209,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNumber;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTheme;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
+        private ColorDialog colorPicker;
+        private Guna.UI2.WinForms.Guna2Button btnColor;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
     }
 }

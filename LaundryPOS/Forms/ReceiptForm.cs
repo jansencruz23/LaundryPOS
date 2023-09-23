@@ -17,19 +17,12 @@ namespace LaundryPOS.Forms
     public partial class ReceiptForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ReceiptDataService _dataService;
-        private readonly Order _orders;
-        private readonly decimal _total;
         private readonly Transaction _transaction;
 
         public ReceiptForm(IUnitOfWork unitOfWork, 
-            Order orders, decimal total,
             Transaction transaction)
         {
             _unitOfWork = unitOfWork;
-            _orders = orders;
-            _total = total;
-            _dataService = new();
             _transaction = transaction;
 
             InitializeComponent();

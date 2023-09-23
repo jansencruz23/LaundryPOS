@@ -38,10 +38,10 @@ namespace LaundryPOS
                     }, ServiceLifetime.Scoped);
 
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
-                    services.AddScoped<MainForm>();
+                    services.AddScoped<AdminForm>();
                 }).Build();
 
-            var form = host.Services.GetService<MainForm>();
+            var form = host.Services.GetService<AdminForm>();
             Application.Run(form);
         }
     }

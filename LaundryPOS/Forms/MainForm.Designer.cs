@@ -33,7 +33,7 @@
             this.itemsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.cartPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btnPayNow = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPayNow = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // itemsPanel
@@ -69,7 +69,6 @@
             this.btnPayNow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPayNow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPayNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPayNow.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPayNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPayNow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPayNow.ForeColor = System.Drawing.Color.White;
@@ -78,7 +77,7 @@
             this.btnPayNow.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnPayNow.Size = new System.Drawing.Size(84, 45);
             this.btnPayNow.TabIndex = 3;
-            this.btnPayNow.Text = "Pay Now";
+            this.btnPayNow.Text = "PAY NOW";
             this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
             // 
             // MainForm
@@ -103,6 +102,6 @@
         private FlowLayoutPanel itemsPanel;
         private FlowLayoutPanel cartPanel;
         private Label lblTotal;
-        private Guna.UI2.WinForms.Guna2GradientButton btnPayNow;
+        private Guna.UI2.WinForms.Guna2Button btnPayNow;
     }
 }
