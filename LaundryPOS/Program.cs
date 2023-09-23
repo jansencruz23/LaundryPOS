@@ -2,6 +2,8 @@ using LaundryPOS.Contracts;
 using LaundryPOS.DAL;
 using LaundryPOS.Data;
 using LaundryPOS.Forms;
+using LaundryPOS.Models;
+using LaundryPOS.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +39,7 @@ namespace LaundryPOS
                         options.UseSqlServer(context.Configuration.GetConnectionString(CONNECTION_STRING));
                     }, ServiceLifetime.Scoped);
 
+                    services.AddSingleton<ThemeManager>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<AdminForm>();
                 }).Build();

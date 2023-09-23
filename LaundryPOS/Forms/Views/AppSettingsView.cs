@@ -1,7 +1,7 @@
 ﻿using Guna.UI2.WinForms.Suite;
 using LaundryPOS.Contracts;
-using LaundryPOS.Helpers;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using System;
 using System.Collections.Generic;
@@ -19,12 +19,16 @@ namespace LaundryPOS.Forms.Views
     {
         private const int FIRST_VALUE = 1;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
         private string theme = "#000";
 
-        public AppSettingsView(IUnitOfWork unitOfWork)
+        public AppSettingsView(IUnitOfWork unitOfWork,
+            ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
             InitializeComponent();
+            ApplyTheme();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -42,6 +46,8 @@ namespace LaundryPOS.Forms.Views
             }
 
             await _unitOfWork.SaveAsync();
+
+            MessageBox.Show("Restart application to see results");
         }
 
         private void btnColor_Click(object sender, EventArgs e)
@@ -73,6 +79,12 @@ namespace LaundryPOS.Forms.Views
             appSettings.PhoneNumber = txtNumber.Text;
             appSettings.Email = txtEmail.Text;
             appSettings.Theme = theme;
+        }
+
+        private async void ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnColor);
+            await _themeManager.ApplyThemeToButton(btnSave);
         }
     }
 }
