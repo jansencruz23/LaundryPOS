@@ -20,14 +20,17 @@ namespace LaundryPOS.Forms
         private readonly Employee _employee;
         private readonly Order _orders;
         private readonly decimal _total;
+        private readonly int _transactionId;
 
         public PaymentForm(Order orders, decimal total,
-            IUnitOfWork unitOfWork, Employee employee)
+            IUnitOfWork unitOfWork, Employee employee,
+            int transactionId = default)
         {
             _orders = orders;
             _total = total;
             _unitOfWork = unitOfWork;
             _employee = employee;
+            _transactionId = transactionId;
 
             InitializeComponent();
             InitializeOrders();
@@ -50,10 +53,21 @@ namespace LaundryPOS.Forms
                 {
                     try
                     {
-                        var transaction = CreateTransaction(amount);
-                        _unitOfWork.TransactionRepo.Insert(transaction);
-                        await _unitOfWork.SaveAsync();
+                        var transaction = await _unitOfWork.TransactionRepo
+                            .GetByID(_transactionId);
 
+                        if (transaction != null)
+                        {
+                            UpdateTransaction(transaction, amount);
+                            _unitOfWork.TransactionRepo.Update(transaction);
+                        }
+                        else
+                        {
+                            transaction = CreateTransaction(amount);
+                            _unitOfWork.TransactionRepo.Insert(transaction);
+                        }
+
+                        await _unitOfWork.SaveAsync();
                         var receiptForm = new ReceiptForm(_unitOfWork, transaction);
                         receiptForm.ShowDialog();
                     }
@@ -84,6 +98,14 @@ namespace LaundryPOS.Forms
                 SubTotal = order.SubTotal
             }).ToList()
         };
+
+        private void UpdateTransaction(Transaction transaction, decimal amount)
+        {
+            transaction.TransactionDate = DateTime.Now;
+            transaction.AmountPaid = amount;
+            transaction.Change = amount - _total;
+            transaction.IsCompleted = true;
+        }
 
         private void btnNumber_Click(object sender, EventArgs e)
         {

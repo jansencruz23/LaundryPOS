@@ -18,12 +18,15 @@ namespace LaundryPOS.Forms.Views
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
+        private readonly Employee _employee;
 
         public UnpaidForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            Employee employee)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _employee = employee;
 
             InitializeComponent();
             InitializeTable();
@@ -90,5 +93,18 @@ namespace LaundryPOS.Forms.Views
             { "Item Price", vm => vm.Order.Items.Select(p => (object)p.Item.Price) },
             { "SubTotal", vm => vm.Order.Items.Select(s => (object)s.SubTotal) },
         };
+
+        private void unpaidTable_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
+                var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
+                    _unitOfWork, _employee, selectedTransaction.TransactionId);
+                Hide();
+                paymentForm.FormClosed += (s, args) => Close();
+                paymentForm.Show();
+            }
+        }
     }
 }

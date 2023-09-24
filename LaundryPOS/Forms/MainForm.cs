@@ -149,7 +149,7 @@ namespace LaundryPOS.Forms
         private void btnViewUnpaid_Click(object sender, EventArgs e)
         {
             Hide();
-            var form = new UnpaidForm(_unitOfWork, _themeManager);
+            var form = new UnpaidForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.Show();
         }
