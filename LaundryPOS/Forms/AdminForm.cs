@@ -24,7 +24,7 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWorK;
             _themeManager = themeManager;
             InitializeComponent();
-            viewPanel.Controls.Add(new ItemView(_unitOfWork, themeManager));
+            viewPanel.Controls.Add(new TransactionView(_unitOfWork, themeManager));
         }
 
         private void ChangePanelContent(UserControl newContent)

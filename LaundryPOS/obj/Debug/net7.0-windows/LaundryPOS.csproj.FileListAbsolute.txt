@@ -140,3 +140,4 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.CategoryView.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.CustomControls.CategoryControl.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Properties.Resources.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.TransactionView.resources

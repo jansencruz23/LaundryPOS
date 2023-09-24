@@ -1,6 +1,6 @@
 ﻿using LaundryPOS.Contracts;
-using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
+using LaundryPOS.Models;
 using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
@@ -14,24 +14,20 @@ using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class UnpaidForm : Form
+    public partial class TransactionView : UserControl
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
-        private readonly Employee _employee;
 
-        public UnpaidForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
-            Employee employee)
+        public TransactionView(IUnitOfWork unitOfWork,
+            ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
-            _employee = employee;
-
             InitializeComponent();
         }
 
-        private async void UnpaidForm_Load(object sender, EventArgs e)
+        private async void TransactionView_Load(object sender, EventArgs e)
         {
             await InitializeTable();
         }
@@ -39,7 +35,7 @@ namespace LaundryPOS.Forms.Views
         private async Task InitializeTable()
         {
             var transactionItems = await _unitOfWork.TransactionItemRepo
-                .Get(filter: ti => !ti.Transaction.IsCompleted, includeProperties: "Item,Transaction");
+                .Get(filter: ti => ti.Transaction.IsCompleted, includeProperties: "Item,Transaction");
 
             var groupedTransactions = transactionItems
                 .GroupBy(ti => ti.TransactionId)
@@ -54,35 +50,35 @@ namespace LaundryPOS.Forms.Views
                 })
                 .ToList();
 
-            unpaidTable.DataSource = groupedTransactions;
+            transactionTable.DataSource = groupedTransactions;
             ConfigureDataGridView(groupedTransactions);
         }
 
         private void ConfigureDataGridView(List<GroupedTransactionViewModel> groupedTransactions)
         {
-            unpaidTable.AutoGenerateColumns = false;
-            unpaidTable.Columns["TransactionId"].Visible = false;
-            unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
+            transactionTable.AutoGenerateColumns = false;
+            transactionTable.Columns["TransactionId"].Visible = false;
+            transactionTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
 
-            unpaidTable.Columns.Add("Quantity", "Quantity");
-            unpaidTable.Columns.Add("Item Price", "Item Price");
-            unpaidTable.Columns.Add("SubTotal", "SubTotal");
+            transactionTable.Columns.Add("Quantity", "Quantity");
+            transactionTable.Columns.Add("Item Price", "Item Price");
+            transactionTable.Columns.Add("SubTotal", "SubTotal");
 
-            if (unpaidTable.Columns.Contains("Total"))
+            if (transactionTable.Columns.Contains("Total"))
             {
-                DataGridViewColumn totalColumn = unpaidTable.Columns["Total"];
-                totalColumn.DisplayIndex = unpaidTable.ColumnCount - 1;
+                DataGridViewColumn totalColumn = transactionTable.Columns["Total"];
+                totalColumn.DisplayIndex = transactionTable.ColumnCount - 1;
             }
         }
 
-        private void unpaidTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void transactionTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            var columnName = unpaidTable.Columns[e.ColumnIndex].Name;
+            var columnName = transactionTable.Columns[e.ColumnIndex].Name;
             if (columnMappings.TryGetValue(columnName, out var propertySelector))
             {
-                var transaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
+                var transaction = (GroupedTransactionViewModel)transactionTable.Rows[e.RowIndex].DataBoundItem;
                 var columnData = propertySelector(transaction);
 
                 e.Value = string.Join("\n", columnData);
@@ -97,19 +93,5 @@ namespace LaundryPOS.Forms.Views
             { "Item Price", vm => vm.Order.Items.Select(p => (object)p.Item.Price) },
             { "SubTotal", vm => vm.Order.Items.Select(s => (object)s.SubTotal) },
         };
-
-        private void unpaidTable_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
-                var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
-                    _unitOfWork, _employee, selectedTransaction.TransactionId);
-
-                Hide();
-                paymentForm.FormClosed += (s, args) => Close();
-                paymentForm.Show();
-            }
-        }
     }
 }

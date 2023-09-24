@@ -97,6 +97,7 @@
             this.Controls.Add(this.unpaidTable);
             this.Name = "UnpaidForm";
             this.Text = "UnpaidForm";
+            this.Load += new System.EventHandler(this.UnpaidForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.unpaidTable)).EndInit();
             this.ResumeLayout(false);
 
