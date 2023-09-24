@@ -63,7 +63,7 @@ namespace LaundryPOS.Forms
         {
             userRole = null!;
 
-            if (employee != null & employee!.ValidatePassword(password))
+            if (employee?.ValidatePassword(password) == true)
             {
                 userRole = employee.UserRole;
                 return true;

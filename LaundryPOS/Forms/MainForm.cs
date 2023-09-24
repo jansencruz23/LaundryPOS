@@ -21,7 +21,7 @@ namespace LaundryPOS.Forms
         private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
         private readonly List<ItemControl> items;
-        private readonly Order orders = new();
+        private readonly Order orders;
 
         private decimal Total { get; set; } = default;
 
@@ -33,6 +33,7 @@ namespace LaundryPOS.Forms
             _themeManager = themeManager;
             _employee = employee;
             items = new();
+            orders = new();
 
             InitializeComponent();
             DisplayItems();

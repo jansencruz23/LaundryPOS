@@ -34,7 +34,7 @@ namespace LaundryPOS.Repositories
             foreach (var property in includeProperties.Split(
                 new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                query = query.Include(property).AsNoTracking();
+                query = query.Include(property);
             }
 
             if (orderBy != null)
