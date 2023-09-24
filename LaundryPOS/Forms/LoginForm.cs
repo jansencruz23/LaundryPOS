@@ -1,15 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace LaundryPOS.Forms
 {
@@ -24,7 +16,11 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             InitializeComponent();
-            ApplyTheme();
+        }
+
+        private async void LoginForm_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -72,9 +68,10 @@ namespace LaundryPOS.Forms
             return false;
         }
 
-        private async void ApplyTheme()
+        private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnLogin);
+            await _themeManager.ApplyLighterThemeToPanel(rightPanel, 1.45f);
         }
     }
 }

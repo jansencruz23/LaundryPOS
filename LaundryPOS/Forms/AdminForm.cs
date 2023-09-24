@@ -24,13 +24,13 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWorK;
             _themeManager = themeManager;
             InitializeComponent();
-            servicePanel.Controls.Add(new ItemView(_unitOfWork, themeManager));
+            viewPanel.Controls.Add(new ItemView(_unitOfWork, themeManager));
         }
 
         private void ChangePanelContent(UserControl newContent)
         {
-            servicePanel.Controls.Clear();
-            servicePanel.Controls.Add(newContent);
+            viewPanel.Controls.Clear();
+            viewPanel.Controls.Add(newContent);
         }
 
         public void DisplayEmployeeView()

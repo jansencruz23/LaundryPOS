@@ -53,5 +53,42 @@ namespace LaundryPOS.Services
                 button.ForeColor = Color.Black;
             }
         }
+
+        public async Task ApplyLighterThemeToPanel(Guna2Panel panel, float brightnessFactor = 0.8f)
+        {
+            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
+            {
+                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
+
+                if (appSettings != null)
+                {
+                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
+                }
+            }
+
+            if (appSettings != null)
+            {
+                var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
+
+                // Adjust the brightness of the theme color
+                var adjustedColor = Color.FromArgb(
+                    (int)(themeColor.R * brightnessFactor),
+                    (int)(themeColor.G * brightnessFactor),
+                    (int)(themeColor.B * brightnessFactor)
+                );
+
+                panel.FillColor = adjustedColor;
+
+                var brightness = adjustedColor.GetBrightness();
+                var foreColor = brightness < 0.5 ? Color.White : Color.Black;
+
+                panel.ForeColor = foreColor;
+            }
+            else
+            {
+                panel.FillColor = Color.White;
+                panel.ForeColor = Color.Black;
+            }
+        }
     }
 }

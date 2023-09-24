@@ -26,10 +26,14 @@ namespace LaundryPOS.Forms.Views
             _themeManager = themeManager;
 
             InitializeComponent();
-            InitializeAsync();
-            InitializeCategory();
+        }
+
+        private async void ItemView_Load(object sender, EventArgs e)
+        {
+            await InitializeAsync();
+            await InitializeCategory();
+            await ApplyTheme();
             ConfigureImageColumn();
-            ApplyTheme();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -53,23 +57,23 @@ namespace LaundryPOS.Forms.Views
                 Stock = stock
             };
 
-            CreateService(item);
+            await CreateService(item);
             await RefreshData();
             ClearText();
         }
 
-        public async void CreateService(Item service)
+        public async Task CreateService(Item service)
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
         }
 
-        private async void InitializeAsync()
+        private async Task InitializeAsync()
         {
             await DisplayItems();
         }
 
-        private async void InitializeCategory()
+        private async Task InitializeCategory()
         {
             var categories = await _unitOfWork.CategoryRepo.Get();
             cbCategory.DataSource = categories.Select(c => new
@@ -168,10 +172,11 @@ namespace LaundryPOS.Forms.Views
             txtPath.Text = string.Empty;
         }
 
-        private async void ApplyTheme()
+        private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnSave);
             await _themeManager.ApplyThemeToButton(btnFile);
+            await _themeManager.ApplyThemeToButton(btnItem);
         }
 
         private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

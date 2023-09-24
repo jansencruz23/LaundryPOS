@@ -28,43 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.servicePanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            this.viewPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
-            // servicePanel
+            // viewPanel
             // 
-            this.servicePanel.BackColor = System.Drawing.Color.Transparent;
-            this.servicePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.servicePanel.FillColor = System.Drawing.Color.White;
-            this.servicePanel.Location = new System.Drawing.Point(0, 0);
-            this.servicePanel.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.servicePanel.Name = "servicePanel";
-            this.servicePanel.ShadowColor = System.Drawing.Color.Black;
-            this.servicePanel.ShadowDepth = 0;
-            this.servicePanel.Size = new System.Drawing.Size(800, 502);
-            this.servicePanel.TabIndex = 0;
+            this.viewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.viewPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.viewPanel.FillColor = System.Drawing.SystemColors.Control;
+            this.viewPanel.Location = new System.Drawing.Point(0, 0);
+            this.viewPanel.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.viewPanel.Name = "viewPanel";
+            this.viewPanel.ShadowColor = System.Drawing.Color.Black;
+            this.viewPanel.ShadowDepth = 0;
+            this.viewPanel.Size = new System.Drawing.Size(917, 661);
+            this.viewPanel.TabIndex = 0;
             // 
-            // guna2ShadowPanel1
+            // guna2Panel1
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowDepth = 20;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(800, 54);
-            this.guna2ShadowPanel1.TabIndex = 1;
+            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel1.CustomizableEdges = customizableEdges3;
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2Panel1.Size = new System.Drawing.Size(917, 75);
+            this.guna2Panel1.TabIndex = 0;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 502);
-            this.Controls.Add(this.guna2ShadowPanel1);
-            this.Controls.Add(this.servicePanel);
+            this.ClientSize = new System.Drawing.Size(917, 661);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.viewPanel);
             this.Name = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
             this.ResumeLayout(false);
 
@@ -72,7 +77,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ShadowPanel servicePanel;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel viewPanel;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

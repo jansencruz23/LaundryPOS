@@ -127,7 +127,7 @@
             this.categoryPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.categoryPanel.Location = new System.Drawing.Point(3, 37);
             this.categoryPanel.Name = "categoryPanel";
-            this.categoryPanel.Size = new System.Drawing.Size(86, 100);
+            this.categoryPanel.Size = new System.Drawing.Size(86, 412);
             this.categoryPanel.TabIndex = 12;
             // 
             // MainForm
@@ -145,6 +145,7 @@
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

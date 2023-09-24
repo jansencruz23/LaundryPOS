@@ -21,7 +21,7 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
-        private readonly List<ItemControl> itemsControl;
+        private readonly List<ItemControl> itemsControls;
         private readonly Order orders;
         private IEnumerable<Item> allItems;
 
@@ -34,13 +34,17 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             _employee = employee;
-            itemsControl = new();
+            itemsControls = new();
             orders = new();
 
             InitializeComponent();
-            DisplayItems();
-            DisplayCategories();
-            ApplyTheme();
+        }
+
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            await DisplayItems();
+            await DisplayCategories();
+            await ApplyTheme();
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -70,7 +74,6 @@ namespace LaundryPOS.Forms
         {
             var filteredItems = allItems.Where(i => i.CategoryId == e.Category.CategoryId);
             DisplayFilteredItems(filteredItems);
-            MessageBox.Show("asdasd");
         }
 
         private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
@@ -83,35 +86,36 @@ namespace LaundryPOS.Forms
             UpdateTotalDisplay();
         }
 
-        private async void DisplayItems()
+        private async Task DisplayItems()
         {
             allItems = await _unitOfWork.ItemRepo.Get();
-            itemsControl.AddRange(allItems
+            itemsControls.AddRange(allItems
                 .Select(item => new ItemControl(item)));
 
-            itemsControl.ForEach(item =>
+            foreach (var item in itemsControls)
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
-            });
+            }
         }
 
         private void DisplayFilteredItems(IEnumerable<Item> filteredItems = null)
         {
             var itemsToDisplay = filteredItems ?? allItems;
-            itemsControl.Clear();
+            itemsControls.Clear();
+            itemsPanel.Controls.Clear();
 
-            itemsControl.AddRange(itemsToDisplay
+            itemsControls.AddRange(itemsToDisplay
                 .Select(item => new ItemControl(item)));
 
-            itemsControl.ForEach(item =>
+            foreach (var item in itemsControls)
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
-            });
+            }
         }
 
-        private async void DisplayCategories()
+        private async Task DisplayCategories()
         {
             var categories = await _unitOfWork.CategoryRepo.Get();
             var categoryControls = categories.Select(c =>
@@ -149,7 +153,7 @@ namespace LaundryPOS.Forms
             ClearCart();
         }
 
-        private async void ApplyTheme()
+        private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
         }
