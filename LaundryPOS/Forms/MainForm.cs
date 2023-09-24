@@ -1,5 +1,6 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.CustomEventArgs;
+using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
@@ -20,8 +21,9 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
-        private readonly List<ItemControl> items;
+        private readonly List<ItemControl> itemsControl;
         private readonly Order orders;
+        private IEnumerable<Item> allItems;
 
         private decimal Total { get; set; } = default;
 
@@ -32,11 +34,12 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             _employee = employee;
-            items = new();
+            itemsControl = new();
             orders = new();
 
             InitializeComponent();
             DisplayItems();
+            DisplayCategories();
             ApplyTheme();
         }
 
@@ -63,6 +66,13 @@ namespace LaundryPOS.Forms
             UpdateTotalDisplay();
         }
 
+        private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
+        {
+            var filteredItems = allItems.Where(i => i.CategoryId == e.Category.CategoryId);
+            DisplayFilteredItems(filteredItems);
+            MessageBox.Show("asdasd");
+        }
+
         private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
         {
             var cartControl = sender as CartControl;
@@ -75,15 +85,43 @@ namespace LaundryPOS.Forms
 
         private async void DisplayItems()
         {
-            var items = await _unitOfWork.ItemRepo.Get();
-            this.items.AddRange(items
+            allItems = await _unitOfWork.ItemRepo.Get();
+            itemsControl.AddRange(allItems
                 .Select(item => new ItemControl(item)));
 
-            this.items.ForEach(item =>
+            itemsControl.ForEach(item =>
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
             });
+        }
+
+        private void DisplayFilteredItems(IEnumerable<Item> filteredItems = null)
+        {
+            var itemsToDisplay = filteredItems ?? allItems;
+            itemsControl.Clear();
+
+            itemsControl.AddRange(itemsToDisplay
+                .Select(item => new ItemControl(item)));
+
+            itemsControl.ForEach(item =>
+            {
+                item.AddToCartClicked += ItemControl_AddToCartClicked!;
+                itemsPanel.Controls.Add(item);
+            });
+        }
+
+        private async void DisplayCategories()
+        {
+            var categories = await _unitOfWork.CategoryRepo.Get();
+            var categoryControls = categories.Select(c =>
+            {
+                var control = new CategoryControl(c);
+                control.CategoryClicked += CategoryControl_CategoryClicked!;
+                return control;
+            }).ToList();
+
+            categoryPanel.Controls.AddRange(categoryControls.ToArray());
         }
 
         private void UpdateTotalValue()

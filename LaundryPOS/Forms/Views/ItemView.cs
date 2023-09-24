@@ -79,7 +79,7 @@ namespace LaundryPOS.Forms.Views
             })
             .ToList();
 
-            cbCategory.DisplayMember = "Text"; // Display the Text property
+            cbCategory.DisplayMember = "Text"; 
             cbCategory.ValueMember = "Value";
         }
 
@@ -94,7 +94,7 @@ namespace LaundryPOS.Forms.Views
             if (itemTable.Columns.Contains("Category"))
             {
                 var categoryNameColumn = itemTable.Columns["Category"];
-                categoryNameColumn.DisplayIndex = 3; // Set the display index to 2 (third position)
+                categoryNameColumn.DisplayIndex = 3;
             }
 
             HideUnwantedColumns();

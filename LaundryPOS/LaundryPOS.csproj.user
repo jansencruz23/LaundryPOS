@@ -10,6 +10,9 @@
     <Compile Update="Forms\CustomControls\CartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\CustomControls\CategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\CustomControls\OrderPaymentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

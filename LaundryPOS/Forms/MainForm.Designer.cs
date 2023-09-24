@@ -40,6 +40,7 @@
             this.cartPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPayNow = new Guna.UI2.WinForms.Guna2Button();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.categoryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btnViewUnpaid
@@ -62,9 +63,9 @@
             // itemsPanel
             // 
             this.itemsPanel.AutoScroll = true;
-            this.itemsPanel.Location = new System.Drawing.Point(56, 37);
+            this.itemsPanel.Location = new System.Drawing.Point(95, 37);
             this.itemsPanel.Name = "itemsPanel";
-            this.itemsPanel.Size = new System.Drawing.Size(526, 412);
+            this.itemsPanel.Size = new System.Drawing.Size(487, 412);
             this.itemsPanel.TabIndex = 6;
             // 
             // btnPayLater
@@ -120,11 +121,21 @@
             this.lblTotal.TabIndex = 8;
             this.lblTotal.Text = "label1";
             // 
+            // categoryPanel
+            // 
+            this.categoryPanel.AutoScroll = true;
+            this.categoryPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.categoryPanel.Location = new System.Drawing.Point(3, 37);
+            this.categoryPanel.Name = "categoryPanel";
+            this.categoryPanel.Size = new System.Drawing.Size(86, 100);
+            this.categoryPanel.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 487);
+            this.Controls.Add(this.categoryPanel);
             this.Controls.Add(this.btnViewUnpaid);
             this.Controls.Add(this.itemsPanel);
             this.Controls.Add(this.btnPayLater);
@@ -147,5 +158,6 @@
         private FlowLayoutPanel cartPanel;
         private Guna.UI2.WinForms.Guna2Button btnPayNow;
         private Label lblTotal;
+        private FlowLayoutPanel categoryPanel;
     }
 }
