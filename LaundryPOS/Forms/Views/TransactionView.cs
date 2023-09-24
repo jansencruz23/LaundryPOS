@@ -74,8 +74,9 @@ namespace LaundryPOS.Forms.Views
         private void ConfigureDataGridView(List<GroupedTransactionViewModel> groupedTransactions)
         {
             transactionTable.AutoGenerateColumns = false;
-            transactionTable.Columns["TransactionId"].Visible = false;
+
             transactionTable.Columns["EmployeeId"].Visible = false;
+            transactionTable.Columns["TransactionId"].Visible = false;
             transactionTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
 
             transactionTable.Columns.Add("Quantity", "Quantity");
@@ -98,11 +99,8 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "Employee")
             {
                 var transaction = (GroupedTransactionViewModel)transactionTable.Rows[e.RowIndex].DataBoundItem;
-                var employeeId = transaction.EmployeeId;
-                var employee = employeeCache.FirstOrDefault(emp => emp.EmployeeId == employeeId);
-                var employeeName = employee != null ? employee.FullName : string.Empty;
-
-                e.Value = employeeName;
+                var employee = employeeCache.FirstOrDefault(emp => emp.EmployeeId == transaction.EmployeeId);
+                e.Value = employee?.FullName ?? string.Empty;
             }
 
             if (columnMappings.TryGetValue(columnName, out var propertySelector))
@@ -111,7 +109,6 @@ namespace LaundryPOS.Forms.Views
                 var columnData = propertySelector(transaction);
 
                 e.Value = string.Join("\n", columnData);
-
                 e.FormattingApplied = true;
             }
         }

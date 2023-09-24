@@ -61,7 +61,7 @@ namespace LaundryPOS.Forms.Views
                 {
                     TransactionId = group.Key,
                     TransactionDateTime = group.First().Transaction.TransactionDate,
-                    //Employee = group.First().Transaction.Employee,
+                    EmployeeId = group.First().Transaction.EmployeeId,
                     Order = new Order
                     {
                         Items = group.Select(ti => new CartItem(ti.Item, ti.Quantity)).ToList()
@@ -111,9 +111,9 @@ namespace LaundryPOS.Forms.Views
                 var columnData = propertySelector(transaction);
 
                 e.Value = string.Join("\n", columnData);
+                e.FormattingApplied = true;
             }
 
-            e.FormattingApplied = true;
         }
 
         private Dictionary<string, Func<GroupedTransactionViewModel, IEnumerable<object>>> columnMappings = new()
