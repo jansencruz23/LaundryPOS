@@ -36,9 +36,7 @@ namespace LaundryPOS.Forms.Views
             var employees = await _unitOfWork.EmployeeRepo.Get();
 
             foreach (var employee in employees)
-            {
                 employeeCache.Add(employee);
-            }
         }
 
         private async void TransactionView_Load(object sender, EventArgs e)

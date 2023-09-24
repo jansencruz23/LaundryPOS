@@ -38,9 +38,7 @@ namespace LaundryPOS.Forms.Views
             var employees = await _unitOfWork.EmployeeRepo.Get();
 
             foreach (var employee in employees)
-            {
                 employeeCache.Add(employee);
-            }
         }
 
         private async void UnpaidForm_Load(object sender, EventArgs e)
@@ -113,7 +111,6 @@ namespace LaundryPOS.Forms.Views
                 e.Value = string.Join("\n", columnData);
                 e.FormattingApplied = true;
             }
-
         }
 
         private Dictionary<string, Func<GroupedTransactionViewModel, IEnumerable<object>>> columnMappings = new()

@@ -1,5 +1,7 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +17,17 @@ namespace LaundryPOS.Forms.Views
     public partial class EmployeeView : UserControl
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
 
-        public EmployeeView(IUnitOfWork unitOfWork)
+        public EmployeeView(IUnitOfWork unitOfWork,
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
+
             InitializeComponent();
             InitializeAsync();
         }

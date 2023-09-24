@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Services;
 using System;
@@ -17,25 +18,23 @@ namespace LaundryPOS.Forms
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
+        private ChangeAdminViewDelegate changeAdminViewDelegate;
 
         public AdminForm(IUnitOfWork unitOfWorK,
             ThemeManager themeManager)
         {
             _unitOfWork = unitOfWorK;
             _themeManager = themeManager;
+            changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
+
             InitializeComponent();
-            viewPanel.Controls.Add(new TransactionView(_unitOfWork, themeManager));
+            viewPanel.Controls.Add(new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate));
         }
 
         private void ChangePanelContent(UserControl newContent)
         {
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(newContent);
-        }
-
-        public void DisplayEmployeeView()
-        {
-            ChangePanelContent(new EmployeeView(_unitOfWork));
         }
     }
 }

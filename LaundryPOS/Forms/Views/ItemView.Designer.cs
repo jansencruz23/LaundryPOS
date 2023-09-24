@@ -313,7 +313,7 @@
             this.guna2Panel1.Controls.Add(this.txtStock);
             this.guna2Panel1.CustomizableEdges = customizableEdges15;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(81, 30);
+            this.guna2Panel1.Location = new System.Drawing.Point(52, 83);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
@@ -395,7 +395,7 @@
             this.guna2Panel2.Controls.Add(this.itemTable);
             this.guna2Panel2.CustomizableEdges = customizableEdges17;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(81, 366);
+            this.guna2Panel2.Location = new System.Drawing.Point(52, 419);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;

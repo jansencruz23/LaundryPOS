@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Services;
@@ -18,12 +19,15 @@ namespace LaundryPOS.Forms.Views
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
 
         public ItemView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
 
             InitializeComponent();
         }
@@ -148,7 +152,8 @@ namespace LaundryPOS.Forms.Views
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ((AdminForm)ParentForm!).DisplayEmployeeView();
+            var employeeView = new EmployeeView(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(employeeView);
         }
 
         private void btnFile_Click(object sender, EventArgs e)
