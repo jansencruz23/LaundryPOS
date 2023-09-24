@@ -37,6 +37,9 @@
     <Compile Update="Forms\Views\AppSettingsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\CategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\EmployeeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -46,7 +49,7 @@
     <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\UnpaidForm.cs">
+    <Compile Update="Forms\UnpaidForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

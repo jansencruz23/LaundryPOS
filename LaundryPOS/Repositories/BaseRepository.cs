@@ -65,7 +65,7 @@ namespace LaundryPOS.Repositories
 
         public async Task Delete(object id)
         {
-            var entity = GetByID(id);
+            var entity = await GetByID(id);
             Delete(entity);
         }
 

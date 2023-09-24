@@ -1,5 +1,6 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
+using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
@@ -26,32 +27,38 @@ namespace LaundryPOS.Forms.Views
 
             InitializeComponent();
             InitializeAsync();
+            InitializeCategory();
             ConfigureImageColumn();
             ApplyTheme();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var service = new Item();
-            service.Name = txtName.Text;
-            service.PicPath = txtPath.Text;
-
-            if (!decimal.TryParse(txtPrice.Text, out decimal price) ||
+            if (cbCategory.SelectedItem == null ||
+                !decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock))
             {
-                MessageBox.Show("Invalid Input!");
+                MessageBox.Show("Invalid Input or Category not selected!");
+                return;
             }
-            else
+
+            var selectedCategory = (dynamic)cbCategory.SelectedItem;
+
+            var item = new Item
             {
-                service.Price = price;
-                service.Stock = stock;
-                await CreateService(service);
-                await RefreshData();
-                ClearText();
-            }
+                Name = txtName.Text,
+                PicPath = txtPath.Text,
+                CategoryId = selectedCategory.Value,
+                Price = price,
+                Stock = stock
+            };
+
+            CreateService(item);
+            await RefreshData();
+            ClearText();
         }
 
-        public async Task CreateService(Item service)
+        public async void CreateService(Item service)
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
@@ -59,14 +66,36 @@ namespace LaundryPOS.Forms.Views
 
         private async void InitializeAsync()
         {
-            await DisplayServices();
+            await DisplayItems();
         }
 
-        private async Task DisplayServices()
+        private async void InitializeCategory()
         {
-            var serviceList = await _unitOfWork.ItemRepo
-                .Get(orderBy: s => s.OrderByDescending(s => s.ItemId));
-            dgvService.DataSource = serviceList;
+            var categories = await _unitOfWork.CategoryRepo.Get();
+            cbCategory.DataSource = categories.Select(c => new
+            {
+                Text = c.Name,
+                Value = c.CategoryId
+            })
+            .ToList();
+
+            cbCategory.DisplayMember = "Text"; // Display the Text property
+            cbCategory.ValueMember = "Value";
+        }
+
+        private async Task DisplayItems()
+        {
+            var itemList = await _unitOfWork.ItemRepo
+                .Get(orderBy: s => s.OrderByDescending(s => s.ItemId),
+                includeProperties: "Category");
+
+            itemTable.DataSource = itemList;
+
+            if (itemTable.Columns.Contains("Category"))
+            {
+                var categoryNameColumn = itemTable.Columns["Category"];
+                categoryNameColumn.DisplayIndex = 3; // Set the display index to 2 (third position)
+            }
 
             HideUnwantedColumns();
             HandleImageColumnFormatting();
@@ -74,8 +103,9 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            dgvService.Columns[nameof(Item.ItemId)].Visible = false;
-            dgvService.Columns[nameof(Item.PicPath)].Visible = false;
+            itemTable.Columns[nameof(Item.ItemId)].Visible = false;
+            itemTable.Columns[nameof(Item.PicPath)].Visible = false;
+            itemTable.Columns[nameof(Item.CategoryId)].Visible = false;
         }
 
         private void ConfigureImageColumn()
@@ -87,20 +117,20 @@ namespace LaundryPOS.Forms.Views
                 ImageLayout = DataGridViewImageCellLayout.Zoom
             };
 
-            dgvService.Columns.Add(imageColumn);
-            dgvService.Columns["Image"].DisplayIndex = 0;
+            itemTable.Columns.Add(imageColumn);
+            itemTable.Columns["Image"].DisplayIndex = 0;
         }
 
         private void HandleImageColumnFormatting()
         {
-            dgvService.CellFormatting += (sender, e) =>
+            itemTable.CellFormatting += (sender, e) =>
             {
-                if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Item;
+                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
                     var imagePath = rowData?.PicPath;
-                    e.Value = !string.IsNullOrEmpty(imagePath) 
-                        ? Image.FromFile(imagePath) 
+                    e.Value = !string.IsNullOrEmpty(imagePath)
+                        ? Image.FromFile(imagePath)
                         : null;
                 }
             };
@@ -108,8 +138,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task RefreshData()
         {
-            dgvService.DataSource = null;
-            await DisplayServices();
+            itemTable.DataSource = null;
+            await DisplayItems();
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
@@ -142,6 +172,21 @@ namespace LaundryPOS.Forms.Views
         {
             await _themeManager.ApplyThemeToButton(btnSave);
             await _themeManager.ApplyThemeToButton(btnFile);
+        }
+
+        private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            var columnName = itemTable.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "Category" && 
+                itemTable.Rows[e.RowIndex].DataBoundItem is Item rowData)
+            {
+                e.Value = rowData.Category?.Name;
+                e.FormattingApplied = true;
+            }
         }
     }
 }

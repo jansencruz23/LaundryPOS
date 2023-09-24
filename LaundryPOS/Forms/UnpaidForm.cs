@@ -101,6 +101,7 @@ namespace LaundryPOS.Forms.Views
                 var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
                 var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
                     _unitOfWork, _employee, selectedTransaction.TransactionId);
+
                 Hide();
                 paymentForm.FormClosed += (s, args) => Close();
                 paymentForm.Show();

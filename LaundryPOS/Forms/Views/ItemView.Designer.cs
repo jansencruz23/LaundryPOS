@@ -40,17 +40,23 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvService = new System.Windows.Forms.DataGridView();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.imgIcon = new System.Windows.Forms.PictureBox();
             this.txtStock = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnFile = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
+            this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.itemTable = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPrice
@@ -113,15 +119,6 @@
             this.txtPath.Size = new System.Drawing.Size(200, 36);
             this.txtPath.TabIndex = 5;
             this.txtPath.Visible = false;
-            // 
-            // dgvService
-            // 
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Location = new System.Drawing.Point(153, 354);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowTemplate.Height = 25;
-            this.dgvService.Size = new System.Drawing.Size(577, 82);
-            this.dgvService.TabIndex = 7;
             // 
             // btnEmployee
             // 
@@ -188,7 +185,7 @@
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(453, 228);
+            this.btnSave.Location = new System.Drawing.Point(453, 284);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.btnSave.Size = new System.Drawing.Size(200, 45);
@@ -196,23 +193,93 @@
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbCategory
+            // 
+            this.cbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategory.CustomizableEdges = customizableEdges13;
+            this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbCategory.ItemHeight = 30;
+            this.cbCategory.Location = new System.Drawing.Point(453, 229);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.cbCategory.Size = new System.Drawing.Size(200, 36);
+            this.cbCategory.TabIndex = 13;
+            // 
+            // itemTable
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.itemTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.itemTable.ColumnHeadersHeight = 4;
+            this.itemTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.itemTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.itemTable.Location = new System.Drawing.Point(178, 364);
+            this.itemTable.Name = "itemTable";
+            this.itemTable.RowHeadersVisible = false;
+            this.itemTable.RowTemplate.Height = 25;
+            this.itemTable.Size = new System.Drawing.Size(506, 150);
+            this.itemTable.TabIndex = 14;
+            this.itemTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.itemTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.itemTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.itemTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.itemTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.itemTable.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.itemTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.itemTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.itemTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.itemTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.itemTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.itemTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.itemTable.ThemeStyle.HeaderStyle.Height = 4;
+            this.itemTable.ThemeStyle.ReadOnly = false;
+            this.itemTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.itemTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.itemTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.itemTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.itemTable.ThemeStyle.RowsStyle.Height = 25;
+            this.itemTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.itemTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.itemTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.itemTable_CellFormatting);
+            // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.itemTable);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnFile);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.imgIcon);
             this.Controls.Add(this.btnEmployee);
-            this.Controls.Add(this.dgvService);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
             this.Name = "ItemView";
             this.Size = new System.Drawing.Size(757, 612);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,11 +289,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
-        private DataGridView dgvService;
         private Button btnEmployee;
         private PictureBox imgIcon;
         private Guna.UI2.WinForms.Guna2TextBox txtStock;
         private Guna.UI2.WinForms.Guna2Button btnFile;
         private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
+        private Guna.UI2.WinForms.Guna2DataGridView itemTable;
     }
 }
