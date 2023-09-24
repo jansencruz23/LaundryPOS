@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms.Suite;
 using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
@@ -20,13 +21,17 @@ namespace LaundryPOS.Forms.Views
         private const int FIRST_VALUE = 1;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
         private string theme = "#000";
 
         public AppSettingsView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
+
             InitializeComponent();
             ApplyTheme();
         }

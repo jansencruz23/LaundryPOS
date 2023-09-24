@@ -1,4 +1,6 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
+using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +16,17 @@ namespace LaundryPOS.Forms.Views
     public partial class AdminProfileView : UserControl
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
 
-        public AdminProfileView(IUnitOfWork unitOfWork)
+        public AdminProfileView(IUnitOfWork unitOfWork,
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
+
             InitializeComponent();
         }
 

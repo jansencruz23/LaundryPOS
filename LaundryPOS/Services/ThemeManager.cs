@@ -90,5 +90,45 @@ namespace LaundryPOS.Services
                 panel.ForeColor = Color.Black;
             }
         }
+
+        public async Task ApplyLighterThemeToDataGridView(DataGridView dataGridView, float brightnessFactor = 0.8f)
+        {
+            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
+            {
+                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
+
+                if (appSettings != null)
+                {
+                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
+                }
+            }
+
+            if (appSettings != null)
+            {
+                var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
+
+                // Adjust the brightness of the theme color
+                var adjustedColor = Color.FromArgb(
+                    (int)(themeColor.R * brightnessFactor),
+                    (int)(themeColor.G * brightnessFactor),
+                    (int)(themeColor.B * brightnessFactor)
+                );
+
+                // Apply the adjusted color to the DataGridView column header background
+                dataGridView.ColumnHeadersDefaultCellStyle.BackColor = themeColor;
+                dataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = adjustedColor;
+
+                var brightness = adjustedColor.GetBrightness();
+                var foreColor = brightness < 0.5 ? Color.White : Color.Black;
+
+                dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
+            }
+            else
+            {
+                // Apply default colors if appSettings is not available
+                dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            }
+        }
     }
 }

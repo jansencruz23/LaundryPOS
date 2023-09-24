@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using LaundryPOS.Delegates;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -19,13 +20,16 @@ namespace LaundryPOS.Forms.Views
     {
         private readonly IUnitOfWork _unitOfWork;   
         private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
         private List<Employee> employeeCache;
 
         public TransactionView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
             employeeCache = new();
 
             InitializeComponent();

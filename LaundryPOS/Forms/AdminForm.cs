@@ -36,5 +36,11 @@ namespace LaundryPOS.Forms
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(newContent);
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            var settingsView = new AppSettingsView(_unitOfWork, _themeManager, changeAdminViewDelegate);
+            ChangePanelContent(settingsView);
+        }
     }
 }

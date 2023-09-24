@@ -3,6 +3,7 @@ using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Services;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace LaundryPOS.Forms.Views
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
+        private Item _item;
 
         public ItemView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -44,9 +46,10 @@ namespace LaundryPOS.Forms.Views
         {
             if (cbCategory.SelectedItem == null ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
-                !int.TryParse(txtStock.Text, out int stock))
+                !int.TryParse(txtStock.Text, out int stock) ||
+                string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Invalid Input or Category not selected!");
+                MessageBox.Show("Invalid Input");
                 return;
             }
 
@@ -150,12 +153,6 @@ namespace LaundryPOS.Forms.Views
             await DisplayItems();
         }
 
-        private void btnEmployee_Click(object sender, EventArgs e)
-        {
-            var employeeView = new EmployeeView(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(employeeView);
-        }
-
         private void btnFile_Click(object sender, EventArgs e)
         {
             using var file = new OpenFileDialog();
@@ -179,9 +176,9 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnSave);
             await _themeManager.ApplyThemeToButton(btnFile);
             await _themeManager.ApplyThemeToButton(btnItem);
+            await _themeManager.ApplyLighterThemeToDataGridView(itemTable, 0.8f);
         }
 
         private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -197,6 +194,47 @@ namespace LaundryPOS.Forms.Views
                 e.Value = rowData.Category?.Name;
                 e.FormattingApplied = true;
             }
+        }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+                => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+                => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+                => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnAdminProfile_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+               => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtName.Enabled = true;
+            txtPrice.Enabled = true;
+            txtStock.Enabled = true;
+            cbCategory.Enabled = true;
+
+            btnSave.Enabled = true;
         }
     }
 }

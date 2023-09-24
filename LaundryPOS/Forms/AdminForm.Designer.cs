@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.viewPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSettings = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // viewPanel
@@ -52,14 +56,34 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2Panel1.CustomizableEdges = customizableEdges3;
+            this.guna2Panel1.Controls.Add(this.btnSettings);
+            this.guna2Panel1.CustomizableEdges = customizableEdges2;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             this.guna2Panel1.Size = new System.Drawing.Size(917, 75);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSettings.FillColor = System.Drawing.Color.White;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.Location = new System.Drawing.Point(861, 20);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            this.btnSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnSettings.Size = new System.Drawing.Size(39, 38);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // AdminForm
             // 
@@ -71,6 +95,8 @@
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -79,5 +105,6 @@
 
         private Guna.UI2.WinForms.Guna2ShadowPanel viewPanel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton btnSettings;
     }
 }

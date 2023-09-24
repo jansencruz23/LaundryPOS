@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Contracts;
+using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
 using System;
@@ -17,12 +18,16 @@ namespace LaundryPOS.Forms.Views
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
+        private readonly ChangeAdminViewDelegate _changeAdminView;
 
         public CategoryView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            ThemeManager themeManager,
+            ChangeAdminViewDelegate changeAdminView)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+            _changeAdminView = changeAdminView;
+
             InitializeComponent();
             InitializeCategory();
         }
