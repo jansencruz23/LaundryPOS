@@ -16,5 +16,8 @@ namespace LaundryPOS.Models.ViewModels
 
         public decimal Total { get => Order.Items.Sum(o => o.SubTotal); }
 
+        public int EmployeeId { get; set; }
+
+        public Employee Employee { get; set; }
     }
 }

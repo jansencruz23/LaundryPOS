@@ -42,6 +42,8 @@ namespace LaundryPOS.Models
 
         public string UserRole { get; set; } = "user";
 
+        public string FullName { get => $"{LastName}, {FirstName}"; }
+
         
         public void SetPassword(string password)
         {
