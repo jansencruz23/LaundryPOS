@@ -2,6 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,11 @@ namespace LaundryPOS.Forms.Views
             InitializeAsync();
         }
 
+        private async void EmployeeView_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
+        }
+
         private async void btnRegister_Click(object sender, EventArgs e)
         {
             new RegisterForm(_unitOfWork).ShowDialog();
@@ -46,7 +52,7 @@ namespace LaundryPOS.Forms.Views
         private async Task DisplayServices()
         {
             var employeeList = await _unitOfWork.EmployeeRepo.Get();
-            dgvService.DataSource = employeeList;
+            itemTable.DataSource = employeeList;
 
             HideUnwantedColumns();
             ConfigureImageColumn();
@@ -55,11 +61,11 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            dgvService.Columns[nameof(Employee.EmployeeId)].Visible = false;
-            dgvService.Columns[nameof(Employee.PicPath)].Visible = false;
-            dgvService.Columns[nameof(Employee.HashedPassword)].Visible = false;
-            dgvService.Columns[nameof(Employee.Salt)].Visible = false;
-            dgvService.Columns[nameof(Employee.IsActive)].Visible = false;
+            itemTable.Columns[nameof(Employee.EmployeeId)].Visible = false;
+            itemTable.Columns[nameof(Employee.PicPath)].Visible = false;
+            itemTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
+            itemTable.Columns[nameof(Employee.Salt)].Visible = false;
+            itemTable.Columns[nameof(Employee.IsActive)].Visible = false;
         }
 
         private void ConfigureImageColumn()
@@ -70,17 +76,17 @@ namespace LaundryPOS.Forms.Views
                 Name = "Image",
                 ImageLayout = DataGridViewImageCellLayout.Zoom
             };
-            dgvService.Columns.Add(imageColumn);
-            dgvService.Columns["Image"].DisplayIndex = 0;
+            itemTable.Columns.Add(imageColumn);
+            itemTable.Columns["Image"].DisplayIndex = 0;
         }
 
         private void HandleImageColumnFormatting()
         {
-            dgvService.CellFormatting += (sender, e) =>
+            itemTable.CellFormatting += (sender, e) =>
             {
-                if (e.ColumnIndex == dgvService.Columns["Image"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = dgvService.Rows[e.RowIndex].DataBoundItem as Item;
+                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
@@ -91,8 +97,46 @@ namespace LaundryPOS.Forms.Views
 
         private async Task RefreshData()
         {
-            dgvService.DataSource = null;
+            itemTable.DataSource = null;
             await DisplayServices();
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnEmployee);
+            await _themeManager.ApplyLighterThemeToDataGridView(itemTable);
+        }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            Dispose();
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnAdminProfile_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
         }
     }
 }
