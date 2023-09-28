@@ -28,13 +28,16 @@ namespace LaundryPOS.Forms
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
             InitializeComponent();
-            viewPanel.Controls.Add(new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate));
+            var itemView = new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate);
+            viewPanel.Controls.Add(itemView);
+            itemView.Dock = DockStyle.Fill;
         }
 
         private void ChangePanelContent(UserControl newContent)
         {
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(newContent);
+            newContent.Dock = DockStyle.Fill;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

@@ -199,6 +199,7 @@ namespace LaundryPOS.Forms.Views
         private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
             where T : UserControl
         {
+            Dispose();
             var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
             _changeAdminView?.Invoke(view);
         }
