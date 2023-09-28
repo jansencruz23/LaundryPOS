@@ -132,7 +132,7 @@
             this.txtPrice.PlaceholderText = "eg. 100";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtPrice.Size = new System.Drawing.Size(260, 33);
+            this.txtPrice.Size = new System.Drawing.Size(253, 33);
             this.txtPrice.TabIndex = 3;
             // 
             // txtName
@@ -156,7 +156,7 @@
             this.txtName.PlaceholderText = "eg. Item";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtName.Size = new System.Drawing.Size(260, 33);
+            this.txtName.Size = new System.Drawing.Size(253, 33);
             this.txtName.TabIndex = 2;
             // 
             // txtPath
@@ -187,7 +187,7 @@
             this.imgIcon.Location = new System.Drawing.Point(3, 82);
             this.imgIcon.Name = "imgIcon";
             this.tableLayoutPanel2.SetRowSpan(this.imgIcon, 2);
-            this.imgIcon.Size = new System.Drawing.Size(260, 152);
+            this.imgIcon.Size = new System.Drawing.Size(253, 152);
             this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgIcon.TabIndex = 9;
             this.imgIcon.TabStop = false;
@@ -214,7 +214,7 @@
             this.txtStock.PlaceholderText = "eg. 50";
             this.txtStock.SelectedText = "";
             this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.txtStock.Size = new System.Drawing.Size(260, 39);
+            this.txtStock.Size = new System.Drawing.Size(253, 39);
             this.txtStock.TabIndex = 10;
             // 
             // btnFile
@@ -232,7 +232,7 @@
             this.btnFile.Location = new System.Drawing.Point(3, 240);
             this.btnFile.Name = "btnFile";
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnFile.Size = new System.Drawing.Size(260, 48);
+            this.btnFile.Size = new System.Drawing.Size(253, 48);
             this.btnFile.TabIndex = 11;
             this.btnFile.Text = "SELECT IMAGE";
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
@@ -254,7 +254,7 @@
             this.cbCategory.Location = new System.Drawing.Point(3, 120);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.cbCategory.Size = new System.Drawing.Size(260, 36);
+            this.cbCategory.Size = new System.Drawing.Size(253, 36);
             this.cbCategory.TabIndex = 13;
             // 
             // itemTable
@@ -375,7 +375,8 @@
             this.tableLayoutPanel3.Controls.Add(this.txtStock, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtPrice, 0, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(275, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(282, 3);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -386,7 +387,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(266, 318);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(259, 318);
             this.tableLayoutPanel3.TabIndex = 18;
             // 
             // label1
@@ -397,7 +398,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(3, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 14);
+            this.label1.Size = new System.Drawing.Size(253, 14);
             this.label1.TabIndex = 14;
             this.label1.Text = "Item Name";
             // 
@@ -409,7 +410,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label4.Location = new System.Drawing.Point(3, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 14);
+            this.label4.Size = new System.Drawing.Size(253, 14);
             this.label4.TabIndex = 17;
             this.label4.Text = "Item Stock";
             // 
@@ -421,7 +422,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(3, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 14);
+            this.label2.Size = new System.Drawing.Size(253, 14);
             this.label2.TabIndex = 15;
             this.label2.Text = "Item Category";
             // 
@@ -433,7 +434,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(3, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(260, 14);
+            this.label3.Size = new System.Drawing.Size(253, 14);
             this.label3.TabIndex = 16;
             this.label3.Text = "Item Price";
             // 
@@ -446,13 +447,14 @@
             this.tableLayoutPanel2.Controls.Add(this.btnFile, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(266, 318);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(259, 318);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // label5
@@ -463,7 +465,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label5.Location = new System.Drawing.Point(3, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(260, 19);
+            this.label5.Size = new System.Drawing.Size(253, 19);
             this.label5.TabIndex = 18;
             this.label5.Text = "ITEM DETAILS";
             // 
@@ -544,9 +546,9 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.CustomizableEdges = customizableEdges17;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDelete.Enabled = false;
             this.btnDelete.FillColor = System.Drawing.Color.Transparent;
@@ -564,9 +566,9 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.CustomizableEdges = customizableEdges19;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEdit.Enabled = false;
             this.btnEdit.FillColor = System.Drawing.Color.Transparent;
@@ -584,9 +586,9 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.CustomizableEdges = customizableEdges21;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -604,9 +606,9 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.CustomizableEdges = customizableEdges23;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Enabled = false;
             this.btnSave.FillColor = System.Drawing.Color.Transparent;

@@ -235,6 +235,7 @@ namespace LaundryPOS.Forms.Views
             txtStock.Enabled = true;
             cbCategory.Enabled = true;
 
+            btnFile.Enabled = true;
             btnSave.Enabled = true;
         }
     }
