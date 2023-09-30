@@ -67,6 +67,7 @@ namespace LaundryPOS.Forms.Views
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnAdminProfile);
+            await _themeManager.ApplyThemeToButton(btnSave);
         }
 
         private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)

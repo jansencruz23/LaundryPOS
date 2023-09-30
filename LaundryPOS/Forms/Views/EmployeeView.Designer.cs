@@ -572,6 +572,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 5;
+            this.txtSearch.BorderThickness = 2;
             this.txtSearch.CustomizableEdges = customizableEdges17;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

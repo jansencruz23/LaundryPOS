@@ -123,6 +123,7 @@
             // txtPrice
             // 
             this.txtPrice.BorderRadius = 7;
+            this.txtPrice.BorderThickness = 2;
             this.txtPrice.CustomizableEdges = customizableEdges1;
             this.txtPrice.DefaultText = "";
             this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -147,6 +148,7 @@
             // txtName
             // 
             this.txtName.BorderRadius = 7;
+            this.txtName.BorderThickness = 2;
             this.txtName.CustomizableEdges = customizableEdges3;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -184,6 +186,7 @@
             // 
             this.txtStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.txtStock.BorderRadius = 7;
+            this.txtStock.BorderThickness = 2;
             this.txtStock.CustomizableEdges = customizableEdges7;
             this.txtStock.DefaultText = "";
             this.txtStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -229,6 +232,7 @@
             // 
             this.cbCategory.BackColor = System.Drawing.Color.Transparent;
             this.cbCategory.BorderRadius = 7;
+            this.cbCategory.BorderThickness = 2;
             this.cbCategory.CustomizableEdges = customizableEdges9;
             this.cbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -511,6 +515,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 5;
+            this.txtSearch.BorderThickness = 2;
             this.txtSearch.CustomizableEdges = customizableEdges11;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

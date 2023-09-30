@@ -108,6 +108,7 @@
             // txtName
             // 
             this.txtName.BorderRadius = 5;
+            this.txtName.BorderThickness = 2;
             this.txtName.CustomizableEdges = customizableEdges1;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -601,6 +602,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 5;
+            this.txtSearch.BorderThickness = 2;
             this.txtSearch.CustomizableEdges = customizableEdges7;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

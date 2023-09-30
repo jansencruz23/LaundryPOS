@@ -219,6 +219,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 5;
+            this.txtSearch.BorderThickness = 2;
             this.txtSearch.CustomizableEdges = customizableEdges1;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -257,6 +258,7 @@
             // 
             this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBox1.BorderRadius = 5;
+            this.guna2ComboBox1.BorderThickness = 2;
             this.guna2ComboBox1.CustomizableEdges = customizableEdges3;
             this.guna2ComboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;

@@ -68,6 +68,7 @@
             // 
             // btnSettings
             // 
+            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
