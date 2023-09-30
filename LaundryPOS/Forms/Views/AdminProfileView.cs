@@ -30,19 +30,75 @@ namespace LaundryPOS.Forms.Views
             InitializeComponent();
         }
 
+        private async void AdminProfileView_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
+        }
+
         private async void btnSave_Click(object sender, EventArgs e)
         {
             var admin = await _unitOfWork.EmployeeRepo.GetAdmin();
 
-            if (admin != null)
-            {
-                admin.Username = txtUsername.Text;
-                admin.SetPassword(txtPassword.Text);
-            }
-            else
+            if (admin == null)
             {
                 MessageBox.Show("Admin is empty");
+                return;
             }
+
+            if (!admin.ValidatePassword(txtOldPassword.Text))
+            {
+                MessageBox.Show("Old admin password is incorrect");
+                return;
+            }
+
+            if (!txtNewPassword.Text.Equals(txtConfirmPassword.Text))
+            {
+                MessageBox.Show("Passwords do not match");
+                return;
+            }
+
+            admin.Username = txtUsername.Text;
+            admin.SetPassword(txtNewPassword.Text);
+
+            _unitOfWork.EmployeeRepo.Update(admin);
+            await _unitOfWork.SaveAsync();
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnAdminProfile);
+        }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            Dispose();
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
         }
     }
 }

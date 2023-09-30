@@ -203,5 +203,42 @@ namespace LaundryPOS.Forms.Views
             txtName.Text = string.Empty;
             txtPath.Text = string.Empty;
         }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            Dispose();
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnAdminProfile_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+        }
     }
 }
