@@ -24,6 +24,7 @@ namespace LaundryPOS.Forms
         private readonly List<ItemControl> itemsControls;
         private readonly Order orders;
         private IEnumerable<Item> allItems;
+        private const int APP_SETTINGS_INDEX = 1;
 
         private decimal Total { get; set; } = default;
 
@@ -45,6 +46,7 @@ namespace LaundryPOS.Forms
             await DisplayItems();
             await DisplayCategories();
             await ApplyTheme();
+            await DisplayAppInfo();
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -88,7 +90,7 @@ namespace LaundryPOS.Forms
 
         private async Task DisplayItems()
         {
-            allItems = await _unitOfWork.ItemRepo.Get();
+            allItems = await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
             itemsControls.AddRange(allItems
                 .Select(item => new ItemControl(item)));
 
@@ -128,6 +130,12 @@ namespace LaundryPOS.Forms
             categoryPanel.Controls.AddRange(categoryControls.ToArray());
         }
 
+        private async Task DisplayAppInfo()
+        {
+            var appName = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
+            lblTitle.Text = appName.Name;
+        }
+
         private void UpdateTotalValue()
         {
             Total = orders.Items.Sum(order => order.SubTotal);
@@ -156,6 +164,7 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
+            await _themeManager.ApplyLighterThemeToPanel(bgPanel);
         }
 
         private async void btnPayLater_Click(object sender, EventArgs e)

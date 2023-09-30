@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblStock = new System.Windows.Forms.Label();
             this.imgIcon = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.SuspendLayout();
@@ -45,27 +46,37 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.lblCategory);
             this.guna2Panel1.Controls.Add(this.lblStock);
             this.guna2Panel1.Controls.Add(this.imgIcon);
             this.guna2Panel1.Controls.Add(this.lblPrice);
             this.guna2Panel1.Controls.Add(this.lblName);
-            this.guna2Panel1.CustomizableEdges = customizableEdges3;
+            this.guna2Panel1.CustomizableEdges = customizableEdges7;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.guna2Panel1.Size = new System.Drawing.Size(200, 147);
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2Panel1.Size = new System.Drawing.Size(189, 137);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(149, 13);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(38, 15);
+            this.lblStock.TabIndex = 3;
+            this.lblStock.Text = "label1";
             // 
             // imgIcon
             // 
             this.imgIcon.BackColor = System.Drawing.Color.Gray;
-            this.imgIcon.CustomizableEdges = customizableEdges1;
+            this.imgIcon.CustomizableEdges = customizableEdges5;
             this.imgIcon.FillColor = System.Drawing.Color.DarkGray;
             this.imgIcon.ImageRotate = 0F;
-            this.imgIcon.Location = new System.Drawing.Point(100, 34);
+            this.imgIcon.Location = new System.Drawing.Point(90, 42);
             this.imgIcon.Name = "imgIcon";
-            this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.imgIcon.Size = new System.Drawing.Size(87, 99);
+            this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.imgIcon.Size = new System.Drawing.Size(83, 84);
             this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgIcon.TabIndex = 0;
             this.imgIcon.TabStop = false;
@@ -73,7 +84,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(13, 34);
+            this.lblPrice.Location = new System.Drawing.Point(13, 111);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(38, 15);
             this.lblPrice.TabIndex = 2;
@@ -88,14 +99,14 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "label1";
             // 
-            // lblStock
+            // lblCategory
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(149, 13);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(38, 15);
-            this.lblStock.TabIndex = 3;
-            this.lblStock.Text = "label1";
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(13, 34);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(38, 15);
+            this.lblCategory.TabIndex = 4;
+            this.lblCategory.Text = "label2";
             // 
             // ItemControl
             // 
@@ -103,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel1);
             this.Name = "ItemControl";
-            this.Size = new System.Drawing.Size(207, 153);
+            this.Size = new System.Drawing.Size(195, 143);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
@@ -118,5 +129,6 @@
         private Label lblPrice;
         private Label lblName;
         private Label lblStock;
+        private Label lblCategory;
     }
 }

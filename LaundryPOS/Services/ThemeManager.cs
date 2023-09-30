@@ -82,7 +82,7 @@ namespace LaundryPOS.Services
                 var brightness = adjustedColor.GetBrightness();
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
-                panel.ForeColor = foreColor;
+               // panel.ForeColor = foreColor;
             }
             else
             {
