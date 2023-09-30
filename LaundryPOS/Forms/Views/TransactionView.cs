@@ -45,10 +45,11 @@ namespace LaundryPOS.Forms.Views
 
         private async void TransactionView_Load(object sender, EventArgs e)
         {
-            await InitializeTable();
+            await DisplayTransactions();
+            await ApplyTheme();
         }
 
-        private async Task InitializeTable()
+        private async Task DisplayTransactions()
         {
             await LoadEmployeeData();
 
@@ -122,5 +123,43 @@ namespace LaundryPOS.Forms.Views
             { "Item Price", vm => vm.Order.Items.Select(p => (object)p.Item.Price) },
             { "SubTotal", vm => vm.Order.Items.Select(s => (object)s.SubTotal) },
         };
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnTransaction);
+            await _themeManager.ApplyLighterThemeToDataGridView(transactionTable);
+        }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            Dispose();
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private void btnAdminProfile_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+        }
     }
 }

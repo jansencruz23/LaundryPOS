@@ -31,12 +31,12 @@ namespace LaundryPOS.Forms.Views
             _changeAdminView = changeAdminView;
 
             InitializeComponent();
-            InitializeAsync();
         }
 
         private async void EmployeeView_Load(object sender, EventArgs e)
         {
             await ApplyTheme();
+            await DisplayEmployees();
         }
 
         private async void btnRegister_Click(object sender, EventArgs e)
@@ -45,16 +45,11 @@ namespace LaundryPOS.Forms.Views
             await RefreshData();
         }
 
-        private async void InitializeAsync()
-        {
-            await DisplayServices();
-        }
-
-        private async Task DisplayServices()
+        private async Task DisplayEmployees()
         {
             var employeeList = await _unitOfWork.EmployeeRepo
                 .Get(filter: e => e.IsActive);
-            itemTable.DataSource = employeeList;
+            employeeTable.DataSource = employeeList;
 
             HideUnwantedColumns();
             ConfigureImageColumn();
@@ -63,11 +58,11 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            itemTable.Columns[nameof(Employee.EmployeeId)].Visible = false;
-            itemTable.Columns[nameof(Employee.PicPath)].Visible = false;
-            itemTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
-            itemTable.Columns[nameof(Employee.Salt)].Visible = false;
-            itemTable.Columns[nameof(Employee.IsActive)].Visible = false;
+            employeeTable.Columns[nameof(Employee.EmployeeId)].Visible = false;
+            employeeTable.Columns[nameof(Employee.PicPath)].Visible = false;
+            employeeTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
+            employeeTable.Columns[nameof(Employee.Salt)].Visible = false;
+            employeeTable.Columns[nameof(Employee.IsActive)].Visible = false;
         }
 
         private void ConfigureImageColumn()
@@ -78,17 +73,17 @@ namespace LaundryPOS.Forms.Views
                 Name = "Image",
                 ImageLayout = DataGridViewImageCellLayout.Zoom
             };
-            itemTable.Columns.Add(imageColumn);
-            itemTable.Columns["Image"].DisplayIndex = 0;
+            employeeTable.Columns.Add(imageColumn);
+            employeeTable.Columns["Image"].DisplayIndex = 0;
         }
 
         private void HandleImageColumnFormatting()
         {
-            itemTable.CellFormatting += (sender, e) =>
+            employeeTable.CellFormatting += (sender, e) =>
             {
-                if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == employeeTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Employee;
+                    var rowData = employeeTable.Rows[e.RowIndex].DataBoundItem as Employee;
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
@@ -99,14 +94,14 @@ namespace LaundryPOS.Forms.Views
 
         private async Task RefreshData()
         {
-            itemTable.DataSource = null;
-            await DisplayServices();
+            employeeTable.DataSource = null;
+            await DisplayEmployees();
         }
 
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnEmployee);
-            await _themeManager.ApplyLighterThemeToDataGridView(itemTable);
+            await _themeManager.ApplyLighterThemeToDataGridView(employeeTable);
         }
 
         private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
@@ -153,17 +148,16 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.EmployeeRepo.Update(_employee);
                     await _unitOfWork.SaveAsync();
 
-                    // Optionally, you can provide feedback to the user that the employee has been deleted.
                     MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
-        private async void itemTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void employeeTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                var selectedRow = itemTable.Rows[e.RowIndex];
+                var selectedRow = employeeTable.Rows[e.RowIndex];
                 var employeeId = (selectedRow.DataBoundItem as Employee)?.EmployeeId;
                 _employee = await _unitOfWork.EmployeeRepo
                     .GetByID(employeeId.Value);

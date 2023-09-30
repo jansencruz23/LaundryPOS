@@ -36,7 +36,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void ItemView_Load(object sender, EventArgs e)
         {
-            await InitializeAsync();
+            await DisplayItems();
             await InitializeCategory();
             await ApplyTheme();
             ConfigureImageColumn();
@@ -73,11 +73,6 @@ namespace LaundryPOS.Forms.Views
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
-        }
-
-        private async Task InitializeAsync()
-        {
-            await DisplayItems();
         }
 
         private async Task InitializeCategory()

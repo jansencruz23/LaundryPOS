@@ -79,7 +79,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.itemTable = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.employeeTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -477,7 +477,7 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.99083F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.00917F));
-            this.tableLayoutPanel4.Controls.Add(this.itemTable, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.employeeTable, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtSearch, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -490,17 +490,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(631, 581);
             this.tableLayoutPanel4.TabIndex = 22;
             // 
-            // itemTable
+            // employeeTable
             // 
-            this.itemTable.AllowUserToAddRows = false;
-            this.itemTable.AllowUserToDeleteRows = false;
+            this.employeeTable.AllowUserToAddRows = false;
+            this.employeeTable.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            this.itemTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.itemTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            this.itemTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.employeeTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.employeeTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+            this.employeeTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -508,10 +508,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.itemTable.ColumnHeadersHeight = 25;
-            this.itemTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.tableLayoutPanel4.SetColumnSpan(this.itemTable, 2);
+            this.employeeTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.employeeTable.ColumnHeadersHeight = 25;
+            this.employeeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.tableLayoutPanel4.SetColumnSpan(this.employeeTable, 2);
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -519,11 +519,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemTable.DefaultCellStyle = dataGridViewCellStyle3;
-            this.itemTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.itemTable.Location = new System.Drawing.Point(3, 48);
-            this.itemTable.Name = "itemTable";
+            this.employeeTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.employeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.employeeTable.Location = new System.Drawing.Point(3, 48);
+            this.employeeTable.Name = "employeeTable";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -531,34 +531,34 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.itemTable.RowHeadersVisible = false;
-            this.itemTable.RowTemplate.Height = 10;
-            this.itemTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemTable.Size = new System.Drawing.Size(625, 530);
-            this.itemTable.TabIndex = 25;
-            this.itemTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.itemTable.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.itemTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.itemTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.itemTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.itemTable.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.itemTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.itemTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.itemTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.itemTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.itemTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.itemTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.itemTable.ThemeStyle.HeaderStyle.Height = 25;
-            this.itemTable.ThemeStyle.ReadOnly = false;
-            this.itemTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.itemTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.itemTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.itemTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.itemTable.ThemeStyle.RowsStyle.Height = 10;
-            this.itemTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.itemTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.itemTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTable_CellClick);
+            this.employeeTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.employeeTable.RowHeadersVisible = false;
+            this.employeeTable.RowTemplate.Height = 10;
+            this.employeeTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeeTable.Size = new System.Drawing.Size(625, 530);
+            this.employeeTable.TabIndex = 25;
+            this.employeeTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.employeeTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.employeeTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.employeeTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.employeeTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.employeeTable.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.employeeTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.employeeTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.employeeTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.employeeTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.employeeTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.employeeTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.employeeTable.ThemeStyle.HeaderStyle.Height = 25;
+            this.employeeTable.ThemeStyle.ReadOnly = false;
+            this.employeeTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.employeeTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.employeeTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.employeeTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.employeeTable.ThemeStyle.RowsStyle.Height = 10;
+            this.employeeTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.employeeTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.employeeTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeTable_CellClick);
             // 
             // label6
             // 
@@ -668,7 +668,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.itemTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
@@ -707,6 +707,6 @@
         private TableLayoutPanel tableLayoutPanel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2DataGridView itemTable;
+        private Guna.UI2.WinForms.Guna2DataGridView employeeTable;
     }
 }
