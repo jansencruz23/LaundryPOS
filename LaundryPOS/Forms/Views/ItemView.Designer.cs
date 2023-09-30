@@ -95,7 +95,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -334,6 +334,7 @@
             this.itemTable.ThemeStyle.RowsStyle.Height = 10;
             this.itemTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.itemTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.itemTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemTable_CellClick);
             this.itemTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.itemTable_CellFormatting);
             // 
             // guna2Panel1
@@ -591,7 +592,7 @@
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Controls.Add(this.btnAdd, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.btnEdit, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.btnUpdate, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.btnSave, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.btnDelete, 0, 3);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -627,26 +628,27 @@
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnEdit
+            // btnUpdate
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.CustomizableEdges = customizableEdges21;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.Enabled = false;
-            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.DimGray;
-            this.btnEdit.Location = new System.Drawing.Point(3, 38);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            this.btnEdit.Size = new System.Drawing.Size(202, 29);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit Item";
-            this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.CustomizableEdges = customizableEdges21;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUpdate.Location = new System.Drawing.Point(3, 38);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.btnUpdate.Size = new System.Drawing.Size(202, 29);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update Item";
+            this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -881,7 +883,7 @@
         private Guna.UI2.WinForms.Guna2Button btnTransaction;
         private Guna.UI2.WinForms.Guna2Button btnCategory;
         private Guna.UI2.WinForms.Guna2Button btnAdminProfile;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnDelete;

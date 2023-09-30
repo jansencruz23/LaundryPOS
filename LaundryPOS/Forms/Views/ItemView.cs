@@ -116,15 +116,18 @@ namespace LaundryPOS.Forms.Views
 
         private void ConfigureImageColumn()
         {
-            var imageColumn = new DataGridViewImageColumn
+            if (itemTable.Columns["Image"] == null)
             {
-                HeaderText = "Image",
-                Name = "Image",
-                ImageLayout = DataGridViewImageCellLayout.Zoom
-            };
+                var imageColumn = new DataGridViewImageColumn
+                {
+                    HeaderText = "Image",
+                    Name = "Image",
+                    ImageLayout = DataGridViewImageCellLayout.Zoom
+                };
 
-            itemTable.Columns.Add(imageColumn);
-            itemTable.Columns["Image"].DisplayIndex = 0;
+                itemTable.Columns.Add(imageColumn);
+                itemTable.Columns["Image"].DisplayIndex = 0;
+            }
         }
 
         private void HandleImageColumnFormatting()
@@ -232,6 +235,60 @@ namespace LaundryPOS.Forms.Views
 
             btnFile.Enabled = true;
             btnSave.Enabled = true;
+        }
+
+        private async void itemTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = itemTable.Rows[e.RowIndex];
+                var itemId = (selectedRow.DataBoundItem as Item)?.ItemId;
+                _item = await _unitOfWork.ItemRepo
+                    .GetByID(itemId.Value);
+
+                txtName.Text = _item.Name;
+                txtPrice.Text = _item.Price.ToString();
+                txtStock.Text = _item.Stock.ToString();
+                txtPath.Text = _item.PicPath;
+                imgIcon.Image = Image.FromFile(
+                    !string.IsNullOrWhiteSpace(_item.PicPath)
+                        ? _item.PicPath
+                        : "./default.png");
+
+                txtName.Enabled = true;
+                cbCategory.Enabled = true;
+                txtPrice.Enabled = true;
+                txtStock.Enabled = true;
+                btnFile.Enabled = true;
+
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_item != null)
+                {
+                    _item.Name = txtName.Text;
+                    _item.Price = decimal.Parse(txtPrice.Text);
+                    _item.Stock = int.Parse(txtStock.Text);
+                    _item.PicPath = txtPath.Text;
+
+                    _unitOfWork.ItemRepo.Update(_item);
+                    await _unitOfWork.SaveAsync();
+
+                    MessageBox.Show("Category updated successfully");
+                    await RefreshData();
+                    ClearText();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured " + ex.Message);
+            }
         }
     }
 }

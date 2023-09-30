@@ -2,6 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace LaundryPOS.Forms.Views
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
+        private Category _category;
 
         public CategoryView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -29,10 +31,15 @@ namespace LaundryPOS.Forms.Views
             _changeAdminView = changeAdminView;
 
             InitializeComponent();
-            InitializeCategory();
         }
 
-        public async void InitializeCategory()
+        private async void CategoryView_Load(object sender, EventArgs e)
+        {
+            await DisplayCategory();
+            await ApplyTheme();
+        }
+
+        public async Task DisplayCategory()
         {
             var categories = await _unitOfWork.CategoryRepo
                 .Get();
@@ -45,14 +52,17 @@ namespace LaundryPOS.Forms.Views
 
         private void ConfigureImageColumn()
         {
-            var imageColumn = new DataGridViewImageColumn
+            if (categoryTable.Columns["Image"] == null)
             {
-                HeaderText = "Image",
-                Name = "Image",
-                ImageLayout = DataGridViewImageCellLayout.Zoom
-            };
-            categoryTable.Columns.Add(imageColumn);
-            categoryTable.Columns["Image"].DisplayIndex = 0;
+                var imageColumn = new DataGridViewImageColumn
+                {
+                    HeaderText = "Image",
+                    Name = "Image",
+                    ImageLayout = DataGridViewImageCellLayout.Zoom
+                };
+                categoryTable.Columns.Add(imageColumn);
+                categoryTable.Columns["Image"].DisplayIndex = 0;
+            }
         }
 
         private void HandleImageColumnFormatting()
@@ -86,6 +96,9 @@ namespace LaundryPOS.Forms.Views
 
             _unitOfWork.CategoryRepo.Insert(category);
             await _unitOfWork.SaveAsync();
+
+            btnAdd.Enabled = true;
+            ClearText();
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -100,6 +113,95 @@ namespace LaundryPOS.Forms.Views
                 txtPath.Text = file.FileName;
                 imgIcon.Image = Image.FromFile(file.FileName);
             }
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnFile);
+            await _themeManager.ApplyThemeToButton(btnCategory);
+            await _themeManager.ApplyLighterThemeToDataGridView(categoryTable);
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_category != null)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                { 
+                    await _unitOfWork.CategoryRepo.Delete(_category.CategoryId);
+                    await _unitOfWork.SaveAsync();
+
+                    MessageBox.Show("Category deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearText();
+                }
+            }
+        }
+
+        private async void categoryTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = categoryTable.Rows[e.RowIndex];
+                var categoryId = (selectedRow.DataBoundItem as Category)?.CategoryId;
+                _category = await _unitOfWork.CategoryRepo
+                    .GetByID(categoryId.Value);
+
+                txtName.Text = _category.Name;
+                txtPath.Text = _category.PicPath;
+                imgIcon.Image = Image.FromFile(
+                    !string.IsNullOrWhiteSpace(_category.PicPath)
+                        ? _category.PicPath
+                        : "./default.png");
+
+                btnDelete.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+            btnAdd.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_category != null)
+                {
+                    _category.Name = txtName.Text;
+                    _category.PicPath = txtPath.Text;
+
+                    _unitOfWork.CategoryRepo.Update(_category);
+                    await _unitOfWork.SaveAsync();
+
+                    MessageBox.Show("Category updated successfully");
+                    await RefreshData();
+                    ClearText();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured " + ex.Message);
+            }
+        }
+
+        private async Task RefreshData()
+        {
+            categoryTable.DataSource = null;
+            await DisplayCategory();
+        }
+
+        private void ClearText()
+        {
+            imgIcon.Image = null;
+            txtName.Text = string.Empty;
+            txtPath.Text = string.Empty;
         }
     }
 }

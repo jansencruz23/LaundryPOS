@@ -67,14 +67,17 @@ namespace LaundryPOS.Forms.Views
 
         private void ConfigureImageColumn()
         {
-            var imageColumn = new DataGridViewImageColumn
+            if (employeeTable.Columns["Image"] == null)
             {
-                HeaderText = "Image",
-                Name = "Image",
-                ImageLayout = DataGridViewImageCellLayout.Zoom
-            };
-            employeeTable.Columns.Add(imageColumn);
-            employeeTable.Columns["Image"].DisplayIndex = 0;
+                var imageColumn = new DataGridViewImageColumn
+                {
+                    HeaderText = "Image",
+                    Name = "Image",
+                    ImageLayout = DataGridViewImageCellLayout.Zoom
+                };
+                employeeTable.Columns.Add(imageColumn);
+                employeeTable.Columns["Image"].DisplayIndex = 0;
+            }
         }
 
         private void HandleImageColumnFormatting()

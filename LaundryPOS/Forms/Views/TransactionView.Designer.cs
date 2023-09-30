@@ -105,13 +105,13 @@
             this.transactionTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.transactionTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transactionTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.transactionTable.Location = new System.Drawing.Point(3, 116);
+            this.transactionTable.Location = new System.Drawing.Point(3, 104);
             this.transactionTable.Name = "transactionTable";
             this.transactionTable.RowHeadersVisible = false;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.transactionTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.transactionTable.RowTemplate.Height = 25;
-            this.transactionTable.Size = new System.Drawing.Size(1223, 522);
+            this.transactionTable.Size = new System.Drawing.Size(1163, 474);
             this.transactionTable.TabIndex = 0;
             this.transactionTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.transactionTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -191,6 +191,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(20, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(20, 100, 20, 20);
             this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.guna2Panel1.Size = new System.Drawing.Size(1229, 641);
             this.guna2Panel1.TabIndex = 23;
@@ -206,13 +207,13 @@
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.guna2ComboBox1, 2, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(30, 30);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.892356F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.736349F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.37129F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1229, 641);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1169, 581);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // txtSearch
@@ -228,14 +229,14 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(918, 11);
+            this.txtSearch.Location = new System.Drawing.Point(874, 11);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search using Transaction ID";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtSearch.Size = new System.Drawing.Size(301, 35);
+            this.txtSearch.Size = new System.Drawing.Size(285, 29);
             this.txtSearch.TabIndex = 24;
             // 
             // label1
@@ -247,7 +248,7 @@
             this.label1.Location = new System.Drawing.Point(10, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(895, 57);
+            this.label1.Size = new System.Drawing.Size(851, 51);
             this.label1.TabIndex = 24;
             this.label1.Text = "Transaction Record";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,11 +266,11 @@
             this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(918, 67);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(874, 61);
             this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(10);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(301, 36);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(285, 36);
             this.guna2ComboBox1.TabIndex = 25;
             // 
             // tableLayoutPanel1
