@@ -41,5 +41,10 @@ namespace LaundryPOS
                 txtPath.Text = file.FileName;
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }
