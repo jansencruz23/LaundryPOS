@@ -2,7 +2,6 @@
 using LaundryPOS.Models;
 using LaundryPOS.Services;
 
-
 namespace LaundryPOS.Forms
 {
     public partial class LoginForm : Form

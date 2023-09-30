@@ -20,6 +20,7 @@ namespace LaundryPOS.Forms.Views
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
+        private Employee _employee;
 
         public EmployeeView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -51,7 +52,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task DisplayServices()
         {
-            var employeeList = await _unitOfWork.EmployeeRepo.Get();
+            var employeeList = await _unitOfWork.EmployeeRepo
+                .Get(filter: e => e.IsActive);
             itemTable.DataSource = employeeList;
 
             HideUnwantedColumns();
@@ -86,7 +88,7 @@ namespace LaundryPOS.Forms.Views
             {
                 if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
-                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
+                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Employee;
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
@@ -137,6 +139,43 @@ namespace LaundryPOS.Forms.Views
         {
             ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
             => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_employee != null)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    _employee.IsActive = false;
+                    _unitOfWork.EmployeeRepo.Update(_employee);
+                    await _unitOfWork.SaveAsync();
+
+                    // Optionally, you can provide feedback to the user that the employee has been deleted.
+                    MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private async void itemTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = itemTable.Rows[e.RowIndex];
+                var employeeId = (selectedRow.DataBoundItem as Employee)?.EmployeeId;
+                _employee = await _unitOfWork.EmployeeRepo
+                    .GetByID(employeeId.Value);
+
+                lblName.Text = _employee.FullName;
+                lblUsername.Text = _employee.Username;
+                lblAge.Text = _employee.Age.ToString();
+                lblBirthday.Text = _employee.BirthDate.ToShortDateString();
+                imgPic.Image = Image.FromFile(_employee.PicPath ?? "./default.png");
+
+                btnDelete.Enabled = true;
+            }
         }
     }
 }

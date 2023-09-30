@@ -20,6 +20,7 @@ namespace LaundryPOS.Repositories
         {
             return await _context.Employees
                 .AsNoTracking()
+                .Where(e => e.IsActive)
                 .SingleOrDefaultAsync(e => e.Username.Equals(username));
         }
 
