@@ -72,10 +72,7 @@ namespace LaundryPOS.Forms
             _employee.LastName = txtLastName.Text;
             _employee.BirthDate = dtpBirthday.Value;
             _employee.PicPath = txtPath.Text;
-            _employee.Age = DateTime.Now.Year - _employee.BirthDate.Year -
-                (DateTime.Now < _employee.BirthDate.AddYears(_employee.Age) 
-                    ? 1 
-                    : 0);
+            _employee.Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25);
             _employee.Username = txtUsername.Text;
 
             _unitOfWork.EmployeeRepo.Update(_employee);

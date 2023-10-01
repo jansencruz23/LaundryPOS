@@ -96,16 +96,16 @@
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(10, 48);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtUsername.Location = new System.Drawing.Point(11, 50);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.PlaceholderText = "";
+            this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtUsername.Size = new System.Drawing.Size(207, 35);
+            this.txtUsername.Size = new System.Drawing.Size(205, 31);
             this.txtUsername.TabIndex = 0;
             // 
             // txtNewPassword
@@ -120,16 +120,16 @@
             this.txtNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNewPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(10, 180);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtNewPassword.Location = new System.Drawing.Point(11, 182);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '\0';
-            this.txtNewPassword.PlaceholderText = "";
+            this.txtNewPassword.PasswordChar = '•';
+            this.txtNewPassword.PlaceholderText = "New password";
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtNewPassword.Size = new System.Drawing.Size(207, 35);
+            this.txtNewPassword.Size = new System.Drawing.Size(205, 31);
             this.txtNewPassword.TabIndex = 1;
             // 
             // btnSave
@@ -141,7 +141,7 @@
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(10, 287);
             this.btnSave.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -150,6 +150,7 @@
             this.btnSave.Size = new System.Drawing.Size(207, 41);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "SAVE";
+            this.btnSave.TextOffset = new System.Drawing.Point(0, 1);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // guna2Panel3
@@ -219,7 +220,7 @@
             this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCategory.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategory.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCategory.ForeColor = System.Drawing.Color.DimGray;
             this.btnCategory.Location = new System.Drawing.Point(3, 33);
             this.btnCategory.Name = "btnCategory";
@@ -240,7 +241,7 @@
             this.btnEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEmployee.FillColor = System.Drawing.Color.Transparent;
-            this.btnEmployee.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEmployee.ForeColor = System.Drawing.Color.DimGray;
             this.btnEmployee.Location = new System.Drawing.Point(3, 63);
             this.btnEmployee.Name = "btnEmployee";
@@ -261,7 +262,7 @@
             this.btnTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTransaction.FillColor = System.Drawing.Color.Transparent;
-            this.btnTransaction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransaction.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransaction.ForeColor = System.Drawing.Color.DimGray;
             this.btnTransaction.Location = new System.Drawing.Point(3, 93);
             this.btnTransaction.Name = "btnTransaction";
@@ -282,7 +283,7 @@
             this.btnAdminProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdminProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdminProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdminProfile.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdminProfile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdminProfile.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdminProfile.Location = new System.Drawing.Point(3, 123);
             this.btnAdminProfile.Name = "btnAdminProfile";
@@ -301,7 +302,7 @@
             this.btnItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnItem.FillColor = System.Drawing.Color.Transparent;
-            this.btnItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnItem.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnItem.ForeColor = System.Drawing.Color.DimGray;
             this.btnItem.Location = new System.Drawing.Point(3, 3);
             this.btnItem.Name = "btnItem";
@@ -406,22 +407,22 @@
             this.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(10, 246);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(11, 248);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '\0';
-            this.txtConfirmPassword.PlaceholderText = "";
+            this.txtConfirmPassword.PasswordChar = '•';
+            this.txtConfirmPassword.PlaceholderText = "Confirm your password";
             this.txtConfirmPassword.SelectedText = "";
             this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            this.txtConfirmPassword.Size = new System.Drawing.Size(207, 35);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(205, 31);
             this.txtConfirmPassword.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(10, 218);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label4.Name = "label4";
@@ -433,7 +434,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(10, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.label1.Name = "label1";
@@ -445,7 +446,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(10, 152);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label3.Name = "label3";
@@ -466,22 +467,22 @@
             this.txtOldPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtOldPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOldPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOldPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Location = new System.Drawing.Point(10, 114);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtOldPassword.Location = new System.Drawing.Point(11, 116);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.PasswordChar = '\0';
-            this.txtOldPassword.PlaceholderText = "";
+            this.txtOldPassword.PasswordChar = '•';
+            this.txtOldPassword.PlaceholderText = "Old password";
             this.txtOldPassword.SelectedText = "";
             this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.txtOldPassword.Size = new System.Drawing.Size(207, 35);
+            this.txtOldPassword.Size = new System.Drawing.Size(205, 31);
             this.txtOldPassword.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(10, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
@@ -493,7 +494,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(221, 20);

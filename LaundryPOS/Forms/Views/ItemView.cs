@@ -140,7 +140,7 @@ namespace LaundryPOS.Forms.Views
                     var imagePath = rowData?.PicPath;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
-                        : null;
+                        : Image.FromFile("./default.png");
                 }
             };
         }

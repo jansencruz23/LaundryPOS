@@ -1,3 +1,4 @@
+using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Services;
@@ -18,11 +19,33 @@ namespace LaundryPOS
             InitializeComponent();
         }
 
+        private async void RegisterForm_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
+        }
+
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-            var employee = new Employee();
-            employee.Username = txtUsername.Text;
-            employee.PicPath = txtPath.Text;
+            var allTextboxesFilled = Controls.OfType<Guna2TextBox>()
+                .All(t => !string.IsNullOrEmpty(t.Text));
+
+            if (!allTextboxesFilled)
+            {
+                MessageBox.Show("Please fill all the fields.");
+                return;
+            }
+
+            var employee = new Employee
+            {
+                Username = txtUsername.Text,
+                PicPath = txtPath.Text,
+                BirthDate = dtpBirthday.Value,
+                Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25),
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                IsActive = true,
+                UserRole = "user"
+            };
             employee.SetPassword(txtPassword.Text);
 
             await CreateEmployee(employee);
@@ -52,9 +75,10 @@ namespace LaundryPOS
             Dispose();
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        private async Task ApplyTheme()
         {
-
+            await _themeManager.ApplyThemeToButton(btnRegister);
+            await _themeManager.ApplyLighterThemeToPanel(bgPanel, 1f, true);
         }
     }
 }

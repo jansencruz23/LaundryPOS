@@ -122,7 +122,7 @@ namespace LaundryPOS.Services
             }
         }
 
-        public async Task ApplyLighterThemeToDataGridView(DataGridView dataGridView, float brightnessFactor = 0.8f)
+        public async Task ApplyLighterThemeToDataGridView(DataGridView dataGridView, float brightnessFactor = 0.8f, bool changeFont = false)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -156,8 +156,8 @@ namespace LaundryPOS.Services
                 dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
 
-                // Set the font for the body text
-                dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
+                if (changeFont)
+                    dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
 
                 // Set alternating row background color to "whitesmoke"
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
@@ -172,6 +172,34 @@ namespace LaundryPOS.Services
 
                 // Set alternating row background color to "whitesmoke"
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            }
+        }
+        public async Task ApplyOutlineThemeToButton(Guna2Button button)
+        {
+            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
+            {
+                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
+
+                if (appSettings != null)
+                {
+                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
+                }
+            }
+
+            if (appSettings != null)
+            {
+                var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
+                button.FillColor = Color.Transparent;
+                button.BorderColor = themeColor;
+                button.BorderThickness = 1;
+
+                var brightness = themeColor.GetBrightness();
+                button.ForeColor = ColorTranslator.FromHtml(appSettings.Theme);
+            }
+            else
+            {
+                button.FillColor = Color.White;
+                button.ForeColor = Color.Black;
             }
         }
     }

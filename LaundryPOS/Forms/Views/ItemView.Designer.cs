@@ -133,16 +133,17 @@
             this.txtPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrice.Enabled = false;
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPrice.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(3, 198);
+            this.txtPrice.Location = new System.Drawing.Point(3, 203);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "eg. 100";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtPrice.Size = new System.Drawing.Size(253, 33);
+            this.txtPrice.Size = new System.Drawing.Size(253, 32);
             this.txtPrice.TabIndex = 3;
             // 
             // txtName
@@ -158,16 +159,17 @@
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Enabled = false;
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(3, 42);
+            this.txtName.Location = new System.Drawing.Point(3, 45);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "eg. Item";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtName.Size = new System.Drawing.Size(253, 33);
+            this.txtName.Size = new System.Drawing.Size(253, 35);
             this.txtName.TabIndex = 2;
             // 
             // imgIcon
@@ -196,16 +198,17 @@
             this.txtStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStock.Enabled = false;
             this.txtStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStock.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStock.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStock.Location = new System.Drawing.Point(3, 276);
+            this.txtStock.Location = new System.Drawing.Point(3, 281);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtStock.Name = "txtStock";
             this.txtStock.PasswordChar = '\0';
             this.txtStock.PlaceholderText = "eg. 50";
             this.txtStock.SelectedText = "";
             this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.txtStock.Size = new System.Drawing.Size(253, 39);
+            this.txtStock.Size = new System.Drawing.Size(253, 32);
             this.txtStock.TabIndex = 10;
             // 
             // btnFile
@@ -218,7 +221,7 @@
             this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFile.Enabled = false;
-            this.btnFile.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.White;
             this.btnFile.Location = new System.Drawing.Point(3, 240);
             this.btnFile.Name = "btnFile";
@@ -226,6 +229,7 @@
             this.btnFile.Size = new System.Drawing.Size(253, 48);
             this.btnFile.TabIndex = 11;
             this.btnFile.Text = "SELECT IMAGE";
+            this.btnFile.TextOffset = new System.Drawing.Point(0, 1);
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // cbCategory
@@ -240,10 +244,10 @@
             this.cbCategory.Enabled = false;
             this.cbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbCategory.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbCategory.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbCategory.ItemHeight = 30;
-            this.cbCategory.Location = new System.Drawing.Point(3, 120);
+            this.cbCategory.Location = new System.Drawing.Point(3, 121);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.cbCategory.Size = new System.Drawing.Size(253, 36);
@@ -254,7 +258,7 @@
             this.itemTable.AllowUserToAddRows = false;
             this.itemTable.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             this.itemTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -273,7 +277,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.itemTable, 2);
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -374,12 +378,12 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.15094F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.37736F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.20755F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32076F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(259, 318);
             this.tableLayoutPanel3.TabIndex = 18;
@@ -388,9 +392,9 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(3, 25);
+            this.label1.Location = new System.Drawing.Point(3, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 14);
             this.label1.TabIndex = 14;
@@ -400,9 +404,9 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(3, 259);
+            this.label4.Location = new System.Drawing.Point(3, 262);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(253, 14);
             this.label4.TabIndex = 17;
@@ -412,9 +416,9 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(3, 103);
+            this.label2.Location = new System.Drawing.Point(3, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 14);
             this.label2.TabIndex = 15;
@@ -424,9 +428,9 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(3, 181);
+            this.label3.Location = new System.Drawing.Point(3, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 14);
             this.label3.TabIndex = 16;
@@ -436,9 +440,9 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.imgIcon, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnFile, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
@@ -454,12 +458,11 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(3, 60);
+            this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 19);
+            this.label5.Size = new System.Drawing.Size(127, 79);
             this.label5.TabIndex = 18;
             this.label5.Text = "ITEM DETAILS";
             // 
@@ -488,7 +491,7 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 279F));
             this.tableLayoutPanel5.Controls.Add(this.itemTable, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtSearch, 1, 0);
@@ -504,11 +507,11 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 19);
+            this.label7.Size = new System.Drawing.Size(121, 44);
             this.label7.TabIndex = 20;
             this.label7.Text = "ITEM LIST";
             // 
@@ -524,16 +527,16 @@
             this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(274, 3);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.txtSearch.Location = new System.Drawing.Point(274, 5);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search using Item Name";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.txtSearch.Size = new System.Drawing.Size(258, 38);
+            this.txtSearch.Size = new System.Drawing.Size(257, 34);
             this.txtSearch.TabIndex = 21;
             // 
             // tableLayoutPanel4
@@ -619,7 +622,7 @@
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
@@ -641,7 +644,7 @@
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.Enabled = false;
             this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.DimGray;
             this.btnUpdate.Location = new System.Drawing.Point(3, 38);
             this.btnUpdate.Name = "btnUpdate";
@@ -663,7 +666,7 @@
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSave.Enabled = false;
             this.btnSave.FillColor = System.Drawing.Color.Transparent;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.DimGray;
             this.btnSave.Location = new System.Drawing.Point(3, 73);
             this.btnSave.Name = "btnSave";
@@ -685,7 +688,7 @@
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.Enabled = false;
             this.btnDelete.FillColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.DimGray;
             this.btnDelete.Location = new System.Drawing.Point(3, 108);
             this.btnDelete.Name = "btnDelete";
@@ -727,7 +730,7 @@
             this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCategory.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategory.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCategory.ForeColor = System.Drawing.Color.DimGray;
             this.btnCategory.Location = new System.Drawing.Point(3, 33);
             this.btnCategory.Name = "btnCategory";
@@ -748,7 +751,7 @@
             this.btnEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEmployee.FillColor = System.Drawing.Color.Transparent;
-            this.btnEmployee.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEmployee.ForeColor = System.Drawing.Color.DimGray;
             this.btnEmployee.Location = new System.Drawing.Point(3, 63);
             this.btnEmployee.Name = "btnEmployee";
@@ -769,7 +772,7 @@
             this.btnTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTransaction.FillColor = System.Drawing.Color.Transparent;
-            this.btnTransaction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransaction.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransaction.ForeColor = System.Drawing.Color.DimGray;
             this.btnTransaction.Location = new System.Drawing.Point(3, 93);
             this.btnTransaction.Name = "btnTransaction";
@@ -790,7 +793,7 @@
             this.btnAdminProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdminProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdminProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdminProfile.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdminProfile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdminProfile.ForeColor = System.Drawing.Color.DimGray;
             this.btnAdminProfile.Location = new System.Drawing.Point(3, 123);
             this.btnAdminProfile.Name = "btnAdminProfile";
@@ -809,7 +812,7 @@
             this.btnItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnItem.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnItem.ForeColor = System.Drawing.Color.White;
             this.btnItem.Location = new System.Drawing.Point(3, 3);
             this.btnItem.Name = "btnItem";

@@ -49,7 +49,7 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyLighterThemeToDataGridView(unpaidTable);
+            await _themeManager.ApplyLighterThemeToDataGridView(unpaidTable, changeFont: true);
         }
 
         private async Task InitializeTable()

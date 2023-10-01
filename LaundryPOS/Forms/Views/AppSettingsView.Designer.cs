@@ -225,13 +225,19 @@
             // guna2Panel1
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel1);
             this.guna2Panel1.CustomizableEdges = customizableEdges15;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(592, 61);
             this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
+            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.guna2Panel1.ShadowDecoration.Depth = 10;
+            this.guna2Panel1.ShadowDecoration.Enabled = true;
+            this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
             this.guna2Panel1.Size = new System.Drawing.Size(335, 639);
             this.guna2Panel1.TabIndex = 8;
             // 
@@ -280,8 +286,7 @@
             // label7
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.label7, 2);
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(23, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(289, 41);
@@ -292,7 +297,7 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(23, 491);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(289, 41);
@@ -304,7 +309,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(23, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 41);
@@ -315,7 +320,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(23, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(289, 41);
@@ -326,7 +331,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(23, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(289, 41);
@@ -337,7 +342,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(23, 307);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(289, 41);
@@ -348,7 +353,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(23, 389);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(289, 41);
