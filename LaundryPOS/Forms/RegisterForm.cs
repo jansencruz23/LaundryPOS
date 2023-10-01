@@ -67,6 +67,7 @@ namespace LaundryPOS
             if (file.ShowDialog() == DialogResult.OK)
             {
                 txtPath.Text = file.FileName;
+                imgPic.Image = Image.FromFile(file.FileName);
             }
         }
 

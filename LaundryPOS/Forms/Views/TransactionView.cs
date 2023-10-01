@@ -19,17 +19,21 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class TransactionView : UserControl
     {
-        private readonly IUnitOfWork _unitOfWork;   
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
         private List<Employee> employeeCache;
 
         private const int DAYS_IN_WEEK = 7;
         private const int NEXT_DAY = 1;
+        private const int NEXT_MONTH = 1;
         private const int FIRST_DAY = 1;
         private const int FIRST_MONTH = 1;
         private const int LAST_MONTH = 12;
         private const int LAST_DAY = 31;
+        private const int LAST_HOUR = 23;
+        private const int LAST_MINUTE = 59;
+        private const int LAST_SECOND = 59;
 
         public TransactionView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -175,55 +179,56 @@ namespace LaundryPOS.Forms.Views
 
         private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filter = cbFilter.SelectedItem.ToString();
+            string filter = cbFilter.SelectedItem?.ToString()!;
 
-            if (filter == null)
+            if (string.IsNullOrEmpty(filter))
             {
                 MessageBox.Show("Invalid filter");
                 return;
             }
-                
+
+            DateTime startDate = default;
+            DateTime endDate = default;
+            Expression<Func<TransactionItem, bool>> filterPredicate = ti => ti.Transaction.IsCompleted;
+
             switch (filter)
             {
-                case "All":
-                    await DisplayTransactions(filter: ti => ti.Transaction.IsCompleted);
-                    break;
-
                 case "Daily":
-                    var today = DateTime.Today;
-                    var tomorrow = today.AddDays(NEXT_DAY);
-                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate > today
-                        && ti.Transaction.TransactionDate < tomorrow
-                        && ti.Transaction.IsCompleted);
+                    startDate = DateTime.Today;
+                    endDate = startDate.AddDays(NEXT_DAY);
                     break;
 
                 case "Weekly":
-                    var startWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
-                    var endWeek = startWeek.AddDays(DAYS_IN_WEEK).AddSeconds(-1);
-                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate <= endWeek
-                        && ti.Transaction.IsCompleted);
+                    startDate = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                    endDate = startDate.AddDays(DAYS_IN_WEEK);
                     break;
 
                 case "Monthly":
-                    var startMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-                    var endMonth = startMonth.AddMonths(FIRST_DAY).AddSeconds(-1);
-                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate >= startMonth
-                        && ti.Transaction.TransactionDate <= endMonth
-                        && ti.Transaction.IsCompleted);
+                    startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    endDate = startDate.AddMonths(NEXT_MONTH);
                     break;
 
                 case "Yearly":
-                    var startYear = new DateTime(DateTime.Today.Year, FIRST_MONTH, FIRST_DAY);
-                    var endYear = new DateTime(DateTime.Today.Year, LAST_MONTH, LAST_DAY, 23, 59, 59);
-                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate >= startYear
-                        && ti.Transaction.TransactionDate <= endYear
-                        && ti.Transaction.IsCompleted);
+                    startDate = new DateTime(DateTime.Today.Year, FIRST_MONTH, FIRST_DAY);
+                    endDate = new DateTime(DateTime.Today.Year, LAST_MONTH, LAST_DAY, LAST_HOUR, LAST_MINUTE, LAST_SECOND);
+                    break;
+
+                case "All":
                     break;
 
                 default:
                     MessageBox.Show("Invalid filter");
-                    break;
+                    return;
             }
+
+            if (filter != "All")
+            {
+                filterPredicate = ti => ti.Transaction.TransactionDate >= startDate
+                    && ti.Transaction.TransactionDate <= endDate
+                    && ti.Transaction.IsCompleted;
+            }
+
+            await DisplayTransactions(filterPredicate);
         }
     }
 }

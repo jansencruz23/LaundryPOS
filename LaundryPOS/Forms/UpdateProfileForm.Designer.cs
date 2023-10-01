@@ -224,6 +224,7 @@
             this.btnFile.Size = new System.Drawing.Size(211, 38);
             this.btnFile.TabIndex = 5;
             this.btnFile.Text = "SELECT IMAGE";
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // btnUpdate
             // 

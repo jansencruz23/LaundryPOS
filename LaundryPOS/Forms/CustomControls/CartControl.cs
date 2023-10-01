@@ -16,6 +16,7 @@ namespace LaundryPOS.Forms.Views
     public partial class CartControl : UserControl
     {
         public event EventHandler<CartItemEventArgs> RemoveFromCartClicked;
+        public event EventHandler<CartItemEventArgs> AddToCartClicked;
         public CartItem CartItem { get; }
         private ThemeManager _themeManager;
 
@@ -45,6 +46,18 @@ namespace LaundryPOS.Forms.Views
         private void btnRemove_Click(object sender, EventArgs e)
         {
             RemoveFromCartClicked?.Invoke(this, new CartItemEventArgs(CartItem));
+        }
+
+        private void btnQuantity_Click(object sender, EventArgs e)
+        {
+            var quantityForm = new QuantityForm(_themeManager);
+            quantityForm.Quantity = CartItem.Quantity;
+            quantityForm.ShowDialog();
+            var quantity = quantityForm.Quantity;
+
+            AddToCartClicked?.Invoke(this,
+                new CartItemEventArgs(
+                    new CartItem(CartItem.Item, quantity)));
         }
     }
 }

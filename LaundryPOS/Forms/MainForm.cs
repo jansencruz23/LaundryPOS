@@ -65,6 +65,7 @@ namespace LaundryPOS.Forms
             {
                 var cartItem = new CartControl(e.CartItem, _themeManager);
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
+                cartItem.AddToCartClicked += ItemControl_AddToCartClicked!;
                 cartPanel.Controls.Add(cartItem);
                 orders.Items.Add(e.CartItem);
             }
@@ -94,7 +95,7 @@ namespace LaundryPOS.Forms
         {
             allItems = await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
             itemsControls.AddRange(allItems
-                .Select(item => new ItemControl(item)));
+                .Select(item => new ItemControl(item, _themeManager)));
 
             foreach (var item in itemsControls)
             {
@@ -118,7 +119,7 @@ namespace LaundryPOS.Forms
             itemsPanel.Controls.Clear();
 
             itemsControls.AddRange(itemsToDisplay
-                .Select(item => new ItemControl(item)));
+                .Select(item => new ItemControl(item, _themeManager)));
 
             foreach (var item in itemsControls)
             {

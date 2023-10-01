@@ -78,5 +78,19 @@ namespace LaundryPOS.Forms
             _unitOfWork.EmployeeRepo.Update(_employee);
             await _unitOfWork.SaveAsync();
         }
+
+        private void btnFile_Click(object sender, EventArgs e)
+        {
+            using var file = new OpenFileDialog();
+            file.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico|All Files|*.*";
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txtPath.Text = file.FileName;
+                imgPic.Image = Image.FromFile(file.FileName);
+            }
+        }
     }
 }

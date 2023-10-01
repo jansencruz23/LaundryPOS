@@ -46,13 +46,15 @@
             this.btnQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnQuantity.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuantity.ForeColor = System.Drawing.Color.White;
-            this.btnQuantity.Location = new System.Drawing.Point(5, 6);
+            this.btnQuantity.Location = new System.Drawing.Point(5, 7);
             this.btnQuantity.Name = "btnQuantity";
             this.btnQuantity.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.btnQuantity.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnQuantity.Size = new System.Drawing.Size(58, 59);
+            this.btnQuantity.Size = new System.Drawing.Size(58, 58);
             this.btnQuantity.TabIndex = 0;
             this.btnQuantity.Text = "Q";
+            this.btnQuantity.TextOffset = new System.Drawing.Point(1, 1);
+            this.btnQuantity.Click += new System.EventHandler(this.btnQuantity_Click);
             // 
             // btnRemove
             // 
