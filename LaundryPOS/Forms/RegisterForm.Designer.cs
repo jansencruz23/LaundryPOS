@@ -65,7 +65,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.bgPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -75,7 +75,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.bgPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -271,16 +271,16 @@
             this.label2.Text = "Last Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2Panel1
+            // bgPanel
             // 
-            this.guna2Panel1.Controls.Add(this.txtPath);
-            this.guna2Panel1.CustomizableEdges = customizableEdges19;
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.guna2Panel1.Size = new System.Drawing.Size(316, 636);
-            this.guna2Panel1.TabIndex = 14;
+            this.bgPanel.Controls.Add(this.txtPath);
+            this.bgPanel.CustomizableEdges = customizableEdges19;
+            this.bgPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bgPanel.Location = new System.Drawing.Point(0, 0);
+            this.bgPanel.Name = "bgPanel";
+            this.bgPanel.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.bgPanel.Size = new System.Drawing.Size(316, 636);
+            this.bgPanel.TabIndex = 14;
             // 
             // guna2Panel2
             // 
@@ -411,14 +411,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1024, 636);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.bgPanel);
             this.Name = "RegisterForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
+            this.bgPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -437,7 +438,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Label label1;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel bgPanel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Label label4;
         private Label label3;

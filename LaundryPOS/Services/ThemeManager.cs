@@ -83,7 +83,7 @@ namespace LaundryPOS.Services
             }
         }
 
-        public async Task ApplyLighterThemeToPanel(Guna2Panel panel, float brightnessFactor = 0.8f)
+        public async Task ApplyLighterThemeToPanel(Guna2Panel panel, float brightnessFactor = 0.8f, bool changeFontColor = false)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -109,9 +109,11 @@ namespace LaundryPOS.Services
                 panel.FillColor = adjustedColor;
 
                 var brightness = adjustedColor.GetBrightness();
-                var foreColor = brightness < 0.5 ? Color.White : Color.Black;
-
-               // panel.ForeColor = foreColor;
+                if (changeFontColor)
+                {
+                    var foreColor = brightness < 0.5 ? Color.White : Color.Black;
+                    panel.ForeColor = foreColor;
+                }
             }
             else
             {

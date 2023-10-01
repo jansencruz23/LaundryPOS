@@ -37,6 +37,9 @@
     <Compile Update="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\UpdateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Views\AdminProfileView.cs">
       <SubType>UserControl</SubType>
     </Compile>

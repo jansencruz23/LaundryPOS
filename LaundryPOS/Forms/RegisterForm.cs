@@ -8,24 +8,12 @@ namespace LaundryPOS
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
-        private readonly Employee _employee;
 
         public RegisterForm(IUnitOfWork unitOfWork,
             ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
-
-            InitializeComponent();
-        }
-
-        public RegisterForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
-            Employee employee)
-        {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _employee = employee;
 
             InitializeComponent();
         }
@@ -62,6 +50,11 @@ namespace LaundryPOS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,6 +47,7 @@ namespace LaundryPOS.Forms
             await DisplayCategories();
             await ApplyTheme();
             await DisplayAppInfo();
+            DisplayEmployeeInfo();
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -100,6 +101,14 @@ namespace LaundryPOS.Forms
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 itemsPanel.Controls.Add(item);
             }
+        }
+
+        private void DisplayEmployeeInfo()
+        {
+            lblEmployeeName.Text = _employee.FullName;
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.PicPath)
+                ? _employee.PicPath
+                : "./default.png");
         }
 
         private void DisplayFilteredItems(IEnumerable<Item> filteredItems = null)
@@ -213,6 +222,12 @@ namespace LaundryPOS.Forms
             itemsPanel.Controls.Clear();
             await DisplayItems();
             lblMenuTitle.Text = "All Items";
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            var form = new ProfileForm(_unitOfWork, _themeManager, _employee);
+            form.ShowDialog();
         }
     }
 }

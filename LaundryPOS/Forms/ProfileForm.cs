@@ -33,6 +33,16 @@ namespace LaundryPOS.Forms
         private async void ProfileForm_Load(object sender, EventArgs e)
         {
             await ApplyTheme();
+            InitializeProfile();
+        }
+
+        private void InitializeProfile()
+        {
+            lblName.Text = _employee.FullName;
+            lblUsername.Text = _employee.Username;
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.PicPath)
+                ? _employee.PicPath
+                : "./default.png");
         }
 
         private async Task ApplyTheme()
@@ -43,9 +53,9 @@ namespace LaundryPOS.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var form = new RegisterForm(_unitOfWork, _themeManager, _employee);
+            var form = new UpdateProfileForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

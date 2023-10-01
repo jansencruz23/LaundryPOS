@@ -142,7 +142,7 @@ namespace LaundryPOS.Forms.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Hide();
             var form = new MainForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.Show();
