@@ -150,13 +150,26 @@ namespace LaundryPOS.Services
                 var brightness = adjustedColor.GetBrightness();
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
+                // Set the font for column headers
+                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
+
+                // Set the font for the body text
+                dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
+
+                // Set alternating row background color to "whitesmoke"
+                dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
             else
             {
-                // Apply default colors if appSettings is not available
+                // Apply default colors and fonts if appSettings is not available
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
+                dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
+
+                // Set alternating row background color to "whitesmoke"
+                dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
         }
     }

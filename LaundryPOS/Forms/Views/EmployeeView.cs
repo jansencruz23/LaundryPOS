@@ -41,7 +41,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-            new RegisterForm(_unitOfWork).ShowDialog();
+            new RegisterForm(_unitOfWork, _themeManager).ShowDialog();
             await RefreshData();
         }
 

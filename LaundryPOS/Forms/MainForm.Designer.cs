@@ -34,6 +34,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,9 +52,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.btnViewUnpaid = new Guna.UI2.WinForms.Guna2Button();
             this.itemsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPayLater = new Guna.UI2.WinForms.Guna2Button();
@@ -59,6 +59,7 @@
             this.btnPayNow = new Guna.UI2.WinForms.Guna2Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.categoryPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAllCategory = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -73,7 +74,6 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnAllCategory = new Guna.UI2.WinForms.Guna2Button();
             this.categoryPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -192,6 +192,26 @@
             this.categoryPanel.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.categoryPanel.Size = new System.Drawing.Size(121, 569);
             this.categoryPanel.TabIndex = 12;
+            // 
+            // btnAllCategory
+            // 
+            this.btnAllCategory.BorderRadius = 10;
+            this.btnAllCategory.CustomizableEdges = customizableEdges7;
+            this.btnAllCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAllCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAllCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAllCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAllCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnAllCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAllCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAllCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAllCategory.Image")));
+            this.btnAllCategory.ImageSize = new System.Drawing.Size(33, 37);
+            this.btnAllCategory.Location = new System.Drawing.Point(33, 3);
+            this.btnAllCategory.Name = "btnAllCategory";
+            this.btnAllCategory.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btnAllCategory.Size = new System.Drawing.Size(57, 58);
+            this.btnAllCategory.TabIndex = 0;
+            this.btnAllCategory.Click += new System.EventHandler(this.btnAllCategory_Click);
             // 
             // guna2Panel2
             // 
@@ -394,26 +414,6 @@
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(55, 57);
             this.guna2CirclePictureBox1.TabIndex = 21;
             this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // btnAllCategory
-            // 
-            this.btnAllCategory.BorderRadius = 10;
-            this.btnAllCategory.CustomizableEdges = customizableEdges7;
-            this.btnAllCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAllCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAllCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAllCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAllCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnAllCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAllCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAllCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAllCategory.Image")));
-            this.btnAllCategory.ImageSize = new System.Drawing.Size(33, 37);
-            this.btnAllCategory.Location = new System.Drawing.Point(33, 3);
-            this.btnAllCategory.Name = "btnAllCategory";
-            this.btnAllCategory.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnAllCategory.Size = new System.Drawing.Size(57, 58);
-            this.btnAllCategory.TabIndex = 0;
-            this.btnAllCategory.Click += new System.EventHandler(this.btnAllCategory_Click);
             // 
             // MainForm
             // 

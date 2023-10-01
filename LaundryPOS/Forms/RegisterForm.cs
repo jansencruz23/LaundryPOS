@@ -1,15 +1,32 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 
 namespace LaundryPOS
 {
     public partial class RegisterForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
+        private readonly Employee _employee;
 
-        public RegisterForm(IUnitOfWork unitOfWork)
+        public RegisterForm(IUnitOfWork unitOfWork,
+            ThemeManager themeManager)
         {
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
+
+            InitializeComponent();
+        }
+
+        public RegisterForm(IUnitOfWork unitOfWork,
+            ThemeManager themeManager,
+            Employee employee)
+        {
+            _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
+            _employee = employee;
+
             InitializeComponent();
         }
 

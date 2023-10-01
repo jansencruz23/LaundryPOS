@@ -19,7 +19,7 @@ namespace LaundryPOS.Forms.Views
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
-        private List<Employee> employeeCache;
+        private readonly List<Employee> _employeeCache;
 
         public UnpaidForm(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -28,7 +28,7 @@ namespace LaundryPOS.Forms.Views
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             _employee = employee;
-            employeeCache = new();
+            _employeeCache = new();
 
             InitializeComponent();
         }
@@ -38,12 +38,18 @@ namespace LaundryPOS.Forms.Views
             var employees = await _unitOfWork.EmployeeRepo.Get();
 
             foreach (var employee in employees)
-                employeeCache.Add(employee);
+                _employeeCache.Add(employee);
         }
 
         private async void UnpaidForm_Load(object sender, EventArgs e)
         {
             await InitializeTable();
+            await ApplyTheme();
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyLighterThemeToDataGridView(unpaidTable);
         }
 
         private async Task InitializeTable()
@@ -76,7 +82,6 @@ namespace LaundryPOS.Forms.Views
             unpaidTable.AutoGenerateColumns = false;
 
             unpaidTable.Columns["EmployeeId"].Visible = false;
-            unpaidTable.Columns["TransactionId"].Visible = false;
             unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
 
             unpaidTable.Columns.Add("Quantity", "Quantity");
@@ -99,7 +104,7 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "Employee")
             {
                 var transaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
-                var employee = employeeCache.FirstOrDefault(emp => emp.EmployeeId == transaction.EmployeeId);
+                var employee = _employeeCache.FirstOrDefault(emp => emp.EmployeeId == transaction.EmployeeId);
                 e.Value = employee?.FullName ?? string.Empty;
             }
 
@@ -133,6 +138,14 @@ namespace LaundryPOS.Forms.Views
                 paymentForm.FormClosed += (s, args) => Close();
                 paymentForm.Show();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            var form = new MainForm(_unitOfWork, _themeManager, _employee);
+            form.FormClosed += (s, args) => Close();
+            form.Show();
         }
     }
 }
