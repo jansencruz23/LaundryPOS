@@ -28,7 +28,7 @@ namespace LaundryPOS.Forms.CustomControls
         
         private void InitializeCategory()
         {
-            lblName.Text = _category.Name;
+            //lblName.Text = _category.Name;
             imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(_category.PicPath) 
                 ? _category.PicPath 
                 : "./default.png");

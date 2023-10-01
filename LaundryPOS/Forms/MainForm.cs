@@ -62,7 +62,7 @@ namespace LaundryPOS.Forms
             }
             else
             {
-                var cartItem = new CartControl(e.CartItem);
+                var cartItem = new CartControl(e.CartItem, _themeManager);
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
                 cartPanel.Controls.Add(cartItem);
                 orders.Items.Add(e.CartItem);
@@ -76,6 +76,7 @@ namespace LaundryPOS.Forms
         {
             var filteredItems = allItems.Where(i => i.CategoryId == e.Category.CategoryId);
             DisplayFilteredItems(filteredItems);
+            lblMenuTitle.Text = e.Category.Name;
         }
 
         private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
@@ -164,6 +165,7 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
+            await _themeManager.ApplyThemeToButton(btnViewUnpaid);
             await _themeManager.ApplyLighterThemeToPanel(bgPanel);
         }
 
@@ -203,6 +205,14 @@ namespace LaundryPOS.Forms
             var form = new UnpaidForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.Show();
+        }
+
+        private async void btnAllCategory_Click(object sender, EventArgs e)
+        {
+            itemsControls.Clear();
+            itemsPanel.Controls.Clear();
+            await DisplayItems();
+            lblMenuTitle.Text = "All Items";
         }
     }
 }
