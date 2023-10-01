@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using LaundryPOS.Delegates;
+using System.Linq.Expressions;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -22,6 +23,13 @@ namespace LaundryPOS.Forms.Views
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
         private List<Employee> employeeCache;
+
+        private const int DAYS_IN_WEEK = 7;
+        private const int NEXT_DAY = 1;
+        private const int FIRST_DAY = 1;
+        private const int FIRST_MONTH = 1;
+        private const int LAST_MONTH = 12;
+        private const int LAST_DAY = 31;
 
         public TransactionView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -45,16 +53,17 @@ namespace LaundryPOS.Forms.Views
 
         private async void TransactionView_Load(object sender, EventArgs e)
         {
-            await DisplayTransactions();
+            await DisplayTransactions(ti => ti.Transaction.IsCompleted);
             await ApplyTheme();
         }
 
-        private async Task DisplayTransactions()
+        private async Task DisplayTransactions(Expression<Func<TransactionItem, bool>> filter)
         {
             await LoadEmployeeData();
 
             var transactionItems = await _unitOfWork.TransactionItemRepo
-                .Get(filter: ti => ti.Transaction.IsCompleted, includeProperties: "Item,Transaction");
+                .Get(filter: filter, includeProperties: "Item,Transaction",
+                    orderBy: ti => ti.OrderByDescending(ti => ti.Transaction.TransactionDate));
 
             var groupedTransactions = transactionItems
                 .GroupBy(ti => ti.TransactionId)
@@ -71,7 +80,9 @@ namespace LaundryPOS.Forms.Views
                 .ToList();
 
             transactionTable.DataSource = groupedTransactions;
-            ConfigureDataGridView(groupedTransactions);
+
+            if (transactionTable.Columns["Quantity"] == null)
+                ConfigureDataGridView(groupedTransactions);
         }
 
         private void ConfigureDataGridView(List<GroupedTransactionViewModel> groupedTransactions)
@@ -160,6 +171,59 @@ namespace LaundryPOS.Forms.Views
         {
             ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
             => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+        }
+
+        private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filter = cbFilter.SelectedItem.ToString();
+
+            if (filter == null)
+            {
+                MessageBox.Show("Invalid filter");
+                return;
+            }
+                
+            switch (filter)
+            {
+                case "All":
+                    await DisplayTransactions(filter: ti => ti.Transaction.IsCompleted);
+                    break;
+
+                case "Daily":
+                    var today = DateTime.Today;
+                    var tomorrow = today.AddDays(NEXT_DAY);
+                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate > today
+                        && ti.Transaction.TransactionDate < tomorrow
+                        && ti.Transaction.IsCompleted);
+                    break;
+
+                case "Weekly":
+                    var startWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                    var endWeek = startWeek.AddDays(DAYS_IN_WEEK).AddSeconds(-1);
+                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate <= endWeek
+                        && ti.Transaction.IsCompleted);
+                    break;
+
+                case "Monthly":
+                    var startMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    var endMonth = startMonth.AddMonths(FIRST_DAY).AddSeconds(-1);
+                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate >= startMonth
+                        && ti.Transaction.TransactionDate <= endMonth
+                        && ti.Transaction.IsCompleted);
+                    break;
+
+                case "Yearly":
+                    var startYear = new DateTime(DateTime.Today.Year, FIRST_MONTH, FIRST_DAY);
+                    var endYear = new DateTime(DateTime.Today.Year, LAST_MONTH, LAST_DAY, 23, 59, 59);
+                    await DisplayTransactions(filter: ti => ti.Transaction.TransactionDate >= startYear
+                        && ti.Transaction.TransactionDate <= endYear
+                        && ti.Transaction.IsCompleted);
+                    break;
+
+                default:
+                    MessageBox.Show("Invalid filter");
+                    break;
+            }
         }
     }
 }

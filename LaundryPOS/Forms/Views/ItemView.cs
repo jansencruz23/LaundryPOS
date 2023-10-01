@@ -132,17 +132,24 @@ namespace LaundryPOS.Forms.Views
 
         private void HandleImageColumnFormatting()
         {
-            itemTable.CellFormatting += (sender, e) =>
+            try
             {
-                if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
+                itemTable.CellFormatting += (sender, e) =>
                 {
-                    var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
-                    var imagePath = rowData?.PicPath;
-                    e.Value = !string.IsNullOrEmpty(imagePath)
-                        ? Image.FromFile(imagePath)
-                        : Image.FromFile("./default.png");
-                }
-            };
+                    if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
+                    {
+                        var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
+                        var imagePath = rowData?.PicPath;
+                        e.Value = !string.IsNullOrEmpty(imagePath)
+                            ? Image.FromFile(imagePath)
+                            : Image.FromFile("./default.png");
+                    }
+                };
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("An error occured " + ex.Message);
+            }
         }
 
         private async Task RefreshData()

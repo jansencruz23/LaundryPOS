@@ -19,6 +19,7 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private ChangeAdminViewDelegate changeAdminViewDelegate;
+        private const int APP_SETTINGS_INDEX = 1;
 
         public AdminForm(IUnitOfWork unitOfWorK,
             ThemeManager themeManager)
@@ -28,9 +29,16 @@ namespace LaundryPOS.Forms
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
             InitializeComponent();
+
             var itemView = new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
+        }
+
+        private async void AdminForm_Load(object sender, EventArgs e)
+        {
+            var appSettings = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
+            lblTitle.Text = appSettings.Name;
         }
 
         private void ChangePanelContent(UserControl newContent)

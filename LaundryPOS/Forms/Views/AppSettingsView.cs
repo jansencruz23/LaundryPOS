@@ -89,7 +89,22 @@ namespace LaundryPOS.Forms.Views
         private async void ApplyTheme()
         {
             await _themeManager.ApplyOutlineThemeToButton(btnColor);
+            await _themeManager.ApplyOutlineThemeToButton(btnCancel);
             await _themeManager.ApplyThemeToButton(btnSave);
+        }
+
+        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+            where T : UserControl
+        {
+            Dispose();
+            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            _changeAdminView?.Invoke(view);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
+            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
         }
     }
 }

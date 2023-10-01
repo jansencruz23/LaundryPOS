@@ -34,6 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.viewPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnSettings = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel1.Controls.Add(this.lblTitle);
             this.guna2Panel1.Controls.Add(this.btnSettings);
             this.guna2Panel1.CustomizableEdges = customizableEdges2;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,6 +67,17 @@
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges3;
             this.guna2Panel1.Size = new System.Drawing.Size(917, 75);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(53, 13);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(299, 45);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "label1";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnSettings
             // 
@@ -98,6 +111,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,5 +123,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel viewPanel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CircleButton btnSettings;
+        private Label lblTitle;
     }
 }

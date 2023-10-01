@@ -106,13 +106,13 @@
             this.transactionTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.transactionTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transactionTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.transactionTable.Location = new System.Drawing.Point(3, 136);
+            this.transactionTable.Location = new System.Drawing.Point(3, 135);
             this.transactionTable.Name = "transactionTable";
             this.transactionTable.RowHeadersVisible = false;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.transactionTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.transactionTable.RowTemplate.Height = 25;
-            this.transactionTable.Size = new System.Drawing.Size(1163, 442);
+            this.transactionTable.Size = new System.Drawing.Size(1163, 443);
             this.transactionTable.TabIndex = 0;
             this.transactionTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.transactionTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -238,13 +238,13 @@
             this.txtSearch.PlaceholderText = "Search using Transaction ID";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtSearch.Size = new System.Drawing.Size(283, 40);
+            this.txtSearch.Size = new System.Drawing.Size(283, 39);
             this.txtSearch.TabIndex = 24;
             // 
             // label1
             // 
             this.tableLayoutPanel5.SetColumnSpan(this.label1, 2);
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(10, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
@@ -253,7 +253,6 @@
             this.label1.Size = new System.Drawing.Size(197, 101);
             this.label1.TabIndex = 24;
             this.label1.Text = "TRANSACTION RECORD";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbFilter
             // 
@@ -269,12 +268,20 @@
             this.cbFilter.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbFilter.ItemHeight = 30;
-            this.cbFilter.Location = new System.Drawing.Point(874, 84);
+            this.cbFilter.Items.AddRange(new object[] {
+            "All",
+            "Daily",
+            "Weekly",
+            "Monthly",
+            "Yearly"});
+            this.cbFilter.Location = new System.Drawing.Point(874, 83);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(10);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.cbFilter.Size = new System.Drawing.Size(285, 36);
+            this.cbFilter.StartIndex = 0;
             this.cbFilter.TabIndex = 25;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
