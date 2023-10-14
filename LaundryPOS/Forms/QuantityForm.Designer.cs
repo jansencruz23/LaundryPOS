@@ -107,7 +107,7 @@
             this.btn2.Name = "btn2";
             this.btn2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.btn2.Size = new System.Drawing.Size(164, 45);
-            this.btn2.TabIndex = 1;
+            this.btn2.TabIndex = 3;
             this.btn2.Text = "2";
             this.btn2.TextOffset = new System.Drawing.Point(0, 2);
             this.btn2.Click += new System.EventHandler(this.btn_Click);
@@ -176,7 +176,7 @@
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnEnter.Size = new System.Drawing.Size(340, 45);
-            this.btnEnter.TabIndex = 7;
+            this.btnEnter.TabIndex = 0;
             this.btnEnter.Text = "ENTER QUANTITY";
             this.btnEnter.TextOffset = new System.Drawing.Point(0, 2);
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
@@ -313,7 +313,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.btnClose.Size = new System.Drawing.Size(42, 31);
-            this.btnClose.TabIndex = 1;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "x";
             this.btnClose.TextOffset = new System.Drawing.Point(2, 0);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -338,6 +338,7 @@
             this.Name = "QuantityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.QuantityForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.QuantityForm_KeyUp);
             this.panelBg.ResumeLayout(false);
             this.panelBody.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);

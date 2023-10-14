@@ -64,14 +64,22 @@ namespace LaundryPOS.Forms
             else
             {
                 var cartItem = new CartControl(e.CartItem, _themeManager);
+
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
                 cartItem.AddToCartClicked += ItemControl_AddToCartClicked!;
+
                 cartPanel.Controls.Add(cartItem);
                 orders.Items.Add(e.CartItem);
             }
 
             UpdateTotalValue();
             UpdateTotalDisplay();
+        }
+
+        private void ItemControl_AddQuantity(object sender, CartItemEventArgs e)
+        {
+            var cartItem = e.CartItem;
+            cartItem.Quantity += e.CartItem.Quantity;
         }
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
@@ -229,6 +237,11 @@ namespace LaundryPOS.Forms
         {
             var form = new ProfileForm(_unitOfWork, _themeManager, _employee);
             form.ShowDialog();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearCart();
         }
     }
 }

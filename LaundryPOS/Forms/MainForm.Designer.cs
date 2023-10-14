@@ -288,6 +288,7 @@
             this.btnClear.Size = new System.Drawing.Size(101, 37);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear All";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tableLayoutPanel4
             // 

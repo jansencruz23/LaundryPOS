@@ -45,7 +45,9 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.lblCategory);
             this.guna2Panel1.Controls.Add(this.lblStock);
             this.guna2Panel1.Controls.Add(this.imgIcon);
@@ -120,6 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.guna2Panel1);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "ItemControl";
             this.Size = new System.Drawing.Size(195, 143);
             this.guna2Panel1.ResumeLayout(false);

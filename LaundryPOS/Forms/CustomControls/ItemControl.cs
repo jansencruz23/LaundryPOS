@@ -16,6 +16,7 @@ namespace LaundryPOS.Forms.Views
     public partial class ItemControl : UserControl
     {
         public event EventHandler<CartItemEventArgs> AddToCartClicked;
+        public event EventHandler<CartItemEventArgs> AddQuantity;
         private readonly ThemeManager _themeManager;
         public Item Item { get; set; }
 

@@ -28,6 +28,7 @@ namespace LaundryPOS.Forms
         private async void QuantityForm_Load(object sender, EventArgs e)
         {
             InitializeQuantity();
+            txtQuantity.Focus();
             await ApplyTheme();
         }
 
@@ -80,7 +81,17 @@ namespace LaundryPOS.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            Quantity = 0;
             Close();
+        }
+
+        private void QuantityForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return ||
+                e.KeyCode == Keys.Space)
+            {
+                btnEnter.PerformClick();
+            }
         }
     }
 }

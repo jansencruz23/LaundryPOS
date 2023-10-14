@@ -46,7 +46,7 @@
             this.btnQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnQuantity.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuantity.ForeColor = System.Drawing.Color.White;
-            this.btnQuantity.Location = new System.Drawing.Point(5, 7);
+            this.btnQuantity.Location = new System.Drawing.Point(12, 7);
             this.btnQuantity.Name = "btnQuantity";
             this.btnQuantity.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.btnQuantity.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -68,7 +68,7 @@
             this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageOffset = new System.Drawing.Point(0, 10);
             this.btnRemove.ImageSize = new System.Drawing.Size(10, 15);
-            this.btnRemove.Location = new System.Drawing.Point(218, 27);
+            this.btnRemove.Location = new System.Drawing.Point(227, 27);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnRemove.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -81,7 +81,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(69, 17);
+            this.lblName.Location = new System.Drawing.Point(76, 17);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 22);
             this.lblName.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPrice.Location = new System.Drawing.Point(69, 37);
+            this.lblPrice.Location = new System.Drawing.Point(76, 37);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(42, 19);
             this.lblPrice.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnQuantity);
             this.Name = "CartControl";
-            this.Size = new System.Drawing.Size(255, 72);
+            this.Size = new System.Drawing.Size(264, 72);
             this.Load += new System.EventHandler(this.CartControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
