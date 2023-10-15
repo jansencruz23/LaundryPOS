@@ -70,7 +70,7 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnLogin);
-            await _themeManager.ApplyLighterThemeToPanel(rightPanel, 1f);
+            await _themeManager.ApplyThemeToPanel(rightPanel, 1f);
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Models;
+using LaundryPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace LaundryPOS.Forms
     public partial class PaymentForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
         private readonly Order _orders;
         private readonly decimal _total;
@@ -24,16 +26,23 @@ namespace LaundryPOS.Forms
 
         public PaymentForm(Order orders, decimal total,
             IUnitOfWork unitOfWork, Employee employee,
+            ThemeManager themeManager,
             int transactionId = default)
         {
             _orders = orders;
             _total = total;
             _unitOfWork = unitOfWork;
+            _themeManager = themeManager;
             _employee = employee;
             _transactionId = transactionId;
 
             InitializeComponent();
             InitializeOrders();
+        }
+
+        private async void PaymentForm_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
         }
 
         private void InitializeOrders()
@@ -42,7 +51,7 @@ namespace LaundryPOS.Forms
                 orderPanel.Controls
                     .Add(new OrderPaymentControl(order)));
 
-            lblTotal.Text = $"{_total:#,###.00}";
+            lblTotal.Text = $"₱ {_total:#,###.00}";
         }
 
         private async void btnPay_Click(object sender, EventArgs e)
@@ -118,6 +127,17 @@ namespace LaundryPOS.Forms
             }
 
             txtAmount.Text += number;
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToPanel(panelBg);
+            await _themeManager.ApplyThemeToButton(btnPay);
+        }
+
+        private void lblCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

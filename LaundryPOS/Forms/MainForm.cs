@@ -171,7 +171,7 @@ namespace LaundryPOS.Forms
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee);
+            var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
             paymentForm.ShowDialog();
             ClearCart();
         }
@@ -180,7 +180,7 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
             await _themeManager.ApplyThemeToButton(btnViewUnpaid);
-            await _themeManager.ApplyLighterThemeToPanel(bgPanel);
+            await _themeManager.ApplyThemeToPanel(bgPanel);
         }
 
         private async void btnPayLater_Click(object sender, EventArgs e)

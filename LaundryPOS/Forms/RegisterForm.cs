@@ -79,7 +79,7 @@ namespace LaundryPOS
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnRegister);
-            await _themeManager.ApplyLighterThemeToPanel(bgPanel, 1f, true);
+            await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
         }
     }
 }

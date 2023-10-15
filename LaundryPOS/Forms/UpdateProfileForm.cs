@@ -40,7 +40,7 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnUpdate);
             await _themeManager.ApplyThemeToButton(btnChangePassword);
-            await _themeManager.ApplyLighterThemeToPanel(bgPanel, 1f, true);
+            await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
         }
 
         private void InitializeProfile()

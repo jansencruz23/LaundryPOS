@@ -83,7 +83,7 @@ namespace LaundryPOS.Services
             }
         }
 
-        public async Task ApplyLighterThemeToPanel(Guna2Panel panel, float brightnessFactor = 0.8f, bool changeFontColor = false)
+        public async Task ApplyThemeToPanel(Guna2Panel panel, float brightnessFactor = 1f, bool changeFontColor = false)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {

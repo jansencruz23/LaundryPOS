@@ -37,36 +37,40 @@
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblQuantity.Location = new System.Drawing.Point(13, 13);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(38, 15);
+            this.lblQuantity.Size = new System.Drawing.Size(46, 23);
             this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "label1";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(66, 13);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 15);
+            this.lblName.Size = new System.Drawing.Size(49, 23);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "label2";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(234, 13);
+            this.lblPrice.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrice.Location = new System.Drawing.Point(215, 13);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(38, 15);
+            this.lblPrice.Size = new System.Drawing.Size(50, 23);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "label3";
             // 
             // lblSubTotal
             // 
             this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Location = new System.Drawing.Point(297, 13);
+            this.lblSubTotal.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSubTotal.Location = new System.Drawing.Point(271, 13);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(38, 15);
+            this.lblSubTotal.Size = new System.Drawing.Size(50, 23);
             this.lblSubTotal.TabIndex = 3;
             this.lblSubTotal.Text = "label4";
             // 

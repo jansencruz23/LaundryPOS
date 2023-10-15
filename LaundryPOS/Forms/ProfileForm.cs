@@ -48,7 +48,7 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnEdit);
-            await _themeManager.ApplyLighterThemeToPanel(bgPanel, 1f);
+            await _themeManager.ApplyThemeToPanel(bgPanel, 1f);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
