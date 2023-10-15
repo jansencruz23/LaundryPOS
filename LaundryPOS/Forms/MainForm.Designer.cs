@@ -177,7 +177,7 @@
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(126, 33);
             this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "₱";
+            this.lblTotal.Text = "₱ .00";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // categoryPanel

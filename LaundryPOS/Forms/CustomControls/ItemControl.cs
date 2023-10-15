@@ -64,6 +64,12 @@ namespace LaundryPOS.Forms.Views
 
             var quantity = quantityForm.Quantity;
 
+            if (quantity > Item.Stock)
+            {
+                MessageBox.Show("Stocks not enough");
+                return;
+            }
+
             AddToCartClicked?.Invoke(this, 
                 new CartItemEventArgs(
                     new CartItem(Item, quantity)));

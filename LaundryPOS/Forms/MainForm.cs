@@ -108,6 +108,13 @@ namespace LaundryPOS.Forms
             }
         }
 
+        private async Task RefreshItems()
+        {
+            itemsControls.Clear();
+            itemsPanel.Controls.Clear();
+            await DisplayItems();
+        }
+
         private void DisplayEmployeeInfo()
         {
             lblEmployeeName.Text = _employee.FullName;
@@ -157,7 +164,7 @@ namespace LaundryPOS.Forms
         }
 
         private void UpdateTotalDisplay()
-        {
+        {                
             lblTotal.Text = $"₱ {Total:#,###.00}";
         }
 
@@ -171,6 +178,12 @@ namespace LaundryPOS.Forms
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
+            if (orders.Items.Count <= 0)
+            {
+                MessageBox.Show("Please enter order first");
+                return;
+            }
+
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
             paymentForm.ShowDialog();
             ClearCart();
@@ -185,11 +198,21 @@ namespace LaundryPOS.Forms
 
         private async void btnPayLater_Click(object sender, EventArgs e)
         {
+            if (orders.Items.Count <= 0)
+            {
+                MessageBox.Show("Please enter order first");
+                return;
+            }
+
             try
             {
-                var transaction = CreateTransaction();
+                var transaction = await CreateTransaction();
                 _unitOfWork.TransactionRepo.Insert(transaction);
                 await _unitOfWork.SaveAsync();
+
+                MessageBox.Show("Order added to pay later");
+                await RefreshItems();
+                ClearCart();
             }
             catch (Exception ex)
             {
@@ -197,21 +220,57 @@ namespace LaundryPOS.Forms
             }
         }
 
-        private Transaction CreateTransaction() => new()
+        private async Task<Transaction> CreateTransaction()
         {
-            EmployeeId = _employee.EmployeeId,
-            TransactionDate = DateTime.Now,
-            TotalAmount = Total,
-            AmountPaid = default,
-            Change = default,
-            IsCompleted = false,
-            Items = orders.Items.Select(order => new TransactionItem
+            var transaction = new Transaction
             {
-                ItemId = order.Item.ItemId,
-                Quantity = order.Quantity,
-                SubTotal = order.SubTotal
-            }).ToList()
-        };
+                EmployeeId = _employee.EmployeeId,
+                TransactionDate = DateTime.Now,
+                TotalAmount = Total,
+                AmountPaid = default,
+                Change = default,
+                IsCompleted = false,
+                Items = new List<TransactionItem>()
+            };
+
+            await SubtractStocks(transaction.Items);
+            return transaction;
+        }
+
+        private async Task SubtractStocks(ICollection<TransactionItem> transaction)
+        {
+            foreach (var order in orders.Items)
+            {
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+
+                if (item != null)
+                {
+                    var soldQuantity = order.Quantity;
+                    var availableQuantity = item.Stock;
+
+                    if (soldQuantity <= availableQuantity)
+                    {
+                        var transactionItem = new TransactionItem
+                        {
+                            ItemId = order.Item.ItemId,
+                            Quantity = soldQuantity,
+                            SubTotal = order.SubTotal
+                        };
+
+                        transaction.Add(transactionItem);
+                        item.Stock -= soldQuantity;
+                    }
+                    else
+                    {
+                        throw new Exception("Item quantity cannot exceed item stocks. Please check your order again.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Transaction failed.");
+                }
+            }
+        }
 
         private void btnViewUnpaid_Click(object sender, EventArgs e)
         {
