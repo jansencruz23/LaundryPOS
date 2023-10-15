@@ -72,12 +72,13 @@ namespace LaundryPOS.Forms
                         }
                         else
                         {
-                            transaction = CreateTransaction(amount);
+                            transaction = await CreateTransaction(amount);
                             _unitOfWork.TransactionRepo.Insert(transaction);
                         }
 
                         await _unitOfWork.SaveAsync();
                         var receiptForm = new ReceiptForm(_unitOfWork, transaction);
+                        receiptForm.FormClosed += (s, args) => Close();
                         receiptForm.ShowDialog();
                     }
                     catch (Exception ex)
@@ -92,21 +93,57 @@ namespace LaundryPOS.Forms
             }
         }
 
-        private Transaction CreateTransaction(decimal amount) => new()
+        private async Task<Transaction> CreateTransaction(decimal amount)
         {
-            EmployeeId = _employee.EmployeeId,
-            TransactionDate = DateTime.Now,
-            TotalAmount = _total,
-            AmountPaid = amount,
-            Change = amount - _total,
-            IsCompleted = true,
-            Items = _orders.Items.Select(order => new TransactionItem
+            var transaction = new Transaction
             {
-                ItemId = order.Item.ItemId,
-                Quantity = order.Quantity,
-                SubTotal = order.SubTotal
-            }).ToList()
-        };
+                EmployeeId = _employee.EmployeeId,
+                TransactionDate = DateTime.Now,
+                TotalAmount = _total,
+                AmountPaid = amount,
+                Change = amount - _total,
+                IsCompleted = true,
+                Items = new List<TransactionItem>()
+            };
+
+            await SubtractStocks(transaction.Items);
+            return transaction;
+        }
+
+        private async Task SubtractStocks(ICollection<TransactionItem> transaction)
+        {
+            foreach (var order in _orders.Items)
+            {
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+
+                if (item != null)
+                {
+                    var soldQuantity = order.Quantity;
+                    var availableQuantity = item.Stock;
+
+                    if (soldQuantity <= availableQuantity)
+                    {
+                        var transactionItem = new TransactionItem
+                        {
+                            ItemId = order.Item.ItemId,
+                            Quantity = soldQuantity,
+                            SubTotal = order.SubTotal
+                        };
+
+                        transaction.Add(transactionItem);
+                        item.Stock -= soldQuantity;
+                    }
+                    else
+                    {
+                        throw new Exception("Item quantity cannot exceed item stocks. Please check your order again.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Transaction failed.");
+                }
+            }
+        }
 
         private void UpdateTransaction(Transaction transaction, decimal amount)
         {

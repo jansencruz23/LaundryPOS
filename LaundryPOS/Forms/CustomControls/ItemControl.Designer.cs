@@ -125,6 +125,7 @@
             this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "ItemControl";
             this.Size = new System.Drawing.Size(195, 143);
+            this.Load += new System.EventHandler(this.ItemControl_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();

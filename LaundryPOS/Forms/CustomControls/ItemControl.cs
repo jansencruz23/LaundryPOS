@@ -26,11 +26,19 @@ namespace LaundryPOS.Forms.Views
             _themeManager = themeManager;
 
             InitializeComponent();
-            InitializeService();
+            InitializeItem();
             WireAllControls(this);
         }
 
-        private void InitializeService()
+        private void ItemControl_Load(object sender, EventArgs e)
+        {
+            if (Item.Stock <= 0)
+            {
+                Enabled = false;
+            }
+        }
+
+        private void InitializeItem()
         {
             lblName.Text = Item.Name;
             lblCategory.Text = Item.Category.Name;

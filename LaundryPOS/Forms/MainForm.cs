@@ -191,6 +191,7 @@ namespace LaundryPOS.Forms
             }
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
             paymentForm.ShowDialog();
+            await RefreshItems();
             ClearCart();
         }
 
