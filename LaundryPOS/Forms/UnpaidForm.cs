@@ -134,9 +134,7 @@ namespace LaundryPOS.Forms.Views
                 var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
                     _unitOfWork, _employee, _themeManager, selectedTransaction.TransactionId);
 
-                Hide();
-                paymentForm.FormClosed += (s, args) => Close();
-                paymentForm.Show();
+                paymentForm.ShowDialog();
             }
         }
 

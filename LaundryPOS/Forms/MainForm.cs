@@ -164,7 +164,7 @@ namespace LaundryPOS.Forms
         }
 
         private void UpdateTotalDisplay()
-        {                
+        {
             lblTotal.Text = $"₱ {Total:#,###.00}";
         }
 
@@ -176,7 +176,7 @@ namespace LaundryPOS.Forms
             cartPanel.Controls.Clear();
         }
 
-        private void btnPayNow_Click(object sender, EventArgs e)
+        private async void btnPayNow_Click(object sender, EventArgs e)
         {
             if (orders.Items.Count <= 0)
             {
@@ -184,9 +184,27 @@ namespace LaundryPOS.Forms
                 return;
             }
 
+            if (!await ValidateStocks())
+            {
+                MessageBox.Show("Item quantity cannot exceed item stocks. Please check your order again.");
+                return;
+            }
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
             paymentForm.ShowDialog();
             ClearCart();
+        }
+
+        private async Task<bool> ValidateStocks()
+        {
+            foreach (var order in orders.Items)
+            {
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+                if (item == null || order.Quantity > item.Stock)
+                {
+                    return false; 
+                }
+            }
+            return true;
         }
 
         private async Task ApplyTheme()
