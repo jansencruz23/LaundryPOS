@@ -550,8 +550,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(389, 23);
             this.label4.TabIndex = 0;
-            this.label4.Text = "    Qty         Product                                    Price         Total Pr" +
-    "ice\r\n  ";
+            this.label4.Text = "    Qty           Product                                 Price       Total Price" +
+    "\r\n  ";
             // 
             // label1
             // 

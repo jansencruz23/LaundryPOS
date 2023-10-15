@@ -174,7 +174,7 @@ namespace LaundryPOS.Services
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
         }
-        public async Task ApplyOutlineThemeToButton(Guna2Button button)
+        public async Task ApplyOutlineThemeToButton(Guna2Button button, int borderThickness = 1)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -191,7 +191,7 @@ namespace LaundryPOS.Services
                 var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
                 button.FillColor = Color.Transparent;
                 button.BorderColor = themeColor;
-                button.BorderThickness = 1;
+                button.BorderThickness = borderThickness;
 
                 var brightness = themeColor.GetBrightness();
                 button.ForeColor = ColorTranslator.FromHtml(appSettings.Theme);

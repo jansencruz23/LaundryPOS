@@ -68,7 +68,7 @@
             this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageOffset = new System.Drawing.Point(0, 10);
             this.btnRemove.ImageSize = new System.Drawing.Size(10, 15);
-            this.btnRemove.Location = new System.Drawing.Point(227, 27);
+            this.btnRemove.Location = new System.Drawing.Point(223, 27);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnRemove.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

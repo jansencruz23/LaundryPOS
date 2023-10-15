@@ -28,17 +28,26 @@ namespace LaundryPOS.Forms
         private async void QuantityForm_Load(object sender, EventArgs e)
         {
             InitializeQuantity();
-            txtQuantity.Focus();
+            FocusTextbox();
             await ApplyTheme();
+        }
+
+        private void FocusTextbox()
+        {
+            BeginInvoke((MethodInvoker)delegate
+            {
+                txtQuantity.Focus();
+                txtQuantity.SelectAll();
+            });
         }
 
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToPanel(panelBg, 1f);
-            await _themeManager.ApplyOutlineThemeToButton(btnClose);
-            await _themeManager.ApplyOutlineThemeToButton(btnMinus);
-            await _themeManager.ApplyOutlineThemeToButton(btnAdd);
-            await _themeManager.ApplyOutlineThemeToButton(btnEnter);
+            await _themeManager.ApplyOutlineThemeToButton(btnClose, 2);
+            await _themeManager.ApplyOutlineThemeToButton(btnMinus, 2);
+            await _themeManager.ApplyOutlineThemeToButton(btnAdd, 2);
+            await _themeManager.ApplyOutlineThemeToButton(btnEnter,2);
             await _themeManager.ApplyThemeToButton(btn2);
             await _themeManager.ApplyThemeToButton(btn3);
             await _themeManager.ApplyThemeToButton(btn5);
@@ -57,6 +66,7 @@ namespace LaundryPOS.Forms
             if (sender is Guna2Button button)
             {
                 Quantity = int.Parse(button.Text);
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }
@@ -75,22 +85,34 @@ namespace LaundryPOS.Forms
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            Quantity = int.Parse(txtQuantity.Text);
-            Close();
+            try
+            {
+                Quantity = int.Parse(txtQuantity.Text);
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("Please input valid quantity");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Quantity = 0;
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void QuantityForm_KeyUp(object sender, KeyEventArgs e)
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Return ||
-                e.KeyCode == Keys.Space)
+            if (e.KeyChar == (char)Keys.Return || e.KeyChar == (char)Keys.Space)
             {
                 btnEnter.PerformClick();
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

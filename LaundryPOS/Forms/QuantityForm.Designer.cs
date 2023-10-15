@@ -170,13 +170,13 @@
             this.btnEnter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEnter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEnter.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEnter.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnter.ForeColor = System.Drawing.Color.White;
             this.btnEnter.Location = new System.Drawing.Point(29, 237);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnEnter.Size = new System.Drawing.Size(340, 45);
-            this.btnEnter.TabIndex = 0;
+            this.btnEnter.TabIndex = 1;
             this.btnEnter.Text = "ENTER QUANTITY";
             this.btnEnter.TextOffset = new System.Drawing.Point(0, 2);
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
@@ -231,7 +231,8 @@
             this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQuantity.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtQuantity.Location = new System.Drawing.Point(26, 50);
             this.txtQuantity.Name = "txtQuantity";
@@ -240,7 +241,9 @@
             this.txtQuantity.SelectedText = "";
             this.txtQuantity.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.txtQuantity.Size = new System.Drawing.Size(225, 42);
-            this.txtQuantity.TabIndex = 4;
+            this.txtQuantity.TabIndex = 0;
+            this.txtQuantity.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // btn10
             // 
@@ -300,7 +303,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.BorderRadius = 7;
-            this.btnClose.BorderThickness = 1;
+            this.btnClose.BorderThickness = 2;
             this.btnClose.CustomizableEdges = customizableEdges19;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -338,7 +341,6 @@
             this.Name = "QuantityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.QuantityForm_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.QuantityForm_KeyUp);
             this.panelBg.ResumeLayout(false);
             this.panelBody.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);

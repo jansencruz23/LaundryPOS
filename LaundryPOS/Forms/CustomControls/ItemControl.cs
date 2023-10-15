@@ -58,7 +58,10 @@ namespace LaundryPOS.Forms.Views
             InvokeOnClick(this, EventArgs.Empty);
 
             var quantityForm = new QuantityForm(_themeManager);
-            quantityForm.ShowDialog();
+
+            if (quantityForm.ShowDialog() == DialogResult.Cancel)
+                return;
+
             var quantity = quantityForm.Quantity;
 
             AddToCartClicked?.Invoke(this, 

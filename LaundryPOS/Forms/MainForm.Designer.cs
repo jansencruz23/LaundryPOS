@@ -125,11 +125,11 @@
             this.btnPayLater.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnPayLater.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPayLater.ForeColor = System.Drawing.Color.White;
-            this.btnPayLater.Location = new System.Drawing.Point(10, 37);
-            this.btnPayLater.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPayLater.Location = new System.Drawing.Point(10, 46);
+            this.btnPayLater.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.btnPayLater.Name = "btnPayLater";
             this.btnPayLater.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnPayLater.Size = new System.Drawing.Size(121, 43);
+            this.btnPayLater.Size = new System.Drawing.Size(121, 44);
             this.btnPayLater.TabIndex = 10;
             this.btnPayLater.Text = "PAY LATER";
             this.btnPayLater.TextOffset = new System.Drawing.Point(0, 1);
@@ -143,7 +143,7 @@
             this.cartPanel.Location = new System.Drawing.Point(1002, 172);
             this.cartPanel.Margin = new System.Windows.Forms.Padding(0);
             this.cartPanel.Name = "cartPanel";
-            this.cartPanel.Size = new System.Drawing.Size(273, 436);
+            this.cartPanel.Size = new System.Drawing.Size(273, 426);
             this.cartPanel.TabIndex = 7;
             this.cartPanel.WrapContents = false;
             // 
@@ -158,11 +158,11 @@
             this.btnPayNow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPayNow.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPayNow.ForeColor = System.Drawing.Color.White;
-            this.btnPayNow.Location = new System.Drawing.Point(141, 37);
-            this.btnPayNow.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPayNow.Location = new System.Drawing.Point(141, 46);
+            this.btnPayNow.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.btnPayNow.Name = "btnPayNow";
             this.btnPayNow.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnPayNow.Size = new System.Drawing.Size(122, 43);
+            this.btnPayNow.Size = new System.Drawing.Size(122, 44);
             this.btnPayNow.TabIndex = 9;
             this.btnPayNow.Text = "PAY NOW";
             this.btnPayNow.TextOffset = new System.Drawing.Point(0, 1);
@@ -172,12 +172,13 @@
             // 
             this.lblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotal.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotal.Location = new System.Drawing.Point(139, 0);
+            this.lblTotal.Location = new System.Drawing.Point(139, 3);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(126, 32);
+            this.lblTotal.Size = new System.Drawing.Size(126, 33);
             this.lblTotal.TabIndex = 8;
             this.lblTotal.Text = "₱";
-            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // categoryPanel
             // 
@@ -300,26 +301,27 @@
             this.tableLayoutPanel4.Controls.Add(this.lblTotal, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnPayLater, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnPayNow, 1, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1002, 608);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1002, 598);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.Padding = new System.Windows.Forms.Padding(5, 0, 5, 10);
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.29787F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.70213F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(273, 95);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(273, 105);
             this.tableLayoutPanel4.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(8, 0);
+            this.label2.Location = new System.Drawing.Point(8, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 32);
+            this.label2.Size = new System.Drawing.Size(125, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "Total";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // bgPanel
             // 

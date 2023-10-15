@@ -158,7 +158,7 @@ namespace LaundryPOS.Forms
 
         private void UpdateTotalDisplay()
         {
-            lblTotal.Text = $"{Total:#,###.00}";
+            lblTotal.Text = $"₱ {Total:#,###.00}";
         }
 
         private void ClearCart()
