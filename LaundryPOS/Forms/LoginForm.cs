@@ -72,5 +72,12 @@ namespace LaundryPOS.Forms
             await _themeManager.ApplyThemeToButton(btnLogin);
             await _themeManager.ApplyLighterThemeToPanel(rightPanel, 1f);
         }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = cbShowPassword.Checked 
+                ? '\0' 
+                : '•';
+        }
     }
 }

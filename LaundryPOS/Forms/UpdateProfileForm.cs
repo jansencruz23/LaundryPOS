@@ -92,5 +92,13 @@ namespace LaundryPOS.Forms
                 imgPic.Image = Image.FromFile(file.FileName);
             }
         }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new ChangePassword(_unitOfWork, _themeManager, _employee);
+            form.ShowDialog();
+            Show();
+        }
     }
 }

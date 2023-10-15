@@ -422,6 +422,7 @@
             this.btnChangePassword.TabIndex = 21;
             this.btnChangePassword.Text = "CHANGE PASSWORD";
             this.btnChangePassword.TextOffset = new System.Drawing.Point(0, 1);
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // txtUsername
             // 

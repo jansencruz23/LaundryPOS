@@ -58,7 +58,9 @@ namespace LaundryPOS.Forms
 
             if (existingCartItem != null)
             {
-                existingCartItem.CartItem.Quantity = e.CartItem.Quantity;
+                existingCartItem.CartItem.Quantity = (sender is ItemControl)
+                    ? existingCartItem.CartItem.Quantity + e.CartItem.Quantity
+                    : e.CartItem.Quantity;
                 existingCartItem.InitializeCartItem();
             }
             else
@@ -74,12 +76,6 @@ namespace LaundryPOS.Forms
 
             UpdateTotalValue();
             UpdateTotalDisplay();
-        }
-
-        private void ItemControl_AddQuantity(object sender, CartItemEventArgs e)
-        {
-            var cartItem = e.CartItem;
-            cartItem.Quantity += e.CartItem.Quantity;
         }
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)

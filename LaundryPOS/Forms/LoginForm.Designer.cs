@@ -65,19 +65,20 @@
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconLeft")));
             this.txtPassword.IconLeftOffset = new System.Drawing.Point(5, -1);
             this.txtPassword.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtPassword.Location = new System.Drawing.Point(22, 117);
+            this.txtPassword.Location = new System.Drawing.Point(22, 125);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtPassword.Size = new System.Drawing.Size(212, 38);
+            this.txtPassword.Size = new System.Drawing.Size(213, 40);
             this.txtPassword.TabIndex = 10;
             // 
             // txtUsername
@@ -92,19 +93,20 @@
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsername.IconLeft")));
             this.txtUsername.IconLeftOffset = new System.Drawing.Point(5, -1);
             this.txtUsername.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtUsername.Location = new System.Drawing.Point(22, 68);
+            this.txtUsername.Location = new System.Drawing.Point(22, 73);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtUsername.Size = new System.Drawing.Size(212, 38);
+            this.txtUsername.Size = new System.Drawing.Size(212, 40);
             this.txtUsername.TabIndex = 9;
             // 
             // guna2Panel1
@@ -148,22 +150,23 @@
             this.cbShowPassword.CheckedState.BorderRadius = 0;
             this.cbShowPassword.CheckedState.BorderThickness = 0;
             this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbShowPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbShowPassword.Location = new System.Drawing.Point(126, 166);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(108, 18);
+            this.cbShowPassword.Size = new System.Drawing.Size(122, 26);
             this.cbShowPassword.TabIndex = 0;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
             this.cbShowPassword.UncheckedState.BorderRadius = 3;
             this.cbShowPassword.UncheckedState.BorderThickness = 1;
             this.cbShowPassword.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(20, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 32);
@@ -180,7 +183,7 @@
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(22, 200);
             this.btnLogin.Name = "btnLogin";
@@ -191,6 +194,7 @@
             this.btnLogin.Size = new System.Drawing.Size(212, 41);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "LOGIN";
+            this.btnLogin.TextOffset = new System.Drawing.Point(0, 1);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // rightPanel
