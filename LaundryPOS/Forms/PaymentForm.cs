@@ -2,7 +2,7 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,7 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

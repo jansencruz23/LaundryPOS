@@ -1,6 +1,6 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 
 namespace LaundryPOS.Forms
 {

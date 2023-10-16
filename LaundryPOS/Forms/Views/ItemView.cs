@@ -2,7 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using System;
 using System.Collections.Generic;
@@ -297,5 +297,27 @@ namespace LaundryPOS.Forms.Views
                 MessageBox.Show("An error occured " + ex.Message);
             }
         }
+
+        private async void btnPrint_Click(object sender, EventArgs e)
+        {
+            var printer = new DGVPrinter();
+            var businessName = await GetBusinessName();
+
+            printer.Title = businessName;
+            printer.SubTitle = string.Format("Item/Service List", printer.SubTitleColor = Color.Black, printer);
+            printer.SubTitleSpacing = 15;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = businessName;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(itemTable);
+        }
+
+        private async Task<string> GetBusinessName() =>
+            (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
     }
 }

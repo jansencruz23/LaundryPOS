@@ -1,7 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -240,5 +240,27 @@ namespace LaundryPOS.Forms.Views
             ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
             => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
         }
+
+        private async void btnPrint_Click(object sender, EventArgs e)
+        {
+            var printer = new DGVPrinter();
+            var businessName = await GetBusinessName();
+
+            printer.Title = businessName;
+            printer.SubTitle = string.Format("Item/Service Category List", printer.SubTitleColor = Color.Black, printer);
+            printer.SubTitleSpacing = 15;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = businessName;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(categoryTable);
+        }
+
+        private async Task<string> GetBusinessName() =>
+            (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
     }
 }

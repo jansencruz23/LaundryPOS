@@ -859,10 +859,7 @@
   </Body>
   <Width>3.83208in</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageWidth>2.25in</PageWidth>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>

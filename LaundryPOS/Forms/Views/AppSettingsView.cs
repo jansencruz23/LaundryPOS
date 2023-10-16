@@ -2,7 +2,7 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using System;
 using System.Collections.Generic;

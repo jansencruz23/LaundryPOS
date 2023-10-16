@@ -1,7 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -230,5 +230,27 @@ namespace LaundryPOS.Forms.Views
 
             await DisplayTransactions(filterPredicate);
         }
+
+        private async void btnPrint_Click(object sender, EventArgs e)
+        {
+            var printer = new DGVPrinter();
+            var businessName = await GetBusinessName();
+
+            printer.Title = businessName;
+            printer.SubTitle = string.Format("Transaction List", printer.SubTitleColor = Color.Black, printer);
+            printer.SubTitleSpacing = 15;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = businessName;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(transactionTable);
+        }
+
+        private async Task<string> GetBusinessName() =>
+            (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
     }
 }

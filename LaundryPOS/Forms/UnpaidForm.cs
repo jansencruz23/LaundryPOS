@@ -1,7 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

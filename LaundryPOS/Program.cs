@@ -3,7 +3,7 @@ using LaundryPOS.DAL;
 using LaundryPOS.Data;
 using LaundryPOS.Forms;
 using LaundryPOS.Models;
-using LaundryPOS.Services;
+using LaundryPOS.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
