@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace LaundryPOS.Models
 
         public decimal Price { get; set; }
 
-        public string? PicPath { get; set; }
+        [Column(TypeName = "varbinary(max)")]
+        public byte[]? Image { get; set; }
 
         public int Stock { get; set; }
 

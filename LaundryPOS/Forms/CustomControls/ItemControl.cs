@@ -44,9 +44,16 @@ namespace LaundryPOS.Forms.Views
             lblCategory.Text = Item.Category.Name;
             lblPrice.Text = $"₱ {Item.Price:#,###.00}";
             lblStock.Text = $"Stk: {Item.Stock}";
-            imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(Item.PicPath) 
-                ? Item.PicPath :
-                "./default.png");
+            imgIcon.Image = GetImage();
+        }
+
+        private Image GetImage()
+        {
+            var imageData = Item.Image;
+            if (imageData == null)
+                return Image.FromFile("./default.png");
+
+            return Image.FromStream(new MemoryStream(Item.Image));
         }
 
         private void WireAllControls(Control control)

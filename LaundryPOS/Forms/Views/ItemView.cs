@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LaundryPOS.Helpers.DGVPrinter;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -58,18 +59,26 @@ namespace LaundryPOS.Forms.Views
             var item = new Item
             {
                 Name = txtName.Text,
-                PicPath = txtPath.Text,
+                Image = ConvertImageToByteArray(txtPath.Text),
                 CategoryId = selectedCategory.Value,
                 Price = price,
                 Stock = stock
             };
 
-            await CreateService(item);
+            await CreateItem(item);
             await RefreshData();
             ClearText();
         }
 
-        public async Task CreateService(Item service)
+        private byte[] ConvertImageToByteArray(string imagePath)
+        {
+            using var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
+            using var reader = new BinaryReader(stream);
+
+            return reader.ReadBytes((int)stream.Length);
+        }
+
+        public async Task CreateItem(Item service)
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
@@ -110,7 +119,7 @@ namespace LaundryPOS.Forms.Views
         private void HideUnwantedColumns()
         {
             itemTable.Columns[nameof(Item.ItemId)].Visible = false;
-            itemTable.Columns[nameof(Item.PicPath)].Visible = false;
+            itemTable.Columns[nameof(Item.Image)].Visible = false;
             itemTable.Columns[nameof(Item.CategoryId)].Visible = false;
         }
 
@@ -139,10 +148,7 @@ namespace LaundryPOS.Forms.Views
                     if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
                     {
                         var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
-                        var imagePath = rowData?.PicPath;
-                        e.Value = !string.IsNullOrEmpty(imagePath)
-                            ? Image.FromFile(imagePath)
-                            : Image.FromFile("./default.png");
+                        e.Value = GetImage(rowData);
                     }
                 };
             }
@@ -150,6 +156,15 @@ namespace LaundryPOS.Forms.Views
             {
                 MessageBox.Show("An error occured " + ex.Message);
             }
+        }
+
+        private Image GetImage(Item item)
+        {
+            var imageData = item.Image;
+            if (imageData == null)
+                return Image.FromFile("./default.png");
+
+            return Image.FromStream(new MemoryStream(item.Image));
         }
 
         private async Task RefreshData()
@@ -256,11 +271,8 @@ namespace LaundryPOS.Forms.Views
                 txtName.Text = _item.Name;
                 txtPrice.Text = _item.Price.ToString();
                 txtStock.Text = _item.Stock.ToString();
-                txtPath.Text = _item.PicPath;
-                imgIcon.Image = Image.FromFile(
-                    !string.IsNullOrWhiteSpace(_item.PicPath)
-                        ? _item.PicPath
-                        : "./default.png");
+                txtPath.Text = _item.Image?.ToString();
+                imgIcon.Image = GetImage(_item);
 
                 txtName.Enabled = true;
                 cbCategory.Enabled = true;
@@ -282,7 +294,7 @@ namespace LaundryPOS.Forms.Views
                     _item.Name = txtName.Text;
                     _item.Price = decimal.Parse(txtPrice.Text);
                     _item.Stock = int.Parse(txtStock.Text);
-                    _item.PicPath = txtPath.Text;
+                    _item.Image = ConvertImageToByteArray(txtPath.Text);
 
                     _unitOfWork.ItemRepo.Update(_item);
                     await _unitOfWork.SaveAsync();
