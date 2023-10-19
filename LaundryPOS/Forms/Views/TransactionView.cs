@@ -94,7 +94,6 @@ namespace LaundryPOS.Forms.Views
             transactionTable.AutoGenerateColumns = false;
 
             transactionTable.Columns["EmployeeId"].Visible = false;
-            transactionTable.Columns["TransactionId"].Visible = false;
             transactionTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
 
             transactionTable.Columns.Add("Quantity", "Quantity");
@@ -247,6 +246,8 @@ namespace LaundryPOS.Forms.Views
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.Footer = businessName;
             printer.FooterSpacing = 15;
+            printer.ColumnWidth = DGVPrinter.ColumnWidthSetting.DataWidth;
+            printer.TableAlignment = DGVPrinter.Alignment.Center;
             printer.PrintDataGridView(transactionTable);
         }
 
