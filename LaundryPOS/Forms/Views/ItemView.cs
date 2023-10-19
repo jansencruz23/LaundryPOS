@@ -23,6 +23,7 @@ namespace LaundryPOS.Forms.Views
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
         private Item _item;
+        private FileInfo _imageFile;
 
         public ItemView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -59,23 +60,28 @@ namespace LaundryPOS.Forms.Views
             var item = new Item
             {
                 Name = txtName.Text,
-                Image = ConvertImageToByteArray(txtPath.Text),
+                Image = GetImagePath(txtPath.Text),
                 CategoryId = selectedCategory.Value,
                 Price = price,
                 Stock = stock
             };
 
+            SaveToImages(txtPath.Text);
             await CreateItem(item);
             await RefreshData();
             ClearText();
         }
 
-        private byte[] ConvertImageToByteArray(string imagePath)
-        {
-            using var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
-            using var reader = new BinaryReader(stream);
+        private string GetImagePath(string imagePath)
+            => Path.Combine("Icons", "Images", Path.GetFileName(imagePath));
 
-            return reader.ReadBytes((int)stream.Length);
+        private void SaveToImages(string imagePath)
+        {
+            string rootPath = Path.Combine(Application.StartupPath);
+            string relativePath = Path.Combine("Icons", "Images", Path.GetFileName(imagePath));
+            string destinationPath = Path.Combine(rootPath, relativePath);
+            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
+            File.Copy(imagePath, destinationPath);
         }
 
         public async Task CreateItem(Item service)
@@ -160,11 +166,16 @@ namespace LaundryPOS.Forms.Views
 
         private Image GetImage(Item item)
         {
-            var imageData = item.Image;
-            if (imageData == null)
+            try
+            {
+                return item.Image != null
+                ? Image.FromFile(item.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
                 return Image.FromFile("./default.png");
-
-            return Image.FromStream(new MemoryStream(item.Image));
+            }
         }
 
         private async Task RefreshData()
@@ -182,6 +193,7 @@ namespace LaundryPOS.Forms.Views
 
             if (file.ShowDialog() == DialogResult.OK)
             {
+                _imageFile = new FileInfo(file.FileName);
                 txtPath.Text = file.FileName;
                 imgIcon.Image = Image.FromFile(file.FileName);
             }
@@ -294,14 +306,16 @@ namespace LaundryPOS.Forms.Views
                     _item.Name = txtName.Text;
                     _item.Price = decimal.Parse(txtPrice.Text);
                     _item.Stock = int.Parse(txtStock.Text);
-                    _item.Image = ConvertImageToByteArray(txtPath.Text);
+                    _item.Image = GetImagePath(txtPath.Text);
 
                     _unitOfWork.ItemRepo.Update(_item);
                     await _unitOfWork.SaveAsync();
 
                     MessageBox.Show("Category updated successfully");
+                    SaveToImages(txtPath.Text);
                     await RefreshData();
                     ClearText();
+                    // Delete file
                 }
             }
             catch (Exception ex)

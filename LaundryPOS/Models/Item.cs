@@ -17,8 +17,7 @@ namespace LaundryPOS.Models
 
         public decimal Price { get; set; }
 
-        [Column(TypeName = "varbinary(max)")]
-        public byte[]? Image { get; set; }
+        public string? Image { get; set; }
 
         public int Stock { get; set; }
 

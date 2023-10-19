@@ -49,12 +49,18 @@ namespace LaundryPOS.Forms.Views
 
         private Image GetImage()
         {
-            var imageData = Item.Image;
-            if (imageData == null)
+            try
+            {
+                return Item.Image != null
+                ? Image.FromFile(Item.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
                 return Image.FromFile("./default.png");
-
-            return Image.FromStream(new MemoryStream(Item.Image));
+            }
         }
+
 
         private void WireAllControls(Control control)
         {
