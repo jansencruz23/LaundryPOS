@@ -46,31 +46,48 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (cbCategory.SelectedItem == null ||
-                !decimal.TryParse(txtPrice.Text, out decimal price) ||
-                !int.TryParse(txtStock.Text, out int stock) ||
-                string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtPath.Text))
+            if (!ValidateInputs())
             {
                 MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
                 return;
             }
 
-            var selectedCategory = (dynamic)cbCategory.SelectedItem;
-
-            var item = new Item
-            {
-                Name = txtName.Text,
-                Image = GetImagePath(SaveToImages(txtPath.Text)),
-                CategoryId = selectedCategory.Value,
-                Price = price,
-                Stock = stock
-            };
-
+            var item = CreateItemFromInputs();
             SaveToImages(txtPath.Text);
             await CreateItem(item);
             await RefreshData();
             ClearText();
+        }
+
+        private bool ValidateInputs()
+        {
+            if (cbCategory.SelectedItem == null ||
+                !decimal.TryParse(txtPrice.Text, out _) ||
+                !int.TryParse(txtStock.Text, out _) ||
+                string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtPath.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private Item CreateItemFromInputs()
+        {
+            var selectedCategory = (dynamic)cbCategory.SelectedItem;
+            var price = decimal.Parse(txtPrice.Text);
+            var stock = int.Parse(txtStock.Text);
+            var imagePath = SaveToImages(txtPath.Text);
+
+            return new Item
+            {
+                Name = txtName.Text,
+                Image = GetImagePath(imagePath),
+                CategoryId = selectedCategory.Value,
+                Price = price,
+                Stock = stock
+            };
         }
 
         private string GetImagePath(string imagePath)
@@ -319,20 +336,18 @@ namespace LaundryPOS.Forms.Views
         {
             try
             {
+                if (!ValidateInputs())
+                {
+                    MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
+                    return;
+                }
+
                 if (_item != null)
                 {
-                    _item.Name = txtName.Text;
-                    _item.Price = decimal.Parse(txtPrice.Text);
-                    _item.Stock = int.Parse(txtStock.Text);
-                    _item.Image = GetImagePath(SaveToImages(txtPath.Text));
-
-                    _unitOfWork.ItemRepo.Update(_item);
-                    await _unitOfWork.SaveAsync();
-
+                    await UpdateItem();
                     MessageBox.Show("Item updated successfully");
                     await RefreshData();
                     ClearText();
-                    // Delete file
 
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
@@ -342,6 +357,17 @@ namespace LaundryPOS.Forms.Views
             {
                 MessageBox.Show("An error occured " + ex.Message);
             }
+        }
+
+        private async Task UpdateItem()
+        {
+            _item.Name = txtName.Text;
+            _item.Price = decimal.Parse(txtPrice.Text);
+            _item.Stock = int.Parse(txtStock.Text);
+            _item.Image = GetImagePath(SaveToImages(txtPath.Text));
+
+            _unitOfWork.ItemRepo.Update(_item);
+            await _unitOfWork.SaveAsync();
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)
@@ -356,7 +382,7 @@ namespace LaundryPOS.Forms.Views
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
-            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
+            printer.RowHeight = RowHeightSetting.CellHeight;
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.Footer = businessName;
             printer.FooterSpacing = 15;

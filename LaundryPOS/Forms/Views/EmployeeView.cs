@@ -197,5 +197,23 @@ namespace LaundryPOS.Forms.Views
 
         private async Task<string> GetBusinessName() =>
             (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to log out?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                RestartApplication();
+            }
+        }
+
+        private void RestartApplication()
+        {
+            string appPath = Application.ExecutablePath;
+            System.Diagnostics.Process.Start(appPath);
+            Application.Exit();
+        }
     }
 }
