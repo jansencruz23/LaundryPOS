@@ -60,7 +60,7 @@ namespace LaundryPOS.Forms.Views
             var item = new Item
             {
                 Name = txtName.Text,
-                Image = GetImagePath(txtPath.Text),
+                Image = GetImagePath(SaveToImages(txtPath.Text)),
                 CategoryId = selectedCategory.Value,
                 Price = price,
                 Stock = stock
@@ -73,22 +73,26 @@ namespace LaundryPOS.Forms.Views
         }
 
         private string GetImagePath(string imagePath)
-            => Path.Combine("Icons", "Images", Path.GetFileName(imagePath));
+            => Path.Combine("Icons", "Images", "Items", Path.GetFileName(imagePath));
 
-        private void SaveToImages(string imagePath)
+        private string SaveToImages(string imagePath)
         {
-            string rootPath = Path.Combine(Application.StartupPath);
-            string relativePath = Path.Combine("Icons", "Images", Path.GetFileName(imagePath));
-            string destinationPath = Path.Combine(rootPath, relativePath);
+            string uniqueName = $"{Guid.NewGuid().ToString()[(32 - 4)..]}_{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
+            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Items", uniqueName);
             Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
             File.Copy(imagePath, destinationPath);
+
+            if (Path.GetFileName(imagePath).Length > 200)
+                MessageBox.Show("File name too long. Please rename and try again.");
+
+            return uniqueName;
         }
 
         public async Task CreateItem(Item service)
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
-        }
+        }   
 
         private async Task InitializeCategory()
         {
@@ -204,6 +208,8 @@ namespace LaundryPOS.Forms.Views
             txtName.Text = string.Empty;
             txtPrice.Text = string.Empty;
             txtPath.Text = string.Empty;
+            txtStock.Text = string.Empty;
+            imgIcon.Image = null;
         }
 
         private async Task ApplyTheme()
@@ -262,6 +268,7 @@ namespace LaundryPOS.Forms.Views
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ClearText();
             txtName.Enabled = true;
             txtPrice.Enabled = true;
             txtStock.Enabled = true;
@@ -269,6 +276,8 @@ namespace LaundryPOS.Forms.Views
 
             btnFile.Enabled = true;
             btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private async void itemTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -294,6 +303,7 @@ namespace LaundryPOS.Forms.Views
 
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                btnSave.Enabled = false;
             }
         }
 
@@ -306,16 +316,18 @@ namespace LaundryPOS.Forms.Views
                     _item.Name = txtName.Text;
                     _item.Price = decimal.Parse(txtPrice.Text);
                     _item.Stock = int.Parse(txtStock.Text);
-                    _item.Image = GetImagePath(txtPath.Text);
+                    _item.Image = GetImagePath(SaveToImages(txtPath.Text));
 
                     _unitOfWork.ItemRepo.Update(_item);
                     await _unitOfWork.SaveAsync();
 
                     MessageBox.Show("Category updated successfully");
-                    SaveToImages(txtPath.Text);
                     await RefreshData();
                     ClearText();
                     // Delete file
+
+                    btnUpdate.Enabled = false;
+                    btnDelete.Enabled = false;
                 }
             }
             catch (Exception ex)
