@@ -72,7 +72,7 @@ namespace LaundryPOS.Forms.Views
                 if (e.ColumnIndex == categoryTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
                     var rowData = categoryTable.Rows[e.RowIndex].DataBoundItem as Category;
-                    var imagePath = rowData?.PicPath;
+                    var imagePath = rowData?.Image;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
                         : null;
@@ -83,15 +83,22 @@ namespace LaundryPOS.Forms.Views
         private void HideUnwantedColumns()
         {
             categoryTable.Columns[nameof(Category.CategoryId)].Visible = false;
-            categoryTable.Columns[nameof(Category.PicPath)].Visible = false;
+            categoryTable.Columns[nameof(Category.Image)].Visible = false;
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtPath.Text))
+            {
+                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
+                return;
+            }
+
             var category = new Category
             {
                 Name = txtName.Text,
-                PicPath = txtPath.Text
+                Image = GetImagePath(SaveToImages(txtPath.Text))
             };
 
             _unitOfWork.CategoryRepo.Insert(category);
@@ -99,6 +106,34 @@ namespace LaundryPOS.Forms.Views
 
             btnAdd.Enabled = true;
             ClearText();
+        }
+
+        private string GetImagePath(string imagePath)
+            => Path.Combine("Icons", "Images", "Categories", Path.GetFileName(imagePath));
+
+        private string SaveToImages(string imagePath)
+        {
+            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
+                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
+            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Categories", uniqueName);
+            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
+            File.Copy(imagePath, destinationPath);
+
+            return uniqueName;
+        }
+
+        private Image GetImage(Category category)
+        {
+            try
+            {
+                return category.Image != null
+                ? Image.FromFile(category.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -149,11 +184,8 @@ namespace LaundryPOS.Forms.Views
                     .GetByID(categoryId.Value);
 
                 txtName.Text = _category.Name;
-                txtPath.Text = _category.PicPath;
-                imgIcon.Image = Image.FromFile(
-                    !string.IsNullOrWhiteSpace(_category.PicPath)
-                        ? _category.PicPath
-                        : "./default.png");
+                txtPath.Text = _category.Image;
+                imgIcon.Image = GetImage(_category);
 
 
                 btnDelete.Enabled = true;
@@ -178,7 +210,7 @@ namespace LaundryPOS.Forms.Views
                 if (_category != null)
                 {
                     _category.Name = txtName.Text;
-                    _category.PicPath = txtPath.Text;
+                    _category.Image = GetImagePath(SaveToImages(txtPath.Text));
 
                     _unitOfWork.CategoryRepo.Update(_category);
                     await _unitOfWork.SaveAsync();

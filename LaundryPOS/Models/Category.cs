@@ -12,6 +12,6 @@ namespace LaundryPOS.Models
 
         public string Name { get; set; }
         
-        public string? PicPath { get; set; }
+        public string? Image { get; set; }
     }
 }
