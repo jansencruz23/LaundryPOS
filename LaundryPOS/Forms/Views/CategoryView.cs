@@ -129,7 +129,7 @@ namespace LaundryPOS.Forms.Views
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
-                { 
+                {
                     await _unitOfWork.CategoryRepo.Delete(_category.CategoryId);
                     await _unitOfWork.SaveAsync();
 
@@ -155,15 +155,18 @@ namespace LaundryPOS.Forms.Views
                         ? _category.PicPath
                         : "./default.png");
 
+
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+                btnSave.Enabled = false;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            ClearText();
+
             btnSave.Enabled = true;
-            btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
         }
@@ -212,11 +215,6 @@ namespace LaundryPOS.Forms.Views
             _changeAdminView?.Invoke(view);
         }
 
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnItem_Click(object sender, EventArgs e)
         {
             ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
@@ -262,5 +260,23 @@ namespace LaundryPOS.Forms.Views
 
         private async Task<string> GetBusinessName() =>
             (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to log out?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                RestartApplication();
+            }
+        }
+
+        private void RestartApplication()
+        {
+            string appPath = Application.ExecutablePath;
+            System.Diagnostics.Process.Start(appPath);
+            Application.Exit();
+        }
     }
 }

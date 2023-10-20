@@ -49,9 +49,10 @@ namespace LaundryPOS.Forms.Views
             if (cbCategory.SelectedItem == null ||
                 !decimal.TryParse(txtPrice.Text, out decimal price) ||
                 !int.TryParse(txtStock.Text, out int stock) ||
-                string.IsNullOrWhiteSpace(txtName.Text))
+                string.IsNullOrWhiteSpace(txtName.Text) ||
+                string.IsNullOrWhiteSpace(txtPath.Text))
             {
-                MessageBox.Show("Invalid Input");
+                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
                 return;
             }
 
@@ -77,13 +78,11 @@ namespace LaundryPOS.Forms.Views
 
         private string SaveToImages(string imagePath)
         {
-            string uniqueName = $"{Guid.NewGuid().ToString()[(32 - 4)..]}_{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
+            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
+                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
             string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Items", uniqueName);
             Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
             File.Copy(imagePath, destinationPath);
-
-            if (Path.GetFileName(imagePath).Length > 200)
-                MessageBox.Show("File name too long. Please rename and try again.");
 
             return uniqueName;
         }
@@ -92,7 +91,7 @@ namespace LaundryPOS.Forms.Views
         {
             _unitOfWork.ItemRepo.Insert(service);
             await _unitOfWork.SaveAsync();
-        }   
+        }
 
         private async Task InitializeCategory()
         {
@@ -104,7 +103,7 @@ namespace LaundryPOS.Forms.Views
             })
             .ToList();
 
-            cbCategory.DisplayMember = "Text"; 
+            cbCategory.DisplayMember = "Text";
             cbCategory.ValueMember = "Value";
         }
 
@@ -162,7 +161,7 @@ namespace LaundryPOS.Forms.Views
                     }
                 };
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("An error occured " + ex.Message);
             }
@@ -226,7 +225,7 @@ namespace LaundryPOS.Forms.Views
 
             var columnName = itemTable.Columns[e.ColumnIndex].Name;
 
-            if (columnName == "Category" && 
+            if (columnName == "Category" &&
                 itemTable.Rows[e.RowIndex].DataBoundItem is Item rowData)
             {
                 e.Value = rowData.Category?.Name;
@@ -269,6 +268,11 @@ namespace LaundryPOS.Forms.Views
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearText();
+            EnableInputAddControls();
+        }
+
+        private void EnableInputAddControls()
+        {
             txtName.Enabled = true;
             txtPrice.Enabled = true;
             txtStock.Enabled = true;
@@ -295,16 +299,20 @@ namespace LaundryPOS.Forms.Views
                 txtPath.Text = _item.Image?.ToString();
                 imgIcon.Image = GetImage(_item);
 
-                txtName.Enabled = true;
-                cbCategory.Enabled = true;
-                txtPrice.Enabled = true;
-                txtStock.Enabled = true;
-                btnFile.Enabled = true;
-
-                btnDelete.Enabled = true;
-                btnUpdate.Enabled = true;
-                btnSave.Enabled = false;
+                EnableInputEditControls();
             }
+        }
+
+        private void EnableInputEditControls()
+        {
+            txtName.Enabled = true;
+            cbCategory.Enabled = true;
+            txtPrice.Enabled = true;
+            txtStock.Enabled = true;
+            btnFile.Enabled = true;
+
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
         }
 
         private async void btnUpdate_Click(object sender, EventArgs e)
@@ -321,7 +329,7 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.ItemRepo.Update(_item);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Category updated successfully");
+                    MessageBox.Show("Item updated successfully");
                     await RefreshData();
                     ClearText();
                     // Delete file
@@ -357,5 +365,54 @@ namespace LaundryPOS.Forms.Views
 
         private async Task<string> GetBusinessName() =>
             (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to delete this item?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    _unitOfWork.ItemRepo.Delete(_item);
+                    await _unitOfWork.SaveAsync();
+
+                    ClearText();
+                    ResetButtons();
+                    await RefreshData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error occured: {ex.Message}");
+                }
+            }
+        }
+
+        private void ResetButtons()
+        {
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Are you sure you want to log out?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                RestartApplication();
+            }
+        }
+
+        private void RestartApplication()
+        {
+            string appPath = Application.ExecutablePath;
+            System.Diagnostics.Process.Start(appPath);
+            Application.Exit();
+        }
     }
 }

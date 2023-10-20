@@ -98,7 +98,7 @@
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -605,7 +605,7 @@
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.guna2Button8, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.btnLogout, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.btnPrint, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 685);
@@ -617,25 +617,26 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(208, 73);
             this.tableLayoutPanel9.TabIndex = 25;
             // 
-            // guna2Button8
+            // btnLogout
             // 
-            this.guna2Button8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.CustomizableEdges = customizableEdges19;
-            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
-            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button8.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button8.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button8.Location = new System.Drawing.Point(3, 39);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.guna2Button8.Size = new System.Drawing.Size(202, 31);
-            this.guna2Button8.TabIndex = 23;
-            this.guna2Button8.Text = "Log out";
-            this.guna2Button8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.CustomizableEdges = customizableEdges19;
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogout.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.DimGray;
+            this.btnLogout.Location = new System.Drawing.Point(3, 39);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.btnLogout.Size = new System.Drawing.Size(202, 31);
+            this.btnLogout.TabIndex = 23;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnPrint
             // 
@@ -763,6 +764,7 @@
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete Item";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -973,7 +975,7 @@
         private Guna.UI2.WinForms.Guna2Button btnItem;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private TableLayoutPanel tableLayoutPanel9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
     }
 }

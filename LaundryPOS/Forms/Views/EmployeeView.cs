@@ -152,6 +152,7 @@ namespace LaundryPOS.Forms.Views
                     await _unitOfWork.SaveAsync();
 
                     MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnDelete.Enabled = false;
                 }
             }
         }
