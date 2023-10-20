@@ -34,7 +34,7 @@ namespace LaundryPOS.Models
 
         public int Age { get; set; }
 
-        public string? PicPath { get; set; }
+        public string? Image { get; set; }
 
         public DateTime BirthDate { get; set; }
 

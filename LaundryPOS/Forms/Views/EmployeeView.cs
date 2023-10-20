@@ -59,7 +59,7 @@ namespace LaundryPOS.Forms.Views
         private void HideUnwantedColumns()
         {
             employeeTable.Columns[nameof(Employee.EmployeeId)].Visible = false;
-            employeeTable.Columns[nameof(Employee.PicPath)].Visible = false;
+            employeeTable.Columns[nameof(Employee.Image)].Visible = false;
             employeeTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
             employeeTable.Columns[nameof(Employee.Salt)].Visible = false;
             employeeTable.Columns[nameof(Employee.IsActive)].Visible = false;
@@ -87,7 +87,7 @@ namespace LaundryPOS.Forms.Views
                 if (e.ColumnIndex == employeeTable.Columns["Image"].Index && e.RowIndex >= 0)
                 {
                     var rowData = employeeTable.Rows[e.RowIndex].DataBoundItem as Employee;
-                    var imagePath = rowData?.PicPath;
+                    var imagePath = rowData?.Image;
                     e.Value = !string.IsNullOrEmpty(imagePath)
                         ? Image.FromFile(imagePath)
                         : null;
@@ -152,9 +152,34 @@ namespace LaundryPOS.Forms.Views
                     await _unitOfWork.SaveAsync();
 
                     MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await RefreshData();
+                    ClearText();
                     btnDelete.Enabled = false;
                 }
             }
+        }
+
+        private Image GetImage(Employee employee)
+        {
+            try
+            {
+                return employee.Image != null
+                ? Image.FromFile(employee.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
+        }
+
+        private void ClearText()
+        {
+            imgPic.Image = default;
+            lblAge.Text = string.Empty;
+            lblBirthday.Text = string.Empty;
+            lblName.Text = string.Empty;
+            lblUsername.Text = string.Empty;
         }
 
         private async void employeeTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -170,7 +195,7 @@ namespace LaundryPOS.Forms.Views
                 lblUsername.Text = _employee.Username;
                 lblAge.Text = _employee.Age.ToString();
                 lblBirthday.Text = _employee.BirthDate.ToShortDateString();
-                imgPic.Image = Image.FromFile(_employee.PicPath ?? "./default.png");
+                imgPic.Image = GetImage(_employee);
 
                 btnDelete.Enabled = true;
             }

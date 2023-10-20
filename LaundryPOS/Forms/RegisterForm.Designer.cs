@@ -258,6 +258,7 @@
             this.imgPic.Name = "imgPic";
             this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.imgPic.Size = new System.Drawing.Size(98, 86);
+            this.imgPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgPic.TabIndex = 10;
             this.imgPic.TabStop = false;
             // 

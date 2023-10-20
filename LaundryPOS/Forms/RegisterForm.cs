@@ -26,19 +26,43 @@ namespace LaundryPOS
 
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-            var allTextboxesFilled = Controls.OfType<Guna2TextBox>()
-                .All(t => !string.IsNullOrEmpty(t.Text));
-
-            if (!allTextboxesFilled)
+            if (!ValidateInput())
             {
-                MessageBox.Show("Please fill all the fields.");
+                MessageBox.Show("Please fill all the fields including image.");
                 return;
             }
 
+            var employeeIsExisting = await _unitOfWork.EmployeeRepo
+                .IsEmployeeExisting(txtUsername.Text);
+
+            if (employeeIsExisting)
+            {
+                MessageBox.Show("Username already exists.");
+                return;
+            }
+
+            var employee = CreateEmployee();
+            _unitOfWork.EmployeeRepo.Insert(employee);
+            await _unitOfWork.SaveAsync();
+
+            Close();
+        }
+
+        private bool ValidateInput()
+            => !(string.IsNullOrWhiteSpace(txtUsername.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text) ||
+                string.IsNullOrWhiteSpace(txtConfirmPassword.Text) ||
+                string.IsNullOrWhiteSpace(txtFirstName.Text) ||
+                string.IsNullOrWhiteSpace(txtLastName.Text) ||
+                string.IsNullOrWhiteSpace(txtPath.Text));
+
+        private Employee CreateEmployee()
+        {
+            var imagePath = SaveToImages(txtPath.Text);
             var employee = new Employee
             {
                 Username = txtUsername.Text,
-                PicPath = txtPath.Text,
+                Image = GetImagePath(imagePath),
                 BirthDate = dtpBirthday.Value,
                 Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25),
                 FirstName = txtFirstName.Text,
@@ -48,13 +72,21 @@ namespace LaundryPOS
             };
             employee.SetPassword(txtPassword.Text);
 
-            await CreateEmployee(employee);
+            return employee;
         }
 
-        public async Task CreateEmployee(Employee employee)
+        private string GetImagePath(string imagePath)
+            => Path.Combine("Icons", "Images", "Employees", Path.GetFileName(imagePath));
+
+        private string SaveToImages(string imagePath)
         {
-            _unitOfWork.EmployeeRepo.Insert(employee);
-            await _unitOfWork.SaveAsync();
+            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
+                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
+            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Employees", uniqueName);
+            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
+            File.Copy(imagePath, destinationPath);
+
+            return uniqueName;
         }
 
         private void btnFile_Click(object sender, EventArgs e)

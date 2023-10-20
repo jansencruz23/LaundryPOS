@@ -23,7 +23,6 @@ namespace LaundryPOS.Forms.Views
         private readonly ThemeManager _themeManager;
         private readonly ChangeAdminViewDelegate _changeAdminView;
         private Item _item;
-        private FileInfo _imageFile;
 
         public ItemView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -53,25 +52,17 @@ namespace LaundryPOS.Forms.Views
             }
 
             var item = CreateItemFromInputs();
-            SaveToImages(txtPath.Text);
             await CreateItem(item);
             await RefreshData();
             ClearText();
         }
 
         private bool ValidateInputs()
-        {
-            if (cbCategory.SelectedItem == null ||
+            => !(cbCategory.SelectedItem == null ||
                 !decimal.TryParse(txtPrice.Text, out _) ||
                 !int.TryParse(txtStock.Text, out _) ||
                 string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtPath.Text))
-            {
-                return false;
-            }
-
-            return true;
-        }
+                string.IsNullOrWhiteSpace(txtPath.Text));
 
         private Item CreateItemFromInputs()
         {
@@ -213,7 +204,6 @@ namespace LaundryPOS.Forms.Views
 
             if (file.ShowDialog() == DialogResult.OK)
             {
-                _imageFile = new FileInfo(file.FileName);
                 txtPath.Text = file.FileName;
                 imgIcon.Image = Image.FromFile(file.FileName);
             }

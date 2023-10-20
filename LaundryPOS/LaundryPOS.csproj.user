@@ -49,10 +49,10 @@
     <Compile Update="Forms\Views\AppSettingsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\CategoryView.cs">
+    <Compile Update="Forms\CustomControls\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\CustomControls\ItemControl.cs">
+    <Compile Update="Forms\Views\CategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\Views\EmployeeView.cs">

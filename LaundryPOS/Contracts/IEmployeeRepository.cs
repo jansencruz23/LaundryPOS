@@ -9,6 +9,7 @@ namespace LaundryPOS.Contracts
 {
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
+        Task<bool> IsEmployeeExisting(string username);
         Task<Employee> GetEmployeeByUsername(string username);
         Task<IEnumerable<Employee>> GetTransactedEmployee(int transactionId);
         Task<Employee> GetAdmin();

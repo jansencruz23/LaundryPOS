@@ -118,8 +118,8 @@ namespace LaundryPOS.Forms
         private void DisplayEmployeeInfo()
         {
             lblEmployeeName.Text = _employee.FullName;
-            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.PicPath)
-                ? _employee.PicPath
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
+                ? _employee.Image
                 : "./default.png");
         }
 

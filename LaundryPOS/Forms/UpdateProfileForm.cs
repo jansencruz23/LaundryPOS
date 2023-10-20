@@ -47,9 +47,9 @@ namespace LaundryPOS.Forms
         {
             txtFirstName.Text = _employee.FirstName;
             txtLastName.Text = _employee.LastName;
-            txtPath.Text = _employee.PicPath ?? string.Empty;
-            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.PicPath)
-                ? _employee.PicPath
+            txtPath.Text = _employee.Image ?? string.Empty;
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
+                ? _employee.Image
                 : "./default.png");
             dtpBirthday.Value = _employee.BirthDate;
             txtUsername.Text = _employee.Username;
@@ -71,7 +71,7 @@ namespace LaundryPOS.Forms
             _employee.FirstName = txtFirstName.Text;
             _employee.LastName = txtLastName.Text;
             _employee.BirthDate = dtpBirthday.Value;
-            _employee.PicPath = txtPath.Text;
+            _employee.Image = txtPath.Text;
             _employee.Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25);
             _employee.Username = txtUsername.Text;
 

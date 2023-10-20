@@ -40,8 +40,8 @@ namespace LaundryPOS.Forms
         {
             lblName.Text = _employee.FullName;
             lblUsername.Text = _employee.Username;
-            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.PicPath)
-                ? _employee.PicPath
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
+                ? _employee.Image
                 : "./default.png");
         }
 
