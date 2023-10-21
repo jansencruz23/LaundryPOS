@@ -429,6 +429,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "AppSettingsView";
             this.Size = new System.Drawing.Size(1520, 761);
+            this.Load += new System.EventHandler(this.AppSettingsView_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

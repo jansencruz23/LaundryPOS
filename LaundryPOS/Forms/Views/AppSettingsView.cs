@@ -27,7 +27,23 @@ namespace LaundryPOS.Forms.Views
             : base (unitOfWork, themeManager, changeAdminView)
         {
             InitializeComponent();
-            ApplyTheme();
+        }
+
+        private async void AppSettingsView_Load(object sender, EventArgs e)
+        {
+            await ApplyTheme();
+            await FillData();
+        }
+
+        private async Task FillData()
+        {
+            var appData = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_VALUE);
+
+            txtName.Text = appData.Name;
+            txtAddress.Text = appData.Address;
+            txtNumber.Text = appData.PhoneNumber;
+            txtEmail.Text = appData.Email;
+            txtDescription.Text = appData.Description ?? string.Empty;
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -81,7 +97,7 @@ namespace LaundryPOS.Forms.Views
             appSettings.Theme = theme;
         }
 
-        private async void ApplyTheme()
+        private async Task ApplyTheme()
         {
             await _themeManager.ApplyOutlineThemeToButton(btnColor);
             await _themeManager.ApplyOutlineThemeToButton(btnCancel);
