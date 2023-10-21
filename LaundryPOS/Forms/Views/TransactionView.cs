@@ -2,28 +2,17 @@
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using LaundryPOS.Delegates;
 using System.Linq.Expressions;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class TransactionView : UserControl
+    public partial class TransactionView : BaseViewControl
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
-        private readonly ChangeAdminViewDelegate _changeAdminView;
-        private List<Employee> employeeCache;
+        private readonly List<Employee> _employeeCache;
 
+        #region -- CONSTANTS --
         private const int DAYS_IN_WEEK = 7;
         private const int NEXT_DAY = 1;
         private const int NEXT_MONTH = 1;
@@ -34,16 +23,14 @@ namespace LaundryPOS.Forms.Views
         private const int LAST_HOUR = 23;
         private const int LAST_MINUTE = 59;
         private const int LAST_SECOND = 59;
+        #endregion
 
         public TransactionView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base (unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
-            employeeCache = new();
-
+            _employeeCache = new();
             InitializeComponent();
         }
 
@@ -52,7 +39,7 @@ namespace LaundryPOS.Forms.Views
             var employees = await _unitOfWork.EmployeeRepo.Get();
 
             foreach (var employee in employees)
-                employeeCache.Add(employee);
+                _employeeCache.Add(employee);
         }
 
         private async void TransactionView_Load(object sender, EventArgs e)
@@ -116,7 +103,7 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "Employee")
             {
                 var transaction = (GroupedTransactionViewModel)transactionTable.Rows[e.RowIndex].DataBoundItem;
-                var employee = employeeCache.FirstOrDefault(emp => emp.Id == transaction.EmployeeId);
+                var employee = _employeeCache.FirstOrDefault(emp => emp.Id == transaction.EmployeeId);
                 e.Value = employee?.FullName ?? string.Empty;
             }
 
@@ -144,36 +131,24 @@ namespace LaundryPOS.Forms.Views
             await _themeManager.ApplyLighterThemeToDataGridView(transactionTable);
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
         private void btnItem_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<ItemView>());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<CategoryView>());
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<EmployeeView>());
         }
 
         private void btnAdminProfile_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<AdminProfileView>());
         }
 
         private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,5 +228,10 @@ namespace LaundryPOS.Forms.Views
 
         private async Task<string> GetBusinessName() =>
             (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ConfirmLogout();
+        }
     }
 }

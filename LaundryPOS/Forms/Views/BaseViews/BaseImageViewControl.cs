@@ -2,33 +2,17 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using LaundryPOS.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class BaseImageViewControl<T> : UserControl
+    public partial class BaseImageViewControl<T> : BaseViewControl
         where T : ImageEntity
     {
-        protected readonly IUnitOfWork _unitOfWork;
-        protected readonly ThemeManager _themeManager;
-        protected readonly ChangeAdminViewDelegate _changeAdminView;
-
         public BaseImageViewControl(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base (unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
         }
 
         public BaseImageViewControl() { }
@@ -60,19 +44,5 @@ namespace LaundryPOS.Forms.Views
 
         protected string GetImagePath(string imagePath, string folderName)
             => Path.Combine("Icons", "Images", folderName, Path.GetFileName(imagePath));
-
-        protected void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
-        protected Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> CreateView<T>() 
-            where T : UserControl
-                => (_unitOfWork, _themeManager, _changeAdminView) 
-                    => Activator.CreateInstance(
-                        typeof(T), _unitOfWork, _themeManager, _changeAdminView) as T;
     }
 }

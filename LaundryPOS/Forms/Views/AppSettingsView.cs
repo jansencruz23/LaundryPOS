@@ -16,22 +16,16 @@ using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class AppSettingsView : UserControl
+    public partial class AppSettingsView : BaseViewControl
     {
         private const int FIRST_VALUE = 1;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
-        private readonly ChangeAdminViewDelegate _changeAdminView;
         private string theme = "#000";
 
         public AppSettingsView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base (unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
-
             InitializeComponent();
             ApplyTheme();
         }
@@ -53,6 +47,7 @@ namespace LaundryPOS.Forms.Views
             await _unitOfWork.SaveAsync();
 
             MessageBox.Show("Restart application to see results");
+            RestartApplication();
         }
 
         private void btnColor_Click(object sender, EventArgs e)
@@ -93,18 +88,9 @@ namespace LaundryPOS.Forms.Views
             await _themeManager.ApplyThemeToButton(btnSave);
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<ItemView>());
         }
     }
 }

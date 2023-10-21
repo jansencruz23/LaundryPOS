@@ -46,14 +46,14 @@
     <Compile Update="Forms\Views\AdminProfileView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\AppSettingsView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Forms\CustomControls\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\BaseImageViewControl.cs">
+    <Compile Update="Forms\Views\AppSettingsView.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\UnpaidForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Views\BaseViews\BaseCategoryView.cs">
       <SubType>UserControl</SubType>
@@ -72,9 +72,6 @@
     </Compile>
     <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Forms\UnpaidForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Views\TransactionView.cs">
       <SubType>UserControl</SubType>
