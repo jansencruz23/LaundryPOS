@@ -116,7 +116,7 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "Employee")
             {
                 var transaction = (GroupedTransactionViewModel)transactionTable.Rows[e.RowIndex].DataBoundItem;
-                var employee = employeeCache.FirstOrDefault(emp => emp.EmployeeId == transaction.EmployeeId);
+                var employee = employeeCache.FirstOrDefault(emp => emp.Id == transaction.EmployeeId);
                 e.Value = employee?.FullName ?? string.Empty;
             }
 

@@ -52,6 +52,18 @@
     <Compile Update="Forms\CustomControls\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\BaseImageViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\BaseViews\BaseCategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\BaseViews\BaseEmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\BaseViews\BaseItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\CategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>

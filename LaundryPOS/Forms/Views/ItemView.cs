@@ -14,24 +14,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static LaundryPOS.Helpers.DGVPrinter;
+using LaundryPOS.Forms.Views.BaseViews;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class ItemView : UserControl
+    public partial class ItemView : BaseItemView
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
-        private readonly ChangeAdminViewDelegate _changeAdminView;
         private Item _item;
+        private const string ITEMS_FOLDER = "Items";
 
         public ItemView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base(unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
-
             InitializeComponent();
         }
 
@@ -69,30 +65,16 @@ namespace LaundryPOS.Forms.Views
             var selectedCategory = (dynamic)cbCategory.SelectedItem;
             var price = decimal.Parse(txtPrice.Text);
             var stock = int.Parse(txtStock.Text);
-            var imagePath = SaveToImages(txtPath.Text);
+            var imagePath = SaveToImages(txtPath.Text, ITEMS_FOLDER);
 
             return new Item
             {
                 Name = txtName.Text,
-                Image = GetImagePath(imagePath),
+                Image = GetImagePath(imagePath, ITEMS_FOLDER),
                 CategoryId = selectedCategory.Value,
                 Price = price,
                 Stock = stock
             };
-        }
-
-        private string GetImagePath(string imagePath)
-            => Path.Combine("Icons", "Images", "Items", Path.GetFileName(imagePath));
-
-        private string SaveToImages(string imagePath)
-        {
-            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
-                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
-            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Items", uniqueName);
-            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
-            File.Copy(imagePath, destinationPath);
-
-            return uniqueName;
         }
 
         public async Task CreateItem(Item service)
@@ -107,7 +89,7 @@ namespace LaundryPOS.Forms.Views
             cbCategory.DataSource = categories.Select(c => new
             {
                 Text = c.Name,
-                Value = c.CategoryId
+                Value = c.Id
             })
             .ToList();
 
@@ -118,7 +100,7 @@ namespace LaundryPOS.Forms.Views
         private async Task DisplayItems()
         {
             var itemList = await _unitOfWork.ItemRepo
-                .Get(orderBy: s => s.OrderByDescending(s => s.ItemId),
+                .Get(orderBy: s => s.OrderByDescending(s => s.Id),
                 includeProperties: "Category");
 
             itemTable.DataSource = itemList;
@@ -135,7 +117,7 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            itemTable.Columns[nameof(Item.ItemId)].Visible = false;
+            itemTable.Columns[nameof(Item.Id)].Visible = false;
             itemTable.Columns[nameof(Item.Image)].Visible = false;
             itemTable.Columns[nameof(Item.CategoryId)].Visible = false;
         }
@@ -172,20 +154,6 @@ namespace LaundryPOS.Forms.Views
             catch (Exception ex)
             {
                 MessageBox.Show("An error occured " + ex.Message);
-            }
-        }
-
-        private Image GetImage(Item item)
-        {
-            try
-            {
-                return item.Image != null
-                ? Image.FromFile(item.Image)
-                : Image.FromFile("./default.png");
-            }
-            catch
-            {
-                return Image.FromFile("./default.png");
             }
         }
 
@@ -240,36 +208,24 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-                => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<EmployeeView>());
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-                => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<TransactionView>());
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-                => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<CategoryView>());
         }
 
         private void btnAdminProfile_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-               => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<AdminProfileView>());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -296,7 +252,7 @@ namespace LaundryPOS.Forms.Views
             if (e.RowIndex >= 0)
             {
                 var selectedRow = itemTable.Rows[e.RowIndex];
-                var itemId = (selectedRow.DataBoundItem as Item)?.ItemId;
+                var itemId = (selectedRow.DataBoundItem as Item)?.Id;
                 _item = await _unitOfWork.ItemRepo
                     .GetByID(itemId.Value);
 
@@ -354,7 +310,9 @@ namespace LaundryPOS.Forms.Views
             _item.Name = txtName.Text;
             _item.Price = decimal.Parse(txtPrice.Text);
             _item.Stock = int.Parse(txtStock.Text);
-            _item.Image = GetImagePath(SaveToImages(txtPath.Text));
+            _item.Image = GetImagePath(
+                SaveToImages(txtPath.Text, ITEMS_FOLDER), 
+                ITEMS_FOLDER);
 
             _unitOfWork.ItemRepo.Update(_item);
             await _unitOfWork.SaveAsync();

@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace LaundryPOS.Models
 {
-    public class Employee
+    public class Employee : ImageEntity
     {
-        [Key]
-        public int EmployeeId { get; set; }
-
         [Required]
         [StringLength(100, MinimumLength = 5)]
         public string Username { get; set; }
@@ -33,8 +30,6 @@ namespace LaundryPOS.Models
         public string LastName { get; set; } = "lastname";
 
         public int Age { get; set; }
-
-        public string? Image { get; set; }
 
         public DateTime BirthDate { get; set; }
 

@@ -15,21 +15,16 @@ using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class CategoryView : UserControl
+    public partial class CategoryView : BaseCategoryView
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
-        private readonly ChangeAdminViewDelegate _changeAdminView;
         private Category _category;
+        private const string CATEGORY_FOLDER = "Categories";
 
         public CategoryView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base (unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
-
             InitializeComponent();
         }
 
@@ -82,7 +77,7 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            categoryTable.Columns[nameof(Category.CategoryId)].Visible = false;
+            categoryTable.Columns[nameof(Category.Id)].Visible = false;
             categoryTable.Columns[nameof(Category.Image)].Visible = false;
         }
 
@@ -98,7 +93,9 @@ namespace LaundryPOS.Forms.Views
             var category = new Category
             {
                 Name = txtName.Text,
-                Image = GetImagePath(SaveToImages(txtPath.Text))
+                Image = GetImagePath(
+                    SaveToImages(txtPath.Text, CATEGORY_FOLDER), 
+                    CATEGORY_FOLDER)
             };
 
             _unitOfWork.CategoryRepo.Insert(category);
@@ -106,34 +103,6 @@ namespace LaundryPOS.Forms.Views
 
             btnAdd.Enabled = true;
             ClearText();
-        }
-
-        private string GetImagePath(string imagePath)
-            => Path.Combine("Icons", "Images", "Categories", Path.GetFileName(imagePath));
-
-        private string SaveToImages(string imagePath)
-        {
-            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
-                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
-            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Categories", uniqueName);
-            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
-            File.Copy(imagePath, destinationPath);
-
-            return uniqueName;
-        }
-
-        private Image GetImage(Category category)
-        {
-            try
-            {
-                return category.Image != null
-                ? Image.FromFile(category.Image)
-                : Image.FromFile("./default.png");
-            }
-            catch
-            {
-                return Image.FromFile("./default.png");
-            }
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -165,7 +134,7 @@ namespace LaundryPOS.Forms.Views
 
                 if (result == DialogResult.Yes)
                 {
-                    await _unitOfWork.CategoryRepo.Delete(_category.CategoryId);
+                    await _unitOfWork.CategoryRepo.Delete(_category.Id);
                     await _unitOfWork.SaveAsync();
 
                     MessageBox.Show("Category deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -179,7 +148,7 @@ namespace LaundryPOS.Forms.Views
             if (e.RowIndex >= 0)
             {
                 var selectedRow = categoryTable.Rows[e.RowIndex];
-                var categoryId = (selectedRow.DataBoundItem as Category)?.CategoryId;
+                var categoryId = (selectedRow.DataBoundItem as Category)?.Id;
                 _category = await _unitOfWork.CategoryRepo
                     .GetByID(categoryId.Value);
 
@@ -210,7 +179,9 @@ namespace LaundryPOS.Forms.Views
                 if (_category != null)
                 {
                     _category.Name = txtName.Text;
-                    _category.Image = GetImagePath(SaveToImages(txtPath.Text));
+                    _category.Image = GetImagePath(
+                        SaveToImages(txtPath.Text, CATEGORY_FOLDER),
+                        CATEGORY_FOLDER);
 
                     _unitOfWork.CategoryRepo.Update(_category);
                     await _unitOfWork.SaveAsync();
@@ -239,36 +210,24 @@ namespace LaundryPOS.Forms.Views
             txtPath.Text = string.Empty;
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
         private void btnItem_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<ItemView>());
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new EmployeeView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<EmployeeView>());
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<TransactionView>());
         }
 
         private void btnAdminProfile_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<AdminProfileView>());
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)

@@ -12,24 +12,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LaundryPOS.Forms.Views.BaseViews;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class EmployeeView : UserControl
+    public partial class EmployeeView : BaseEmployeeView
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
-        private readonly ChangeAdminViewDelegate _changeAdminView;
         private Employee _employee;
 
         public EmployeeView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
+            : base (unitOfWork, themeManager, changeAdminView)
         {
-            _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
-            _changeAdminView = changeAdminView;
-
             InitializeComponent();
         }
 
@@ -58,7 +53,7 @@ namespace LaundryPOS.Forms.Views
 
         private void HideUnwantedColumns()
         {
-            employeeTable.Columns[nameof(Employee.EmployeeId)].Visible = false;
+            employeeTable.Columns[nameof(Employee.Id)].Visible = false;
             employeeTable.Columns[nameof(Employee.Image)].Visible = false;
             employeeTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
             employeeTable.Columns[nameof(Employee.Salt)].Visible = false;
@@ -117,26 +112,22 @@ namespace LaundryPOS.Forms.Views
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new CategoryView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<CategoryView>());
         }
 
         private void btnItem_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new ItemView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<ItemView>());
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new TransactionView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<TransactionView>());
         }
 
         private void btnAdminProfile_Click(object sender, EventArgs e)
         {
-            ChangeAdminView((_unitOfWork, _themeManager, _changeAdminView)
-            => new AdminProfileView(_unitOfWork, _themeManager, _changeAdminView));
+            ChangeAdminView(CreateView<AdminProfileView>());
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -159,20 +150,6 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private Image GetImage(Employee employee)
-        {
-            try
-            {
-                return employee.Image != null
-                ? Image.FromFile(employee.Image)
-                : Image.FromFile("./default.png");
-            }
-            catch
-            {
-                return Image.FromFile("./default.png");
-            }
-        }
-
         private void ClearText()
         {
             imgPic.Image = default;
@@ -187,7 +164,7 @@ namespace LaundryPOS.Forms.Views
             if (e.RowIndex >= 0)
             {
                 var selectedRow = employeeTable.Rows[e.RowIndex];
-                var employeeId = (selectedRow.DataBoundItem as Employee)?.EmployeeId;
+                var employeeId = (selectedRow.DataBoundItem as Employee)?.Id;
                 _employee = await _unitOfWork.EmployeeRepo
                     .GetByID(employeeId.Value);
 

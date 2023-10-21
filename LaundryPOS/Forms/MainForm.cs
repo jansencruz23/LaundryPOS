@@ -54,7 +54,7 @@ namespace LaundryPOS.Forms
         {
             var existingCartItem = cartPanel.Controls
                 .OfType<CartControl>()
-                .FirstOrDefault(cart => cart.CartItem.Item.ItemId == e.CartItem.Item.ItemId);
+                .FirstOrDefault(cart => cart.CartItem.Item.Id == e.CartItem.Item.Id);
 
             if (existingCartItem != null)
             {
@@ -80,7 +80,7 @@ namespace LaundryPOS.Forms
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
         {
-            var filteredItems = allItems.Where(i => i.CategoryId == e.Category.CategoryId);
+            var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
             DisplayFilteredItems(filteredItems);
             lblMenuTitle.Text = e.Category.Name;
         }
@@ -199,7 +199,7 @@ namespace LaundryPOS.Forms
         {
             foreach (var order in orders.Items)
             {
-                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.Id);
                 if (item == null || order.Quantity > item.Stock)
                 {
                     return false; 
@@ -243,7 +243,7 @@ namespace LaundryPOS.Forms
         {
             var transaction = new Transaction
             {
-                EmployeeId = _employee.EmployeeId,
+                EmployeeId = _employee.Id,
                 TransactionDate = DateTime.Now,
                 TotalAmount = Total,
                 AmountPaid = default,
@@ -260,7 +260,7 @@ namespace LaundryPOS.Forms
         {
             foreach (var order in orders.Items)
             {
-                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.Id);
 
                 if (item != null)
                 {
@@ -271,7 +271,7 @@ namespace LaundryPOS.Forms
                     {
                         var transactionItem = new TransactionItem
                         {
-                            ItemId = order.Item.ItemId,
+                            ItemId = order.Item.Id,
                             Quantity = soldQuantity,
                             SubTotal = order.SubTotal
                         };

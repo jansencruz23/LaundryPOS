@@ -97,7 +97,7 @@ namespace LaundryPOS.Forms
         {
             var transaction = new Transaction
             {
-                EmployeeId = _employee.EmployeeId,
+                EmployeeId = _employee.Id,
                 TransactionDate = DateTime.Now,
                 TotalAmount = _total,
                 AmountPaid = amount,
@@ -114,7 +114,7 @@ namespace LaundryPOS.Forms
         {
             foreach (var order in _orders.Items)
             {
-                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.ItemId);
+                var item = await _unitOfWork.ItemRepo.GetByID(order.Item.Id);
 
                 if (item != null)
                 {
@@ -125,7 +125,7 @@ namespace LaundryPOS.Forms
                     {
                         var transactionItem = new TransactionItem
                         {
-                            ItemId = order.Item.ItemId,
+                            ItemId = order.Item.Id,
                             Quantity = soldQuantity,
                             SubTotal = order.SubTotal
                         };

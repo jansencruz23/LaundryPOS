@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace LaundryPOS.Models
 {
-    public class Category
+    public class Category : ImageEntity
     {
-        public int CategoryId { get; set; }
-
         public string Name { get; set; }
-        
-        public string? Image { get; set; }
     }
 }
