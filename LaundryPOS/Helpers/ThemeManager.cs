@@ -25,7 +25,7 @@ namespace LaundryPOS.Helpers
             _memoryCache = memoryCache;
         }
 
-        public async Task ApplyThemeToButton(Guna2Button button)
+        public async Task ApplyThemeToButton(Guna2Button button, bool hasShadow = false)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -46,6 +46,9 @@ namespace LaundryPOS.Helpers
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
                 button.ForeColor = foreColor;
+
+                if (hasShadow)
+                    button.ShadowDecoration.Color = themeColor;
             }
             else
             {

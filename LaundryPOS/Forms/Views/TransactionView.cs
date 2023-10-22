@@ -123,7 +123,7 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private Dictionary<string, Func<GroupedTransactionViewModel, IEnumerable<object>>> columnMappings = new()
+        private readonly Dictionary<string, Func<GroupedTransactionViewModel, IEnumerable<object>>> columnMappings = new()
         {
             { "Order", vm => vm.Order.Items.Select(item => (object)item.Item.Name) },
             { "Quantity", vm => vm.Order.Items.Select(q => (object)q.Quantity) },
@@ -160,7 +160,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filter = cbFilter.SelectedItem?.ToString()!;
+            var filter = cbFilter.SelectedItem?.ToString()!;
 
             if (string.IsNullOrEmpty(filter))
             {
@@ -168,6 +168,12 @@ namespace LaundryPOS.Forms.Views
                 return;
             }
 
+            var filterPredicate = GetDateExpression(filter);
+            await DisplayTransactions(filterPredicate);
+        }
+
+        private Expression<Func<TransactionItem, bool>> GetDateExpression(string filter)
+        {
             DateTime startDate = default;
             DateTime endDate = default;
             Expression<Func<TransactionItem, bool>> filterPredicate = ti => ti.Transaction.IsCompleted;
@@ -199,17 +205,17 @@ namespace LaundryPOS.Forms.Views
 
                 default:
                     MessageBox.Show("Invalid filter");
-                    return;
+                    break;
             }
 
             if (filter != "All")
             {
-                filterPredicate = ti => ti.Transaction.TransactionDate >= startDate
+                return ti => ti.Transaction.TransactionDate >= startDate
                     && ti.Transaction.TransactionDate <= endDate
                     && ti.Transaction.IsCompleted;
             }
 
-            await DisplayTransactions(filterPredicate);
+            return filterPredicate;
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)
