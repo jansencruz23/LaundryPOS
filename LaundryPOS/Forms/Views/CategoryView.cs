@@ -34,10 +34,10 @@ namespace LaundryPOS.Forms.Views
             await ApplyTheme();
         }
 
-        public async Task DisplayCategory()
+        public async Task DisplayCategory(string query = "")
         {
             var categories = await _unitOfWork.CategoryRepo
-                .Get();
+                .Get(filter: c => c.Name.Contains(query));
 
             categoryTable.DataSource = categories;
             ConfigureImageColumn();
@@ -123,6 +123,7 @@ namespace LaundryPOS.Forms.Views
         {
             await _themeManager.ApplyThemeToButton(btnFile);
             await _themeManager.ApplyThemeToButton(btnCategory);
+            await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(categoryTable);
         }
 
@@ -197,10 +198,10 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private async Task RefreshData()
+        private async Task RefreshData(string query = "")
         {
             categoryTable.DataSource = null;
-            await DisplayCategory();
+            await DisplayCategory(query);
         }
 
         private void ClearText()
@@ -255,6 +256,11 @@ namespace LaundryPOS.Forms.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ConfirmLogout();
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await RefreshData(txtSearch.Text);
         }
     }
 }

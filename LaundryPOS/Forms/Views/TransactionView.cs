@@ -76,6 +76,12 @@ namespace LaundryPOS.Forms.Views
                 ConfigureDataGridView(groupedTransactions);
         }
 
+        private async Task RefreshData(string query = "")
+        {       
+            await DisplayTransactions(ti => ti.Transaction.IsCompleted 
+                && ti.TransactionId.ToString().Contains(query));
+        }
+
         private void ConfigureDataGridView(List<GroupedTransactionViewModel> groupedTransactions)
         {
             transactionTable.AutoGenerateColumns = false;
@@ -128,6 +134,7 @@ namespace LaundryPOS.Forms.Views
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnTransaction);
+            await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(transactionTable);
         }
 
@@ -232,6 +239,11 @@ namespace LaundryPOS.Forms.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ConfirmLogout();
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await RefreshData(txtSearch.Text);
         }
     }
 }

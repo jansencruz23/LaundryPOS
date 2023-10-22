@@ -3,16 +3,7 @@ using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Helpers;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using static LaundryPOS.Helpers.DGVPrinter;
 using LaundryPOS.Forms.Views.BaseViews;
 
@@ -97,11 +88,12 @@ namespace LaundryPOS.Forms.Views
             cbCategory.ValueMember = "Value";
         }
 
-        private async Task DisplayItems()
+        private async Task DisplayItems(string query = "")
         {
             var itemList = await _unitOfWork.ItemRepo
                 .Get(orderBy: s => s.OrderByDescending(s => s.Id),
-                includeProperties: "Category");
+                includeProperties: "Category",
+                filter: i => i.Name.Contains(query));
 
             itemTable.DataSource = itemList;
 
@@ -157,10 +149,10 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private async Task RefreshData()
+        private async Task RefreshData(string query = "")
         {
             itemTable.DataSource = null;
-            await DisplayItems();
+            await DisplayItems(query);
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -190,6 +182,7 @@ namespace LaundryPOS.Forms.Views
         {
             await _themeManager.ApplyThemeToButton(btnFile);
             await _themeManager.ApplyThemeToButton(btnItem);
+            await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(itemTable, 0.8f);
         }
 
@@ -374,6 +367,11 @@ namespace LaundryPOS.Forms.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ConfirmLogout();
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await RefreshData(txtSearch.Text);
         }
     }
 }

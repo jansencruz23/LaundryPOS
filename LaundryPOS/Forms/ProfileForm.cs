@@ -1,16 +1,6 @@
 ﻿using LaundryPOS.Contracts;
-using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms
 {

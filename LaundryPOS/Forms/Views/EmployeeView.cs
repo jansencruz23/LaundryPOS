@@ -23,7 +23,7 @@ namespace LaundryPOS.Forms.Views
         public EmployeeView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
             ChangeAdminViewDelegate changeAdminView)
-            : base (unitOfWork, themeManager, changeAdminView)
+            : base(unitOfWork, themeManager, changeAdminView)
         {
             InitializeComponent();
         }
@@ -40,10 +40,12 @@ namespace LaundryPOS.Forms.Views
             await RefreshData();
         }
 
-        private async Task DisplayEmployees()
+        private async Task DisplayEmployees(string query = "")
         {
             var employeeList = await _unitOfWork.EmployeeRepo
-                .Get(filter: e => e.IsActive);
+                .Get(filter: e => e.IsActive
+                    && (e.LastName.Contains(query)
+                    || e.FirstName.Contains(query)));
             employeeTable.DataSource = employeeList;
 
             HideUnwantedColumns();
@@ -90,15 +92,16 @@ namespace LaundryPOS.Forms.Views
             };
         }
 
-        private async Task RefreshData()
+        private async Task RefreshData(string query = "")
         {
             employeeTable.DataSource = null;
-            await DisplayEmployees();
+            await DisplayEmployees(query);
         }
 
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnEmployee);
+            await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(employeeTable);
         }
 
@@ -203,6 +206,11 @@ namespace LaundryPOS.Forms.Views
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ConfirmLogout();
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await RefreshData(txtSearch.Text);
         }
     }
 }
