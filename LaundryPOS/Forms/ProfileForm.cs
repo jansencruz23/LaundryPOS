@@ -18,6 +18,7 @@ namespace LaundryPOS.Forms
             _employee = employee;
 
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
 
         private async void ProfileForm_Load(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnEdit);
             await _themeManager.ApplyOutlineThemeToButton(btnLogOut);
+            await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f);
         }
 
@@ -64,6 +66,11 @@ namespace LaundryPOS.Forms
             string appPath = Application.ExecutablePath;
             System.Diagnostics.Process.Start(appPath);
             Application.Exit();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

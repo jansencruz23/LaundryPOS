@@ -1,4 +1,6 @@
-﻿namespace LaundryPOS.Forms
+﻿using System.Runtime.InteropServices;
+
+namespace LaundryPOS.Forms
 {
     partial class QuantityForm
     {
@@ -20,6 +22,17 @@
             base.Dispose(disposing);
         }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,6 +41,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -65,24 +79,26 @@
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn10 = new Guna.UI2.WinForms.Guna2Button();
             this.btn5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelBg.SuspendLayout();
             this.panelBody.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.panelDrag.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn3
             // 
             this.btn3.BorderRadius = 7;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.CustomizableEdges = customizableEdges1;
             this.btn3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn3.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn3.ForeColor = System.Drawing.Color.White;
             this.btn3.Location = new System.Drawing.Point(205, 116);
             this.btn3.Name = "btn3";
@@ -90,18 +106,18 @@
             this.btn3.Size = new System.Drawing.Size(164, 45);
             this.btn3.TabIndex = 0;
             this.btn3.Text = "3";
-            this.btn3.TextOffset = new System.Drawing.Point(0, 2);
             this.btn3.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn2
             // 
             this.btn2.BorderRadius = 7;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.CustomizableEdges = customizableEdges3;
             this.btn2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn2.ForeColor = System.Drawing.Color.White;
             this.btn2.Location = new System.Drawing.Point(29, 116);
             this.btn2.Name = "btn2";
@@ -109,7 +125,6 @@
             this.btn2.Size = new System.Drawing.Size(164, 45);
             this.btn2.TabIndex = 3;
             this.btn2.Text = "2";
-            this.btn2.TextOffset = new System.Drawing.Point(0, 2);
             this.btn2.Click += new System.EventHandler(this.btn_Click);
             // 
             // panelBg
@@ -127,9 +142,9 @@
             // panelBody
             // 
             this.panelBody.BackColor = System.Drawing.Color.Transparent;
-            this.panelBody.BorderRadius = 15;
+            this.panelBody.BorderRadius = 20;
             this.panelBody.Controls.Add(this.guna2Panel2);
-            this.panelBody.Controls.Add(this.guna2Panel1);
+            this.panelBody.Controls.Add(this.panelDrag);
             this.panelBody.CustomizableEdges = customizableEdges23;
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.FillColor = System.Drawing.Color.White;
@@ -165,25 +180,27 @@
             // btnEnter
             // 
             this.btnEnter.BorderRadius = 7;
+            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnter.CustomizableEdges = customizableEdges5;
             this.btnEnter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEnter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEnter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEnter.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnter.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnter.ForeColor = System.Drawing.Color.White;
             this.btnEnter.Location = new System.Drawing.Point(29, 237);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnEnter.Size = new System.Drawing.Size(340, 45);
             this.btnEnter.TabIndex = 1;
-            this.btnEnter.Text = "ENTER QUANTITY";
-            this.btnEnter.TextOffset = new System.Drawing.Point(0, 2);
+            this.btnEnter.Text = "Enter Quantity";
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BorderRadius = 7;
+            this.btnAdd.BorderThickness = 1;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.CustomizableEdges = customizableEdges7;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -203,6 +220,8 @@
             // btnMinus
             // 
             this.btnMinus.BorderRadius = 7;
+            this.btnMinus.BorderThickness = 1;
+            this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinus.CustomizableEdges = customizableEdges9;
             this.btnMinus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMinus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -223,7 +242,6 @@
             // 
             this.txtQuantity.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtQuantity.BorderRadius = 7;
-            this.txtQuantity.BorderThickness = 2;
             this.txtQuantity.CustomizableEdges = customizableEdges11;
             this.txtQuantity.DefaultText = "";
             this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -248,12 +266,13 @@
             // btn10
             // 
             this.btn10.BorderRadius = 7;
+            this.btn10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn10.CustomizableEdges = customizableEdges13;
             this.btn10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn10.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn10.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn10.ForeColor = System.Drawing.Color.White;
             this.btn10.Location = new System.Drawing.Point(205, 172);
             this.btn10.Name = "btn10";
@@ -261,18 +280,18 @@
             this.btn10.Size = new System.Drawing.Size(164, 45);
             this.btn10.TabIndex = 3;
             this.btn10.Text = "10";
-            this.btn10.TextOffset = new System.Drawing.Point(0, 2);
             this.btn10.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn5
             // 
             this.btn5.BorderRadius = 7;
+            this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.CustomizableEdges = customizableEdges15;
             this.btn5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn5.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn5.ForeColor = System.Drawing.Color.White;
             this.btn5.Location = new System.Drawing.Point(29, 172);
             this.btn5.Name = "btn5";
@@ -280,30 +299,30 @@
             this.btn5.Size = new System.Drawing.Size(164, 45);
             this.btn5.TabIndex = 2;
             this.btn5.Text = "5";
-            this.btn5.TextOffset = new System.Drawing.Point(0, 2);
             this.btn5.Click += new System.EventHandler(this.btn_Click);
             // 
-            // guna2Panel1
+            // panelDrag
             // 
-            this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.btnClose);
-            this.guna2Panel1.Controls.Add(this.label1);
+            this.panelDrag.BorderRadius = 15;
+            this.panelDrag.Controls.Add(this.btnClose);
+            this.panelDrag.Controls.Add(this.label1);
             customizableEdges21.BottomLeft = false;
             customizableEdges21.BottomRight = false;
-            this.guna2Panel1.CustomizableEdges = customizableEdges21;
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            this.guna2Panel1.Size = new System.Drawing.Size(392, 76);
-            this.guna2Panel1.TabIndex = 2;
+            this.panelDrag.CustomizableEdges = customizableEdges21;
+            this.panelDrag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDrag.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDrag.Location = new System.Drawing.Point(0, 0);
+            this.panelDrag.Name = "panelDrag";
+            this.panelDrag.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.panelDrag.Size = new System.Drawing.Size(392, 76);
+            this.panelDrag.TabIndex = 2;
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.BorderRadius = 7;
-            this.btnClose.BorderThickness = 2;
+            this.btnClose.BorderThickness = 1;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.CustomizableEdges = customizableEdges19;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -311,7 +330,7 @@
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClose.FillColor = System.Drawing.Color.Transparent;
             this.btnClose.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnClose.Location = new System.Drawing.Point(335, 24);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -324,7 +343,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(17, 6);
             this.label1.Name = "label1";
@@ -332,6 +351,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Quantity";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dragControl
+            // 
+            this.dragControl.DockIndicatorTransparencyValue = 0.6D;
+            this.dragControl.TargetControl = this.panelDrag;
+            this.dragControl.UseTransparentDrag = true;
             // 
             // QuantityForm
             // 
@@ -344,7 +369,7 @@
             this.panelBg.ResumeLayout(false);
             this.panelBody.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
+            this.panelDrag.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,7 +380,7 @@
         private Guna.UI2.WinForms.Guna2Button btn2;
         private Guna.UI2.WinForms.Guna2Panel panelBg;
         private Guna.UI2.WinForms.Guna2Panel panelBody;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panelDrag;
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -365,5 +390,6 @@
         private Guna.UI2.WinForms.Guna2Button btn10;
         private Guna.UI2.WinForms.Guna2Button btn5;
         private Guna.UI2.WinForms.Guna2Button btnEnter;
+        private Guna.UI2.WinForms.Guna2DragControl dragControl;
     }
 }

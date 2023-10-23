@@ -192,7 +192,7 @@ namespace LaundryPOS.Forms
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnMinimize.Location = new System.Drawing.Point(911, 23);
+            this.btnMinimize.Location = new System.Drawing.Point(915, 16);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnMinimize.Size = new System.Drawing.Size(39, 39);
@@ -212,7 +212,7 @@ namespace LaundryPOS.Forms
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClose.Location = new System.Drawing.Point(956, 23);
+            this.btnClose.Location = new System.Drawing.Point(960, 16);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.btnClose.Size = new System.Drawing.Size(39, 39);
@@ -275,7 +275,7 @@ namespace LaundryPOS.Forms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 41);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Login";
+            this.label1.Text = "Log in";
             // 
             // cbShowPassword
             // 
@@ -321,7 +321,7 @@ namespace LaundryPOS.Forms
             this.btnLogin.Size = new System.Drawing.Size(250, 45);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Log in";
-            this.btnLogin.TextOffset = new System.Drawing.Point(0, 1);
+            this.btnLogin.TextOffset = new System.Drawing.Point(0, 2);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // guna2PictureBox1
@@ -364,8 +364,6 @@ namespace LaundryPOS.Forms
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 672);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

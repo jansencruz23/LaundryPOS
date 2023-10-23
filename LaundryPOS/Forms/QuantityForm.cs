@@ -2,15 +2,6 @@
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms
 {
@@ -23,6 +14,7 @@ namespace LaundryPOS.Forms
         {
             _themeManager = themeManager;
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
 
         private async void QuantityForm_Load(object sender, EventArgs e)
@@ -44,10 +36,10 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToPanel(panelBg, 1f);
-            await _themeManager.ApplyOutlineThemeToButton(btnClose, 2);
-            await _themeManager.ApplyOutlineThemeToButton(btnMinus, 2);
-            await _themeManager.ApplyOutlineThemeToButton(btnAdd, 2);
-            await _themeManager.ApplyOutlineThemeToButton(btnEnter,2);
+            await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
+            await _themeManager.ApplyOutlineThemeToButton(btnMinus, 1);
+            await _themeManager.ApplyOutlineThemeToButton(btnAdd, 1);
+            await _themeManager.ApplyOutlineThemeToButton(btnEnter,1);
             await _themeManager.ApplyThemeToButton(btn2);
             await _themeManager.ApplyThemeToButton(btn3);
             await _themeManager.ApplyThemeToButton(btn5);

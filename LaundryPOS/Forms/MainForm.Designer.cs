@@ -111,15 +111,14 @@
             this.btnViewUnpaid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnViewUnpaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewUnpaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewUnpaid.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewUnpaid.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewUnpaid.ForeColor = System.Drawing.Color.White;
-            this.btnViewUnpaid.Location = new System.Drawing.Point(837, 24);
+            this.btnViewUnpaid.Location = new System.Drawing.Point(837, 25);
             this.btnViewUnpaid.Name = "btnViewUnpaid";
             this.btnViewUnpaid.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnViewUnpaid.Size = new System.Drawing.Size(131, 43);
             this.btnViewUnpaid.TabIndex = 11;
             this.btnViewUnpaid.Text = "View Unpaid";
-            this.btnViewUnpaid.TextOffset = new System.Drawing.Point(0, 2);
             this.btnViewUnpaid.Click += new System.EventHandler(this.btnViewUnpaid_Click);
             // 
             // itemsPanel
@@ -132,7 +131,7 @@
             this.itemsPanel.Location = new System.Drawing.Point(121, 60);
             this.itemsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.itemsPanel.Name = "itemsPanel";
-            this.itemsPanel.Size = new System.Drawing.Size(879, 579);
+            this.itemsPanel.Size = new System.Drawing.Size(879, 587);
             this.itemsPanel.TabIndex = 6;
             // 
             // lblMenuTitle
@@ -174,7 +173,7 @@
             this.btnAllCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAllCategory.ForeColor = System.Drawing.Color.White;
             this.btnAllCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAllCategory.Image")));
-            this.btnAllCategory.ImageSize = new System.Drawing.Size(33, 37);
+            this.btnAllCategory.ImageSize = new System.Drawing.Size(37, 37);
             this.btnAllCategory.Location = new System.Drawing.Point(33, 50);
             this.btnAllCategory.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnAllCategory.Name = "btnAllCategory";
@@ -302,7 +301,7 @@
             this.label2.Location = new System.Drawing.Point(8, 3);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 53);
+            this.label2.Size = new System.Drawing.Size(131, 52);
             this.label2.TabIndex = 3;
             this.label2.Text = "Total:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -315,7 +314,7 @@
             this.lblTotal.Location = new System.Drawing.Point(145, 3);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(131, 53);
+            this.lblTotal.Size = new System.Drawing.Size(131, 52);
             this.lblTotal.TabIndex = 8;
             this.lblTotal.Text = "₱ .00";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -330,16 +329,15 @@
             this.btnPayLater.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPayLater.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPayLater.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnPayLater.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPayLater.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPayLater.ForeColor = System.Drawing.Color.White;
-            this.btnPayLater.Location = new System.Drawing.Point(10, 66);
+            this.btnPayLater.Location = new System.Drawing.Point(10, 65);
             this.btnPayLater.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.btnPayLater.Name = "btnPayLater";
             this.btnPayLater.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnPayLater.Size = new System.Drawing.Size(127, 48);
+            this.btnPayLater.Size = new System.Drawing.Size(127, 49);
             this.btnPayLater.TabIndex = 10;
             this.btnPayLater.Text = "Pay Later";
-            this.btnPayLater.TextOffset = new System.Drawing.Point(0, 1);
             this.btnPayLater.Click += new System.EventHandler(this.btnPayLater_Click);
             // 
             // btnPayNow
@@ -351,16 +349,15 @@
             this.btnPayNow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPayNow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPayNow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPayNow.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPayNow.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPayNow.ForeColor = System.Drawing.Color.White;
-            this.btnPayNow.Location = new System.Drawing.Point(147, 66);
+            this.btnPayNow.Location = new System.Drawing.Point(147, 65);
             this.btnPayNow.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.btnPayNow.Name = "btnPayNow";
             this.btnPayNow.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.btnPayNow.Size = new System.Drawing.Size(127, 48);
+            this.btnPayNow.Size = new System.Drawing.Size(127, 49);
             this.btnPayNow.TabIndex = 9;
             this.btnPayNow.Text = "Pay Now";
-            this.btnPayNow.TextOffset = new System.Drawing.Point(0, 1);
             this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
             // 
             // guna2Panel1
@@ -416,7 +413,7 @@
             this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
-            this.btnClear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClear.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.Color.Red;
             this.btnClear.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnClear.HoverState.ForeColor = System.Drawing.Color.White;
@@ -427,7 +424,6 @@
             this.btnClear.Size = new System.Drawing.Size(117, 36);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear All";
-            this.btnClear.TextOffset = new System.Drawing.Point(0, 1);
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // cartPanel
@@ -441,7 +437,7 @@
             this.cartPanel.Location = new System.Drawing.Point(0, 68);
             this.cartPanel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 105);
             this.cartPanel.Name = "cartPanel";
-            this.cartPanel.Size = new System.Drawing.Size(284, 445);
+            this.cartPanel.Size = new System.Drawing.Size(284, 454);
             this.cartPanel.TabIndex = 7;
             this.cartPanel.WrapContents = false;
             // 
@@ -521,7 +517,7 @@
             this.lblEmployeeName.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.SetColumnSpan(this.lblEmployeeName, 2);
             this.lblEmployeeName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmployeeName.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEmployeeName.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEmployeeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblEmployeeName.Location = new System.Drawing.Point(100, 0);
             this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
