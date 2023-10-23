@@ -57,6 +57,30 @@ namespace LaundryPOS.Helpers
             }
         }
 
+        public async Task ApplyForeColorToButton(Guna2Button button)
+        {
+            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
+            {
+                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
+
+                if (appSettings != null)
+                {
+                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
+                }
+            }
+
+            if (appSettings != null)
+            {
+                var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
+                button.ForeColor = themeColor;
+            }
+            else
+            {
+                button.FillColor = Color.White;
+                button.ForeColor = Color.Black;
+            }
+        }
+
         public async Task ApplyThemeToButton(Guna2CircleButton button)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))

@@ -30,19 +30,25 @@ namespace LaundryPOS.Forms.Views
             WireAllControls(this);
         }
 
-        private void ItemControl_Load(object sender, EventArgs e)
+        private async void ItemControl_Load(object sender, EventArgs e)
         {
+            await ApplyTheme();
             if (Item.Stock <= 0)
             {
                 Enabled = false;
             }
         }
 
+        private async Task ApplyTheme()
+        {
+            await _themeManager.ApplyThemeToButton(btnPrice);
+        }
+
         private void InitializeItem()
         {
             lblName.Text = Item.Name;
             lblCategory.Text = Item.Category.Name;
-            lblPrice.Text = $"₱ {Item.Price:#,###.00}";
+            btnPrice.Text = $"₱ {Item.Price:#,###.00}";
             lblStock.Text = $"Stk: {Item.Stock}";
             imgIcon.Image = GetImage();
         }
