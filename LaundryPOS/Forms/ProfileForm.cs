@@ -29,8 +29,8 @@ namespace LaundryPOS.Forms
 
         private void InitializeProfile()
         {
-            lblName.Text = _employee.FullName;
-            lblUsername.Text = _employee.Username;
+            txtName.Text = _employee.FullName;
+            txtUsername.Text = _employee.Username;
             imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
                 ? _employee.Image
                 : "./default.png");
@@ -42,6 +42,8 @@ namespace LaundryPOS.Forms
             await _themeManager.ApplyOutlineThemeToButton(btnLogOut);
             await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtName);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtUsername);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

@@ -66,8 +66,8 @@ namespace LaundryPOS.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.lblUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.imgPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -98,8 +98,8 @@ namespace LaundryPOS.Forms
             this.guna2Panel1.Controls.Add(this.panelDrag);
             this.guna2Panel1.Controls.Add(this.btnLogOut);
             this.guna2Panel1.Controls.Add(this.btnEdit);
-            this.guna2Panel1.Controls.Add(this.lblUsername);
-            this.guna2Panel1.Controls.Add(this.lblName);
+            this.guna2Panel1.Controls.Add(this.txtUsername);
+            this.guna2Panel1.Controls.Add(this.txtName);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.imgPic);
@@ -136,7 +136,7 @@ namespace LaundryPOS.Forms
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BorderRadius = 7;
+            this.btnClose.BorderRadius = 5;
             this.btnClose.BorderThickness = 1;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.CustomizableEdges = customizableEdges1;
@@ -171,7 +171,7 @@ namespace LaundryPOS.Forms
             // btnLogOut
             // 
             this.btnLogOut.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(8)))), ((int)(((byte)(12)))));
-            this.btnLogOut.BorderRadius = 7;
+            this.btnLogOut.BorderRadius = 5;
             this.btnLogOut.BorderThickness = 1;
             this.btnLogOut.CustomizableEdges = customizableEdges5;
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -191,7 +191,7 @@ namespace LaundryPOS.Forms
             // 
             // btnEdit
             // 
-            this.btnEdit.BorderRadius = 7;
+            this.btnEdit.BorderRadius = 5;
             this.btnEdit.CustomizableEdges = customizableEdges7;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -207,57 +207,62 @@ namespace LaundryPOS.Forms
             this.btnEdit.Text = "Edit Profile";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // lblUsername
+            // txtUsername
             // 
-            this.lblUsername.BorderRadius = 7;
-            this.lblUsername.CustomizableEdges = customizableEdges9;
-            this.lblUsername.DefaultText = "";
-            this.lblUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblUsername.DisabledState.FillColor = System.Drawing.Color.White;
-            this.lblUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lblUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblUsername.Enabled = false;
-            this.lblUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblUsername.Location = new System.Drawing.Point(41, 348);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.PasswordChar = '\0';
-            this.lblUsername.PlaceholderText = "";
-            this.lblUsername.ReadOnly = true;
-            this.lblUsername.SelectedText = "";
-            this.lblUsername.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.lblUsername.Size = new System.Drawing.Size(214, 35);
-            this.lblUsername.TabIndex = 4;
+            this.txtUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtUsername.BorderRadius = 5;
+            this.txtUsername.CustomizableEdges = customizableEdges9;
+            this.txtUsername.DefaultText = "";
+            this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.txtUsername.DisabledState.FillColor = System.Drawing.Color.White;
+            this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.Enabled = false;
+            this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.Location = new System.Drawing.Point(41, 348);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.PlaceholderText = "";
+            this.txtUsername.ReadOnly = true;
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.txtUsername.Size = new System.Drawing.Size(214, 35);
+            this.txtUsername.TabIndex = 4;
             // 
-            // lblName
+            // txtName
             // 
-            this.lblName.BorderRadius = 7;
-            this.lblName.CustomizableEdges = customizableEdges11;
-            this.lblName.DefaultText = "";
-            this.lblName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.lblName.DisabledState.FillColor = System.Drawing.Color.White;
-            this.lblName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.lblName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblName.Enabled = false;
-            this.lblName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblName.Location = new System.Drawing.Point(41, 273);
-            this.lblName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.lblName.Name = "lblName";
-            this.lblName.PasswordChar = '\0';
-            this.lblName.PlaceholderText = "";
-            this.lblName.ReadOnly = true;
-            this.lblName.SelectedText = "";
-            this.lblName.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.lblName.Size = new System.Drawing.Size(214, 35);
-            this.lblName.TabIndex = 3;
+            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtName.BorderRadius = 5;
+            this.txtName.CustomizableEdges = customizableEdges11;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.White;
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.Enabled = false;
+            this.txtName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(41, 273);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.PlaceholderText = "";
+            this.txtName.ReadOnly = true;
+            this.txtName.SelectedText = "";
+            this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.txtName.Size = new System.Drawing.Size(214, 35);
+            this.txtName.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(41, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 23);
@@ -268,6 +273,7 @@ namespace LaundryPOS.Forms
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(41, 245);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 23);
@@ -320,8 +326,8 @@ namespace LaundryPOS.Forms
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2TextBox lblUsername;
-        private Guna.UI2.WinForms.Guna2TextBox lblName;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Label label2;
         private Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox imgPic;

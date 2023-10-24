@@ -57,7 +57,7 @@ namespace LaundryPOS.Helpers
             }
         }
 
-        public async Task ApplyForeColorToButton(Guna2Button button)
+        public async Task ApplyFocusedThemeToTextBox(Guna2TextBox textbox)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -72,12 +72,14 @@ namespace LaundryPOS.Helpers
             if (appSettings != null)
             {
                 var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
-                button.ForeColor = themeColor;
+                textbox.FocusedState.BorderColor = themeColor;
+                textbox.HoverState.BorderColor = themeColor;
+                textbox.BorderThickness = 1;
             }
             else
             {
-                button.FillColor = Color.White;
-                button.ForeColor = Color.Black;
+                textbox.FillColor = Color.White;
+                textbox.ForeColor = Color.Black;
             }
         }
 

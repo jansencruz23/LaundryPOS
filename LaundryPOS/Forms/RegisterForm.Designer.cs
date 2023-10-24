@@ -50,8 +50,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -71,7 +69,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,22 +79,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).BeginInit();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderRadius = 7;
+            this.txtUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtUsername.BorderRadius = 5;
             this.txtUsername.CustomizableEdges = customizableEdges1;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(358, 218);
+            this.txtUsername.Location = new System.Drawing.Point(685, 249);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -109,17 +107,19 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderRadius = 7;
+            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtPassword.BorderRadius = 5;
             this.txtPassword.CustomizableEdges = customizableEdges3;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(358, 295);
+            this.txtPassword.Location = new System.Drawing.Point(685, 326);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -163,7 +163,7 @@
             this.btnFile.FillColor = System.Drawing.Color.Transparent;
             this.btnFile.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.Black;
-            this.btnFile.Location = new System.Drawing.Point(358, 137);
+            this.btnFile.Location = new System.Drawing.Point(685, 168);
             this.btnFile.Name = "btnFile";
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.btnFile.Size = new System.Drawing.Size(217, 38);
@@ -173,7 +173,7 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.BorderRadius = 7;
+            this.btnRegister.BorderRadius = 5;
             this.btnRegister.CustomizableEdges = customizableEdges9;
             this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -181,7 +181,7 @@
             this.btnRegister.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRegister.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(326, 449);
+            this.btnRegister.Location = new System.Drawing.Point(653, 480);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnRegister.Size = new System.Drawing.Size(236, 45);
@@ -191,17 +191,19 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BorderRadius = 7;
+            this.txtFirstName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtFirstName.BorderRadius = 5;
             this.txtFirstName.CustomizableEdges = customizableEdges11;
             this.txtFirstName.DefaultText = "";
             this.txtFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtFirstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtFirstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFirstName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFirstName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstName.Location = new System.Drawing.Point(67, 218);
+            this.txtFirstName.Location = new System.Drawing.Point(394, 249);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
@@ -213,17 +215,19 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.BorderRadius = 7;
+            this.txtLastName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtLastName.BorderRadius = 5;
             this.txtLastName.CustomizableEdges = customizableEdges13;
             this.txtLastName.DefaultText = "";
             this.txtLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtLastName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtLastName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtLastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLastName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLastName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLastName.Location = new System.Drawing.Point(67, 301);
+            this.txtLastName.Location = new System.Drawing.Point(394, 332);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PasswordChar = '\0';
@@ -235,12 +239,14 @@
             // 
             // dtpBirthday
             // 
+            this.dtpBirthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.dtpBirthday.BorderRadius = 5;
             this.dtpBirthday.Checked = true;
             this.dtpBirthday.CustomizableEdges = customizableEdges15;
             this.dtpBirthday.FillColor = System.Drawing.Color.White;
             this.dtpBirthday.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpBirthday.Location = new System.Drawing.Point(67, 377);
+            this.dtpBirthday.Location = new System.Drawing.Point(394, 408);
             this.dtpBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
@@ -254,7 +260,7 @@
             this.imgPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgPic.CustomizableEdges = customizableEdges17;
             this.imgPic.ImageRotate = 0F;
-            this.imgPic.Location = new System.Drawing.Point(416, 42);
+            this.imgPic.Location = new System.Drawing.Point(743, 73);
             this.imgPic.Name = "imgPic";
             this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.imgPic.Size = new System.Drawing.Size(98, 86);
@@ -265,7 +271,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(67, 191);
+            this.label1.Location = new System.Drawing.Point(394, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 12;
@@ -275,7 +281,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(67, 268);
+            this.label2.Location = new System.Drawing.Point(394, 299);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 13;
@@ -332,44 +338,10 @@
             this.guna2CirclePictureBox1.TabIndex = 23;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.label7);
-            this.guna2Panel2.Controls.Add(this.btnCancel);
-            this.guna2Panel2.Controls.Add(this.label6);
-            this.guna2Panel2.Controls.Add(this.label5);
-            this.guna2Panel2.Controls.Add(this.txtConfirmPassword);
-            this.guna2Panel2.Controls.Add(this.label4);
-            this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Controls.Add(this.txtFirstName);
-            this.guna2Panel2.Controls.Add(this.dtpBirthday);
-            this.guna2Panel2.Controls.Add(this.txtPassword);
-            this.guna2Panel2.Controls.Add(this.btnFile);
-            this.guna2Panel2.Controls.Add(this.btnRegister);
-            this.guna2Panel2.Controls.Add(this.imgPic);
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Controls.Add(this.label1);
-            this.guna2Panel2.Controls.Add(this.txtUsername);
-            this.guna2Panel2.Controls.Add(this.txtLastName);
-            this.guna2Panel2.CustomizableEdges = customizableEdges26;
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(366, 44);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges27;
-            this.guna2Panel2.ShadowDecoration.Depth = 15;
-            this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel2.Size = new System.Drawing.Size(620, 543);
-            this.guna2Panel2.TabIndex = 15;
-            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(67, 42);
+            this.label7.Location = new System.Drawing.Point(394, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(164, 93);
             this.label7.TabIndex = 21;
@@ -378,7 +350,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BorderRadius = 7;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.BorderRadius = 5;
             this.btnCancel.BorderThickness = 1;
             this.btnCancel.CustomizableEdges = customizableEdges22;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -386,20 +359,20 @@
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancel.FillColor = System.Drawing.Color.Transparent;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(67, 449);
+            this.btnCancel.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.Location = new System.Drawing.Point(394, 480);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges23;
             this.btnCancel.Size = new System.Drawing.Size(236, 45);
             this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(67, 351);
+            this.label6.Location = new System.Drawing.Point(394, 382);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 18;
@@ -409,7 +382,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(358, 351);
+            this.label5.Location = new System.Drawing.Point(685, 382);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(204, 23);
             this.label5.TabIndex = 17;
@@ -418,17 +391,19 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.BorderRadius = 7;
+            this.txtConfirmPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtConfirmPassword.BorderRadius = 5;
             this.txtConfirmPassword.CustomizableEdges = customizableEdges24;
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtConfirmPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(358, 378);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(685, 409);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '\0';
@@ -441,7 +416,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(358, 268);
+            this.label4.Location = new System.Drawing.Point(685, 299);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 23);
             this.label4.TabIndex = 15;
@@ -451,7 +426,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(358, 191);
+            this.label3.Location = new System.Drawing.Point(685, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 23);
             this.label3.TabIndex = 14;
@@ -464,8 +439,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 636);
-            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.bgPanel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.imgPic);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.dtpBirthday);
+            this.Controls.Add(this.btnFile);
+            this.Controls.Add(this.txtPassword);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -473,7 +464,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).EndInit();
             this.bgPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,7 +482,6 @@
         private Label label1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Panel bgPanel;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Label label4;
         private Label label3;
         private Label label6;

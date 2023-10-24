@@ -39,8 +39,11 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnUpdate);
-            await _themeManager.ApplyThemeToButton(btnChangePassword);
+            await _themeManager.ApplyOutlineThemeToButton(btnChangePassword);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtFirstName);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtLastName);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtPassword);
         }
 
         private void InitializeProfile()
@@ -52,7 +55,6 @@ namespace LaundryPOS.Forms
                 ? _employee.Image
                 : "./default.png");
             dtpBirthday.Value = _employee.BirthDate;
-            txtUsername.Text = _employee.Username;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -73,13 +75,12 @@ namespace LaundryPOS.Forms
             _employee.BirthDate = dtpBirthday.Value;
             _employee.Image = txtPath.Text;
             _employee.Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25);
-            _employee.Username = txtUsername.Text;
 
             _unitOfWork.EmployeeRepo.Update(_employee);
             await _unitOfWork.SaveAsync();
         }
 
-        private void btnFile_Click(object sender, EventArgs e)
+        private void imgPic_Click(object sender, EventArgs e)
         {
             using var file = new OpenFileDialog();
             file.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico|All Files|*.*";

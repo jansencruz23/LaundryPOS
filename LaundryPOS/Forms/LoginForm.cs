@@ -52,14 +52,16 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password.");
+                    MessageBox.Show("Invalid username or password.", "Log in failed", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 txtPassword.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error occurred", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,6 +82,8 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnLogin, true);
             await _themeManager.ApplyThemeToPanel(panelDrag);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtUsername);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtPassword);
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
