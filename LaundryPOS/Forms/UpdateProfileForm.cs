@@ -28,6 +28,7 @@ namespace LaundryPOS.Forms
             _employee = employee;
 
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private async void UpdateProfileForm_Load(object sender, EventArgs e)
@@ -39,7 +40,6 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnUpdate);
-            await _themeManager.ApplyOutlineThemeToButton(btnChangePassword);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
             await _themeManager.ApplyFocusedThemeToTextBox(txtFirstName);
             await _themeManager.ApplyFocusedThemeToTextBox(txtLastName);
@@ -48,6 +48,7 @@ namespace LaundryPOS.Forms
 
         private void InitializeProfile()
         {
+            lblName.Text = $"Hello! {_employee.FirstName}";
             txtFirstName.Text = _employee.FirstName;
             txtLastName.Text = _employee.LastName;
             txtPath.Text = _employee.Image ?? string.Empty;
@@ -66,7 +67,8 @@ namespace LaundryPOS.Forms
         {
             if (!_employee.ValidatePassword(txtPassword.Text))
             {
-                MessageBox.Show("Incorrect password");
+                MessageBox.Show("Incorrect password", "Update failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -96,10 +98,8 @@ namespace LaundryPOS.Forms
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Hide();
             var form = new ChangePassword(_unitOfWork, _themeManager, _employee);
             form.ShowDialog();
-            Show();
         }
     }
 }

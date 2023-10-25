@@ -1,4 +1,3 @@
-using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
@@ -28,7 +27,8 @@ namespace LaundryPOS
         {
             if (!ValidateInput())
             {
-                MessageBox.Show("Please fill all the fields including image.");
+                MessageBox.Show("Please fill all the fields including image.", "Registration failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -37,7 +37,8 @@ namespace LaundryPOS
 
             if (employeeIsExisting)
             {
-                MessageBox.Show("Username already exists.");
+                MessageBox.Show("Username already exists.", "Registration failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

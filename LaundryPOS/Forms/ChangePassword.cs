@@ -53,19 +53,22 @@ namespace LaundryPOS.Forms
 
             if (!allTextboxesFilled)
             {
-                MessageBox.Show("Please fill all the fields.");
+                MessageBox.Show("Please fill all the fields.", "Change password failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!_employee.ValidatePassword(oldPassword))
             {
-                MessageBox.Show("Incorrect password");
+                MessageBox.Show("Incorrect password", "Change password failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!newPassword.Equals(confirmPassword))
             {
-                MessageBox.Show("Passwords do not match");
+                MessageBox.Show("Passwords do not match", "Change password failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

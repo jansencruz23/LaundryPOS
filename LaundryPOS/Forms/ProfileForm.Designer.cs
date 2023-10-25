@@ -46,8 +46,6 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -59,9 +57,10 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.bgPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
@@ -72,10 +71,11 @@ namespace LaundryPOS.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.imgPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
             this.bgPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).BeginInit();
+            this.panelDrag.SuspendLayout();
             this.SuspendLayout();
             // 
             // bgPanel
@@ -117,26 +117,11 @@ namespace LaundryPOS.Forms
             this.guna2Panel1.Size = new System.Drawing.Size(295, 540);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // panelDrag
-            // 
-            this.panelDrag.BorderRadius = 15;
-            this.panelDrag.Controls.Add(this.btnClose);
-            this.panelDrag.Controls.Add(this.label3);
-            customizableEdges3.BottomLeft = false;
-            customizableEdges3.BottomRight = false;
-            this.panelDrag.CustomizableEdges = customizableEdges3;
-            this.panelDrag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDrag.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.panelDrag.Location = new System.Drawing.Point(0, 0);
-            this.panelDrag.Name = "panelDrag";
-            this.panelDrag.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.panelDrag.Size = new System.Drawing.Size(295, 76);
-            this.panelDrag.TabIndex = 7;
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BorderRadius = 5;
+            this.btnClose.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnClose.BorderRadius = 10;
             this.btnClose.BorderThickness = 1;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.CustomizableEdges = customizableEdges1;
@@ -300,6 +285,22 @@ namespace LaundryPOS.Forms
             this.dragControl.TargetControl = this.panelDrag;
             this.dragControl.UseTransparentDrag = true;
             // 
+            // panelDrag
+            // 
+            this.panelDrag.BorderRadius = 15;
+            this.panelDrag.Controls.Add(this.btnClose);
+            this.panelDrag.Controls.Add(this.label3);
+            customizableEdges3.BottomLeft = false;
+            customizableEdges3.BottomRight = false;
+            this.panelDrag.CustomizableEdges = customizableEdges3;
+            this.panelDrag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDrag.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDrag.Location = new System.Drawing.Point(0, 0);
+            this.panelDrag.Name = "panelDrag";
+            this.panelDrag.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.panelDrag.Size = new System.Drawing.Size(295, 76);
+            this.panelDrag.TabIndex = 7;
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -314,8 +315,8 @@ namespace LaundryPOS.Forms
             this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.bgPanel.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.panelDrag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).EndInit();
+            this.panelDrag.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -331,9 +332,9 @@ namespace LaundryPOS.Forms
         private Label label2;
         private Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox imgPic;
-        private Guna.UI2.WinForms.Guna2Panel panelDrag;
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Label label3;
         private Guna.UI2.WinForms.Guna2DragControl dragControl;
+        private Guna.UI2.WinForms.Guna2Panel panelDrag;
     }
 }
