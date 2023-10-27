@@ -33,54 +33,85 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.imgIcon = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.panelBg = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.panelBg.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgIcon
             // 
+            this.imgIcon.BorderRadius = 2;
             this.imgIcon.CustomizableEdges = customizableEdges1;
-            this.imgIcon.FillColor = System.Drawing.Color.Transparent;
+            this.imgIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgIcon.FillColor = System.Drawing.Color.DimGray;
             this.imgIcon.ImageRotate = 0F;
-            this.imgIcon.Location = new System.Drawing.Point(12, 10);
+            this.imgIcon.Location = new System.Drawing.Point(20, 5);
+            this.imgIcon.Margin = new System.Windows.Forms.Padding(0);
             this.imgIcon.Name = "imgIcon";
+            this.imgIcon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.imgIcon.Size = new System.Drawing.Size(33, 37);
-            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgIcon.Size = new System.Drawing.Size(25, 25);
+            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgIcon.TabIndex = 0;
             this.imgIcon.TabStop = false;
             // 
-            // guna2Panel1
+            // lblName
             // 
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.imgIcon);
-            this.guna2Panel1.CustomizableEdges = customizableEdges3;
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.guna2Panel1.Size = new System.Drawing.Size(57, 58);
-            this.guna2Panel1.TabIndex = 1;
+            this.lblName.AutoSize = true;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.lblName.Location = new System.Drawing.Point(45, 5);
+            this.lblName.Name = "lblName";
+            this.lblName.Padding = new System.Windows.Forms.Padding(4, 4, 10, 4);
+            this.lblName.Size = new System.Drawing.Size(54, 25);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Meal";
+            // 
+            // panelBg
+            // 
+            this.panelBg.AutoSize = true;
+            this.panelBg.BorderRadius = 5;
+            this.panelBg.Controls.Add(this.lblName);
+            this.panelBg.Controls.Add(this.imgIcon);
+            this.panelBg.CustomizableEdges = customizableEdges3;
+            this.panelBg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBg.FillColor = System.Drawing.Color.White;
+            this.panelBg.Location = new System.Drawing.Point(0, 0);
+            this.panelBg.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.panelBg.Name = "panelBg";
+            this.panelBg.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.panelBg.ShadowDecoration.BorderRadius = 5;
+            this.panelBg.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.panelBg.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.panelBg.ShadowDecoration.Depth = 5;
+            this.panelBg.ShadowDecoration.Enabled = true;
+            this.panelBg.Size = new System.Drawing.Size(104, 35);
+            this.panelBg.TabIndex = 2;
             // 
             // CategoryControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panelBg);
             this.Name = "CategoryControl";
-            this.Size = new System.Drawing.Size(57, 58);
+            this.Size = new System.Drawing.Size(104, 35);
+            this.Load += new System.EventHandler(this.CategoryControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
+            this.panelBg.ResumeLayout(false);
+            this.panelBg.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Label lblName;
+        private Guna.UI2.WinForms.Guna2Panel panelBg;
     }
 }

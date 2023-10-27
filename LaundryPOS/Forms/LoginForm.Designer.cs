@@ -102,7 +102,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconLeft")));
@@ -117,7 +117,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtPassword.Size = new System.Drawing.Size(250, 45);
             this.txtPassword.TabIndex = 10;
-            this.txtPassword.TextOffset = new System.Drawing.Point(2, 0);
+            this.txtPassword.TextOffset = new System.Drawing.Point(2, 1);
             // 
             // txtUsername
             // 
@@ -134,7 +134,7 @@ namespace LaundryPOS.Forms
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUsername.IconLeft")));
@@ -149,7 +149,7 @@ namespace LaundryPOS.Forms
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtUsername.Size = new System.Drawing.Size(250, 45);
             this.txtUsername.TabIndex = 9;
-            this.txtUsername.TextOffset = new System.Drawing.Point(2, 0);
+            this.txtUsername.TextOffset = new System.Drawing.Point(2, 1);
             // 
             // panelDrag
             // 
@@ -229,7 +229,7 @@ namespace LaundryPOS.Forms
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(98, 80);
             this.label2.Name = "label2";
@@ -244,7 +244,7 @@ namespace LaundryPOS.Forms
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(94, 41);
+            this.lblName.Location = new System.Drawing.Point(92, 41);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(215, 40);
             this.lblName.TabIndex = 16;
@@ -277,7 +277,7 @@ namespace LaundryPOS.Forms
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(21, 44);
+            this.label1.Location = new System.Drawing.Point(23, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 41);
             this.label1.TabIndex = 12;
@@ -291,15 +291,15 @@ namespace LaundryPOS.Forms
             this.cbShowPassword.CheckedState.BorderRadius = 0;
             this.cbShowPassword.CheckedState.BorderThickness = 0;
             this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbShowPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbShowPassword.Location = new System.Drawing.Point(166, 231);
+            this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowPassword.Location = new System.Drawing.Point(178, 231);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(112, 23);
+            this.cbShowPassword.Size = new System.Drawing.Size(108, 23);
             this.cbShowPassword.TabIndex = 0;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
-            this.cbShowPassword.UncheckedState.BorderRadius = 3;
-            this.cbShowPassword.UncheckedState.BorderThickness = 1;
+            this.cbShowPassword.UncheckedState.BorderRadius = 0;
+            this.cbShowPassword.UncheckedState.BorderThickness = 0;
             this.cbShowPassword.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.cbShowPassword.UseVisualStyleBackColor = false;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
@@ -314,7 +314,7 @@ namespace LaundryPOS.Forms
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(28, 289);
             this.btnLogin.Name = "btnLogin";
@@ -327,7 +327,6 @@ namespace LaundryPOS.Forms
             this.btnLogin.Size = new System.Drawing.Size(250, 45);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Log in";
-            this.btnLogin.TextOffset = new System.Drawing.Point(0, 2);
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // guna2PictureBox1

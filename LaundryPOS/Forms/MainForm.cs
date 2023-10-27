@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LaundryPOS.Migrations;
 
 namespace LaundryPOS.Forms
 {
@@ -39,6 +40,7 @@ namespace LaundryPOS.Forms
             orders = new();
 
             InitializeComponent();
+            InitializeTimer();
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace LaundryPOS.Forms
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
         {
-            var existingCartItem = cartPanel.Controls
+            var existingCartItem = panelCart.Controls
                 .OfType<CartControl>()
                 .FirstOrDefault(cart => cart.CartItem.Item.Id == e.CartItem.Item.Id);
 
@@ -70,7 +72,7 @@ namespace LaundryPOS.Forms
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
                 cartItem.AddToCartClicked += ItemControl_AddToCartClicked!;
 
-                cartPanel.Controls.Add(cartItem);
+                panelCart.Controls.Add(cartItem);
                 orders.Items.Add(e.CartItem);
             }
 
@@ -82,13 +84,22 @@ namespace LaundryPOS.Forms
         {
             var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
             DisplayFilteredItems(filteredItems);
-            lblMenuTitle.Text = e.Category.Name;
+
+            btnAllCategory.FillColor = Color.White;
+            btnAllCategory.ForeColor = Color.FromArgb(48,48,48);
+
+            var category = sender as CategoryControl;
+
+            flowLeft.Controls.OfType<CategoryControl>()
+                .Where(c => c != category)
+                .ToList()
+                .ForEach(c => c.ChangeToDefault());
         }
 
         private void CartControl_RemoveFromCartClicked(object sender, CartItemEventArgs e)
         {
             var cartControl = sender as CartControl;
-            cartPanel.Controls.Remove(cartControl);
+            panelCart.Controls.Remove(cartControl);
             orders.Items.Remove(e.CartItem);
 
             UpdateTotalValue();
@@ -104,20 +115,20 @@ namespace LaundryPOS.Forms
             foreach (var item in itemsControls)
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
-                itemsPanel.Controls.Add(item);
+                panelItems.Controls.Add(item);
             }
         }
 
         private async Task RefreshItems()
         {
             itemsControls.Clear();
-            itemsPanel.Controls.Clear();
+            panelItems.Controls.Clear();
             await DisplayItems();
+            await DisplayTransactionId();
         }
 
         private void DisplayEmployeeInfo()
         {
-            lblEmployeeName.Text = _employee.FullName;
             imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
                 ? _employee.Image
                 : "./default.png");
@@ -127,7 +138,7 @@ namespace LaundryPOS.Forms
         {
             var itemsToDisplay = filteredItems ?? allItems;
             itemsControls.Clear();
-            itemsPanel.Controls.Clear();
+            panelItems.Controls.Clear();
 
             itemsControls.AddRange(itemsToDisplay
                 .Select(item => new ItemControl(item, _themeManager)));
@@ -135,7 +146,7 @@ namespace LaundryPOS.Forms
             foreach (var item in itemsControls)
             {
                 item.AddToCartClicked += ItemControl_AddToCartClicked!;
-                itemsPanel.Controls.Add(item);
+                panelItems.Controls.Add(item);
             }
         }
 
@@ -144,18 +155,19 @@ namespace LaundryPOS.Forms
             var categories = await _unitOfWork.CategoryRepo.Get();
             var categoryControls = categories.Select(c =>
             {
-                var control = new CategoryControl(c);
+                var control = new CategoryControl(c, _themeManager);
                 control.CategoryClicked += CategoryControl_CategoryClicked!;
                 return control;
             }).ToList();
 
-            categoryPanel.Controls.AddRange(categoryControls.ToArray());
+            flowLeft.Controls.AddRange(categoryControls.ToArray());
         }
 
         private async Task DisplayAppInfo()
         {
             var appName = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
             lblTitle.Text = appName.Name;
+            await DisplayTransactionId();
         }
 
         private void UpdateTotalValue()
@@ -173,7 +185,7 @@ namespace LaundryPOS.Forms
             orders.Items.Clear();
             Total = default;
             UpdateTotalDisplay();
-            cartPanel.Controls.Clear();
+            panelCart.Controls.Clear();
         }
 
         private async void btnPayNow_Click(object sender, EventArgs e)
@@ -202,7 +214,7 @@ namespace LaundryPOS.Forms
                 var item = await _unitOfWork.ItemRepo.GetByID(order.Item.Id);
                 if (item == null || order.Quantity > item.Stock)
                 {
-                    return false; 
+                    return false;
                 }
             }
             return true;
@@ -212,7 +224,6 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
             await _themeManager.ApplyThemeToButton(btnViewUnpaid);
-            await _themeManager.ApplyThemeToPanel(bgPanel);
         }
 
         private async void btnPayLater_Click(object sender, EventArgs e)
@@ -302,9 +313,15 @@ namespace LaundryPOS.Forms
         private async void btnAllCategory_Click(object sender, EventArgs e)
         {
             itemsControls.Clear();
-            itemsPanel.Controls.Clear();
+            panelItems.Controls.Clear();
             await DisplayItems();
-            lblMenuTitle.Text = "All Items";
+
+            btnAllCategory.FillColor = Color.FromArgb(48, 48, 48);
+            btnAllCategory.ForeColor = Color.White;
+
+            flowLeft.Controls.OfType<CategoryControl>()
+                .ToList()
+                .ForEach(c => c.ChangeToDefault());
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -316,6 +333,23 @@ namespace LaundryPOS.Forms
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearCart();
+        }
+
+        private async Task DisplayTransactionId()
+        {
+            var transactionId = await _unitOfWork.TransactionRepo.GetLatestTransactionId();
+            lblTransacId.Text = $"Transaction #: {transactionId}";
+        }
+
+        private void InitializeTimer()
+        {
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
         }
     }
 }

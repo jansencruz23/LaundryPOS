@@ -32,15 +32,29 @@ namespace LaundryPOS.Forms.Views
 
         private async void CartControl_Load(object sender, EventArgs e)
         {
-            await _themeManager.ApplyThemeToButton(btnQuantity);
+            await _themeManager.ApplyOutlineThemeToButton(btnQuantity);
         }
 
         public void InitializeCartItem()
         {
             lblName.Text = CartItem.Item.Name;
-            lblPrice.Text = $"₱ {CartItem.Item.Price:#,###.00}";
+            lblCategory.Text = CartItem.Item.Category.Name;
             btnQuantity.Text = CartItem.Quantity.ToString();
-            lblSubTotal.Text = $"₱ {CartItem.SubTotal:#,###.00}";
+            lblSubTotal.Text = $"₱{CartItem.SubTotal:#,###.00}";
+            imgPic.Image = GetImage();
+        }
+        private Image GetImage()
+        {
+            try
+            {
+                return CartItem.Item.Image != null
+                ? Image.FromFile(CartItem.Item.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

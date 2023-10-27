@@ -41,16 +41,16 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnPrice);
+            await _themeManager.ApplyThemeToLabel(lblPrice);
         }
 
         private void InitializeItem()
         {
             lblName.Text = Item.Name;
             lblCategory.Text = Item.Category.Name;
-            btnPrice.Text = $"₱ {Item.Price:#,###.00}";
-            lblStock.Text = $"Stk: {Item.Stock}";
-            imgIcon.Image = GetImage();
+            lblPrice.Text = $"₱{Item.Price:#,###.00}";
+            lblStock.Text = $"{Item.Stock} left";
+            imgPic.Image = GetImage();
         }
 
         private Image GetImage()

@@ -83,7 +83,7 @@ namespace LaundryPOS.Helpers
             }
         }
 
-        public async Task ApplyThemeToButton(Guna2CircleButton button)
+        public async Task ApplyThemeToLabel(Label label)
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
@@ -98,17 +98,11 @@ namespace LaundryPOS.Helpers
             if (appSettings != null)
             {
                 var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
-                button.FillColor = themeColor;
-
-                var brightness = themeColor.GetBrightness();
-                var foreColor = brightness < 0.5 ? Color.White : Color.Black;
-
-                button.ForeColor = foreColor;
+                label.ForeColor = themeColor;
             }
             else
             {
-                button.FillColor = Color.White;
-                button.ForeColor = Color.Black;
+                label.ForeColor = Color.Black;
             }
         }
 
@@ -128,7 +122,6 @@ namespace LaundryPOS.Helpers
             {
                 var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
 
-                // Adjust the brightness of the theme color
                 var adjustedColor = Color.FromArgb(
                     (int)(themeColor.R * brightnessFactor),
                     (int)(themeColor.G * brightnessFactor),
@@ -167,39 +160,33 @@ namespace LaundryPOS.Helpers
             {
                 var themeColor = ColorTranslator.FromHtml(appSettings.Theme);
 
-                // Adjust the brightness of the theme color
                 var adjustedColor = Color.FromArgb(
                     (int)(themeColor.R * brightnessFactor),
                     (int)(themeColor.G * brightnessFactor),
                     (int)(themeColor.B * brightnessFactor)
                 );
 
-                // Apply the adjusted color to the DataGridView column header background
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = themeColor;
                 dataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = adjustedColor;
 
                 var brightness = adjustedColor.GetBrightness();
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
-                // Set the font for column headers
                 dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
 
                 if (changeFont)
                     dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
 
-                // Set alternating row background color to "whitesmoke"
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
             else
             {
-                // Apply default colors and fonts if appSettings is not available
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
                 dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
                 dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
 
-                // Set alternating row background color to "whitesmoke"
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
         }
