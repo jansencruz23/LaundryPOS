@@ -19,6 +19,8 @@ namespace LaundryPOS.Forms
 {
     public partial class MainForm : Form
     {
+        private LoadingForm _loadingForm;
+
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private readonly Employee _employee;
@@ -45,11 +47,36 @@ namespace LaundryPOS.Forms
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            await DisplayItems();
+            ShowWaitForm();
             await DisplayCategories();
             await ApplyTheme();
             await DisplayAppInfo();
             DisplayEmployeeInfo();
+            await DisplayItems();
+        }
+
+        private void ShowWaitForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            _loadingForm = new LoadingForm();
+            _loadingForm.TopMost = true;
+            _loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            // force the wait window to display for at least 700ms so it doesn't just flash on the screen
+            System.Threading.Thread.Sleep(700);
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -85,7 +112,7 @@ namespace LaundryPOS.Forms
             var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
             DisplayFilteredItems(filteredItems);
 
-            btnAllCategory.FillColor = Color.White;
+            btnAllCategory.FillColor = Color.FromArgb(248, 248, 248);
             btnAllCategory.ForeColor = Color.FromArgb(48,48,48);
 
             var category = sender as CategoryControl;
@@ -317,7 +344,7 @@ namespace LaundryPOS.Forms
             await DisplayItems();
 
             btnAllCategory.FillColor = Color.FromArgb(48, 48, 48);
-            btnAllCategory.ForeColor = Color.White;
+            btnAllCategory.ForeColor = Color.FromArgb(248, 248, 248);
 
             flowLeft.Controls.OfType<CategoryControl>()
                 .ToList()
@@ -350,6 +377,7 @@ namespace LaundryPOS.Forms
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
+            Opacity = 100;
         }
     }
 }

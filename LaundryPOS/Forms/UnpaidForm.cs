@@ -50,14 +50,16 @@ namespace LaundryPOS.Forms.Views
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyLighterThemeToDataGridView(unpaidTable, changeFont: true);
+            await _themeManager.ApplyThemeToButton(btnSearch);
         }
 
-        private async Task InitializeTable()
+        private async Task InitializeTable(string query = "")
         {
             await LoadEmployeeData();
 
             var transactionItems = await _unitOfWork.TransactionItemRepo
-                .Get(filter: ti => !ti.Transaction.IsCompleted, includeProperties: "Item,Transaction");
+                .Get(filter: ti => !ti.Transaction.IsCompleted && ti.TransactionId.ToString().Contains(query) || ti.Transaction.Employee.LastName.Contains(query) || ti.Transaction.Employee.FirstName.Contains(query), 
+                includeProperties: "Item,Transaction");
 
             var groupedTransactions = transactionItems
                 .GroupBy(ti => ti.TransactionId)
@@ -79,19 +81,22 @@ namespace LaundryPOS.Forms.Views
 
         private void ConfigureDataGridView(List<GroupedTransactionViewModel> groupedTransactions)
         {
-            unpaidTable.AutoGenerateColumns = false;
-
-            unpaidTable.Columns["EmployeeId"].Visible = false;
-            unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
-
-            unpaidTable.Columns.Add("Quantity", "Quantity");
-            unpaidTable.Columns.Add("Item Price", "Item Price");
-            unpaidTable.Columns.Add("SubTotal", "SubTotal");
-
-            if (unpaidTable.Columns.Contains("Total"))
+            if (unpaidTable.Columns["SubTotal"] == null)
             {
-                DataGridViewColumn totalColumn = unpaidTable.Columns["Total"];
-                totalColumn.DisplayIndex = unpaidTable.ColumnCount - 1;
+                unpaidTable.AutoGenerateColumns = false;
+
+                unpaidTable.Columns["EmployeeId"].Visible = false;
+                unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
+
+                unpaidTable.Columns.Add("Quantity", "Quantity");
+                unpaidTable.Columns.Add("Item Price", "Item Price");
+                unpaidTable.Columns.Add("SubTotal", "SubTotal");
+
+                if (unpaidTable.Columns.Contains("Total"))
+                {
+                    DataGridViewColumn totalColumn = unpaidTable.Columns["Total"];
+                    totalColumn.DisplayIndex = unpaidTable.ColumnCount - 1;
+                }
             }
         }
 
@@ -144,6 +149,16 @@ namespace LaundryPOS.Forms.Views
             var form = new MainForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.Show();
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await RefreshData(txtSearch.Text);
+        }
+
+        private async Task RefreshData(string query = "")
+        {
+            await InitializeTable(query);
         }
     }
 }

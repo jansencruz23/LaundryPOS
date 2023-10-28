@@ -72,22 +72,23 @@
             // panelBg
             // 
             this.panelBg.AutoSize = true;
+            this.panelBg.BackColor = System.Drawing.Color.Transparent;
             this.panelBg.BorderRadius = 5;
             this.panelBg.Controls.Add(this.lblName);
             this.panelBg.Controls.Add(this.imgIcon);
             this.panelBg.CustomizableEdges = customizableEdges3;
             this.panelBg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBg.FillColor = System.Drawing.Color.White;
+            this.panelBg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panelBg.Location = new System.Drawing.Point(0, 0);
             this.panelBg.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.panelBg.Name = "panelBg";
-            this.panelBg.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.panelBg.Padding = new System.Windows.Forms.Padding(20, 5, 8, 5);
             this.panelBg.ShadowDecoration.BorderRadius = 5;
             this.panelBg.ShadowDecoration.Color = System.Drawing.Color.Silver;
             this.panelBg.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.panelBg.ShadowDecoration.Depth = 5;
             this.panelBg.ShadowDecoration.Enabled = true;
-            this.panelBg.Size = new System.Drawing.Size(104, 35);
+            this.panelBg.Size = new System.Drawing.Size(107, 35);
             this.panelBg.TabIndex = 2;
             // 
             // CategoryControl
@@ -98,8 +99,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelBg);
             this.Name = "CategoryControl";
-            this.Size = new System.Drawing.Size(104, 35);
-            this.Load += new System.EventHandler(this.CategoryControl_Load);
+            this.Size = new System.Drawing.Size(107, 35);
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
             this.panelBg.ResumeLayout(false);
             this.panelBg.PerformLayout();

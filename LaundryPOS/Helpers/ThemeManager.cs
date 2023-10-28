@@ -172,21 +172,25 @@ namespace LaundryPOS.Helpers
                 var brightness = adjustedColor.GetBrightness();
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
-                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
+                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Bold);
+                dataGridView.ColumnHeadersHeight = 30;
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
 
                 if (changeFont)
-                    dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
+                {
+                    dataGridView.DefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Regular);
+                    dataGridView.AlternatingRowsDefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Regular);
+                }
 
+                dataGridView.RowTemplate.Height = 35;
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
             else
             {
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
-                dataGridView.DefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Regular);
-
+                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 11f, FontStyle.Bold);
+                dataGridView.DefaultCellStyle.Font = new Font("Arial", 11f, FontStyle.Regular);
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
         }
