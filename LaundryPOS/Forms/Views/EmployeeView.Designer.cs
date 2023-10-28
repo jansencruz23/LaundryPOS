@@ -684,7 +684,7 @@
             this.lblAge.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblAge.Name = "lblAge";
             this.lblAge.PasswordChar = '\0';
-            this.lblAge.PlaceholderText = "";
+            this.lblAge.PlaceholderText = "eg. 18";
             this.lblAge.SelectedText = "";
             this.lblAge.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.lblAge.Size = new System.Drawing.Size(224, 41);
@@ -708,7 +708,7 @@
             this.lblBirthday.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.PasswordChar = '\0';
-            this.lblBirthday.PlaceholderText = "";
+            this.lblBirthday.PlaceholderText = "eg. 01/01/01";
             this.lblBirthday.SelectedText = "";
             this.lblBirthday.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.lblBirthday.Size = new System.Drawing.Size(224, 41);
@@ -732,7 +732,7 @@
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.PasswordChar = '\0';
-            this.lblUsername.PlaceholderText = "";
+            this.lblUsername.PlaceholderText = "eg. JohnDoe23";
             this.lblUsername.SelectedText = "";
             this.lblUsername.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.lblUsername.Size = new System.Drawing.Size(224, 41);
@@ -756,7 +756,7 @@
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblName.Name = "lblName";
             this.lblName.PasswordChar = '\0';
-            this.lblName.PlaceholderText = "";
+            this.lblName.PlaceholderText = "eh. John Doe";
             this.lblName.SelectedText = "";
             this.lblName.ShadowDecoration.CustomizableEdges = customizableEdges34;
             this.lblName.Size = new System.Drawing.Size(224, 41);

@@ -38,6 +38,7 @@ namespace LaundryPOS.Forms
 
             InitializeComponent();
             InitializeOrders();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private async void PaymentForm_Load(object sender, EventArgs e)
@@ -168,8 +169,8 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToPanel(panelBg);
             await _themeManager.ApplyThemeToButton(btnPay);
+            await _themeManager.ApplyThemeToPanel(panelBg);
         }
 
         private void lblCancel_Click(object sender, EventArgs e)
