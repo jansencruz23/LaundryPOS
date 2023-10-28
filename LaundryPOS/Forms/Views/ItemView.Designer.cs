@@ -32,30 +32,30 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemView));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemView));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -77,28 +77,26 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.imgIcon = new System.Windows.Forms.PictureBox();
             this.txtStock = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnFile = new Guna.UI2.WinForms.Guna2Button();
             this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.itemTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.imgIcon = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -116,15 +114,11 @@
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -134,134 +128,129 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.BorderRadius = 7;
-            this.txtPrice.BorderThickness = 2;
+            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrice.BorderRadius = 5;
+            this.txtPrice.BorderThickness = 0;
             this.txtPrice.CustomizableEdges = customizableEdges1;
             this.txtPrice.DefaultText = "";
             this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrice.Enabled = false;
+            this.txtPrice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(4, 204);
+            this.txtPrice.Location = new System.Drawing.Point(264, 227);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "eg. 100";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtPrice.Size = new System.Drawing.Size(251, 30);
+            this.txtPrice.Size = new System.Drawing.Size(217, 40);
             this.txtPrice.TabIndex = 3;
             // 
             // txtName
             // 
-            this.txtName.BorderRadius = 7;
-            this.txtName.BorderThickness = 2;
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.BorderRadius = 5;
+            this.txtName.BorderThickness = 0;
             this.txtName.CustomizableEdges = customizableEdges3;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Enabled = false;
+            this.txtName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(4, 46);
+            this.txtName.Location = new System.Drawing.Point(264, 69);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "eg. Item";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtName.Size = new System.Drawing.Size(251, 33);
+            this.txtName.Size = new System.Drawing.Size(217, 40);
             this.txtName.TabIndex = 2;
-            // 
-            // imgIcon
-            // 
-            this.imgIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgIcon.Location = new System.Drawing.Point(3, 82);
-            this.imgIcon.Name = "imgIcon";
-            this.tableLayoutPanel2.SetRowSpan(this.imgIcon, 2);
-            this.imgIcon.Size = new System.Drawing.Size(253, 152);
-            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgIcon.TabIndex = 9;
-            this.imgIcon.TabStop = false;
             // 
             // txtStock
             // 
+            this.txtStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtStock.BorderRadius = 7;
-            this.txtStock.BorderThickness = 2;
-            this.txtStock.CustomizableEdges = customizableEdges7;
+            this.txtStock.BorderRadius = 5;
+            this.txtStock.BorderThickness = 0;
+            this.txtStock.CustomizableEdges = customizableEdges5;
             this.txtStock.DefaultText = "";
             this.txtStock.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStock.Enabled = false;
+            this.txtStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStock.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStock.Location = new System.Drawing.Point(4, 282);
+            this.txtStock.Location = new System.Drawing.Point(264, 310);
             this.txtStock.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtStock.Name = "txtStock";
             this.txtStock.PasswordChar = '\0';
             this.txtStock.PlaceholderText = "eg. 50";
             this.txtStock.SelectedText = "";
-            this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.txtStock.Size = new System.Drawing.Size(251, 30);
+            this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.txtStock.Size = new System.Drawing.Size(217, 40);
             this.txtStock.TabIndex = 10;
             // 
             // btnFile
             // 
             this.btnFile.BorderRadius = 7;
-            this.btnFile.CustomizableEdges = customizableEdges5;
+            this.btnFile.CustomizableEdges = customizableEdges7;
             this.btnFile.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFile.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFile.Enabled = false;
             this.btnFile.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(3, 240);
+            this.btnFile.Location = new System.Drawing.Point(37, 303);
             this.btnFile.Name = "btnFile";
-            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnFile.Size = new System.Drawing.Size(253, 48);
+            this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btnFile.Size = new System.Drawing.Size(195, 48);
             this.btnFile.TabIndex = 11;
             this.btnFile.Text = "Select Image";
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // cbCategory
             // 
+            this.cbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCategory.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategory.BorderRadius = 7;
-            this.cbCategory.BorderThickness = 2;
+            this.cbCategory.BorderRadius = 5;
+            this.cbCategory.BorderThickness = 0;
             this.cbCategory.CustomizableEdges = customizableEdges9;
-            this.cbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.Enabled = false;
+            this.cbCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.cbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCategory.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbCategory.ItemHeight = 30;
-            this.cbCategory.Location = new System.Drawing.Point(3, 121);
+            this.cbCategory.Location = new System.Drawing.Point(264, 153);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.cbCategory.Size = new System.Drawing.Size(253, 36);
+            this.cbCategory.Size = new System.Drawing.Size(217, 36);
             this.cbCategory.TabIndex = 13;
             // 
             // itemTable
@@ -294,7 +283,7 @@
             this.itemTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.itemTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.itemTable.Location = new System.Drawing.Point(3, 51);
+            this.itemTable.Location = new System.Drawing.Point(3, 58);
             this.itemTable.Name = "itemTable";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -307,7 +296,7 @@
             this.itemTable.RowHeadersVisible = false;
             this.itemTable.RowTemplate.Height = 50;
             this.itemTable.RowTemplate.ReadOnly = true;
-            this.itemTable.Size = new System.Drawing.Size(536, 527);
+            this.itemTable.Size = new System.Drawing.Size(535, 491);
             this.itemTable.TabIndex = 14;
             this.itemTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.itemTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -335,165 +324,130 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 5;
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.guna2Panel1.CustomizableEdges = customizableEdges15;
+            this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.imgIcon);
+            this.guna2Panel1.Controls.Add(this.btnFile);
+            this.guna2Panel1.Controls.Add(this.txtName);
+            this.guna2Panel1.Controls.Add(this.cbCategory);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.txtStock);
+            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.txtPrice);
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.CustomizableEdges = customizableEdges17;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 100);
+            this.guna2Panel1.Location = new System.Drawing.Point(297, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(20, 100, 10, 0);
+            this.guna2Panel1.MaximumSize = new System.Drawing.Size(522, 393);
+            this.guna2Panel1.MinimumSize = new System.Drawing.Size(432, 393);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(604, 384);
+            this.guna2Panel1.Size = new System.Drawing.Size(522, 393);
             this.guna2Panel1.TabIndex = 15;
             // 
-            // tableLayoutPanel1
+            // imgIcon
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 30);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 324);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtName, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.cbCategory, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txtStock, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.txtPrice, 0, 5);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(282, 3);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 8;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.15094F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.37736F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.20755F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32076F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(259, 318);
-            this.tableLayoutPanel3.TabIndex = 18;
+            this.imgIcon.BorderRadius = 5;
+            this.imgIcon.CustomizableEdges = customizableEdges15;
+            this.imgIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.imgIcon.ImageRotate = 0F;
+            this.imgIcon.Location = new System.Drawing.Point(37, 92);
+            this.imgIcon.Name = "imgIcon";
+            this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.imgIcon.Size = new System.Drawing.Size(195, 195);
+            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgIcon.TabIndex = 19;
+            this.imgIcon.TabStop = false;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Location = new System.Drawing.Point(264, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 14);
+            this.label1.Size = new System.Drawing.Size(112, 14);
             this.label1.TabIndex = 14;
             this.label1.Text = "Item Name";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(3, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 14);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Item Stock";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(3, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 14);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Item Category";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(3, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 14);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Item Price";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.imgIcon, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnFile, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(259, 318);
-            this.tableLayoutPanel2.TabIndex = 19;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Location = new System.Drawing.Point(37, 43);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 79);
+            this.label5.Size = new System.Drawing.Size(201, 43);
             this.label5.TabIndex = 18;
             this.label5.Text = "ITEM DETAILS";
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.label4.Location = new System.Drawing.Point(264, 288);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 14);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Item Stock";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.label3.Location = new System.Drawing.Point(264, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 14);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Item Price";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.label2.Location = new System.Drawing.Point(264, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 14);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Item Category";
+            // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
             this.guna2Panel2.Controls.Add(this.tableLayoutPanel5);
-            this.guna2Panel2.CustomizableEdges = customizableEdges17;
+            this.guna2Panel2.CustomizableEdges = customizableEdges19;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(644, 100);
+            this.guna2Panel2.Location = new System.Drawing.Point(869, 100);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(10, 100, 20, 20);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(30);
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel2.Size = new System.Drawing.Size(602, 641);
+            this.guna2Panel2.Size = new System.Drawing.Size(601, 612);
             this.guna2Panel2.TabIndex = 16;
             // 
             // tableLayoutPanel5
@@ -510,9 +464,9 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(30, 30);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.261618F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.73838F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(542, 581);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(541, 552);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
             // label7
@@ -524,7 +478,7 @@
             this.label7.Location = new System.Drawing.Point(3, 5);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 43);
+            this.label7.Size = new System.Drawing.Size(200, 50);
             this.label7.TabIndex = 20;
             this.label7.Text = "ITEM LIST";
             // 
@@ -532,7 +486,7 @@
             // 
             this.txtSearch.AutoSize = true;
             this.txtSearch.BorderRadius = 5;
-            this.txtSearch.BorderThickness = 2;
+            this.txtSearch.BorderThickness = 0;
             this.txtSearch.CustomizableEdges = customizableEdges11;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -540,6 +494,7 @@
             this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -550,7 +505,7 @@
             this.txtSearch.PlaceholderText = "Search using Item Name";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.txtSearch.Size = new System.Drawing.Size(206, 36);
+            this.txtSearch.Size = new System.Drawing.Size(205, 43);
             this.txtSearch.TabIndex = 21;
             // 
             // btnSearch
@@ -564,33 +519,18 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(440, 5);
+            this.btnSearch.Location = new System.Drawing.Point(439, 5);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.btnSearch.Size = new System.Drawing.Size(102, 38);
+            this.btnSearch.Size = new System.Drawing.Size(102, 45);
             this.btnSearch.TabIndex = 22;
             this.btnSearch.Text = "Search";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.guna2Panel2, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(251, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1269, 761);
-            this.tableLayoutPanel4.TabIndex = 18;
-            // 
             // txtPath
             // 
-            this.txtPath.CustomizableEdges = customizableEdges19;
+            this.txtPath.CustomizableEdges = customizableEdges21;
             this.txtPath.DefaultText = "";
             this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -604,7 +544,7 @@
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
             this.txtPath.SelectedText = "";
-            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.txtPath.Size = new System.Drawing.Size(21, 45);
             this.txtPath.TabIndex = 5;
             this.txtPath.Visible = false;
@@ -647,7 +587,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BorderRadius = 5;
-            this.btnLogout.CustomizableEdges = customizableEdges21;
+            this.btnLogout.CustomizableEdges = customizableEdges23;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -660,7 +600,7 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.Location = new System.Drawing.Point(3, 45);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.btnLogout.Size = new System.Drawing.Size(202, 37);
             this.btnLogout.TabIndex = 23;
             this.btnLogout.Text = "Log out";
@@ -672,7 +612,7 @@
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Transparent;
             this.btnPrint.BorderRadius = 5;
-            this.btnPrint.CustomizableEdges = customizableEdges23;
+            this.btnPrint.CustomizableEdges = customizableEdges25;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnPrint.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -685,7 +625,7 @@
             this.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPrint.Location = new System.Drawing.Point(3, 3);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.btnPrint.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.btnPrint.Size = new System.Drawing.Size(202, 36);
             this.btnPrint.TabIndex = 22;
             this.btnPrint.Text = "Print";
@@ -717,7 +657,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.BorderRadius = 5;
-            this.btnAdd.CustomizableEdges = customizableEdges25;
+            this.btnAdd.CustomizableEdges = customizableEdges27;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -730,7 +670,7 @@
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.btnAdd.Size = new System.Drawing.Size(202, 33);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add Item";
@@ -741,7 +681,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BorderRadius = 5;
-            this.btnUpdate.CustomizableEdges = customizableEdges27;
+            this.btnUpdate.CustomizableEdges = customizableEdges29;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -755,7 +695,7 @@
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUpdate.Location = new System.Drawing.Point(3, 42);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.btnUpdate.Size = new System.Drawing.Size(202, 33);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update Item";
@@ -766,7 +706,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BorderRadius = 5;
-            this.btnSave.CustomizableEdges = customizableEdges29;
+            this.btnSave.CustomizableEdges = customizableEdges31;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -780,7 +720,7 @@
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.Location = new System.Drawing.Point(3, 81);
             this.btnSave.Name = "btnSave";
-            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.btnSave.Size = new System.Drawing.Size(202, 33);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save Item";
@@ -791,7 +731,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 5;
-            this.btnDelete.CustomizableEdges = customizableEdges31;
+            this.btnDelete.CustomizableEdges = customizableEdges33;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.WhiteSmoke;
@@ -805,7 +745,7 @@
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.Location = new System.Drawing.Point(3, 120);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges34;
             this.btnDelete.Size = new System.Drawing.Size(202, 33);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete Item";
@@ -838,7 +778,7 @@
             // 
             this.btnCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnCategory.BorderRadius = 5;
-            this.btnCategory.CustomizableEdges = customizableEdges33;
+            this.btnCategory.CustomizableEdges = customizableEdges35;
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -851,7 +791,7 @@
             this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.Location = new System.Drawing.Point(3, 40);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            this.btnCategory.ShadowDecoration.CustomizableEdges = customizableEdges36;
             this.btnCategory.Size = new System.Drawing.Size(202, 31);
             this.btnCategory.TabIndex = 16;
             this.btnCategory.Text = "Category";
@@ -862,7 +802,7 @@
             // 
             this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
             this.btnEmployee.BorderRadius = 5;
-            this.btnEmployee.CustomizableEdges = customizableEdges35;
+            this.btnEmployee.CustomizableEdges = customizableEdges37;
             this.btnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEmployee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -875,7 +815,7 @@
             this.btnEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEmployee.Location = new System.Drawing.Point(3, 77);
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            this.btnEmployee.ShadowDecoration.CustomizableEdges = customizableEdges38;
             this.btnEmployee.Size = new System.Drawing.Size(202, 31);
             this.btnEmployee.TabIndex = 13;
             this.btnEmployee.Text = "Employees";
@@ -886,7 +826,7 @@
             // 
             this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
             this.btnTransaction.BorderRadius = 5;
-            this.btnTransaction.CustomizableEdges = customizableEdges37;
+            this.btnTransaction.CustomizableEdges = customizableEdges39;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -899,7 +839,7 @@
             this.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTransaction.Location = new System.Drawing.Point(3, 114);
             this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            this.btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges40;
             this.btnTransaction.Size = new System.Drawing.Size(202, 31);
             this.btnTransaction.TabIndex = 15;
             this.btnTransaction.Text = "Transaction";
@@ -910,7 +850,7 @@
             // 
             this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnAdminProfile.BorderRadius = 5;
-            this.btnAdminProfile.CustomizableEdges = customizableEdges39;
+            this.btnAdminProfile.CustomizableEdges = customizableEdges41;
             this.btnAdminProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdminProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdminProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -923,7 +863,7 @@
             this.btnAdminProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdminProfile.Location = new System.Drawing.Point(3, 151);
             this.btnAdminProfile.Name = "btnAdminProfile";
-            this.btnAdminProfile.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            this.btnAdminProfile.ShadowDecoration.CustomizableEdges = customizableEdges42;
             this.btnAdminProfile.Size = new System.Drawing.Size(202, 35);
             this.btnAdminProfile.TabIndex = 17;
             this.btnAdminProfile.Text = "Admin Profile";
@@ -933,7 +873,7 @@
             // btnItem
             // 
             this.btnItem.BorderRadius = 5;
-            this.btnItem.CustomizableEdges = customizableEdges41;
+            this.btnItem.CustomizableEdges = customizableEdges43;
             this.btnItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -945,7 +885,7 @@
             this.btnItem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnItem.Location = new System.Drawing.Point(3, 3);
             this.btnItem.Name = "btnItem";
-            this.btnItem.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            this.btnItem.ShadowDecoration.CustomizableEdges = customizableEdges44;
             this.btnItem.Size = new System.Drawing.Size(202, 31);
             this.btnItem.TabIndex = 14;
             this.btnItem.Text = "Items";
@@ -955,14 +895,14 @@
             // 
             this.guna2Panel3.Controls.Add(this.tableLayoutPanel6);
             this.guna2Panel3.Controls.Add(this.txtPath);
-            this.guna2Panel3.CustomizableEdges = customizableEdges43;
+            this.guna2Panel3.CustomizableEdges = customizableEdges45;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges46;
             this.guna2Panel3.ShadowDecoration.Depth = 10;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
@@ -974,22 +914,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.tableLayoutPanel4);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel3);
             this.DoubleBuffered = true;
             this.Name = "ItemView";
             this.Size = new System.Drawing.Size(1520, 761);
             this.Load += new System.EventHandler(this.ItemView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemTable)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -1003,7 +940,6 @@
 
         private Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private PictureBox imgIcon;
         private Guna.UI2.WinForms.Guna2TextBox txtStock;
         private Guna.UI2.WinForms.Guna2Button btnFile;
         private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
@@ -1016,10 +952,6 @@
         private Label label5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Label label7;
-        private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel5;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
@@ -1040,5 +972,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
     }
 }

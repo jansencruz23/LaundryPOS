@@ -159,7 +159,7 @@
             this.txtName.PlaceholderText = "eg. Meal";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtName.Size = new System.Drawing.Size(203, 42);
+            this.txtName.Size = new System.Drawing.Size(203, 40);
             this.txtName.TabIndex = 1;
             // 
             // imgIcon
