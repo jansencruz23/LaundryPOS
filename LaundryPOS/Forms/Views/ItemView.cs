@@ -183,7 +183,7 @@ namespace LaundryPOS.Forms.Views
             await _themeManager.ApplyThemeToButton(btnFile);
             await _themeManager.ApplyThemeToButton(btnItem);
             await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(itemTable, 0.8f, true);
+            await _themeManager.ApplyLighterThemeToDataGridView(itemTable, 1f, true);
         }
 
         private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

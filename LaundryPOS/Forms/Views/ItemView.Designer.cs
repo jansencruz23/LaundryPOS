@@ -622,8 +622,8 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.50197F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.03416F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.59527F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.16557F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.46386F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(251, 761);
             this.tableLayoutPanel6.TabIndex = 22;
             // 
@@ -710,7 +710,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(208, 155);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(208, 156);
             this.tableLayoutPanel8.TabIndex = 23;
             // 
             // btnAdd
@@ -731,7 +731,7 @@
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            this.btnAdd.Size = new System.Drawing.Size(202, 32);
+            this.btnAdd.Size = new System.Drawing.Size(202, 33);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add Item";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -753,10 +753,10 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(3, 41);
+            this.btnUpdate.Location = new System.Drawing.Point(3, 42);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            this.btnUpdate.Size = new System.Drawing.Size(202, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(202, 33);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update Item";
             this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -778,10 +778,10 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Location = new System.Drawing.Point(3, 79);
+            this.btnSave.Location = new System.Drawing.Point(3, 81);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            this.btnSave.Size = new System.Drawing.Size(202, 32);
+            this.btnSave.Size = new System.Drawing.Size(202, 33);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save Item";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -803,10 +803,10 @@
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDelete.Location = new System.Drawing.Point(3, 117);
+            this.btnDelete.Location = new System.Drawing.Point(3, 120);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            this.btnDelete.Size = new System.Drawing.Size(202, 35);
+            this.btnDelete.Size = new System.Drawing.Size(202, 33);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "Delete Item";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

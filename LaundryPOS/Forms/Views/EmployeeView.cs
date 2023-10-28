@@ -102,7 +102,7 @@ namespace LaundryPOS.Forms.Views
         {
             await _themeManager.ApplyThemeToButton(btnEmployee);
             await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(employeeTable);
+            await _themeManager.ApplyLighterThemeToDataGridView(employeeTable, 1f, true);
         }
 
         private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
