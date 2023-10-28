@@ -11,8 +11,10 @@
               <TextRun>
                 <Value>=First(Fields!Name.Value, "ShopInfoDataSet")</Value>
                 <Style>
-                  <FontFamily>Montserrat</FontFamily>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Helvetica</FontFamily>
                   <FontSize>15pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -854,7 +856,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4.52101in</Height>
+    <Height>4.3135in</Height>
     <Style />
   </Body>
   <Width>3.83208in</Width>

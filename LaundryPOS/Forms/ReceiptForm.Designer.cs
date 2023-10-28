@@ -68,7 +68,7 @@
             this.Controls.Add(this.reportViewer);
             this.Name = "ReceiptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "A";
+            this.Text = "Print Receipt";
             this.ResumeLayout(false);
 
         }
