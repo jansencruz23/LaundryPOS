@@ -71,10 +71,10 @@
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(50, 20);
+            this.lblTitle.Font = new System.Drawing.Font("Helvetica", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(45, 13);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(299, 45);
+            this.lblTitle.Size = new System.Drawing.Size(711, 45);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "label1";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

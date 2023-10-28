@@ -71,71 +71,67 @@
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtOldPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtOldPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderRadius = 7;
-            this.txtUsername.BorderThickness = 2;
+            this.txtUsername.BorderRadius = 5;
+            this.txtUsername.BorderThickness = 0;
             this.txtUsername.CustomizableEdges = customizableEdges1;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(11, 50);
+            this.txtUsername.Location = new System.Drawing.Point(37, 134);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.PlaceholderText = "Username";
+            this.txtUsername.PlaceholderText = "eg. admin";
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtUsername.Size = new System.Drawing.Size(205, 31);
+            this.txtUsername.Size = new System.Drawing.Size(265, 40);
             this.txtUsername.TabIndex = 0;
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.BorderRadius = 7;
-            this.txtNewPassword.BorderThickness = 2;
+            this.txtNewPassword.BorderRadius = 5;
+            this.txtNewPassword.BorderThickness = 0;
             this.txtNewPassword.CustomizableEdges = customizableEdges3;
             this.txtNewPassword.DefaultText = "";
             this.txtNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNewPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(11, 182);
+            this.txtNewPassword.Location = new System.Drawing.Point(38, 312);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '•';
-            this.txtNewPassword.PlaceholderText = "New password";
+            this.txtNewPassword.PlaceholderText = "••••••••";
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtNewPassword.Size = new System.Drawing.Size(205, 31);
+            this.txtNewPassword.Size = new System.Drawing.Size(264, 40);
             this.txtNewPassword.TabIndex = 1;
             // 
             // btnSave
@@ -146,16 +142,15 @@
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(10, 287);
+            this.btnSave.Location = new System.Drawing.Point(40, 471);
             this.btnSave.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnSave.Size = new System.Drawing.Size(207, 41);
+            this.btnSave.Size = new System.Drawing.Size(262, 49);
             this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "SAVE";
+            this.btnSave.Text = "Update Account";
             this.btnSave.TextOffset = new System.Drawing.Point(0, 1);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -188,8 +183,8 @@
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.93954F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.65735F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.29041F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.2523F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.40311F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(251, 761);
             this.tableLayoutPanel6.TabIndex = 22;
@@ -198,15 +193,14 @@
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.btnLogout, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.btnLogout, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 685);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 110, 3, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 700);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 110, 3, 20);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(208, 73);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(208, 41);
             this.tableLayoutPanel9.TabIndex = 27;
             // 
             // btnLogout
@@ -220,19 +214,17 @@
             this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLogout.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogout.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnLogout.Location = new System.Drawing.Point(3, 39);
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnLogout.Size = new System.Drawing.Size(202, 31);
+            this.btnLogout.Size = new System.Drawing.Size(202, 35);
             this.btnLogout.TabIndex = 23;
             this.btnLogout.Text = "Log out";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogout.TextOffset = new System.Drawing.Point(0, 2);
             // 
             // tableLayoutPanel7
             // 
@@ -253,7 +245,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(208, 178);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(208, 196);
             this.tableLayoutPanel7.TabIndex = 23;
             // 
             // btnCategory
@@ -267,19 +259,17 @@
             this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCategory.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategory.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCategory.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCategory.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnCategory.Location = new System.Drawing.Point(3, 38);
+            this.btnCategory.Location = new System.Drawing.Point(3, 42);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.btnCategory.Size = new System.Drawing.Size(202, 29);
+            this.btnCategory.Size = new System.Drawing.Size(202, 33);
             this.btnCategory.TabIndex = 16;
             this.btnCategory.Text = "Category";
             this.btnCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCategory.TextOffset = new System.Drawing.Point(-1, 1);
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnEmployee
@@ -293,19 +283,17 @@
             this.btnEmployee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEmployee.FillColor = System.Drawing.Color.Transparent;
-            this.btnEmployee.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmployee.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
             this.btnEmployee.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEmployee.ImageSize = new System.Drawing.Size(17, 17);
-            this.btnEmployee.Location = new System.Drawing.Point(3, 73);
+            this.btnEmployee.Location = new System.Drawing.Point(3, 81);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.btnEmployee.Size = new System.Drawing.Size(202, 29);
+            this.btnEmployee.Size = new System.Drawing.Size(202, 33);
             this.btnEmployee.TabIndex = 13;
             this.btnEmployee.Text = "Employees";
             this.btnEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnEmployee.TextOffset = new System.Drawing.Point(-3, 1);
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnTransaction
@@ -319,19 +307,17 @@
             this.btnTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTransaction.FillColor = System.Drawing.Color.Transparent;
-            this.btnTransaction.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTransaction.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnTransaction.Image")));
             this.btnTransaction.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTransaction.ImageSize = new System.Drawing.Size(17, 17);
-            this.btnTransaction.Location = new System.Drawing.Point(3, 108);
+            this.btnTransaction.Location = new System.Drawing.Point(3, 120);
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.btnTransaction.Size = new System.Drawing.Size(202, 29);
+            this.btnTransaction.Size = new System.Drawing.Size(202, 33);
             this.btnTransaction.TabIndex = 15;
             this.btnTransaction.Text = "Transaction";
             this.btnTransaction.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTransaction.TextOffset = new System.Drawing.Point(-3, 1);
             this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
             // btnAdminProfile
@@ -345,19 +331,17 @@
             this.btnAdminProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdminProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdminProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdminProfile.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdminProfile.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdminProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnAdminProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnAdminProfile.Image")));
             this.btnAdminProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdminProfile.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnAdminProfile.Location = new System.Drawing.Point(3, 143);
+            this.btnAdminProfile.Location = new System.Drawing.Point(3, 159);
             this.btnAdminProfile.Name = "btnAdminProfile";
             this.btnAdminProfile.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.btnAdminProfile.Size = new System.Drawing.Size(202, 32);
+            this.btnAdminProfile.Size = new System.Drawing.Size(202, 34);
             this.btnAdminProfile.TabIndex = 17;
             this.btnAdminProfile.Text = "Admin Profile";
             this.btnAdminProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdminProfile.TextOffset = new System.Drawing.Point(0, 1);
             // 
             // btnItem
             // 
@@ -369,19 +353,17 @@
             this.btnItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnItem.FillColor = System.Drawing.Color.Transparent;
-            this.btnItem.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnItem.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnItem.Image = ((System.Drawing.Image)(resources.GetObject("btnItem.Image")));
             this.btnItem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnItem.ImageSize = new System.Drawing.Size(15, 15);
             this.btnItem.Location = new System.Drawing.Point(3, 3);
             this.btnItem.Name = "btnItem";
             this.btnItem.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.btnItem.Size = new System.Drawing.Size(202, 29);
+            this.btnItem.Size = new System.Drawing.Size(202, 33);
             this.btnItem.TabIndex = 14;
             this.btnItem.Text = "Items";
             this.btnItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnItem.TextOffset = new System.Drawing.Point(0, 1);
             this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
             // txtPath
@@ -405,28 +387,23 @@
             this.txtPath.TabIndex = 5;
             this.txtPath.Visible = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(251, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(30);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1269, 761);
-            this.tableLayoutPanel1.TabIndex = 19;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel2);
+            this.guna2Panel1.Controls.Add(this.txtConfirmPassword);
+            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.btnSave);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.txtUsername);
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.txtOldPassword);
+            this.guna2Panel1.Controls.Add(this.txtNewPassword);
+            this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.CustomizableEdges = customizableEdges27;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(30, 100);
+            this.guna2Panel1.Location = new System.Drawing.Point(304, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(30, 100, 30, 30);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
@@ -436,71 +413,57 @@
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(287, 391);
+            this.guna2Panel1.Size = new System.Drawing.Size(343, 558);
             this.guna2Panel1.TabIndex = 20;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.txtConfirmPassword, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.btnSave, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.txtOldPassword, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.txtUsername, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtNewPassword, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(30, 30);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 100, 3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 10;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(227, 331);
-            this.tableLayoutPanel2.TabIndex = 21;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.BorderRadius = 7;
-            this.txtConfirmPassword.BorderThickness = 2;
+            this.txtConfirmPassword.BorderRadius = 5;
+            this.txtConfirmPassword.BorderThickness = 0;
             this.txtConfirmPassword.CustomizableEdges = customizableEdges23;
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtConfirmPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(11, 248);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(38, 405);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '•';
-            this.txtConfirmPassword.PlaceholderText = "Confirm your password";
+            this.txtConfirmPassword.PlaceholderText = "••••••••";
             this.txtConfirmPassword.SelectedText = "";
             this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.txtConfirmPassword.Size = new System.Drawing.Size(205, 31);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(264, 40);
             this.txtConfirmPassword.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(33, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(277, 55);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Admin Settings";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(37, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 31);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Username";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label4
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(10, 218);
+            this.label4.Location = new System.Drawing.Point(37, 372);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 25);
@@ -508,59 +471,10 @@
             this.label4.Text = "Confirm New Password";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(10, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 15);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Username";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(10, 152);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 25);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "New Password";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtOldPassword
-            // 
-            this.txtOldPassword.BorderRadius = 7;
-            this.txtOldPassword.BorderThickness = 2;
-            this.txtOldPassword.CustomizableEdges = customizableEdges25;
-            this.txtOldPassword.DefaultText = "";
-            this.txtOldPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtOldPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtOldPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOldPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOldPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtOldPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Location = new System.Drawing.Point(11, 116);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
-            this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.PasswordChar = '•';
-            this.txtOldPassword.PlaceholderText = "Old password";
-            this.txtOldPassword.SelectedText = "";
-            this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            this.txtOldPassword.Size = new System.Drawing.Size(205, 31);
-            this.txtOldPassword.TabIndex = 22;
-            // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(10, 86);
+            this.label2.Location = new System.Drawing.Point(37, 191);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 25);
@@ -568,21 +482,46 @@
             this.label2.Text = "Old Password";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label5
+            // txtOldPassword
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 20);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Admin Login Settings";
+            this.txtOldPassword.BorderRadius = 5;
+            this.txtOldPassword.BorderThickness = 0;
+            this.txtOldPassword.CustomizableEdges = customizableEdges25;
+            this.txtOldPassword.DefaultText = "";
+            this.txtOldPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtOldPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtOldPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOldPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOldPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.txtOldPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOldPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOldPassword.Location = new System.Drawing.Point(38, 221);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '•';
+            this.txtOldPassword.PlaceholderText = "••••••••";
+            this.txtOldPassword.SelectedText = "";
+            this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.txtOldPassword.Size = new System.Drawing.Size(264, 40);
+            this.txtOldPassword.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(37, 282);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 25);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "New Password";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // AdminProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel3);
             this.Name = "AdminProfileView";
             this.Size = new System.Drawing.Size(1520, 761);
@@ -591,9 +530,7 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -612,9 +549,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAdminProfile;
         private Guna.UI2.WinForms.Guna2Button btnItem;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
-        private TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2TextBox txtOldPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtConfirmPassword;
         private Label label4;

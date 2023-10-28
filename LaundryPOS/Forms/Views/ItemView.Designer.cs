@@ -324,8 +324,6 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
@@ -574,8 +572,8 @@
             this.tableLayoutPanel9.Controls.Add(this.btnLogout, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.btnPrint, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 673);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 90, 3, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 656);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 0, 3, 20);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

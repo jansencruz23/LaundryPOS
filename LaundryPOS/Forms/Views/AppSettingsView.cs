@@ -100,7 +100,6 @@ namespace LaundryPOS.Forms.Views
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyOutlineThemeToButton(btnColor);
-            await _themeManager.ApplyOutlineThemeToButton(btnCancel);
             await _themeManager.ApplyThemeToButton(btnSave);
         }
 

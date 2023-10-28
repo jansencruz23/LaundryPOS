@@ -135,7 +135,7 @@ namespace LaundryPOS.Forms.Views
         {
             await _themeManager.ApplyThemeToButton(btnTransaction);
             await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(transactionTable);
+            await _themeManager.ApplyLighterThemeToDataGridView(transactionTable, 1f, true);
         }
 
         private void btnItem_Click(object sender, EventArgs e)

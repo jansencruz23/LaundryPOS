@@ -225,7 +225,7 @@
             this.categoryTable.Location = new System.Drawing.Point(3, 62);
             this.categoryTable.Name = "categoryTable";
             this.categoryTable.RowHeadersVisible = false;
-            this.categoryTable.RowTemplate.Height = 25;
+            this.categoryTable.RowTemplate.Height = 40;
             this.categoryTable.Size = new System.Drawing.Size(469, 479);
             this.categoryTable.TabIndex = 7;
             this.categoryTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -246,7 +246,7 @@
             this.categoryTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.categoryTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.categoryTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.categoryTable.ThemeStyle.RowsStyle.Height = 25;
+            this.categoryTable.ThemeStyle.RowsStyle.Height = 40;
             this.categoryTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.categoryTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.categoryTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryTable_CellClick);
@@ -553,8 +553,8 @@
             this.tableLayoutPanel9.Controls.Add(this.btnLogout, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.btnPrint, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 674);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 110, 3, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(40, 657);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(40, 0, 3, 20);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
