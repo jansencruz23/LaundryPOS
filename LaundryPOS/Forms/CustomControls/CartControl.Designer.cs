@@ -82,6 +82,7 @@
             // btnQuantity
             // 
             this.btnQuantity.BorderRadius = 5;
+            this.btnQuantity.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuantity.CustomizableEdges = customizableEdges1;
             this.btnQuantity.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuantity.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -139,6 +140,7 @@
             // btnRemove
             // 
             this.btnRemove.BorderRadius = 5;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.CustomizableEdges = customizableEdges5;
             this.btnRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

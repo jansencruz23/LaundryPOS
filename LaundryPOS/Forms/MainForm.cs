@@ -4,16 +4,7 @@ using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LaundryPOS.Migrations;
 
 namespace LaundryPOS.Forms
 {
@@ -47,7 +38,7 @@ namespace LaundryPOS.Forms
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            ShowWaitForm();
+            ShowLoadingForm();
             await DisplayCategories();
             await ApplyTheme();
             await DisplayAppInfo();
@@ -55,7 +46,7 @@ namespace LaundryPOS.Forms
             await DisplayItems();
         }
 
-        private void ShowWaitForm()
+        private void ShowLoadingForm()
         {
             if (_loadingForm != null && !_loadingForm.IsDisposed)
             {
@@ -63,13 +54,9 @@ namespace LaundryPOS.Forms
             }
 
             _loadingForm = new LoadingForm();
-            _loadingForm.TopMost = true;
-            _loadingForm.StartPosition = FormStartPosition.CenterScreen;
             _loadingForm.Show();
             _loadingForm.Refresh();
 
-            // force the wait window to display for at least 700ms so it doesn't just flash on the screen
-            System.Threading.Thread.Sleep(700);
             Application.Idle += OnLoaded;
         }
 
@@ -194,6 +181,7 @@ namespace LaundryPOS.Forms
         {
             var appName = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
             lblTitle.Text = appName.Name;
+            lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
             await DisplayTransactionId();
         }
 
@@ -370,13 +358,19 @@ namespace LaundryPOS.Forms
 
         private void InitializeTimer()
         {
-            timer.Tick += timer_Tick;
-            timer.Start();
+            timerDate.Tick += timerDate_Tick!;
+            timerForm.Tick += timerForm_Tick!;
+            timerDate.Start();
+            timerForm.Start();
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void timerDate_Tick(object sender, EventArgs e)
         {
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
+        }
+
+        private void timerForm_Tick(object sender, EventArgs e)
+        {
             Opacity = 100;
         }
     }

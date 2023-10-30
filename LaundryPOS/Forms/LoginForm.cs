@@ -16,7 +16,7 @@ namespace LaundryPOS.Forms
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
             InitializeComponent();
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private async void LoginForm_Load(object sender, EventArgs e)

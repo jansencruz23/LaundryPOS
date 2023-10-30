@@ -139,6 +139,7 @@ namespace LaundryPOS.Forms
             // btnPay
             // 
             this.btnPay.BorderRadius = 8;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.CustomizableEdges = customizableEdges1;
             this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -158,6 +159,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn00.BackColor = System.Drawing.Color.Transparent;
             this.btn00.BorderRadius = 5;
+            this.btn00.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn00.CustomizableEdges = customizableEdges3;
             this.btn00.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn00.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -183,6 +185,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn0.BackColor = System.Drawing.Color.Transparent;
             this.btn0.BorderRadius = 5;
+            this.btn0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn0.CustomizableEdges = customizableEdges5;
             this.btn0.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn0.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -208,6 +211,7 @@ namespace LaundryPOS.Forms
             // 
             this.btnDot.BackColor = System.Drawing.Color.Transparent;
             this.btnDot.BorderRadius = 5;
+            this.btnDot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDot.CustomizableEdges = customizableEdges7;
             this.btnDot.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDot.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -233,6 +237,7 @@ namespace LaundryPOS.Forms
             // 
             this.btnDelete.BorderRadius = 8;
             this.btnDelete.BorderThickness = 1;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.CustomizableEdges = customizableEdges9;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -253,6 +258,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn3.BackColor = System.Drawing.Color.Transparent;
             this.btn3.BorderRadius = 5;
+            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.CustomizableEdges = customizableEdges11;
             this.btn3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -278,6 +284,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn2.BackColor = System.Drawing.Color.Transparent;
             this.btn2.BorderRadius = 5;
+            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.CustomizableEdges = customizableEdges13;
             this.btn2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -303,6 +310,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn1.BackColor = System.Drawing.Color.Transparent;
             this.btn1.BorderRadius = 5;
+            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.CustomizableEdges = customizableEdges15;
             this.btn1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -328,6 +336,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn6.BackColor = System.Drawing.Color.Transparent;
             this.btn6.BorderRadius = 5;
+            this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.CustomizableEdges = customizableEdges17;
             this.btn6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -353,6 +362,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn5.BackColor = System.Drawing.Color.Transparent;
             this.btn5.BorderRadius = 5;
+            this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.CustomizableEdges = customizableEdges19;
             this.btn5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -378,6 +388,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn4.BackColor = System.Drawing.Color.Transparent;
             this.btn4.BorderRadius = 5;
+            this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.CustomizableEdges = customizableEdges21;
             this.btn4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -403,6 +414,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn9.BackColor = System.Drawing.Color.Transparent;
             this.btn9.BorderRadius = 5;
+            this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.CustomizableEdges = customizableEdges23;
             this.btn9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -428,6 +440,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn8.BackColor = System.Drawing.Color.Transparent;
             this.btn8.BorderRadius = 5;
+            this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.CustomizableEdges = customizableEdges25;
             this.btn8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -453,6 +466,7 @@ namespace LaundryPOS.Forms
             // 
             this.btn7.BackColor = System.Drawing.Color.Transparent;
             this.btn7.BorderRadius = 5;
+            this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.CustomizableEdges = customizableEdges27;
             this.btn7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

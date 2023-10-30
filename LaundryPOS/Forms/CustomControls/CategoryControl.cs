@@ -55,6 +55,9 @@ namespace LaundryPOS.Forms.CustomControls
             InvokeOnClick(this, EventArgs.Empty);
             CategoryClicked?.Invoke(this,
                 new CategoryEventArgs(_category));
+
+            panelBg.FillColor = Color.FromArgb(48,48,48);
+            lblName.ForeColor = Color.White;
         }
 
         public void ChangeToDefault()

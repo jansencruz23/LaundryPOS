@@ -12,9 +12,11 @@ namespace LaundryPOS.Forms
 {
     public partial class LoadingForm : Form
     {
+        int num = 1;
         public LoadingForm()
         {
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
     }
 }

@@ -76,6 +76,7 @@
             this.panelBg.BorderRadius = 5;
             this.panelBg.Controls.Add(this.lblName);
             this.panelBg.Controls.Add(this.imgIcon);
+            this.panelBg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelBg.CustomizableEdges = customizableEdges3;
             this.panelBg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));

@@ -24,7 +24,6 @@ namespace LaundryPOS.Forms.Views
         {
             Item = item;
             _themeManager = themeManager;
-
             InitializeComponent();
             InitializeItem();
             WireAllControls(this);
