@@ -31,6 +31,7 @@ namespace LaundryPOS.Forms.Views
             _employeeCache = new();
 
             InitializeComponent();
+            DisplayEmployeeInfo();
         }
 
         private async Task LoadEmployeeData()
@@ -146,14 +147,6 @@ namespace LaundryPOS.Forms.Views
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var form = new MainForm(_unitOfWork, _themeManager, _employee);
-            form.FormClosed += (s, args) => Close();
-            form.Show();
-        }
-
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
@@ -162,6 +155,45 @@ namespace LaundryPOS.Forms.Views
         private async Task RefreshData(string query = "")
         {
             await InitializeTable(query);
+        }
+
+        private void DisplayEmployeeInfo()
+        {
+            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
+                ? _employee.Image
+                : "./default.png");
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var form = new MainForm(_unitOfWork, _themeManager, _employee);
+            form.FormClosed += (s, args) => Close();
+            form.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                RestartApplication();
+            }
+        }
+
+        private void RestartApplication()
+        {
+            string appPath = Application.ExecutablePath;
+            System.Diagnostics.Process.Start(appPath);
+            Application.Exit();
+        }
+
+        private void imgPic_Click(object sender, EventArgs e)
+        {
+            var form = new ProfileForm(_unitOfWork, _themeManager, _employee);
+            form.ShowDialog();
         }
     }
 }

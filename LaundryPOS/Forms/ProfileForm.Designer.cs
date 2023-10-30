@@ -42,10 +42,10 @@ namespace LaundryPOS.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -57,14 +57,11 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.bgPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -82,12 +79,12 @@ namespace LaundryPOS.Forms
             // 
             this.bgPanel.BackColor = System.Drawing.Color.Transparent;
             this.bgPanel.Controls.Add(this.guna2Panel1);
-            this.bgPanel.CustomizableEdges = customizableEdges16;
+            this.bgPanel.CustomizableEdges = customizableEdges14;
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Padding = new System.Windows.Forms.Padding(15);
-            this.bgPanel.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            this.bgPanel.ShadowDecoration.CustomizableEdges = customizableEdges15;
             this.bgPanel.Size = new System.Drawing.Size(325, 570);
             this.bgPanel.TabIndex = 0;
             // 
@@ -96,21 +93,20 @@ namespace LaundryPOS.Forms
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.panelDrag);
-            this.guna2Panel1.Controls.Add(this.btnLogOut);
             this.guna2Panel1.Controls.Add(this.btnEdit);
             this.guna2Panel1.Controls.Add(this.txtUsername);
             this.guna2Panel1.Controls.Add(this.txtName);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.imgPic);
-            this.guna2Panel1.CustomizableEdges = customizableEdges14;
+            this.guna2Panel1.CustomizableEdges = customizableEdges12;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(15, 15);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.Gray;
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
@@ -169,43 +165,21 @@ namespace LaundryPOS.Forms
             this.label3.Text = "Options";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(8)))), ((int)(((byte)(12)))));
-            this.btnLogOut.BorderRadius = 5;
-            this.btnLogOut.BorderThickness = 1;
-            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.CustomizableEdges = customizableEdges5;
-            this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(8)))), ((int)(((byte)(12)))));
-            this.btnLogOut.Location = new System.Drawing.Point(41, 460);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnLogOut.Size = new System.Drawing.Size(214, 40);
-            this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // btnEdit
             // 
             this.btnEdit.BorderRadius = 5;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.CustomizableEdges = customizableEdges7;
+            this.btnEdit.CustomizableEdges = customizableEdges5;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEdit.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(41, 415);
+            this.btnEdit.Location = new System.Drawing.Point(41, 448);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnEdit.Size = new System.Drawing.Size(214, 40);
+            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.btnEdit.Size = new System.Drawing.Size(214, 53);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit Profile";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -214,7 +188,7 @@ namespace LaundryPOS.Forms
             // 
             this.txtUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.BorderRadius = 5;
-            this.txtUsername.CustomizableEdges = customizableEdges9;
+            this.txtUsername.CustomizableEdges = customizableEdges7;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
@@ -232,7 +206,7 @@ namespace LaundryPOS.Forms
             this.txtUsername.PlaceholderText = "";
             this.txtUsername.ReadOnly = true;
             this.txtUsername.SelectedText = "";
-            this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtUsername.Size = new System.Drawing.Size(214, 40);
             this.txtUsername.TabIndex = 4;
             // 
@@ -240,7 +214,7 @@ namespace LaundryPOS.Forms
             // 
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtName.BorderRadius = 5;
-            this.txtName.CustomizableEdges = customizableEdges11;
+            this.txtName.CustomizableEdges = customizableEdges9;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
@@ -258,7 +232,7 @@ namespace LaundryPOS.Forms
             this.txtName.PlaceholderText = "";
             this.txtName.ReadOnly = true;
             this.txtName.SelectedText = "";
-            this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.txtName.Size = new System.Drawing.Size(214, 40);
             this.txtName.TabIndex = 3;
             // 
@@ -290,7 +264,7 @@ namespace LaundryPOS.Forms
             this.imgPic.ImageRotate = 0F;
             this.imgPic.Location = new System.Drawing.Point(88, 104);
             this.imgPic.Name = "imgPic";
-            this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.imgPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.imgPic.Size = new System.Drawing.Size(120, 120);
             this.imgPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -327,7 +301,6 @@ namespace LaundryPOS.Forms
 
         private Guna.UI2.WinForms.Guna2Panel bgPanel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2TextBox txtName;

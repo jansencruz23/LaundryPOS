@@ -242,7 +242,6 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
-            await _themeManager.ApplyThemeToButton(btnViewUnpaid);
             await _themeManager.ApplyOutlineThemeToButton(btnSearch);
         }
 
@@ -326,7 +325,7 @@ namespace LaundryPOS.Forms
             }
         }
 
-        private void btnViewUnpaid_Click(object sender, EventArgs e)
+        private void btnPending_Click(object sender, EventArgs e)
         {
             Hide();
             var form = new UnpaidForm(_unitOfWork, _themeManager, _employee);
@@ -394,6 +393,24 @@ namespace LaundryPOS.Forms
             {
                 panelItems.Controls.Add(item);
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                RestartApplication();
+            }
+        }
+
+        private void RestartApplication()
+        {
+            string appPath = Application.ExecutablePath;
+            System.Diagnostics.Process.Start(appPath);
+            Application.Exit();
         }
     }
 }

@@ -39,7 +39,6 @@ namespace LaundryPOS.Forms
         private async Task ApplyTheme()
         {
             await _themeManager.ApplyThemeToButton(btnEdit);
-            await _themeManager.ApplyOutlineThemeToButton(btnLogOut);
             await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f);
             await _themeManager.ApplyFocusedThemeToTextBox(txtName);
