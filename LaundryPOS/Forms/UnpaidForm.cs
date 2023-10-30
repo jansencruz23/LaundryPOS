@@ -58,7 +58,10 @@ namespace LaundryPOS.Forms.Views
             await LoadEmployeeData();
 
             var transactionItems = await _unitOfWork.TransactionItemRepo
-                .Get(filter: ti => !ti.Transaction.IsCompleted && ti.TransactionId.ToString().Contains(query) || ti.Transaction.Employee.LastName.Contains(query) || ti.Transaction.Employee.FirstName.Contains(query), 
+                .Get(filter: ti => !ti.Transaction.IsCompleted 
+                    && (ti.TransactionId.ToString().Contains(query) 
+                    || ti.Transaction.Employee.LastName.Contains(query) 
+                    || ti.Transaction.Employee.FirstName.Contains(query)), 
                 includeProperties: "Item,Transaction");
 
             var groupedTransactions = transactionItems

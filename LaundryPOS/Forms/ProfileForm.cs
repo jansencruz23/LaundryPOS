@@ -48,9 +48,11 @@ namespace LaundryPOS.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            Opacity = 0;
             var form = new UpdateProfileForm(_unitOfWork, _themeManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.ShowDialog();
+            Opacity = 100;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

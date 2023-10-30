@@ -1,4 +1,6 @@
-﻿namespace LaundryPOS.Forms
+﻿using System.Runtime.InteropServices;
+
+namespace LaundryPOS.Forms
 {
     partial class ChangePassword
     {
@@ -19,6 +21,17 @@
             }
             base.Dispose(disposing);
         }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
 
         #region Windows Form Designer generated code
 
@@ -69,13 +82,14 @@
             this.panelBg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBg.Location = new System.Drawing.Point(0, 0);
             this.panelBg.Name = "panelBg";
+            this.panelBg.Padding = new System.Windows.Forms.Padding(20);
             this.panelBg.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.panelBg.Size = new System.Drawing.Size(364, 522);
+            this.panelBg.Size = new System.Drawing.Size(406, 582);
             this.panelBg.TabIndex = 0;
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.BorderRadius = 15;
             this.guna2Panel2.Controls.Add(this.cbShowPassword);
             this.guna2Panel2.Controls.Add(this.label3);
             this.guna2Panel2.Controls.Add(this.label2);
@@ -86,11 +100,12 @@
             this.guna2Panel2.Controls.Add(this.txtOldPassword);
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.CustomizableEdges = customizableEdges13;
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(12, 12);
+            this.guna2Panel2.Location = new System.Drawing.Point(20, 20);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.guna2Panel2.Size = new System.Drawing.Size(340, 498);
+            this.guna2Panel2.Size = new System.Drawing.Size(366, 542);
             this.guna2Panel2.TabIndex = 0;
             // 
             // cbShowPassword
@@ -101,11 +116,11 @@
             this.cbShowPassword.CheckedState.BorderRadius = 0;
             this.cbShowPassword.CheckedState.BorderThickness = 0;
             this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbShowPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbShowPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbShowPassword.Location = new System.Drawing.Point(180, 353);
+            this.cbShowPassword.Location = new System.Drawing.Point(200, 388);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(112, 23);
+            this.cbShowPassword.Size = new System.Drawing.Size(119, 19);
             this.cbShowPassword.TabIndex = 9;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -119,20 +134,20 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(47, 284);
+            this.label3.Location = new System.Drawing.Point(49, 312);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 23);
+            this.label3.Size = new System.Drawing.Size(206, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Confirm Password";
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(47, 203);
+            this.label2.Location = new System.Drawing.Point(49, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 23);
             this.label2.TabIndex = 6;
@@ -141,9 +156,9 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(47, 118);
+            this.label1.Location = new System.Drawing.Point(49, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 23);
             this.label1.TabIndex = 5;
@@ -157,12 +172,12 @@
             this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSubmit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSubmit.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSubmit.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(47, 412);
+            this.btnSubmit.Location = new System.Drawing.Point(49, 444);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnSubmit.Size = new System.Drawing.Size(245, 42);
+            this.btnSubmit.Size = new System.Drawing.Size(270, 48);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Change Password";
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -180,16 +195,16 @@
             this.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtConfirmPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(47, 308);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(49, 337);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.PlaceholderText = "••••••••";
             this.txtConfirmPassword.SelectedText = "";
             this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtConfirmPassword.Size = new System.Drawing.Size(245, 37);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(270, 42);
             this.txtConfirmPassword.TabIndex = 3;
             // 
             // txtNewPassword
@@ -205,16 +220,16 @@
             this.txtNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(47, 226);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtNewPassword.Location = new System.Drawing.Point(49, 246);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '•';
             this.txtNewPassword.PlaceholderText = "••••••••";
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.txtNewPassword.Size = new System.Drawing.Size(245, 37);
+            this.txtNewPassword.Size = new System.Drawing.Size(270, 42);
             this.txtNewPassword.TabIndex = 2;
             // 
             // txtOldPassword
@@ -230,16 +245,16 @@
             this.txtOldPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtOldPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtOldPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOldPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Location = new System.Drawing.Point(47, 142);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtOldPassword.Location = new System.Drawing.Point(49, 152);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '•';
             this.txtOldPassword.PlaceholderText = "••••••••";
             this.txtOldPassword.SelectedText = "";
             this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.txtOldPassword.Size = new System.Drawing.Size(245, 37);
+            this.txtOldPassword.Size = new System.Drawing.Size(270, 42);
             this.txtOldPassword.TabIndex = 1;
             // 
             // guna2Panel3
@@ -251,11 +266,12 @@
             customizableEdges11.BottomLeft = false;
             customizableEdges11.BottomRight = false;
             this.guna2Panel3.CustomizableEdges = customizableEdges11;
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.guna2Panel3.Size = new System.Drawing.Size(340, 76);
+            this.guna2Panel3.Size = new System.Drawing.Size(366, 76);
             this.guna2Panel3.TabIndex = 0;
             // 
             // btnClose
@@ -273,7 +289,7 @@
             this.btnClose.FillColor = System.Drawing.Color.Transparent;
             this.btnClose.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnClose.Location = new System.Drawing.Point(280, 24);
+            this.btnClose.Location = new System.Drawing.Point(303, 23);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnClose.Size = new System.Drawing.Size(42, 31);
@@ -285,9 +301,9 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(17, 7);
+            this.label4.Location = new System.Drawing.Point(22, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 63);
             this.label4.TabIndex = 3;
@@ -298,8 +314,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 522);
+            this.ClientSize = new System.Drawing.Size(406, 582);
             this.Controls.Add(this.panelBg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";

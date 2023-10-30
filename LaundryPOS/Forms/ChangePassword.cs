@@ -29,6 +29,7 @@ namespace LaundryPOS.Forms
             _employee = employee;
 
             InitializeComponent();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
 
         private async void ChangePassword_Load(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToPanel(panelBg, 1f);
             await _themeManager.ApplyThemeToButton(btnSubmit);
+            await _themeManager.ApplyOutlineThemeToButton(btnClose);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)

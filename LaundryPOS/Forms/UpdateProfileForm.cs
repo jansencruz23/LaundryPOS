@@ -98,8 +98,10 @@ namespace LaundryPOS.Forms
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            Opacity = 0;
             var form = new ChangePassword(_unitOfWork, _themeManager, _employee);
             form.ShowDialog();
+            Opacity = 100;
         }
     }
 }
