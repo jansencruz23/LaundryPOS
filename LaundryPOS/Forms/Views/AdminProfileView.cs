@@ -49,7 +49,7 @@ namespace LaundryPOS.Forms.Views
             if (!txtNewPassword.Text.Equals(txtConfirmPassword.Text))
             {
                 MessageBox.Show("Passwords do not match", "Admin Settings Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error););
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
