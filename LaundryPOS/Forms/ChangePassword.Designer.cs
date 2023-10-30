@@ -167,6 +167,7 @@ namespace LaundryPOS.Forms
             // btnSubmit
             // 
             this.btnSubmit.BorderRadius = 7;
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmit.CustomizableEdges = customizableEdges1;
             this.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

@@ -10,6 +10,7 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class TransactionView : BaseViewControl
     {
+        private LoadingForm _loadingForm;
         private readonly List<Employee> _employeeCache;
 
         #region -- CONSTANTS --
@@ -31,8 +32,34 @@ namespace LaundryPOS.Forms.Views
             : base (unitOfWork, themeManager, changeAdminView)
         {
             _employeeCache = new();
+
             InitializeComponent();
+            ShowLoadingForm();
         }
+
+        private void ShowLoadingForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            panelCover.Dock = DockStyle.Fill;
+            _loadingForm = new LoadingForm();
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
+            panelCover.Dock = DockStyle.None;
+            panelCover.Size = new Size(1,1);
+        }
+
 
         private async Task LoadEmployeeData()
         {
@@ -44,7 +71,10 @@ namespace LaundryPOS.Forms.Views
 
         private async void TransactionView_Load(object sender, EventArgs e)
         {
-            await DisplayTransactions(ti => ti.Transaction.IsCompleted);
+            var filter = cbFilter.SelectedItem?.ToString()!;
+            var expression = GetDateExpression(filter);
+
+            await DisplayTransactions(expression);
             await ApplyTheme();
         }
 

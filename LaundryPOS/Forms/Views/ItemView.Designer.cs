@@ -114,6 +114,7 @@
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelCover = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
@@ -214,6 +215,7 @@
             // btnFile
             // 
             this.btnFile.BorderRadius = 7;
+            this.btnFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFile.CustomizableEdges = customizableEdges7;
             this.btnFile.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -509,6 +511,7 @@
             // btnSearch
             // 
             this.btnSearch.BorderRadius = 7;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.CustomizableEdges = customizableEdges13;
             this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -585,6 +588,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BorderRadius = 5;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges23;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -610,6 +614,7 @@
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Transparent;
             this.btnPrint.BorderRadius = 5;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.CustomizableEdges = customizableEdges25;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -655,6 +660,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.BorderRadius = 5;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.CustomizableEdges = customizableEdges27;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -679,6 +685,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.BorderRadius = 5;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.CustomizableEdges = customizableEdges29;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -704,6 +711,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.BorderRadius = 5;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.CustomizableEdges = customizableEdges31;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -729,6 +737,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 5;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.CustomizableEdges = customizableEdges33;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -776,6 +785,7 @@
             // 
             this.btnCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnCategory.BorderRadius = 5;
+            this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategory.CustomizableEdges = customizableEdges35;
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -800,6 +810,7 @@
             // 
             this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
             this.btnEmployee.BorderRadius = 5;
+            this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.CustomizableEdges = customizableEdges37;
             this.btnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -824,6 +835,7 @@
             // 
             this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
             this.btnTransaction.BorderRadius = 5;
+            this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.CustomizableEdges = customizableEdges39;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -848,6 +860,7 @@
             // 
             this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnAdminProfile.BorderRadius = 5;
+            this.btnAdminProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfile.CustomizableEdges = customizableEdges41;
             this.btnAdminProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdminProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -871,6 +884,7 @@
             // btnItem
             // 
             this.btnItem.BorderRadius = 5;
+            this.btnItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItem.CustomizableEdges = customizableEdges43;
             this.btnItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -907,11 +921,19 @@
             this.guna2Panel3.Size = new System.Drawing.Size(251, 761);
             this.guna2Panel3.TabIndex = 17;
             // 
+            // panelCover
+            // 
+            this.panelCover.Location = new System.Drawing.Point(257, 3);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Size = new System.Drawing.Size(243, 37);
+            this.panelCover.TabIndex = 25;
+            // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.panelCover);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel3);
@@ -971,5 +993,6 @@
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
+        private Panel panelCover;
     }
 }

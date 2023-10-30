@@ -11,6 +11,7 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class ItemView : BaseItemView
     {
+        private LoadingForm _loadingForm;
         private Item _item;
         private const string ITEMS_FOLDER = "Items";
 
@@ -20,7 +21,32 @@ namespace LaundryPOS.Forms.Views
             : base(unitOfWork, themeManager, changeAdminView)
         {
             InitializeComponent();
+            ShowLoadingForm();
         }
+
+        private void ShowLoadingForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            panelCover.Dock = DockStyle.Fill;
+            _loadingForm = new LoadingForm();
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
+            panelCover.Dock = DockStyle.None;
+            panelCover.Size = new Size(1, 1);
+        }
+
 
         private async void ItemView_Load(object sender, EventArgs e)
         {

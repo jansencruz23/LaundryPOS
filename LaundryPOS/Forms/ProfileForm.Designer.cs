@@ -174,6 +174,7 @@ namespace LaundryPOS.Forms
             this.btnLogOut.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(8)))), ((int)(((byte)(12)))));
             this.btnLogOut.BorderRadius = 5;
             this.btnLogOut.BorderThickness = 1;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.CustomizableEdges = customizableEdges5;
             this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -193,6 +194,7 @@ namespace LaundryPOS.Forms
             // btnEdit
             // 
             this.btnEdit.BorderRadius = 5;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.CustomizableEdges = customizableEdges7;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

@@ -122,6 +122,7 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelCover = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryTable)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -937,13 +938,22 @@
             this.guna2Button6.Text = "Save Category";
             this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // panelCover
+            // 
+            this.panelCover.Location = new System.Drawing.Point(273, 3);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Size = new System.Drawing.Size(243, 37);
+            this.panelCover.TabIndex = 26;
+            // 
             // CategoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelCover);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "CategoryView";
             this.Size = new System.Drawing.Size(1214, 761);
             this.Load += new System.EventHandler(this.CategoryView_Load);
@@ -1003,5 +1013,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Panel panelCover;
     }
 }

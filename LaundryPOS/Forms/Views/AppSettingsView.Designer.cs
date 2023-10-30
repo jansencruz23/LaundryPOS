@@ -192,6 +192,7 @@
             // btnColor
             // 
             this.btnColor.BorderRadius = 5;
+            this.btnColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnColor.CustomizableEdges = customizableEdges11;
             this.btnColor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnColor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -210,6 +211,7 @@
             // btnSave
             // 
             this.btnSave.BorderRadius = 5;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.CustomizableEdges = customizableEdges13;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -274,6 +276,7 @@
             this.btnCancel.BorderColor = System.Drawing.Color.DarkRed;
             this.btnCancel.BorderRadius = 5;
             this.btnCancel.BorderThickness = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.CustomizableEdges = customizableEdges15;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

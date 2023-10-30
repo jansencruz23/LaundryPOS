@@ -102,6 +102,7 @@
             this.lblUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblName = new Guna.UI2.WinForms.Guna2TextBox();
             this.imgPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelCover = new System.Windows.Forms.Panel();
             this.guna2Panel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -169,6 +170,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BorderRadius = 5;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges1;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -194,6 +196,7 @@
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Transparent;
             this.btnPrint.BorderRadius = 5;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.CustomizableEdges = customizableEdges3;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -235,6 +238,7 @@
             // 
             this.btnRegister.BackColor = System.Drawing.Color.Transparent;
             this.btnRegister.BorderRadius = 5;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.CustomizableEdges = customizableEdges5;
             this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -259,6 +263,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 5;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.CustomizableEdges = customizableEdges7;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -311,6 +316,7 @@
             // 
             this.btnCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnCategory.BorderRadius = 5;
+            this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategory.CustomizableEdges = customizableEdges9;
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -335,6 +341,7 @@
             // 
             this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
             this.btnEmployee.BorderRadius = 5;
+            this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.CustomizableEdges = customizableEdges11;
             this.btnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -358,6 +365,7 @@
             // 
             this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
             this.btnTransaction.BorderRadius = 5;
+            this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.CustomizableEdges = customizableEdges13;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -382,6 +390,7 @@
             // 
             this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnAdminProfile.BorderRadius = 5;
+            this.btnAdminProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfile.CustomizableEdges = customizableEdges15;
             this.btnAdminProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdminProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -405,6 +414,7 @@
             // btnItem
             // 
             this.btnItem.BorderRadius = 5;
+            this.btnItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItem.CustomizableEdges = customizableEdges17;
             this.btnItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -594,6 +604,7 @@
             // btnSearch
             // 
             this.btnSearch.BorderRadius = 5;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.CustomizableEdges = customizableEdges23;
             this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -776,10 +787,18 @@
             this.imgPic.TabIndex = 16;
             this.imgPic.TabStop = false;
             // 
+            // panelCover
+            // 
+            this.panelCover.Location = new System.Drawing.Point(275, 3);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Size = new System.Drawing.Size(243, 37);
+            this.panelCover.TabIndex = 26;
+            // 
             // EmployeeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelCover);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel3);
@@ -832,5 +851,6 @@
         private Guna.UI2.WinForms.Guna2TextBox lblUsername;
         private Guna.UI2.WinForms.Guna2TextBox lblName;
         private Guna.UI2.WinForms.Guna2PictureBox imgPic;
+        private Panel panelCover;
     }
 }

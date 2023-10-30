@@ -82,5 +82,10 @@ namespace LaundryPOS.Forms.Views
         {
             ChangeAdminView(CreateView<TransactionView>());
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ConfirmLogout();
+        }
     }
 }

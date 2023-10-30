@@ -227,6 +227,7 @@ namespace LaundryPOS.Forms
             // btnUpdate
             // 
             this.btnUpdate.BorderRadius = 5;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.CustomizableEdges = customizableEdges9;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

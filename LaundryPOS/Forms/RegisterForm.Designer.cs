@@ -401,6 +401,7 @@
             // btnRegister
             // 
             this.btnRegister.BorderRadius = 5;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.CustomizableEdges = customizableEdges14;
             this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

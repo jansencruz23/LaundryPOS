@@ -64,6 +64,7 @@ namespace LaundryPOS.Forms
         {
             Application.Idle -= OnLoaded;
             _loadingForm.Close();
+            Opacity = 100;
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
@@ -359,19 +360,12 @@ namespace LaundryPOS.Forms
         private void InitializeTimer()
         {
             timerDate.Tick += timerDate_Tick!;
-            timerForm.Tick += timerForm_Tick!;
             timerDate.Start();
-            timerForm.Start();
         }
 
         private void timerDate_Tick(object sender, EventArgs e)
         {
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
-        }
-
-        private void timerForm_Tick(object sender, EventArgs e)
-        {
-            Opacity = 100;
         }
     }
 }

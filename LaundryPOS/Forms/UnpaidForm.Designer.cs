@@ -256,6 +256,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1284, 715);
             this.Controls.Add(this.guna2Panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UnpaidForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UnpaidForm";

@@ -60,7 +60,7 @@
             this.transactionTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -77,9 +77,10 @@
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelCover = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.transactionTable)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.panelData.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -178,28 +179,28 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(157, 1);
             this.tableLayoutPanel8.TabIndex = 23;
             // 
-            // guna2Panel1
+            // panelData
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel5);
-            this.guna2Panel1.CustomizableEdges = customizableEdges7;
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(288, 103);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(20, 100, 20, 20);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
-            this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.guna2Panel1.ShadowDecoration.Depth = 10;
-            this.guna2Panel1.ShadowDecoration.Enabled = true;
-            this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(1188, 615);
-            this.guna2Panel1.TabIndex = 23;
+            this.panelData.BackColor = System.Drawing.Color.Transparent;
+            this.panelData.BorderRadius = 15;
+            this.panelData.Controls.Add(this.tableLayoutPanel5);
+            this.panelData.CustomizableEdges = customizableEdges7;
+            this.panelData.FillColor = System.Drawing.Color.White;
+            this.panelData.Location = new System.Drawing.Point(288, 103);
+            this.panelData.Margin = new System.Windows.Forms.Padding(20, 100, 20, 20);
+            this.panelData.Name = "panelData";
+            this.panelData.Padding = new System.Windows.Forms.Padding(30);
+            this.panelData.ShadowDecoration.BorderRadius = 15;
+            this.panelData.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.panelData.ShadowDecoration.Depth = 10;
+            this.panelData.ShadowDecoration.Enabled = true;
+            this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
+            this.panelData.Size = new System.Drawing.Size(1188, 615);
+            this.panelData.TabIndex = 23;
             // 
             // tableLayoutPanel5
             // 
@@ -275,7 +276,7 @@
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.cbFilter.Size = new System.Drawing.Size(377, 36);
-            this.cbFilter.StartIndex = 0;
+            this.cbFilter.StartIndex = 1;
             this.cbFilter.TabIndex = 25;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
@@ -558,18 +559,27 @@
             this.guna2Panel3.Size = new System.Drawing.Size(251, 761);
             this.guna2Panel3.TabIndex = 21;
             // 
+            // panelCover
+            // 
+            this.panelCover.Location = new System.Drawing.Point(251, 0);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Size = new System.Drawing.Size(243, 37);
+            this.panelCover.TabIndex = 24;
+            // 
             // TransactionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.panelCover);
+            this.Controls.Add(this.panelData);
             this.Controls.Add(this.guna2Panel3);
+            this.DoubleBuffered = true;
             this.Name = "TransactionView";
             this.Size = new System.Drawing.Size(1520, 761);
             this.Load += new System.EventHandler(this.TransactionView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transactionTable)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
+            this.panelData.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -585,7 +595,7 @@
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel8;
         private TableLayoutPanel tableLayoutPanel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panelData;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
@@ -602,5 +612,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Panel panelCover;
     }
 }

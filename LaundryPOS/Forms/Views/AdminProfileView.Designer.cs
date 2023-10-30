@@ -137,6 +137,7 @@
             // btnSave
             // 
             this.btnSave.BorderRadius = 7;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.CustomizableEdges = customizableEdges5;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -207,6 +208,7 @@
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
             this.btnLogout.BorderRadius = 5;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges7;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.Black;
@@ -225,6 +227,7 @@
             this.btnLogout.TabIndex = 23;
             this.btnLogout.Text = "Log out";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -252,6 +255,7 @@
             // 
             this.btnCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnCategory.BorderRadius = 5;
+            this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategory.CustomizableEdges = customizableEdges9;
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -276,6 +280,7 @@
             // 
             this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
             this.btnEmployee.BorderRadius = 5;
+            this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.CustomizableEdges = customizableEdges11;
             this.btnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEmployee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -300,6 +305,7 @@
             // 
             this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
             this.btnTransaction.BorderRadius = 5;
+            this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.CustomizableEdges = customizableEdges13;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -324,6 +330,7 @@
             // 
             this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnAdminProfile.BorderRadius = 5;
+            this.btnAdminProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfile.CustomizableEdges = customizableEdges15;
             this.btnAdminProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdminProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -346,6 +353,7 @@
             // btnItem
             // 
             this.btnItem.BorderRadius = 5;
+            this.btnItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItem.CustomizableEdges = customizableEdges17;
             this.btnItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

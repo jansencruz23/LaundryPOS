@@ -291,6 +291,7 @@ namespace LaundryPOS.Forms
             this.cbShowPassword.CheckedState.BorderRadius = 0;
             this.cbShowPassword.CheckedState.BorderThickness = 0;
             this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbShowPassword.Location = new System.Drawing.Point(178, 231);
             this.cbShowPassword.Name = "cbShowPassword";
@@ -309,6 +310,7 @@ namespace LaundryPOS.Forms
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BorderRadius = 5;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.CustomizableEdges = customizableEdges9;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

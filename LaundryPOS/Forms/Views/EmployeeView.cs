@@ -19,6 +19,7 @@ namespace LaundryPOS.Forms.Views
     public partial class EmployeeView : BaseEmployeeView
     {
         private Employee _employee;
+        private LoadingForm _loadingForm;
 
         public EmployeeView(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
@@ -26,6 +27,30 @@ namespace LaundryPOS.Forms.Views
             : base(unitOfWork, themeManager, changeAdminView)
         {
             InitializeComponent();
+            ShowLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            panelCover.Dock = DockStyle.Fill;
+            _loadingForm = new LoadingForm();
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
+            panelCover.Dock = DockStyle.None;
+            panelCover.Size = new Size(1, 1);
         }
 
         private async void EmployeeView_Load(object sender, EventArgs e)
