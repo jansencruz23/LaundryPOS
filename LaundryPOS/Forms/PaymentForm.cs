@@ -84,13 +84,20 @@ namespace LaundryPOS.Forms
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message);
+                        MessageBox.Show("An error occurred: " + ex.Message, "Payment Failed",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("failed");
+                    MessageBox.Show("failed", "Payment Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please make sure you enter valid input", "Payment Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -141,7 +148,8 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Transaction failed.");
+                    MessageBox.Show("Transaction failed.", "Transaction Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

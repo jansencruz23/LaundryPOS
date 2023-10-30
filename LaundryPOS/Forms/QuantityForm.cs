@@ -85,7 +85,8 @@ namespace LaundryPOS.Forms
             }
             catch
             {
-                MessageBox.Show("Please input valid quantity");
+                MessageBox.Show("Please input valid quantity", "Error Occured",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -111,7 +111,8 @@ namespace LaundryPOS.Forms.Views
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 string.IsNullOrWhiteSpace(txtPath.Text))
             {
-                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
+                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.",
+                    "Category Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -156,14 +157,16 @@ namespace LaundryPOS.Forms.Views
         {
             if (_category != null)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", 
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
                     await _unitOfWork.CategoryRepo.Delete(_category.Id);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Category deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Category deleted successfully.", "Success", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearText();
                 }
             }
@@ -212,14 +215,16 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.CategoryRepo.Update(_category);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Category updated successfully");
+                    MessageBox.Show("Category updated successfully", "Category Updated Successfully",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await RefreshData();
                     ClearText();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured " + ex.Message);
+                MessageBox.Show("An error occured " + ex.Message, "Category Update Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

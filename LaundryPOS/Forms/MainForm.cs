@@ -208,13 +208,15 @@ namespace LaundryPOS.Forms
         {
             if (orders.Items.Count <= 0)
             {
-                MessageBox.Show("Please enter order first");
+                MessageBox.Show("Please enter order first", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             if (!await ValidateStocks())
             {
-                MessageBox.Show("Item quantity cannot exceed item stocks. Please check your order again.");
+                MessageBox.Show("Item quantity cannot exceed item stocks. Please check your order again.", 
+                    "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
@@ -246,7 +248,8 @@ namespace LaundryPOS.Forms
         {
             if (orders.Items.Count <= 0)
             {
-                MessageBox.Show("Please enter order first");
+                MessageBox.Show("Please enter order first", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -256,13 +259,15 @@ namespace LaundryPOS.Forms
                 _unitOfWork.TransactionRepo.Insert(transaction);
                 await _unitOfWork.SaveAsync();
 
-                MessageBox.Show("Order added to pay later");
+                MessageBox.Show("Order added to pay later", "Order Added",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await RefreshItems();
                 ClearCart();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message, "Order Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -313,7 +318,8 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Transaction failed.");
+                    MessageBox.Show("Transaction failed.", "Error Occured",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

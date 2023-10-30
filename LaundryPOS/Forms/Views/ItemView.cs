@@ -60,7 +60,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
+                MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
+                    , "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -171,7 +172,8 @@ namespace LaundryPOS.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured " + ex.Message);
+                MessageBox.Show("An error occured " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -303,14 +305,16 @@ namespace LaundryPOS.Forms.Views
             {
                 if (!ValidateInputs())
                 {
-                    MessageBox.Show("Invalid item. Please fill up all of the fields including the image.");
+                    MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
+                        , "Item Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (_item != null)
                 {
                     await UpdateItem();
-                    MessageBox.Show("Item updated successfully");
+                    MessageBox.Show("Item updated successfully", "Item Update Successful",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await RefreshData();
                     ClearText();
 
@@ -320,7 +324,8 @@ namespace LaundryPOS.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured " + ex.Message);
+                MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -377,7 +382,8 @@ namespace LaundryPOS.Forms.Views
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error occured: {ex.Message}");
+                    MessageBox.Show($"Error occured: {ex.Message}", "Item Delete Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -526,6 +526,7 @@
             // 
             this.imgPic.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.imgPic.BackColor = System.Drawing.Color.Transparent;
+            this.imgPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgPic.FillColor = System.Drawing.Color.WhiteSmoke;
             this.imgPic.ImageRotate = 0F;
             this.imgPic.Location = new System.Drawing.Point(918, 9);

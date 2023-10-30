@@ -34,19 +34,22 @@ namespace LaundryPOS.Forms.Views
 
             if (admin == null)
             {
-                MessageBox.Show("Admin is empty");
+                MessageBox.Show("Admin is empty", "Empty Admin",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!admin.ValidatePassword(txtOldPassword.Text))
             {
-                MessageBox.Show("Old admin password is incorrect");
+                MessageBox.Show("Old admin password is incorrect", "Admin Settings Update Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!txtNewPassword.Text.Equals(txtConfirmPassword.Text))
             {
-                MessageBox.Show("Passwords do not match");
+                MessageBox.Show("Passwords do not match", "Admin Settings Update Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error););
                 return;
             }
 

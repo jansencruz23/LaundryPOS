@@ -62,7 +62,8 @@ namespace LaundryPOS.Forms.Views
 
             await _unitOfWork.SaveAsync();
 
-            MessageBox.Show("Restart application to see results");
+            MessageBox.Show("Restart application to see results. Press OK to restart the application", 
+                "App Restarting", MessageBoxButtons.OK, MessageBoxIcon.Information);
             RestartApplication();
         }
 

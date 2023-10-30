@@ -162,7 +162,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (_employee != null)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", 
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -170,7 +171,8 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.EmployeeRepo.Update(_employee);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Employee deleted successfully.", "Employee Deleted Successfully", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await RefreshData();
                     ClearText();
                     btnDelete.Enabled = false;

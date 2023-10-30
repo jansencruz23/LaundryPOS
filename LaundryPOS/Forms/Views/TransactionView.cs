@@ -194,7 +194,8 @@ namespace LaundryPOS.Forms.Views
 
             if (string.IsNullOrEmpty(filter))
             {
-                MessageBox.Show("Invalid filter");
+                MessageBox.Show("Invalid filter", "Filter Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -234,7 +235,8 @@ namespace LaundryPOS.Forms.Views
                     break;
 
                 default:
-                    MessageBox.Show("Invalid filter");
+                    MessageBox.Show("Invalid filter", "Filter Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 

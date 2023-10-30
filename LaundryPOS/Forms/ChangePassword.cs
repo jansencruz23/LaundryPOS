@@ -78,7 +78,8 @@ namespace LaundryPOS.Forms
             _unitOfWork.EmployeeRepo.Update(_employee);
             await _unitOfWork.SaveAsync();
 
-            MessageBox.Show("Password updates successfully!");
+            MessageBox.Show("Password updates successfully!", "Password Change Successful",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
 

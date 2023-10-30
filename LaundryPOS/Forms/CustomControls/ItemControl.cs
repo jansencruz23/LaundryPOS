@@ -92,7 +92,8 @@ namespace LaundryPOS.Forms.Views
 
             if (quantity > Item.Stock)
             {
-                MessageBox.Show("Stocks not enough");
+                MessageBox.Show("Not enough stocks", "Insufficient Stocks",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
