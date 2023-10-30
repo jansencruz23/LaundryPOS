@@ -144,3 +144,8 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.ChangePassword.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.ProfileForm.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.UpdateProfileForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.LoadingForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.Views.BaseCategoryView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.Views.BaseImageViewControl.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.Views.BaseViews.BaseItemView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\LaundryPOS.Forms.Views.BaseViewControl.resources

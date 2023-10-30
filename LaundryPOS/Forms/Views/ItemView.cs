@@ -13,6 +13,7 @@ namespace LaundryPOS.Forms.Views
     {
         private LoadingForm _loadingForm;
         private Item _item;
+        private IEnumerable<Category> _categories;
         private const string ITEMS_FOLDER = "Items";
 
         public ItemView(IUnitOfWork unitOfWork,
@@ -103,8 +104,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task InitializeCategory()
         {
-            var categories = await _unitOfWork.CategoryRepo.Get();
-            cbCategory.DataSource = categories.Select(c => new
+            _categories = await _unitOfWork.CategoryRepo.Get();
+            cbCategory.DataSource = _categories.Select(c => new
             {
                 Text = c.Name,
                 Value = c.Id
@@ -281,6 +282,7 @@ namespace LaundryPOS.Forms.Views
                 txtPrice.Text = _item.Price.ToString();
                 txtStock.Text = _item.Stock.ToString();
                 txtPath.Text = _item.Image?.ToString();
+                cbCategory.SelectedValue = _item.CategoryId;
                 imgIcon.Image = GetImage(_item);
 
                 EnableInputEditControls();
@@ -331,7 +333,9 @@ namespace LaundryPOS.Forms.Views
 
         private async Task UpdateItem()
         {
+            var category = _categories.First(c => c.Id == (int) cbCategory.SelectedValue);
             _item.Name = txtName.Text;
+            _item.Category = category;
             _item.Price = decimal.Parse(txtPrice.Text);
             _item.Stock = int.Parse(txtStock.Text);
             _item.Image = GetImagePath(
@@ -340,6 +344,16 @@ namespace LaundryPOS.Forms.Views
 
             _unitOfWork.ItemRepo.Update(_item);
             await _unitOfWork.SaveAsync();
+
+            DisableFields();
+        }
+
+        private void DisableFields()
+        {
+            txtName.Enabled = false;
+            txtPrice.Enabled = false;
+            txtStock.Enabled = false;
+            cbCategory.Enabled = false;
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.10",
+          "Microsoft.Extensions.Configuration.UserSecrets": "7.0.0",
           "Microsoft.Extensions.Hosting": "7.0.1",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "ReportViewerCore.WinForms": "15.1.18",
@@ -683,50 +684,6 @@
           "netstandard.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "7.0.222.60605"
-          }
-        },
-        "native": {
-          "Microsoft.DiaSymReader.Native.x86.dll": {
-            "fileVersion": "14.28.29715.1"
-          },
-          "System.IO.Compression.Native.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "clretwrc.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "clrgc.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "clrjit.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "coreclr.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "createdump.exe": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "hostfxr.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "hostpolicy.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "mscordaccore.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "mscordaccore_x86_x86_7.0.222.60605.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "mscordbi.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "mscorrc.dll": {
-            "fileVersion": "7.0.222.60605"
-          },
-          "msquic.dll": {
-            "fileVersion": "2.1.1.0"
           }
         }
       },

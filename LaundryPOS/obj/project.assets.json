@@ -5571,6 +5571,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10",
+      "Microsoft.Extensions.Configuration.UserSecrets >= 7.0.0",
       "Microsoft.Extensions.Hosting >= 7.0.1",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
       "ReportViewerCore.WinForms >= 15.1.18",
@@ -5650,6 +5651,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.10, )"
+          },
+          "Microsoft.Extensions.Configuration.UserSecrets": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
