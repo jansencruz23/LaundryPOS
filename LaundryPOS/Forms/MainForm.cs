@@ -5,6 +5,7 @@ using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
 using System.Data;
+using System.Linq;
 
 namespace LaundryPOS.Forms
 {
@@ -97,8 +98,12 @@ namespace LaundryPOS.Forms
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
         {
-            var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
-            DisplayFilteredItems(filteredItems);
+            var filteredItemControls = itemsControls.Where(i => i.Item.CategoryId == e.Category.Id)
+                .ToList();
+
+
+            //var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
+            DisplayFilteredItems(filteredItemControls);
 
             btnAllCategory.FillColor = Color.FromArgb(248, 248, 248);
             btnAllCategory.ForeColor = Color.FromArgb(48,48,48);
@@ -123,7 +128,8 @@ namespace LaundryPOS.Forms
 
         private async Task DisplayItems()
         {
-            allItems = await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
+            allItems = await _unitOfWork.ItemRepo
+                .Get(includeProperties: "Category");
             itemsControls.AddRange(allItems
                 .Select(item => new ItemControl(item, _themeManager)));
 
@@ -149,18 +155,13 @@ namespace LaundryPOS.Forms
                 : "./default.png");
         }
 
-        private void DisplayFilteredItems(IEnumerable<Item> filteredItems = null)
+        private void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
         {
-            var itemsToDisplay = filteredItems ?? allItems;
-            itemsControls.Clear();
+            var itemsToDisplay = filteredItems ?? itemsControls;
             panelItems.Controls.Clear();
 
-            itemsControls.AddRange(itemsToDisplay
-                .Select(item => new ItemControl(item, _themeManager)));
-
-            foreach (var item in itemsControls)
+            foreach (var item in itemsToDisplay)
             {
-                item.AddToCartClicked += ItemControl_AddToCartClicked!;
                 panelItems.Controls.Add(item);
             }
         }
@@ -242,6 +243,7 @@ namespace LaundryPOS.Forms
         {
             await _themeManager.ApplyThemeToButton(btnPayNow);
             await _themeManager.ApplyThemeToButton(btnViewUnpaid);
+            await _themeManager.ApplyOutlineThemeToButton(btnSearch);
         }
 
         private async void btnPayLater_Click(object sender, EventArgs e)
@@ -334,9 +336,9 @@ namespace LaundryPOS.Forms
 
         private async void btnAllCategory_Click(object sender, EventArgs e)
         {
-            itemsControls.Clear();
+            //itemsControls.Clear();
             panelItems.Controls.Clear();
-            await DisplayItems();
+            DisplayFilteredItems(itemsControls);
 
             btnAllCategory.FillColor = Color.FromArgb(48, 48, 48);
             btnAllCategory.ForeColor = Color.FromArgb(248, 248, 248);
@@ -372,6 +374,26 @@ namespace LaundryPOS.Forms
         private void timerDate_Tick(object sender, EventArgs e)
         {
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            panelItems.Controls.Clear();
+
+            var query = txtSearch.Text;
+            var filteredItems = itemsControls
+                .Where(item => item.Item.Name
+                    .Contains(query, StringComparison.OrdinalIgnoreCase));
+
+            foreach (var item in filteredItems)
+            {
+                panelItems.Controls.Add(item);
+            }
         }
     }
 }
