@@ -1,10 +1,5 @@
 ﻿using LaundryPOS.Data;
 using LaundryPOS.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LaundryPOS.DAL
 {
@@ -27,6 +22,22 @@ namespace LaundryPOS.DAL
             };
 
             context.AppSettings.Add(appSettings);
+            context.SaveChangesAsync();
+
+            var adminProfile = new Employee
+            {
+                FirstName = "Admin",
+                LastName = "Admin",
+                Age = 0,
+                BirthDate = DateTime.Now,
+                IsActive = true,
+                Username = "admin",
+                UserRole = "admin"
+            };
+
+            adminProfile.SetPassword("admin");
+
+            context.Employees.Add(adminProfile);
             context.SaveChangesAsync();
         }
     }
