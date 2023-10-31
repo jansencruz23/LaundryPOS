@@ -253,6 +253,7 @@ namespace LaundryPOS.Forms
             this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnDelete.Size = new System.Drawing.Size(82, 55);
             this.btnDelete.TabIndex = 14;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btn3
             // 

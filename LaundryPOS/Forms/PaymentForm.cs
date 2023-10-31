@@ -185,5 +185,13 @@ namespace LaundryPOS.Forms
         {
             Close();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtAmount.Text.Length > 0)
+            {
+                txtAmount.Text = txtAmount.Text[..^1];
+            }
+        }
     }
 }

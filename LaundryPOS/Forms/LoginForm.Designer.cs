@@ -116,7 +116,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtPassword.Size = new System.Drawing.Size(250, 45);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.TextOffset = new System.Drawing.Point(2, 1);
             // 
             // txtUsername
@@ -148,7 +148,7 @@ namespace LaundryPOS.Forms
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtUsername.Size = new System.Drawing.Size(250, 45);
-            this.txtUsername.TabIndex = 9;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.TextOffset = new System.Drawing.Point(2, 1);
             // 
             // panelDrag
@@ -296,7 +296,7 @@ namespace LaundryPOS.Forms
             this.cbShowPassword.Location = new System.Drawing.Point(178, 231);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(108, 23);
-            this.cbShowPassword.TabIndex = 0;
+            this.cbShowPassword.TabIndex = 3;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
             this.cbShowPassword.UncheckedState.BorderRadius = 0;
@@ -327,7 +327,7 @@ namespace LaundryPOS.Forms
             this.btnLogin.ShadowDecoration.Enabled = true;
             this.btnLogin.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 10, 10);
             this.btnLogin.Size = new System.Drawing.Size(250, 45);
-            this.btnLogin.TabIndex = 11;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Log in";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
