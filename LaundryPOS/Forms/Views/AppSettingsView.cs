@@ -1,24 +1,12 @@
-﻿using Guna.UI2.WinForms.Suite;
-using LaundryPOS.Contracts;
+﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using Microsoft.Reporting.Map.WebForms.BingMaps;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
     public partial class AppSettingsView : BaseViewControl
     {
-        private const int FIRST_VALUE = 1;
         private string theme = "#000";
 
         public AppSettingsView(IUnitOfWork unitOfWork,
@@ -37,7 +25,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task FillData()
         {
-            var appData = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_VALUE);
+            var appDataList = await _unitOfWork.AppSettingsRepo.Get();
+            var appData = appDataList.FirstOrDefault();
 
             txtName.Text = appData.Name;
             txtAddress.Text = appData.Address;
@@ -48,7 +37,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_VALUE);
+            var appDataList = await _unitOfWork.AppSettingsRepo.Get();
+            var appSettings = appDataList.FirstOrDefault();
 
             if (appSettings != null)
             {

@@ -280,8 +280,6 @@ namespace LaundryPOS.Forms.Views
             printer.PrintDataGridView(categoryTable);
         }
 
-        private async Task<string> GetBusinessName() =>
-            (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

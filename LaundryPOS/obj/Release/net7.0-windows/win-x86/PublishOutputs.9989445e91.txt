@@ -1,0 +1,13 @@
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\LaundryPOS.pdb
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\default.png
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\Reports\Receipt.rdlc
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\appsettings.json
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\LaundryPOS.dll.config
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\D3DCompiler_47_cor3.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\PenImc_cor3.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\PresentationNative_cor3.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\vcruntime140_cor3.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\wpfgfx_cor3.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\Microsoft.Data.SqlClient.SNI.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\sni.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\Publish Winforms\LaundryPOS Test6\LaundryPOS.exe

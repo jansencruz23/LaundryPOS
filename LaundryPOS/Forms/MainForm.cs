@@ -19,7 +19,6 @@ namespace LaundryPOS.Forms
         private readonly List<ItemControl> itemsControls;
         private readonly Order orders;
         private IEnumerable<Item> allItems;
-        private const int APP_SETTINGS_INDEX = 1;
 
         private decimal Total { get; set; } = default;
 
@@ -181,7 +180,8 @@ namespace LaundryPOS.Forms
 
         private async Task DisplayAppInfo()
         {
-            var appName = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
+            var appDataList = await _unitOfWork.AppSettingsRepo.Get();
+            var appName = appDataList.FirstOrDefault();
             lblTitle.Text = appName.Name;
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
             await DisplayTransactionId();

@@ -46,6 +46,12 @@ namespace LaundryPOS.Forms.Views
                     => Activator.CreateInstance(
                         typeof(T), _unitOfWork, _themeManager, _changeAdminView) as T;
 
+        protected async Task<string> GetBusinessName()
+        {
+            var appSettings = await _unitOfWork.AppSettingsRepo.GetFirstAppSettings();
+            return appSettings.Name;
+        }
+
         protected void ConfirmLogout()
         {
             DialogResult confirm = MessageBox.Show("Are you sure you want to log out?",

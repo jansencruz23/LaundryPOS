@@ -2,15 +2,6 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms
 {
@@ -19,26 +10,22 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly ThemeManager _themeManager;
         private ChangeAdminViewDelegate changeAdminViewDelegate;
-        private const int APP_SETTINGS_INDEX = 1;
+        private readonly string _title;
 
         public AdminForm(IUnitOfWork unitOfWorK,
-            ThemeManager themeManager)
+            ThemeManager themeManager, string title)
         {
             _unitOfWork = unitOfWorK;
             _themeManager = themeManager;
+            _title = title;
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
             InitializeComponent();
+            lblTitle.Text = _title;
 
             var itemView = new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
-        }
-
-        private async void AdminForm_Load(object sender, EventArgs e)
-        {
-            var appSettings = await _unitOfWork.AppSettingsRepo.GetByID(APP_SETTINGS_INDEX);
-            lblTitle.Text = appSettings.Name;
         }
 
         private void ChangePanelContent(UserControl newContent)

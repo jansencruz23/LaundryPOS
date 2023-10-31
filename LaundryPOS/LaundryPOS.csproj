@@ -78,6 +78,9 @@
     <None Update="default.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="LaundryDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Reports\Receipt.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

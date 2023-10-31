@@ -1,13 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LaundryPOS.Helpers
 {
@@ -15,7 +9,6 @@ namespace LaundryPOS.Helpers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMemoryCache _memoryCache;
-        private const int FIRST_INDEX = 1;
         private const string THEME_SETTINGS_CACHE_KEY = "ThemeSettings";
 
         public ThemeManager(IUnitOfWork unitOfWork,
@@ -25,17 +18,24 @@ namespace LaundryPOS.Helpers
             _memoryCache = memoryCache;
         }
 
-        public async Task ApplyThemeToButton(Guna2Button button, bool hasShadow = false)
+        private async Task<AppSettings> GetAppSettings()
         {
             if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
             {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
+                appSettings = await _unitOfWork.AppSettingsRepo.GetFirstAppSettings();
 
                 if (appSettings != null)
                 {
                     _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
                 }
             }
+
+            return appSettings;
+        }
+
+        public async Task ApplyThemeToButton(Guna2Button button, bool hasShadow = false)
+        {
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {
@@ -59,15 +59,7 @@ namespace LaundryPOS.Helpers
 
         public async Task ApplyFocusedThemeToTextBox(Guna2TextBox textbox)
         {
-            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
-            {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
-
-                if (appSettings != null)
-                {
-                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
-                }
-            }
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {
@@ -85,15 +77,7 @@ namespace LaundryPOS.Helpers
 
         public async Task ApplyThemeToLabel(Label label)
         {
-            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
-            {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
-
-                if (appSettings != null)
-                {
-                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
-                }
-            }
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {
@@ -108,15 +92,7 @@ namespace LaundryPOS.Helpers
 
         public async Task ApplyThemeToPanel(Guna2Panel panel, float brightnessFactor = 1f, bool changeFontColor = false)
         {
-            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
-            {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
-
-                if (appSettings != null)
-                {
-                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
-                }
-            }
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {
@@ -146,15 +122,7 @@ namespace LaundryPOS.Helpers
 
         public async Task ApplyLighterThemeToDataGridView(DataGridView dataGridView, float brightnessFactor = 0.8f, bool changeFont = false)
         {
-            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
-            {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
-
-                if (appSettings != null)
-                {
-                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
-                }
-            }
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {
@@ -196,15 +164,7 @@ namespace LaundryPOS.Helpers
         }
         public async Task ApplyOutlineThemeToButton(Guna2Button button, int borderThickness = 1)
         {
-            if (!_memoryCache.TryGetValue(THEME_SETTINGS_CACHE_KEY, out AppSettings appSettings))
-            {
-                appSettings = await _unitOfWork.AppSettingsRepo.GetByID(FIRST_INDEX);
-
-                if (appSettings != null)
-                {
-                    _memoryCache.Set(THEME_SETTINGS_CACHE_KEY, appSettings, TimeSpan.FromHours(8));
-                }
-            }
+            var appSettings = await GetAppSettings();
 
             if (appSettings != null)
             {

@@ -45,6 +45,10 @@ namespace LaundryPOS
                     services.AddScoped<LoginForm>();
                 }).Build();
 
+            //var context = host.Services.GetRequiredService<ApplicationDbContext>();
+            //context.Database.EnsureCreated();
+            //DbInitializer.Initialize(context);
+
             var form = host.Services.GetService<LoginForm>();
             Application.Run(form);
         }

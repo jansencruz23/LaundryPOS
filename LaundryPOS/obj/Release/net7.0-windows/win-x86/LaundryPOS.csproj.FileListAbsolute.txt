@@ -596,3 +596,8 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseImageViewControl.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViews.BaseItemView.resources
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViewControl.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\LaundryPOS.dll.manifest
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\LaundryPOS.application
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.dll.manifest
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.application
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\LaundryDB.mdf

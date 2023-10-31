@@ -6,10 +6,10 @@ namespace LaundryPOS.Forms
 {
     public partial class LoginForm : Form
     {
-        private const int APP_DATA_INDEX = 1;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;            
-        
+        private readonly ThemeManager _themeManager;
+        private string _title;
+
         public LoginForm(IUnitOfWork unitOfWork,
             ThemeManager themeManager)
         {
@@ -27,8 +27,9 @@ namespace LaundryPOS.Forms
 
         private async Task DisplayAppInfo()
         {
-            var appData = await _unitOfWork.AppSettingsRepo.GetByID(APP_DATA_INDEX);
-            lblName.Text = appData.Name;
+            var appData = await _unitOfWork.AppSettingsRepo.GetFirstAppSettings();
+            _title = appData?.Name;
+            lblName.Text = _title;
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -45,14 +46,14 @@ namespace LaundryPOS.Forms
                     Hide();
 
                     Form form = userRole == "admin"
-                        ? new AdminForm(_unitOfWork, _themeManager)
+                        ? new AdminForm(_unitOfWork, _themeManager, _title)
                         : new MainForm(_unitOfWork, _themeManager, employee);
                     form.FormClosed += (s, args) => Close();
                     form.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password.", "Log in failed", 
+                    MessageBox.Show("Invalid username or password.", "Log in failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -60,7 +61,7 @@ namespace LaundryPOS.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error occurred", 
+                MessageBox.Show(ex.Message, "Error occurred",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

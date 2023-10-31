@@ -375,8 +375,6 @@ namespace LaundryPOS.Forms.Views
             printer.PrintDataGridView(itemTable);
         }
 
-        private async Task<string> GetBusinessName() =>
-            (await _unitOfWork.AppSettingsRepo.GetByID(1)).Name;
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
