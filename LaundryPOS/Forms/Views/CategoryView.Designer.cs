@@ -174,7 +174,7 @@
             this.imgIcon.Name = "imgIcon";
             this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.imgIcon.Size = new System.Drawing.Size(203, 153);
-            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgIcon.TabIndex = 4;
             this.imgIcon.TabStop = false;
             // 

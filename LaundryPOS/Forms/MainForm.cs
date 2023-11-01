@@ -19,6 +19,7 @@ namespace LaundryPOS.Forms
         private readonly List<ItemControl> itemsControls;
         private readonly Order orders;
         private IEnumerable<Item> allItems;
+        private string _title;
 
         private decimal Total { get; set; } = default;
 
@@ -149,9 +150,21 @@ namespace LaundryPOS.Forms
 
         private void DisplayEmployeeInfo()
         {
-            imgPic.Image = Image.FromFile(!string.IsNullOrWhiteSpace(_employee.Image)
-                ? _employee.Image
-                : "./default.png");
+            imgPic.Image = GetImage(_employee);
+        }
+
+        private Image GetImage(Employee t)
+        {
+            try
+            {
+                return t.Image != null
+                ? Image.FromFile(t.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
         }
 
         private void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
@@ -181,8 +194,10 @@ namespace LaundryPOS.Forms
         private async Task DisplayAppInfo()
         {
             var appDataList = await _unitOfWork.AppSettingsRepo.Get();
-            var appName = appDataList.FirstOrDefault();
-            lblTitle.Text = appName.Name;
+            var appSettings = appDataList.FirstOrDefault();
+            _title = appSettings.Name;
+            lblTitle.Text = _title;
+            Text = _title;
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
             await DisplayTransactionId();
         }
@@ -328,7 +343,8 @@ namespace LaundryPOS.Forms
         private void btnPending_Click(object sender, EventArgs e)
         {
             Hide();
-            var form = new UnpaidForm(_unitOfWork, _themeManager, _employee);
+            var form = new UnpaidForm(_unitOfWork, _themeManager, 
+                _employee, _title);
             form.FormClosed += (s, args) => Close();
             form.Show();
         }

@@ -15,7 +15,8 @@ namespace LaundryPOS.Forms.Views
 
         public UnpaidForm(IUnitOfWork unitOfWork,
             ThemeManager themeManager,
-            Employee employee)
+            Employee employee,
+            string title)
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
@@ -24,6 +25,7 @@ namespace LaundryPOS.Forms.Views
 
             InitializeComponent();
             DisplayEmployeeInfo();
+            Text = title;
         }
 
         private async Task LoadEmployeeData()
@@ -36,6 +38,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void UnpaidForm_Load(object sender, EventArgs e)
         {
+
             await InitializeTable();
             await ApplyTheme();
         }

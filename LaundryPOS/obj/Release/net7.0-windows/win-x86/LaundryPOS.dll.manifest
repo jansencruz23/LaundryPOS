@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="LaundryPOS.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="LaundryPOS.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Icons\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -80,13 +81,22 @@
       <dsig:DigestValue>22s6Ggd/SIuan+pCfup4ug17CUISAnixmFdiLQrcUrQ=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Icons\icon.ico" size="188647">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ijj9PH3/3CeE0/CVN/yqyZdaZH/IBhnCZlrZhX/YUtA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="LaundryDB.mdf" size="8388608">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1tTX9pfLIxzDvErDc+olG9p/wtOvxHpHvqEF0fkc7gU=</dsig:DigestValue>
+      <dsig:DigestValue>Gv7uxq9O1r63G6ZAVuPxY5SbOFIjQSAlztke5mFoNuY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="LaundryPOS.dll.config" size="272">
@@ -98,13 +108,13 @@
       <dsig:DigestValue>VfvpZK5e7XfVK/ak9Vw6bQldMzWiM+k4NuI/CAt/lFI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="LaundryPOS.exe" size="185712634">
+  <file name="LaundryPOS.exe" size="186658810">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HkIRW4hew43KCZwbLWwbL9/7K9gqldagaMZ3uaq3/JU=</dsig:DigestValue>
+      <dsig:DigestValue>dybaHXkdx9E2JBqGjHz5mKBUmH/9SumwA65xwbnlJco=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Microsoft.Data.SqlClient.SNI.dll" size="410048">

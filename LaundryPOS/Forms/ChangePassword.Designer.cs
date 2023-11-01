@@ -320,7 +320,7 @@ namespace LaundryPOS.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangePassword";
+            this.Text = "Change Password";
             this.Load += new System.EventHandler(this.ChangePassword_Load);
             this.panelBg.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);

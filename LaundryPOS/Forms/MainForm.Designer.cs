@@ -663,6 +663,7 @@
             this.ClientSize = new System.Drawing.Size(1471, 859);
             this.Controls.Add(this.bgPanel);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1020, 600);
             this.Name = "MainForm";
             this.Opacity = 0D;
