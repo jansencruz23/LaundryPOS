@@ -20,7 +20,8 @@ namespace LaundryPOS.Forms.CustomControls
         private readonly Category _category;
         private readonly ThemeManager _themeManager;
 
-        public CategoryControl(Category category, ThemeManager themeManager)
+        public CategoryControl(Category category, 
+            ThemeManager themeManager)
         {
             _category = category;
             _themeManager = themeManager;
@@ -33,9 +34,21 @@ namespace LaundryPOS.Forms.CustomControls
         private void InitializeCategory()
         {
             lblName.Text = _category.Name;
-            imgIcon.Image = Image.FromFile(!string.IsNullOrEmpty(_category.Image)
-                ? _category.Image
-                : "./default.png");
+            imgIcon.Image = GetImage();
+        }
+
+        private Image GetImage()
+        {
+            try
+            {
+                return _category.Image != null
+                ? Image.FromFile(_category.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
         }
 
         private void WireAllControls(Control control)

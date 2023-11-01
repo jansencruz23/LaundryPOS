@@ -227,7 +227,7 @@
             this.categoryTable.Name = "categoryTable";
             this.categoryTable.RowHeadersVisible = false;
             this.categoryTable.RowTemplate.Height = 40;
-            this.categoryTable.Size = new System.Drawing.Size(469, 479);
+            this.categoryTable.Size = new System.Drawing.Size(489, 479);
             this.categoryTable.TabIndex = 7;
             this.categoryTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.categoryTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -622,7 +622,7 @@
             this.txtPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPath.Location = new System.Drawing.Point(162, 547);
+            this.txtPath.Location = new System.Drawing.Point(170, 547);
             this.txtPath.Name = "txtPath";
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
@@ -663,7 +663,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(630, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel1.MaximumSize = new System.Drawing.Size(535, 613);
+            this.guna2Panel1.MaximumSize = new System.Drawing.Size(555, 613);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
@@ -672,7 +672,7 @@
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(535, 613);
+            this.guna2Panel1.Size = new System.Drawing.Size(555, 613);
             this.guna2Panel1.TabIndex = 23;
             // 
             // tableLayoutPanel2
@@ -694,7 +694,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.83916F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.16084F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(475, 553);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(495, 553);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label3
@@ -703,7 +703,7 @@
             this.label3.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 59);
+            this.label3.Size = new System.Drawing.Size(161, 59);
             this.label3.TabIndex = 24;
             this.label3.Text = "CATEGORY LIST";
             // 
@@ -723,14 +723,14 @@
             this.txtSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(173, 13);
+            this.txtSearch.Location = new System.Drawing.Point(181, 13);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search using Name";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.txtSearch.Size = new System.Drawing.Size(193, 40);
+            this.txtSearch.Size = new System.Drawing.Size(205, 40);
             this.txtSearch.TabIndex = 25;
             // 
             // btnSearch
@@ -744,7 +744,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(380, 10);
+            this.btnSearch.Location = new System.Drawing.Point(400, 10);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0, 8, 0, 5);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -955,7 +955,7 @@
             this.Controls.Add(this.guna2Panel3);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "CategoryView";
-            this.Size = new System.Drawing.Size(1214, 761);
+            this.Size = new System.Drawing.Size(1226, 761);
             this.Load += new System.EventHandler(this.CategoryView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryTable)).EndInit();
