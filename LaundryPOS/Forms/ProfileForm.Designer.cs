@@ -57,6 +57,7 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileForm));
             this.bgPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
@@ -285,9 +286,10 @@ namespace LaundryPOS.Forms
             this.ClientSize = new System.Drawing.Size(325, 570);
             this.Controls.Add(this.bgPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProfileForm";
+            this.Text = "Profile";
             this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.bgPanel.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);

@@ -12,12 +12,12 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("08c829e6-f09d-44c5-8921-a00a89db535f")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("LaundryPOS")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("POS System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("LaundryPOS")]
-[assembly: System.Reflection.AssemblyTitleAttribute("LaundryPOS")]
+[assembly: System.Reflection.AssemblyProductAttribute("POS System")]
+[assembly: System.Reflection.AssemblyTitleAttribute("POS System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

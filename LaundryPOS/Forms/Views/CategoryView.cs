@@ -126,9 +126,13 @@ namespace LaundryPOS.Forms.Views
 
             _unitOfWork.CategoryRepo.Insert(category);
             await _unitOfWork.SaveAsync();
+            await RefreshData();
+            ClearText();
 
             btnAdd.Enabled = true;
-            ClearText();
+            txtName.Enabled = false;
+            btnFile.Enabled = false;
+            btnSave.Enabled = false;
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -168,6 +172,10 @@ namespace LaundryPOS.Forms.Views
                     MessageBox.Show("Category deleted successfully.", "Success", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearText();
+                    await RefreshData();
+
+                    btnFile.Enabled = false;
+                    txtName.Enabled = false;
                 }
             }
         }
@@ -185,7 +193,8 @@ namespace LaundryPOS.Forms.Views
                 txtPath.Text = _category.Image;
                 imgIcon.Image = GetImage(_category);
 
-
+                txtName.Enabled = true;
+                btnFile.Enabled = true;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
                 btnSave.Enabled = false;
@@ -199,6 +208,8 @@ namespace LaundryPOS.Forms.Views
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
+            btnFile.Enabled = true;
+            txtName.Enabled = true;
         }
 
         private async void btnUpdate_Click(object sender, EventArgs e)
@@ -219,6 +230,9 @@ namespace LaundryPOS.Forms.Views
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await RefreshData();
                     ClearText();
+
+                    btnFile.Enabled = false;
+                    txtName.Enabled = false;
                 }
             }
             catch (Exception ex)

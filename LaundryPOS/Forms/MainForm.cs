@@ -349,7 +349,7 @@ namespace LaundryPOS.Forms
             form.Show();
         }
 
-        private async void btnAllCategory_Click(object sender, EventArgs e)
+        private void btnAllCategory_Click(object sender, EventArgs e)
         {
             //itemsControls.Clear();
             panelItems.Controls.Clear();

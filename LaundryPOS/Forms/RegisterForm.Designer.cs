@@ -565,9 +565,10 @@
             this.ClientSize = new System.Drawing.Size(1076, 700);
             this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Register";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.panelBorder.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);

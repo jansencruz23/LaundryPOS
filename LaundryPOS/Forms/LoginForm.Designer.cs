@@ -374,9 +374,10 @@ namespace LaundryPOS.Forms
             this.ClientSize = new System.Drawing.Size(1080, 672);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panelDrag.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);

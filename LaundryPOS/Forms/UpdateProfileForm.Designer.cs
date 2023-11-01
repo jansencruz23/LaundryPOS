@@ -472,9 +472,10 @@ namespace LaundryPOS.Forms
             this.ClientSize = new System.Drawing.Size(1072, 686);
             this.Controls.Add(this.panelBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateProfileForm";
+            this.Text = "Update Profile";
             this.Load += new System.EventHandler(this.UpdateProfileForm_Load);
             this.bgPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

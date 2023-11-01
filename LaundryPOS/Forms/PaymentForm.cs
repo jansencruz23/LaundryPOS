@@ -90,7 +90,7 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("failed", "Payment Failed",
+                    MessageBox.Show("Insufficient Payment", "Payment Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

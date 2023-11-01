@@ -70,6 +70,7 @@ namespace LaundryPOS.Forms.Views
             await CreateItem(item);
             await RefreshData();
             ClearText();
+            btnSave.Enabled = false;
         }
 
         private bool ValidateInputs()

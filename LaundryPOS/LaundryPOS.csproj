@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>08c829e6-f09d-44c5-8921-a00a89db535f</UserSecretsId>
     <ApplicationIcon>Icons\icon.ico</ApplicationIcon>
+    <AssemblyName>POS System</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -89,7 +90,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Reports\Receipt.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

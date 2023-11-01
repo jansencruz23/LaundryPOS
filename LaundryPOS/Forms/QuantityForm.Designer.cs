@@ -68,6 +68,7 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuantityForm));
             this.btn3 = new Guna.UI2.WinForms.Guna2Button();
             this.btn2 = new Guna.UI2.WinForms.Guna2Button();
             this.panelBg = new Guna.UI2.WinForms.Guna2Panel();
@@ -363,8 +364,10 @@ namespace LaundryPOS.Forms
             this.ClientSize = new System.Drawing.Size(422, 430);
             this.Controls.Add(this.panelBg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuantityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quantity";
             this.Load += new System.EventHandler(this.QuantityForm_Load);
             this.panelBg.ResumeLayout(false);
             this.panelBody.ResumeLayout(false);

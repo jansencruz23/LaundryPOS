@@ -708,9 +708,10 @@ namespace LaundryPOS.Forms
             this.ClientSize = new System.Drawing.Size(976, 844);
             this.Controls.Add(this.panelBg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PaymentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PaymentForm";
+            this.Text = "Payment";
             this.Load += new System.EventHandler(this.PaymentForm_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
