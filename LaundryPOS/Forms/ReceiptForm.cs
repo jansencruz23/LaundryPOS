@@ -1,16 +1,7 @@
 ﻿using LaundryPOS.Contracts;
-using LaundryPOS.DAL;
 using LaundryPOS.Models;
 using Microsoft.Reporting.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms
 {
@@ -46,8 +37,9 @@ namespace LaundryPOS.Forms
             var transactionItemDataSource = new ReportDataSource("TransactionItemsDataSet", transactionItemData);
             var employeeDataSource = new ReportDataSource("EmployeeDataSet", employeeData);
             var transactionDataSource = new ReportDataSource("TransactionDataSet", transactionData);
-            
-            reportViewer.LocalReport.ReportPath = "Reports/Receipt.rdlc";
+
+            string reportPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Reports", "Receipt.rdlc");
+            reportViewer.LocalReport.ReportPath = reportPath;
             reportViewer.LocalReport.DataSources.Add(appSettingsDataSource);
             reportViewer.LocalReport.DataSources.Add(itemDataSource);
             reportViewer.LocalReport.DataSources.Add(transactionItemDataSource);

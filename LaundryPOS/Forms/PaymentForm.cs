@@ -61,8 +61,8 @@ namespace LaundryPOS.Forms
             {
                 if (amount >= _total)
                 {
-                    try
-                    {
+                    //try
+                    //{
                         var transaction = await _unitOfWork.TransactionRepo
                             .GetByID(_transactionId);
 
@@ -81,12 +81,12 @@ namespace LaundryPOS.Forms
                         var receiptForm = new ReceiptForm(_unitOfWork, transaction);
                         receiptForm.FormClosed += (s, args) => Close();
                         receiptForm.ShowDialog();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("An error occurred: " + ex.Message, "Payment Failed",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show("An error occurred: " + ex.Message, "Payment Failed",
+                    //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
                 }
                 else
                 {

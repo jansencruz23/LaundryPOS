@@ -32,6 +32,13 @@ namespace LaundryPOS
                 return;
             }
 
+            if (!txtConfirmPassword.Text.Equals(txtPassword.Text))
+            {
+                MessageBox.Show("Passwords do not match", "Registration failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var employeeIsExisting = await _unitOfWork.EmployeeRepo
                 .IsEmployeeExisting(txtUsername.Text);
 
