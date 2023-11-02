@@ -217,7 +217,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.Location = new System.Drawing.Point(98, 429);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.PlaceholderText = "••••••••••••••";
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;

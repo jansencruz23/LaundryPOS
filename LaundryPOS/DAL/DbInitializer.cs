@@ -7,7 +7,7 @@ namespace LaundryPOS.DAL
     {
         public static void Initialize(ApplicationDbContext context)
         {
-            if (context.AppSettings.Any())
+            if (context.AppSettings.Any() || context.Employees.Any())
             {
                 return;
             }
