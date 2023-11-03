@@ -641,8 +641,8 @@
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Controls.Add(this.btnAdd, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.btnUpdate, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.btnSave, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.btnUpdate, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.btnSave, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.btnDelete, 0, 3);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(40, 392);
@@ -653,6 +653,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(208, 156);
             this.tableLayoutPanel8.TabIndex = 23;
             // 
@@ -698,7 +699,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(3, 42);
+            this.btnUpdate.Location = new System.Drawing.Point(3, 81);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.btnUpdate.Size = new System.Drawing.Size(202, 33);
@@ -724,7 +725,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Location = new System.Drawing.Point(3, 81);
+            this.btnSave.Location = new System.Drawing.Point(3, 42);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.btnSave.Size = new System.Drawing.Size(202, 33);
