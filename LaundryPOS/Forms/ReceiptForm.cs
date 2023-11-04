@@ -38,8 +38,13 @@ namespace LaundryPOS.Forms
             var employeeDataSource = new ReportDataSource("EmployeeDataSet", employeeData);
             var transactionDataSource = new ReportDataSource("TransactionDataSet", transactionData);
 
+<<<<<<< HEAD
             //string reportPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Reports", "Receipt.rdlc");
             reportViewer.LocalReport.ReportPath = "Reports\\Receipt.rdlc";
+=======
+            string reportPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Reports", "Receipt.rdlc");
+            reportViewer.LocalReport.ReportPath = reportPath;
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
             reportViewer.LocalReport.DataSources.Add(appSettingsDataSource);
             reportViewer.LocalReport.DataSources.Add(itemDataSource);
             reportViewer.LocalReport.DataSources.Add(transactionItemDataSource);

@@ -4,7 +4,11 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
+<<<<<<< HEAD
     <History>True|2023-11-04T07:45:44.5161880Z;True|2023-11-04T15:24:15.3337626+08:00;</History>
+=======
+    <History>True|2023-11-02T14:11:02.0367434Z;True|2023-11-02T22:08:04.1935069+08:00;True|2023-11-02T22:02:52.7915485+08:00;</History>
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

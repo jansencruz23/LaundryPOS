@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="POS System.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="POS System.exe" version="1.0.0.21" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Icons\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -2115,21 +2115,33 @@
       <dsig:DigestValue>C8IN/U4yY5Ab970owof3KXE870P+sWk8Jk3cIggHa8Q=</dsig:DigestValue>
     </hash>
   </file>
+<<<<<<< HEAD
   <file name="pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll" size="324224">
+=======
+  <file name="POS System.exe" size="220129541">
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
       <dsig:DigestValue>242Pb86XxzJm4XBg+Ad5UNbrovtv50HvpMGPkrtlquY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="pl\Microsoft.VisualBasic.Forms.resources.dll" size="25736">
+=======
+      <dsig:DigestValue>FgAnIK8Wl8waPEvYdO0vHxRcGdDX3fmXhOlV7n8OtWc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="POS System.pdb" size="166892">
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
       <dsig:DigestValue>eV7Os6WGlRZd898Q/BwTOKRqgan01zcyqdxdJ/czl+M=</dsig:DigestValue>
     </hash>
   </file>
@@ -2446,6 +2458,9 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>O7GLMzYpXTgUGDVuAI3WA8k8TTxXDeU7n3Vdrj0rlrY=</dsig:DigestValue>
+=======
+      <dsig:DigestValue>xIaz8NxTaXijoXG/VJ5jxFOoWXu2739ISPvPngD2zV8=</dsig:DigestValue>
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     </hash>
   </file>
   <file name="PresentationNative_cor3.dll" size="945280">
@@ -2862,6 +2877,7 @@
       <dsig:DigestValue>bNeQA0PY6mYq/JtHgrXmXBRZ4B3GmCeectacSpVP2xg=</dsig:DigestValue>
     </hash>
   </file>
+<<<<<<< HEAD
   <file name="System.AppContext.dll" size="15488">
     <hash>
       <dsig:Transforms>
@@ -4797,6 +4813,8 @@
       <dsig:DigestValue>xuK+4gnRebh8SD65t8nMUvlL6PF8ukc0+D3S7G8COmo=</dsig:DigestValue>
     </hash>
   </file>
+=======
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
   <file name="vcruntime140_cor3.dll" size="90440">
     <hash>
       <dsig:Transforms>

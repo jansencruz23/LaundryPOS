@@ -12,13 +12,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <None Remove="appsettings.json" />
     <None Remove="default.png" />
     <None Remove="LaundryDB.mdf" />
+=======
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     <None Remove="Reports\Receipt.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -31,6 +35,11 @@
     <Content Include="LaundryDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+=======
+    <Content Include="Icons\icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     <Content Include="Reports\Receipt.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -38,6 +47,7 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1358.0" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
@@ -95,18 +105,41 @@
     <None Update="DAL\DataSets\ItemDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ItemDataSet.Designer.cs</LastGenOutput>
+<<<<<<< HEAD
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+=======
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     </None>
     <None Update="DAL\DataSets\ShopInfoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ShopInfoDataSet.Designer.cs</LastGenOutput>
+<<<<<<< HEAD
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+=======
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
     </None>
     <None Update="DAL\DataSets\TransactionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TransactionDataSet.Designer.cs</LastGenOutput>
+<<<<<<< HEAD
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+=======
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="default.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LaundryDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Icons\Images\" />
+>>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
   </ItemGroup>
 
 </Project>
