@@ -251,8 +251,8 @@ namespace LaundryPOS.Forms.Views
         private void ClearText()
         {
             imgIcon.Image = null;
-            txtName.Text = string.Empty;
-            txtPath.Text = string.Empty;
+            txtName.Clear();
+            txtPath.Clear();
         }
 
         private void btnItem_Click(object sender, EventArgs e)

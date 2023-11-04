@@ -279,13 +279,14 @@ namespace LaundryPOS.Forms
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(23, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 41);
+            this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 12;
             this.label1.Text = "Log in";
             // 
             // cbShowPassword
             // 
             this.cbShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShowPassword.AutoSize = true;
             this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.cbShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbShowPassword.CheckedState.BorderRadius = 0;
@@ -295,7 +296,7 @@ namespace LaundryPOS.Forms
             this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbShowPassword.Location = new System.Drawing.Point(178, 231);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(108, 23);
+            this.cbShowPassword.Size = new System.Drawing.Size(103, 16);
             this.cbShowPassword.TabIndex = 3;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
@@ -383,6 +384,7 @@ namespace LaundryPOS.Forms
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 

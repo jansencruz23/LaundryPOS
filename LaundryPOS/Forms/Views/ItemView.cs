@@ -61,8 +61,9 @@ namespace LaundryPOS.Forms.Views
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
-                    , "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid item. Please fill up all of the fields including the image " +
+                    "and make sure fields are valid.", "Item Registration Failed", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -201,10 +202,10 @@ namespace LaundryPOS.Forms.Views
 
         private void ClearText()
         {
-            txtName.Text = string.Empty;
-            txtPrice.Text = string.Empty;
-            txtPath.Text = string.Empty;
-            txtStock.Text = string.Empty;
+            txtName.Clear();
+            txtPrice.Clear();
+            txtPath.Clear();
+            txtStock.Clear();
             imgIcon.Image = null;
         }
 

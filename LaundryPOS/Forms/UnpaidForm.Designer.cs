@@ -111,7 +111,7 @@
             this.unpaidTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.unpaidTable.RowHeadersVisible = false;
             this.unpaidTable.RowTemplate.Height = 50;
-            this.unpaidTable.Size = new System.Drawing.Size(1056, 691);
+            this.unpaidTable.Size = new System.Drawing.Size(1072, 691);
             this.unpaidTable.TabIndex = 0;
             this.unpaidTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.unpaidTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -153,7 +153,7 @@
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(15, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtSearch.Location = new System.Drawing.Point(564, 30);
+            this.txtSearch.Location = new System.Drawing.Point(580, 30);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -195,7 +195,7 @@
             this.panelLeft.ShadowDecoration.Depth = 10;
             this.panelLeft.ShadowDecoration.Enabled = true;
             this.panelLeft.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.panelLeft.Size = new System.Drawing.Size(116, 881);
+            this.panelLeft.Size = new System.Drawing.Size(100, 881);
             this.panelLeft.TabIndex = 26;
             // 
             // btnLogout
@@ -210,18 +210,18 @@
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogout.FillColor = System.Drawing.Color.White;
-            this.btnLogout.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageOffset = new System.Drawing.Point(12, -7);
-            this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(17, 753);
+            this.btnLogout.ImageOffset = new System.Drawing.Point(11, -7);
+            this.btnLogout.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnLogout.Location = new System.Drawing.Point(15, 756);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnLogout.Size = new System.Drawing.Size(82, 82);
+            this.btnLogout.Size = new System.Drawing.Size(72, 72);
             this.btnLogout.TabIndex = 22;
             this.btnLogout.Text = "Log out";
-            this.btnLogout.TextOffset = new System.Drawing.Point(-9, 20);
+            this.btnLogout.TextOffset = new System.Drawing.Point(-8, 15);
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnPending
@@ -234,19 +234,19 @@
             this.btnPending.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPending.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPending.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPending.FillColor = System.Drawing.Color.White;
-            this.btnPending.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPending.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.btnPending.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPending.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.btnPending.Image = ((System.Drawing.Image)(resources.GetObject("btnPending.Image")));
-            this.btnPending.ImageOffset = new System.Drawing.Point(12, -7);
-            this.btnPending.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnPending.ImageOffset = new System.Drawing.Point(10, -7);
+            this.btnPending.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPending.Location = new System.Drawing.Point(17, 226);
             this.btnPending.Name = "btnPending";
             this.btnPending.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnPending.Size = new System.Drawing.Size(82, 82);
+            this.btnPending.Size = new System.Drawing.Size(70, 70);
             this.btnPending.TabIndex = 1;
             this.btnPending.Text = "Pending";
-            this.btnPending.TextOffset = new System.Drawing.Point(-9, 18);
+            this.btnPending.TextOffset = new System.Drawing.Point(-8, 15);
             // 
             // btnHome
             // 
@@ -258,19 +258,19 @@
             this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.btnHome.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHome.FillColor = System.Drawing.Color.Transparent;
+            this.btnHome.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageOffset = new System.Drawing.Point(10, -7);
-            this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHome.Location = new System.Drawing.Point(17, 126);
+            this.btnHome.ImageOffset = new System.Drawing.Point(8, -7);
+            this.btnHome.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnHome.Location = new System.Drawing.Point(15, 126);
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnHome.Size = new System.Drawing.Size(82, 82);
+            this.btnHome.Size = new System.Drawing.Size(70, 70);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
-            this.btnHome.TextOffset = new System.Drawing.Point(-9, 18);
+            this.btnHome.TextOffset = new System.Drawing.Point(-7, 15);
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // imgPic
@@ -280,13 +280,14 @@
             this.imgPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgPic.FillColor = System.Drawing.Color.WhiteSmoke;
             this.imgPic.ImageRotate = 0F;
-            this.imgPic.Location = new System.Drawing.Point(29, 675);
+            this.imgPic.Location = new System.Drawing.Point(25, 688);
             this.imgPic.Margin = new System.Windows.Forms.Padding(20, 10, 0, 10);
-            this.imgPic.MaximumSize = new System.Drawing.Size(100, 100);
+            this.imgPic.MaximumSize = new System.Drawing.Size(50, 50);
+            this.imgPic.MinimumSize = new System.Drawing.Size(50, 50);
             this.imgPic.Name = "imgPic";
             this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.imgPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imgPic.Size = new System.Drawing.Size(55, 55);
+            this.imgPic.Size = new System.Drawing.Size(50, 50);
             this.imgPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPic.TabIndex = 21;
             this.imgPic.TabStop = false;
@@ -303,7 +304,7 @@
             this.guna2Panel2.Controls.Add(this.unpaidTable);
             this.guna2Panel2.CustomizableEdges = customizableEdges16;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(151, 32);
+            this.guna2Panel2.Location = new System.Drawing.Point(135, 32);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.Gray;
@@ -311,7 +312,7 @@
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
-            this.guna2Panel2.Size = new System.Drawing.Size(1101, 823);
+            this.guna2Panel2.Size = new System.Drawing.Size(1117, 823);
             this.guna2Panel2.TabIndex = 3;
             // 
             // guna2Panel3
@@ -324,14 +325,14 @@
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            this.guna2Panel3.Size = new System.Drawing.Size(1101, 100);
+            this.guna2Panel3.Size = new System.Drawing.Size(1117, 100);
             this.guna2Panel3.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(49, 37);
+            this.label1.Location = new System.Drawing.Point(40, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 47);
             this.label1.TabIndex = 3;
@@ -348,7 +349,7 @@
             this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(930, 30);
+            this.btnSearch.Location = new System.Drawing.Point(946, 30);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.btnSearch.Size = new System.Drawing.Size(141, 40);

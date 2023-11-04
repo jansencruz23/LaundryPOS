@@ -94,5 +94,12 @@ namespace LaundryPOS.Forms
             form.ShowDialog();
             Opacity = 100;
         }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = cbShowPassword.Checked
+                ? '\0'
+                : '•';
+        }
     }
 }

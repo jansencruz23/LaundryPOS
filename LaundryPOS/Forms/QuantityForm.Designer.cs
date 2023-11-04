@@ -348,7 +348,7 @@ namespace LaundryPOS.Forms
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(17, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 63);
+            this.label1.Size = new System.Drawing.Size(293, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Quantity";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -32,6 +32,13 @@ namespace LaundryPOS
                 return;
             }
 
+            if (!txtConfirmPassword.Text.Equals(txtPassword.Text))
+            {
+                MessageBox.Show("Passwords do not match", "Registration failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var employeeIsExisting = await _unitOfWork.EmployeeRepo
                 .IsEmployeeExisting(txtUsername.Text);
 
@@ -113,6 +120,19 @@ namespace LaundryPOS
         {
             await _themeManager.ApplyThemeToButton(btnRegister);
             await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = 
+                txtConfirmPassword.PasswordChar = cbShowPassword.Checked
+                    ? '\0'
+                    : '•';
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            txtUsername.Focus();
         }
     }
 }

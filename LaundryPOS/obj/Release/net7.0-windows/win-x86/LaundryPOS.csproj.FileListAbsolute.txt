@@ -1,6 +1,5 @@
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\appsettings.json
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\default.png
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Reports\Receipt.rdlc
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Azure.Core.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Azure.Identity.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\BCrypt.Net-Next.dll
@@ -114,6 +113,48 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.csproj.CoreCompileInputs.cache
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.csproj.CopyComplete
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.genruntimeconfig.cache
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.ChangePassword.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.CustomControls.CategoryControl.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.ProfileForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.UnpaidForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.UpdateProfileForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.AdminProfileView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.CategoryView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.TransactionView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Properties.Resources.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.LoadingForm.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseCategoryView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseImageViewControl.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViews.BaseItemView.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViewControl.resources
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\LaundryDB.mdf
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Icons\icon.ico
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.deps.json
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.runtimeconfig.json
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.exe
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.dll.config
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.pdb
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\refint\POS System.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.pdb
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\ref\POS System.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Reports\Receipt.rdlc
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Microsoft.SqlServer.Types.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\de\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\es\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\fr\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\it\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\ja\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\ko\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\pt-BR\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\ru\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\SqlServerSpatial160.dll
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\DAL\DataSets\ItemDataSet.xsd
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\DAL\DataSets\ShopInfoDataSet.xsd
+D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\DAL\DataSets\TransactionDataSet.xsd
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Microsoft.CSharp.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Microsoft.VisualBasic.Core.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Microsoft.Win32.Primitives.dll
@@ -572,33 +613,7 @@ D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryP
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\zh-Hant\UIAutomationTypes.resources.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\zh-Hant\WindowsBase.resources.dll
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\zh-Hant\WindowsFormsIntegration.resources.dll
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.ChangePassword.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.CustomControls.CategoryControl.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.ProfileForm.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.UnpaidForm.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.UpdateProfileForm.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.AdminProfileView.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.CategoryView.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.TransactionView.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Properties.Resources.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.LoadingForm.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseCategoryView.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseImageViewControl.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViews.BaseItemView.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\LaundryPOS.Forms.Views.BaseViewControl.resources
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\LaundryDB.mdf
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\Icons\icon.ico
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.deps.json
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.runtimeconfig.json
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.exe
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.dll.config
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.dll.manifest
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.application
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.dll
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\bin\Release\net7.0-windows\win-x86\POS System.pdb
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.dll.manifest
 D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.application
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.dll
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\refint\POS System.dll
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\POS System.pdb
-D:\User\Jansen\Self Study\2023 - 09 - SEPTEMBER\ASP.NET CORE\Commission\LaundryPOS\LaundryPOS\obj\Release\net7.0-windows\win-x86\ref\POS System.dll

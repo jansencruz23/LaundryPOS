@@ -87,6 +87,7 @@ namespace LaundryPOS.Forms
             this.panelBorder = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).BeginInit();
@@ -217,8 +218,8 @@ namespace LaundryPOS.Forms
             this.txtPassword.Location = new System.Drawing.Point(98, 429);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.PlaceholderText = "••••••••••••••";
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.PlaceholderText = "••••••••";
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtPassword.Size = new System.Drawing.Size(413, 40);
@@ -378,6 +379,8 @@ namespace LaundryPOS.Forms
             this.imgPic.FillColor = System.Drawing.Color.WhiteSmoke;
             this.imgPic.ImageRotate = 0F;
             this.imgPic.Location = new System.Drawing.Point(243, 113);
+            this.imgPic.MaximumSize = new System.Drawing.Size(106, 106);
+            this.imgPic.MinimumSize = new System.Drawing.Size(106, 106);
             this.imgPic.Name = "imgPic";
             this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.imgPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -393,7 +396,7 @@ namespace LaundryPOS.Forms
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(417, 475);
+            this.label3.Location = new System.Drawing.Point(417, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 12);
             this.label3.TabIndex = 23;
@@ -437,6 +440,7 @@ namespace LaundryPOS.Forms
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 12;
+            this.guna2Panel2.Controls.Add(this.cbShowPassword);
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.Controls.Add(this.label3);
             this.guna2Panel2.Controls.Add(this.btnUpdate);
@@ -463,6 +467,29 @@ namespace LaundryPOS.Forms
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
             this.guna2Panel2.Size = new System.Drawing.Size(600, 625);
             this.guna2Panel2.TabIndex = 25;
+            // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbShowPassword.CheckedState.BorderRadius = 0;
+            this.cbShowPassword.CheckedState.BorderThickness = 0;
+            this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowPassword.Location = new System.Drawing.Point(408, 478);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(103, 16);
+            this.cbShowPassword.TabIndex = 24;
+            this.cbShowPassword.Text = "Show Password";
+            this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
+            this.cbShowPassword.UncheckedState.BorderRadius = 0;
+            this.cbShowPassword.UncheckedState.BorderThickness = 0;
+            this.cbShowPassword.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.UseVisualStyleBackColor = false;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // UpdateProfileForm
             // 
@@ -511,5 +538,6 @@ namespace LaundryPOS.Forms
         private Guna.UI2.WinForms.Guna2Panel panelBorder;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2CheckBox cbShowPassword;
     }
 }
