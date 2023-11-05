@@ -38,7 +38,9 @@ namespace LaundryPOS.Forms.Views
         public void InitializeCartItem()
         {
             lblName.Text = CartItem.Item.Name;
-            lblCategory.Text = CartItem.Item.Category.Name;
+            lblCategory.Text = CartItem.Item.Category != null
+                ? CartItem.Item.Category.Name
+                : string.Empty;
             btnQuantity.Text = CartItem.Quantity.ToString();
             lblSubTotal.Text = $"₱{CartItem.SubTotal:#,###.00}";
             imgPic.Image = GetImage();

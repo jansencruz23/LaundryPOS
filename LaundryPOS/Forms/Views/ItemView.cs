@@ -54,7 +54,7 @@ namespace LaundryPOS.Forms.Views
             await DisplayItems();
             await InitializeCategory();
             await ApplyTheme();
-            ConfigureImageColumn();
+            //ConfigureImageColumn();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace LaundryPOS.Forms.Views
             }
 
             HideUnwantedColumns();
-            HandleImageColumnFormatting();
+            //HandleImageColumnFormatting();
         }
 
         private void HideUnwantedColumns()
@@ -144,41 +144,41 @@ namespace LaundryPOS.Forms.Views
             itemTable.Columns[nameof(Item.CategoryId)].Visible = false;
         }
 
-        private void ConfigureImageColumn()
-        {
-            if (itemTable.Columns["Image"] == null)
-            {
-                var imageColumn = new DataGridViewImageColumn
-                {
-                    HeaderText = "Image",
-                    Name = "Image",
-                    ImageLayout = DataGridViewImageCellLayout.Zoom
-                };
+        //private void ConfigureImageColumn()
+        //{
+        //    if (itemTable.Columns["Image"] == null)
+        //    {
+        //        var imageColumn = new DataGridViewImageColumn
+        //        {
+        //            HeaderText = "Image",
+        //            Name = "Image",
+        //            ImageLayout = DataGridViewImageCellLayout.Zoom
+        //        };
 
-                itemTable.Columns.Add(imageColumn);
-                itemTable.Columns["Image"].DisplayIndex = 0;
-            }
-        }
+        //        itemTable.Columns.Add(imageColumn);
+        //        itemTable.Columns["Image"].DisplayIndex = 0;
+        //    }
+        //}
 
-        private void HandleImageColumnFormatting()
-        {
-            try
-            {
-                itemTable.CellFormatting += (sender, e) =>
-                {
-                    if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
-                    {
-                        var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
-                        e.Value = GetImage(rowData);
-                    }
-                };
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occured " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //private void HandleImageColumnFormatting()
+        //{
+        //    try
+        //    {
+        //        itemTable.CellFormatting += (sender, e) =>
+        //        {
+        //            if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
+        //            {
+        //                var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
+        //                e.Value = GetImage(rowData);
+        //            }
+        //        };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An error occured " + ex.Message, "Error",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private async Task RefreshData(string query = "")
         {
@@ -227,7 +227,9 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "Category" &&
                 itemTable.Rows[e.RowIndex].DataBoundItem is Item rowData)
             {
-                e.Value = rowData.Category?.Name;
+                e.Value = rowData.Category != null
+                    ? rowData.Category.Name
+                    : string.Empty;
                 e.FormattingApplied = true;
             }
         }
@@ -284,7 +286,9 @@ namespace LaundryPOS.Forms.Views
                 txtPrice.Text = _item.Price.ToString();
                 txtStock.Text = _item.Stock.ToString();
                 txtPath.Text = _item.Image?.ToString();
-                cbCategory.SelectedValue = _item.CategoryId;
+                cbCategory.SelectedValue = _item.CategoryId != null 
+                    ? _item.CategoryId
+                    : -1;
                 imgIcon.Image = GetImage(_item);
 
                 EnableInputEditControls();
@@ -305,8 +309,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (!ValidateInputs())
                 {
                     MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
@@ -325,17 +329,17 @@ namespace LaundryPOS.Forms.Views
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private async Task UpdateItem()
         {
-            var category = _categories.First(c => c.Id == (int) cbCategory.SelectedValue);
+            var category = _categories.FirstOrDefault(c => c.Id == (int) cbCategory.SelectedValue);
             _item.Name = txtName.Text;
             _item.Category = category;
             _item.Price = decimal.Parse(txtPrice.Text);

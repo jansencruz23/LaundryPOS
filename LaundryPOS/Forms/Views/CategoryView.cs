@@ -166,6 +166,18 @@ namespace LaundryPOS.Forms.Views
 
                 if (result == DialogResult.Yes)
                 {
+                    var items = await _unitOfWork.ItemRepo
+                        .Get(filter: i => i.CategoryId == _category.Id);
+
+                    foreach (var item in items)
+                    {
+                        item.CategoryId = null;
+                        item.Category = null;
+
+                        _unitOfWork.ItemRepo.Update(item);
+                        await _unitOfWork.SaveAsync();
+                    }
+
                     await _unitOfWork.CategoryRepo.Delete(_category.Id);
                     await _unitOfWork.SaveAsync();
 

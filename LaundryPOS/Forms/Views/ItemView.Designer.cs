@@ -115,6 +115,7 @@
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelCover = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
@@ -329,6 +330,7 @@
             this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.imgIcon);
             this.guna2Panel1.Controls.Add(this.btnFile);
             this.guna2Panel1.Controls.Add(this.txtName);
@@ -929,6 +931,15 @@
             this.panelCover.Size = new System.Drawing.Size(243, 37);
             this.panelCover.TabIndex = 25;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(267, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(214, 23);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Name is ";
+            // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -995,5 +1006,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
         private Panel panelCover;
+        private Label label6;
     }
 }

@@ -120,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelItems.AutoScroll = true;
-            this.panelItems.BackColor = System.Drawing.Color.Transparent;
+            this.panelItems.BackColor = System.Drawing.Color.White;
             this.panelItems.Location = new System.Drawing.Point(0, 68);
             this.panelItems.Margin = new System.Windows.Forms.Padding(0);
             this.panelItems.Name = "panelItems";
@@ -131,7 +131,7 @@
             // flowLeft
             // 
             this.flowLeft.AutoScroll = true;
-            this.flowLeft.BackColor = System.Drawing.Color.Transparent;
+            this.flowLeft.BackColor = System.Drawing.Color.White;
             this.flowLeft.Controls.Add(this.btnAllCategory);
             this.flowLeft.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLeft.Location = new System.Drawing.Point(0, 0);
@@ -200,6 +200,7 @@
             // 
             // panelLeft
             // 
+            this.panelLeft.BackColor = System.Drawing.Color.White;
             this.panelLeft.Controls.Add(this.btnLogout);
             this.panelLeft.Controls.Add(this.btnPending);
             this.panelLeft.Controls.Add(this.guna2Button1);
@@ -221,7 +222,7 @@
             // btnLogout
             // 
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.BorderRadius = 12;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges3;
@@ -246,7 +247,7 @@
             // 
             // btnPending
             // 
-            this.btnPending.BackColor = System.Drawing.Color.Transparent;
+            this.btnPending.BackColor = System.Drawing.Color.White;
             this.btnPending.BorderRadius = 12;
             this.btnPending.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPending.CustomizableEdges = customizableEdges5;
@@ -296,7 +297,7 @@
             // imgPic
             // 
             this.imgPic.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.imgPic.BackColor = System.Drawing.Color.Transparent;
+            this.imgPic.BackColor = System.Drawing.Color.White;
             this.imgPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgPic.FillColor = System.Drawing.Color.WhiteSmoke;
             this.imgPic.ImageRotate = 0F;
@@ -334,7 +335,7 @@
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel5.BackColor = System.Drawing.Color.White;
             this.guna2Panel5.BorderRadius = 7;
             this.guna2Panel5.Controls.Add(this.lblTotal);
             this.guna2Panel5.Controls.Add(this.label2);
@@ -447,7 +448,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.lblTransacId);
             this.guna2Panel3.Controls.Add(this.lblTime);
             this.guna2Panel3.Controls.Add(this.label1);
@@ -462,6 +463,7 @@
             // 
             // lblTransacId
             // 
+            this.lblTransacId.BackColor = System.Drawing.Color.White;
             this.lblTransacId.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTransacId.ForeColor = System.Drawing.Color.DimGray;
             this.lblTransacId.Location = new System.Drawing.Point(24, 101);
@@ -472,6 +474,7 @@
             // 
             // lblTime
             // 
+            this.lblTime.BackColor = System.Drawing.Color.White;
             this.lblTime.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.Color.DimGray;
             this.lblTime.Location = new System.Drawing.Point(24, 77);
@@ -483,6 +486,7 @@
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Helvetica", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(21, 26);
@@ -523,7 +527,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCart.AutoScroll = true;
-            this.panelCart.BackColor = System.Drawing.Color.Transparent;
+            this.panelCart.BackColor = System.Drawing.Color.White;
             this.panelCart.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelCart.Location = new System.Drawing.Point(21, 158);
             this.panelCart.Margin = new System.Windows.Forms.Padding(0, 0, 0, 105);
@@ -537,7 +541,7 @@
             this.panelBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelBody.BackColor = System.Drawing.Color.Transparent;
+            this.panelBody.BackColor = System.Drawing.Color.White;
             this.panelBody.Controls.Add(this.tableBody);
             this.panelBody.CustomizableEdges = customizableEdges34;
             this.panelBody.FillColor = System.Drawing.Color.Transparent;
@@ -549,7 +553,7 @@
             // 
             // tableBody
             // 
-            this.tableBody.BackColor = System.Drawing.Color.Transparent;
+            this.tableBody.BackColor = System.Drawing.Color.White;
             this.tableBody.ColumnCount = 1;
             this.tableBody.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableBody.Controls.Add(this.guna2Panel1, 0, 1);

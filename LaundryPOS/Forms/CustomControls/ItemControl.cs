@@ -46,7 +46,9 @@ namespace LaundryPOS.Forms.Views
         private void InitializeItem()
         {
             lblName.Text = Item.Name;
-            lblCategory.Text = Item.Category.Name;
+            lblCategory.Text = Item.Category != null 
+                ? Item.Category.Name 
+                : string.Empty;
             lblPrice.Text = $"₱{Item.Price:#,###.00}";
             lblStock.Text = $"{Item.Stock} left";
             imgPic.Image = GetImage();

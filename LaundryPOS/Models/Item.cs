@@ -11,7 +11,7 @@ namespace LaundryPOS.Models
     {
         public string Name { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         public decimal Price { get; set; }
 
@@ -19,6 +19,6 @@ namespace LaundryPOS.Models
 
         // Navigation Property/
 
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
     }
 }

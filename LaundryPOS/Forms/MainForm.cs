@@ -398,11 +398,6 @@ namespace LaundryPOS.Forms
             lblTime.Text = $"Date: {DateTime.Now:dddd, hh:mmtt MM/dd/yy}";
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             panelItems.Controls.Clear();
