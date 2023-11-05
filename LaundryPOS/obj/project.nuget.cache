@@ -1,12 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "Yx6dNv6TOpdLhqlk3DBcsoBibPkESqK4duEnjndXLbDfgNc9PABPj9E7tINNjpCM33U53ABehhBTBStVq+meDg==",
-=======
-  "dgSpecHash": "pnARluV2ao6FPioCBKKxY/gvtysajWE1w7o6mC6iVH097Xm/2CtMX4gX2FRcLwziDlfR0zhv0lnZBWpbC+f6fg==",
->>>>>>> 3f7bf0330be60318a516eeeef346171f49d08366
+  "dgSpecHash": "ZgYUVAoeRQdr1E+EHnAv2HDdwzw/N3r0TbHFcbvahHKvojiwx4pujJnS0z8TyCb1Y8ez/jOl7hL47WqeujRJJg==",
   "success": true,
-  "projectFilePath": "D:\\User\\Jansen\\Self Study\\2023 - 09 - SEPTEMBER\\ASP.NET CORE\\Commission\\LaundryPOS\\LaundryPOS\\LaundryPOS.csproj",
+  "projectFilePath": "D:\\User\\Jansen\\Self Study\\2023 - 11 - NOVEMBER\\LaundryPOS\\LaundryPOS\\LaundryPOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
