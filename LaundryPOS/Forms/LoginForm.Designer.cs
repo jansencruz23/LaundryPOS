@@ -50,8 +50,8 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -64,22 +64,19 @@ namespace LaundryPOS.Forms
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelDrag = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.cbShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelDrag.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -153,16 +150,15 @@ namespace LaundryPOS.Forms
             // 
             // panelDrag
             // 
-            this.panelDrag.BackColor = System.Drawing.Color.Transparent;
+            this.panelDrag.BackColor = System.Drawing.Color.White;
             this.panelDrag.Controls.Add(this.guna2Panel1);
-            this.panelDrag.Controls.Add(this.guna2Panel2);
-            this.panelDrag.CustomizableEdges = customizableEdges19;
+            this.panelDrag.CustomizableEdges = customizableEdges17;
             this.panelDrag.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDrag.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.panelDrag.Location = new System.Drawing.Point(0, 0);
             this.panelDrag.Name = "panelDrag";
             this.panelDrag.Padding = new System.Windows.Forms.Padding(30);
-            this.panelDrag.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.panelDrag.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.panelDrag.Size = new System.Drawing.Size(1080, 672);
             this.panelDrag.TabIndex = 12;
             // 
@@ -172,7 +168,7 @@ namespace LaundryPOS.Forms
             this.guna2Panel1.BorderRadius = 12;
             this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Controls.Add(this.btnClose);
-            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.lblDescription);
             this.guna2Panel1.Controls.Add(this.lblName);
             this.guna2Panel1.Controls.Add(this.panelLogin);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
@@ -225,23 +221,23 @@ namespace LaundryPOS.Forms
             this.btnClose.TabIndex = 18;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label2
+            // lblDescription
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(98, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 41);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Point-of-sale management system";
+            this.lblDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDescription.BackColor = System.Drawing.Color.White;
+            this.lblDescription.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDescription.ForeColor = System.Drawing.Color.Black;
+            this.lblDescription.Location = new System.Drawing.Point(98, 80);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(345, 41);
+            this.lblDescription.TabIndex = 17;
+            this.lblDescription.Text = "Point-of-sale management system";
             // 
             // lblName
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.BackColor = System.Drawing.Color.White;
             this.lblName.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.Black;
             this.lblName.Location = new System.Drawing.Point(92, 41);
@@ -255,7 +251,7 @@ namespace LaundryPOS.Forms
             this.panelLogin.BackColor = System.Drawing.Color.Transparent;
             this.panelLogin.BorderRadius = 5;
             this.panelLogin.Controls.Add(this.txtUsername);
-            this.panelLogin.Controls.Add(this.label1);
+            this.panelLogin.Controls.Add(this.lblLogin);
             this.panelLogin.Controls.Add(this.txtPassword);
             this.panelLogin.Controls.Add(this.cbShowPassword);
             this.panelLogin.Controls.Add(this.btnLogin);
@@ -271,17 +267,17 @@ namespace LaundryPOS.Forms
             this.panelLogin.Size = new System.Drawing.Size(306, 405);
             this.panelLogin.TabIndex = 14;
             // 
-            // label1
+            // lblLogin
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(23, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 41);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Log in";
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLogin.BackColor = System.Drawing.Color.White;
+            this.lblLogin.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLogin.ForeColor = System.Drawing.Color.Black;
+            this.lblLogin.Location = new System.Drawing.Point(23, 44);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(178, 41);
+            this.lblLogin.TabIndex = 12;
+            this.lblLogin.Text = "Log in";
             // 
             // cbShowPassword
             // 
@@ -346,24 +342,6 @@ namespace LaundryPOS.Forms
             this.guna2PictureBox1.TabIndex = 15;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.CustomizableEdges = customizableEdges17;
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(1056, 338);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
-            this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.guna2Panel2.ShadowDecoration.Depth = 15;
-            this.guna2Panel2.ShadowDecoration.Enabled = true;
-            this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel2.Size = new System.Drawing.Size(400, 492);
-            this.guna2Panel2.TabIndex = 13;
-            this.guna2Panel2.Visible = false;
-            // 
             // dragControl
             // 
             this.dragControl.DockIndicatorTransparencyValue = 0.6D;
@@ -395,14 +373,13 @@ namespace LaundryPOS.Forms
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2Panel panelDrag;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
-        private Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Label lblLogin;
         private Guna.UI2.WinForms.Guna2CheckBox cbShowPassword;
         private Guna.UI2.WinForms.Guna2DragControl dragControl;
         private Guna.UI2.WinForms.Guna2Panel panelLogin;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Label label2;
+        private Label lblDescription;
         private Label lblName;
         private Guna.UI2.WinForms.Guna2Button btnMinimize;
         private Guna.UI2.WinForms.Guna2Button btnClose;

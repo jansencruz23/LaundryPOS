@@ -15,7 +15,9 @@ namespace LaundryPOS.Forms
         {
             _unitOfWork = unitOfWork;
             _themeManager = themeManager;
+
             InitializeComponent();
+            StyleFonts();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -102,6 +104,15 @@ namespace LaundryPOS.Forms
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void StyleFonts()
+        {
+            lblName.Font = lblLogin.Font = _themeManager.Montserrat(21.75f);
+            lblDescription.Font = txtUsername.Font = txtUsername.Font
+                = _themeManager.Helvetica(11.25f);
+            cbShowPassword.Font = _themeManager.Helvetica(8.25f);
+            btnLogin.Font = _themeManager.HelveticaBold(12);
         }
     }
 }

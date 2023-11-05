@@ -69,6 +69,7 @@
             // 
             // imgPic
             // 
+            this.imgPic.BackColor = System.Drawing.Color.White;
             this.imgPic.BorderRadius = 3;
             this.imgPic.CustomizableEdges = customizableEdges1;
             this.imgPic.FillColor = System.Drawing.Color.LightGray;
@@ -83,7 +84,7 @@
             // 
             // lblPrice
             // 
-            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrice.BackColor = System.Drawing.Color.White;
             this.lblPrice.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.lblPrice.Location = new System.Drawing.Point(12, 265);
@@ -95,6 +96,7 @@
             // 
             // lblCategory
             // 
+            this.lblCategory.BackColor = System.Drawing.Color.White;
             this.lblCategory.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblCategory.Location = new System.Drawing.Point(15, 246);
@@ -105,6 +107,7 @@
             // 
             // lblStock
             // 
+            this.lblStock.BackColor = System.Drawing.Color.White;
             this.lblStock.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblStock.Location = new System.Drawing.Point(154, 269);
@@ -116,7 +119,7 @@
             // 
             // lblName
             // 
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.BackColor = System.Drawing.Color.White;
             this.lblName.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.lblName.Location = new System.Drawing.Point(14, 224);

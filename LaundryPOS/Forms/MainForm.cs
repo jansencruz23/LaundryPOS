@@ -107,8 +107,6 @@ namespace LaundryPOS.Forms
             var filteredItemControls = itemsControls.Where(i => i.Item.CategoryId == e.Category.Id)
                 .ToList();
 
-
-            //var filteredItems = allItems.Where(i => i.CategoryId == e.Category.Id);
             DisplayFilteredItems(filteredItemControls);
 
             btnAllCategory.FillColor = Color.FromArgb(248, 248, 248);
@@ -136,14 +134,17 @@ namespace LaundryPOS.Forms
         {
             allItems = await _unitOfWork.ItemRepo
                 .Get(includeProperties: "Category");
-            itemsControls.AddRange(allItems
-                .Select(item => new ItemControl(item, _themeManager)));
 
-            foreach (var item in itemsControls)
+            itemsControls.AddRange(allItems
+                .Select(item => new ItemControl(item, _themeManager))
+                .ToList());
+
+            foreach (var control in itemsControls)
             {
-                item.AddToCartClicked += ItemControl_AddToCartClicked!;
-                panelItems.Controls.Add(item);
+                control.AddToCartClicked += ItemControl_AddToCartClicked!;
             }
+
+            panelItems.Controls.AddRange(itemsControls.ToArray());
         }
 
         private async Task RefreshItems()

@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ZgYUVAoeRQdr1E+EHnAv2HDdwzw/N3r0TbHFcbvahHKvojiwx4pujJnS0z8TyCb1Y8ez/jOl7hL47WqeujRJJg==",
+  "dgSpecHash": "Hlg+uM+oyeETewr2LsQ+IDy0iv0LxrnF5I6sDhCcefmMrIuYclamsDAwjOQZ1WphM6eMjMiqnT0sth3X0p9ZFQ==",
   "success": true,
   "projectFilePath": "D:\\User\\Jansen\\Self Study\\2023 - 11 - NOVEMBER\\LaundryPOS\\LaundryPOS\\LaundryPOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\corrected.microsoft.reportingservices.reportviewercontrol.winforms\\150.1358.0\\corrected.microsoft.reportingservices.reportviewercontrol.winforms.150.1358.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.5\\guna.ui2.winforms.2.0.4.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
@@ -112,16 +111,5 @@
     "C:\\Users\\user\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1358.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Corrected.Microsoft.ReportingServices.ReportViewerControl.Winforms",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
