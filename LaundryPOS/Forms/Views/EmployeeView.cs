@@ -183,10 +183,10 @@ namespace LaundryPOS.Forms.Views
         private void ClearText()
         {
             imgPic.Image = default;
-            lblAge.Text = string.Empty;
-            lblBirthday.Text = string.Empty;
-            lblName.Text = string.Empty;
-            lblUsername.Text = string.Empty;
+            txtAge.Text = string.Empty;
+            txtBirthday.Text = string.Empty;
+            txtName.Text = string.Empty;
+            txtUsername.Text = string.Empty;
         }
 
         private async void employeeTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -198,10 +198,10 @@ namespace LaundryPOS.Forms.Views
                 _employee = await _unitOfWork.EmployeeRepo
                     .GetByID(employeeId.Value);
 
-                lblName.Text = _employee.FullName;
-                lblUsername.Text = _employee.Username;
-                lblAge.Text = _employee.Age.ToString();
-                lblBirthday.Text = _employee.BirthDate.ToShortDateString();
+                txtName.Text = _employee.FullName;
+                txtUsername.Text = _employee.Username;
+                txtAge.Text = _employee.Age.ToString();
+                txtBirthday.Text = _employee.BirthDate.ToShortDateString();
                 imgPic.Image = GetImage(_employee);
 
                 btnDelete.Enabled = true;
@@ -210,21 +210,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnPrint_Click(object sender, EventArgs e)
         {
-            var printer = new DGVPrinter();
-            var businessName = await GetBusinessName();
-
-            printer.Title = businessName;
-            printer.SubTitle = string.Format("Item/Service Employee List", printer.SubTitleColor = Color.Black, printer);
-            printer.SubTitleSpacing = 15;
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = businessName;
-            printer.FooterSpacing = 15;
-            printer.PrintDataGridView(employeeTable);
+            await PrintTable(employeeTable, "Item/Service Employee List");
         }
 
 

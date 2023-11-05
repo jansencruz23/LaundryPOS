@@ -18,6 +18,7 @@ namespace LaundryPOS.Forms.Views
         {
             InitializeComponent();
             ShowLoadingForm();
+            StyleFonts();
         }
 
         private void ShowLoadingForm()
@@ -39,6 +40,7 @@ namespace LaundryPOS.Forms.Views
         {
             Application.Idle -= OnLoaded;
             _loadingForm.Close();
+
             panelCover.Dock = DockStyle.None;
             panelCover.Size = new Size(1, 1);
         }
@@ -55,39 +57,7 @@ namespace LaundryPOS.Forms.Views
                 .Get(filter: c => c.Name.Contains(query));
 
             categoryTable.DataSource = categories;
-            ConfigureImageColumn();
-            HandleImageColumnFormatting();
             HideUnwantedColumns();
-        }
-
-        private void ConfigureImageColumn()
-        {
-            if (categoryTable.Columns["Image"] == null)
-            {
-                var imageColumn = new DataGridViewImageColumn
-                {
-                    HeaderText = "Image",
-                    Name = "Image",
-                    ImageLayout = DataGridViewImageCellLayout.Zoom
-                };
-                categoryTable.Columns.Add(imageColumn);
-                categoryTable.Columns["Image"].DisplayIndex = 0;
-            }
-        }
-
-        private void HandleImageColumnFormatting()
-        {
-            categoryTable.CellFormatting += (sender, e) =>
-            {
-                if (e.ColumnIndex == categoryTable.Columns["Image"].Index && e.RowIndex >= 0)
-                {
-                    var rowData = categoryTable.Rows[e.RowIndex].DataBoundItem as Category;
-                    var imagePath = rowData?.Image;
-                    e.Value = !string.IsNullOrEmpty(imagePath)
-                        ? Image.FromFile(imagePath)
-                        : null;
-                }
-            };
         }
 
         private void HideUnwantedColumns()
@@ -154,6 +124,8 @@ namespace LaundryPOS.Forms.Views
             await _themeManager.ApplyThemeToButton(btnCategory);
             await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(categoryTable, 1f, true);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtName);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtSearch);
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -288,23 +260,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnPrint_Click(object sender, EventArgs e)
         {
-            var printer = new DGVPrinter();
-            var businessName = await GetBusinessName();
-
-            printer.Title = businessName;
-            printer.SubTitle = string.Format("Item/Service Category List", printer.SubTitleColor = Color.Black, printer);
-            printer.SubTitleSpacing = 15;
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = businessName;
-            printer.FooterSpacing = 15;
-            printer.PrintDataGridView(categoryTable);
+            await PrintTable(categoryTable, "Item/Service Category List");
         }
-
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -314,6 +271,24 @@ namespace LaundryPOS.Forms.Views
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
+        }
+
+        private void StyleFonts()
+        {
+            StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+                btnAdminProfile, btnAdd, btnSave, btnUpdate, btnDelete,
+                btnPrint, btnLogout);
+            StyleFontsLabel(18f, true, lblDetails, lblList);
+            StyleFontsLabel(11.25f, false, lblName);
+            StyleFontsButton(11.25f, btnFile, btnSearch);
+            StyleFontsTextBox(11.25f, txtName, txtSearch);
+            StyleFontsLabel(8.25f, false, lblNameValidation, lblIconValidation);
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            lblIconValidation.Visible =
+            lblNameValidation.Visible = false;
         }
     }
 }

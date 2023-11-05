@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using LaundryPOS.Models;
@@ -44,5 +45,24 @@ namespace LaundryPOS.Forms.Views
 
         protected string GetImagePath(string imagePath, string folderName)
             => Path.Combine("Icons", "Images", folderName, Path.GetFileName(imagePath));
+
+        protected async Task PrintTable(Guna2DataGridView table, string subtitle)
+        {
+            var printer = new DGVPrinter();
+            var businessName = await GetBusinessName();
+
+            printer.Title = businessName;
+            printer.SubTitle = string.Format(subtitle, printer.SubTitleColor = Color.Black, printer);
+            printer.SubTitleSpacing = 15;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = businessName;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(table);
+        }
     }
 }

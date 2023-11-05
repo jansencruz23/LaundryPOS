@@ -46,6 +46,7 @@ namespace LaundryPOS.Forms.Views
         {
             Application.Idle -= OnLoaded;
             _loadingForm.Close();
+
             panelCover.Dock = DockStyle.None;
             panelCover.Size = new Size(1, 1);
         }
@@ -71,6 +72,7 @@ namespace LaundryPOS.Forms.Views
             await CreateItem(item);
             await RefreshData();
             ClearText();
+            DisableFields();
             btnSave.Enabled = false;
         }
 
@@ -184,6 +186,10 @@ namespace LaundryPOS.Forms.Views
             await _themeManager.ApplyThemeToButton(btnItem);
             await _themeManager.ApplyThemeToButton(btnSearch);
             await _themeManager.ApplyLighterThemeToDataGridView(itemTable, 1f, true);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtName);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtPrice);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtSearch);
+            await _themeManager.ApplyFocusedThemeToTextBox(txtStock);
         }
 
         private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -333,23 +339,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnPrint_Click(object sender, EventArgs e)
         {
-            var printer = new DGVPrinter();
-            var businessName = await GetBusinessName();
-
-            printer.Title = businessName;
-            printer.SubTitle = string.Format("Item/Service List", printer.SubTitleColor = Color.Black, printer);
-            printer.SubTitleSpacing = 15;
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.RowHeight = RowHeightSetting.CellHeight;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = businessName;
-            printer.FooterSpacing = 15;
-            printer.PrintDataGridView(itemTable);
+            await PrintTable(itemTable, "Item/Service List");
         }
-
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
