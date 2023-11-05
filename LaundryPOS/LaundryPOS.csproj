@@ -14,6 +14,10 @@
   <ItemGroup>
     <None Remove="appsettings.json" />
     <None Remove="default.png" />
+    <None Remove="Fonts\fake receipt.otf" />
+    <None Remove="Fonts\FreeSansBold.ttf" />
+    <None Remove="Fonts\Helvetica.ttf" />
+    <None Remove="Fonts\Montserrat-Bold.ttf" />
     <None Remove="LaundryDB.mdf" />
     <None Remove="Reports\Receipt.rdlc" />
   </ItemGroup>
@@ -24,6 +28,18 @@
     </Content>
     <Content Include="default.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\fake receipt.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\FreeSansBold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Helvetica.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Montserrat-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -21,6 +21,8 @@ namespace LaundryPOS.Forms
         private IEnumerable<Item> allItems;
         private string _title;
 
+        private DateTime loadingStartTime;
+
         private decimal Total { get; set; } = default;
 
         public MainForm(IUnitOfWork unitOfWork,
@@ -35,15 +37,15 @@ namespace LaundryPOS.Forms
 
             InitializeComponent();
             InitializeTimer();
+            ShowLoadingForm();
+            DisplayEmployeeInfo();
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            ShowLoadingForm();
             await DisplayCategories();
             await ApplyTheme();
             await DisplayAppInfo();
-            DisplayEmployeeInfo();
             await DisplayItems();
         }
 
@@ -54,6 +56,7 @@ namespace LaundryPOS.Forms
                 return;
             }
 
+            loadingStartTime = DateTime.Now;
             _loadingForm = new LoadingForm();
             _loadingForm.Show();
             _loadingForm.Refresh();
@@ -66,6 +69,9 @@ namespace LaundryPOS.Forms
             Application.Idle -= OnLoaded;
             _loadingForm.Close();
             Opacity = 100;
+
+            TimeSpan elapsedTime = DateTime.Now - loadingStartTime;
+            MessageBox.Show("Time elapsed: " + elapsedTime.ToString());
         }
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)

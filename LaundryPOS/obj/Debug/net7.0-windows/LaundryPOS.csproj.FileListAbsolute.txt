@@ -212,3 +212,7 @@ D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\n
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\POS System.pdb
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.genruntimeconfig.cache
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\ref\POS System.dll
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\fake receipt.otf
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\FreeSansBold.ttf
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\Helvetica.ttf
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\Montserrat-Bold.ttf
