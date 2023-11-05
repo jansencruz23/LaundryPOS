@@ -9,8 +9,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -95,6 +97,28 @@ namespace LaundryPOS.Forms.Views
                 Array.ForEach(labels, lbl
                     => lbl.Font = _themeManager.Helvetica(size));
             }
+        }
+
+        protected bool ValidateField(bool condition, Label label)
+        {
+            label.Visible = condition;
+            return !condition;
+        }
+
+        protected bool IsValidDecimalInput(string input, out decimal value)
+        {
+            return decimal.TryParse(input, out value) && value > 0 && input.Length <= 6;
+        }
+
+        protected bool IsValidName(Guna2TextBox textbox)
+        {
+            if (string.IsNullOrWhiteSpace(textbox.Text))
+            {
+                return false;
+            }
+
+            string pattern = @"^[a-zA-Z0-9!&*()-:',.|\s]*[a-zA-Z0-9]+[a-zA-Z0-9!&*()-:',.|\s]*$";
+            return Regex.IsMatch(textbox.Text, pattern);
         }
     }
 }

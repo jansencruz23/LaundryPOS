@@ -113,6 +113,7 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblNameValidation = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -123,6 +124,7 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.panelCover = new System.Windows.Forms.Panel();
+            this.lblIconValidation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryTable)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -140,6 +142,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderRadius = 5;
             this.txtName.BorderThickness = 0;
             this.txtName.CustomizableEdges = customizableEdges1;
@@ -154,18 +157,19 @@
             this.txtName.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(39, 312);
+            this.txtName.Location = new System.Drawing.Point(39, 367);
             this.txtName.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "eg. Meal";
             this.txtName.SelectedText = "";
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtName.Size = new System.Drawing.Size(203, 40);
+            this.txtName.Size = new System.Drawing.Size(200, 40);
             this.txtName.TabIndex = 1;
             // 
             // imgIcon
             // 
+            this.imgIcon.BackColor = System.Drawing.Color.White;
             this.imgIcon.BorderRadius = 5;
             this.imgIcon.CustomizableEdges = customizableEdges3;
             this.imgIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
@@ -174,13 +178,14 @@
             this.imgIcon.Margin = new System.Windows.Forms.Padding(10);
             this.imgIcon.Name = "imgIcon";
             this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.imgIcon.Size = new System.Drawing.Size(203, 153);
+            this.imgIcon.Size = new System.Drawing.Size(200, 200);
             this.imgIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgIcon.TabIndex = 4;
             this.imgIcon.TabStop = false;
             // 
             // btnFile
             // 
+            this.btnFile.BackColor = System.Drawing.Color.White;
             this.btnFile.BorderRadius = 7;
             this.btnFile.CustomizableEdges = customizableEdges5;
             this.btnFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -190,7 +195,7 @@
             this.btnFile.Enabled = false;
             this.btnFile.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(39, 363);
+            this.btnFile.Location = new System.Drawing.Point(36, 447);
             this.btnFile.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnFile.Name = "btnFile";
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -256,7 +261,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.tableLayoutPanel6);
             this.guna2Panel3.CustomizableEdges = customizableEdges35;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -274,7 +279,7 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 0, 1);
@@ -312,7 +317,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.BorderRadius = 5;
             this.btnUpdate.CustomizableEdges = customizableEdges13;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -337,7 +342,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BorderRadius = 5;
             this.btnSave.CustomizableEdges = customizableEdges15;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -362,7 +367,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.BorderRadius = 5;
             this.btnAdd.CustomizableEdges = customizableEdges17;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -386,7 +391,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.BorderRadius = 5;
             this.btnDelete.CustomizableEdges = customizableEdges19;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -433,7 +438,7 @@
             // 
             // btnCategory
             // 
-            this.btnCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategory.BackColor = System.Drawing.Color.White;
             this.btnCategory.BorderRadius = 5;
             this.btnCategory.CustomizableEdges = customizableEdges21;
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -456,7 +461,7 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployee.BackColor = System.Drawing.Color.White;
             this.btnEmployee.BorderRadius = 5;
             this.btnEmployee.CustomizableEdges = customizableEdges23;
             this.btnEmployee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -480,7 +485,7 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransaction.BackColor = System.Drawing.Color.White;
             this.btnTransaction.BorderRadius = 5;
             this.btnTransaction.CustomizableEdges = customizableEdges25;
             this.btnTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -504,7 +509,7 @@
             // 
             // btnAdminProfile
             // 
-            this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdminProfile.BackColor = System.Drawing.Color.White;
             this.btnAdminProfile.BorderRadius = 5;
             this.btnAdminProfile.CustomizableEdges = customizableEdges27;
             this.btnAdminProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -567,7 +572,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.BorderRadius = 5;
             this.btnLogout.CustomizableEdges = customizableEdges31;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -591,7 +596,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackColor = System.Drawing.Color.White;
             this.btnPrint.BorderRadius = 5;
             this.btnPrint.CustomizableEdges = customizableEdges33;
             this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.Transparent;
@@ -636,6 +641,7 @@
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(34, 30);
             this.label2.Name = "label2";
@@ -645,11 +651,12 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(39, 276);
+            this.label1.Location = new System.Drawing.Point(38, 338);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 30);
+            this.label1.Size = new System.Drawing.Size(165, 23);
             this.label1.TabIndex = 23;
             this.label1.Text = "Category Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -658,7 +665,7 @@
             // 
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
             this.guna2Panel1.BorderRadius = 15;
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel2);
             this.guna2Panel1.CustomizableEdges = customizableEdges37;
@@ -679,7 +686,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.76471F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.23529F));
@@ -701,6 +708,7 @@
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(3, 0);
@@ -711,6 +719,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderRadius = 5;
             this.txtSearch.BorderThickness = 0;
             this.txtSearch.CustomizableEdges = customizableEdges9;
@@ -757,8 +766,10 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Controls.Add(this.lblIconValidation);
+            this.guna2Panel2.Controls.Add(this.lblNameValidation);
             this.guna2Panel2.Controls.Add(this.btnFile);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.txtName);
@@ -775,8 +786,20 @@
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel2.Size = new System.Drawing.Size(283, 458);
+            this.guna2Panel2.Size = new System.Drawing.Size(283, 541);
             this.guna2Panel2.TabIndex = 25;
+            // 
+            // lblNameValidation
+            // 
+            this.lblNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNameValidation.Location = new System.Drawing.Point(39, 411);
+            this.lblNameValidation.Name = "lblNameValidation";
+            this.lblNameValidation.Size = new System.Drawing.Size(203, 23);
+            this.lblNameValidation.TabIndex = 27;
+            this.lblNameValidation.Text = "Name is invalid";
+            this.lblNameValidation.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -947,6 +970,18 @@
             this.panelCover.Size = new System.Drawing.Size(243, 37);
             this.panelCover.TabIndex = 26;
             // 
+            // lblIconValidation
+            // 
+            this.lblIconValidation.BackColor = System.Drawing.Color.White;
+            this.lblIconValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIconValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIconValidation.Location = new System.Drawing.Point(39, 315);
+            this.lblIconValidation.Name = "lblIconValidation";
+            this.lblIconValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblIconValidation.TabIndex = 28;
+            this.lblIconValidation.Text = "Item icon is required";
+            this.lblIconValidation.Visible = false;
+            // 
             // CategoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -955,7 +990,6 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
-            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "CategoryView";
             this.Size = new System.Drawing.Size(1226, 761);
             this.Load += new System.EventHandler(this.CategoryView_Load);
@@ -1016,5 +1050,7 @@
         private Guna.UI2.WinForms.Guna2Button btnPrint;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Panel panelCover;
+        private Label lblNameValidation;
+        private Label lblIconValidation;
     }
 }

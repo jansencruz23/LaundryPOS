@@ -6,6 +6,7 @@ using LaundryPOS.Helpers;
 using System.Data;
 using static LaundryPOS.Helpers.DGVPrinter;
 using LaundryPOS.Forms.Views.BaseViews;
+using System.Text.RegularExpressions;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -77,24 +78,13 @@ namespace LaundryPOS.Forms.Views
         {
             bool isValid = true;
 
-            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtName.Text), lblNameValidation);
+            isValid &= ValidateField(!IsValidName(txtName), lblNameValidation);
             isValid &= ValidateField(cbCategory.SelectedItem == null, lblCategoryValidation);
             isValid &= ValidateField(!IsValidDecimalInput(txtPrice.Text, out _), lblPriceValidation);
             isValid &= ValidateField(!IsValidDecimalInput(txtStock.Text, out _), lblStockValidation);
             isValid &= ValidateField(string.IsNullOrWhiteSpace(txtPath.Text), lblIconValidation);
 
             return isValid;
-        }
-
-        private bool ValidateField(bool condition, Label label)
-        {
-            label.Visible = condition;
-            return !condition;
-        }
-
-        private bool IsValidDecimalInput(string input, out decimal value)
-        {
-            return decimal.TryParse(input, out value) && value > 0 && input.Length <= 6;
         }
 
         private Item CreateItemFromInputs()

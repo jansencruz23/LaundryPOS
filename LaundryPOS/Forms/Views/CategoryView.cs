@@ -2,16 +2,6 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -108,11 +98,10 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtPath.Text))
+            if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please fill up all of the fields including the image.",
-                    "Category Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid category. Please make sure fields are valid.",
+                    "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -133,6 +122,16 @@ namespace LaundryPOS.Forms.Views
             txtName.Enabled = false;
             btnFile.Enabled = false;
             btnSave.Enabled = false;
+        }
+
+        private bool ValidateInputs()
+        {
+            bool isValid = true;
+
+            isValid &= ValidateField(!IsValidName(txtName), lblNameValidation);
+            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtPath.Text), lblIconValidation);
+
+            return isValid;
         }
 
         private void btnFile_Click(object sender, EventArgs e)
