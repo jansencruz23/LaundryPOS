@@ -23,6 +23,7 @@ namespace LaundryPOS.Forms.Views
         {
             InitializeComponent();
             ShowLoadingForm();
+            StyleFonts();
         }
 
         private void ShowLoadingForm()
@@ -54,16 +55,14 @@ namespace LaundryPOS.Forms.Views
             await DisplayItems();
             await InitializeCategory();
             await ApplyTheme();
-            //ConfigureImageColumn();
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please fill up all of the fields including the image " +
-                    "and make sure fields are valid.", "Item Registration Failed", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid item. Please make sure fields are valid.", 
+                    "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -75,11 +74,28 @@ namespace LaundryPOS.Forms.Views
         }
 
         private bool ValidateInputs()
-            => !(cbCategory.SelectedItem == null ||
-                !decimal.TryParse(txtPrice.Text, out _) ||
-                !int.TryParse(txtStock.Text, out _) ||
-                string.IsNullOrWhiteSpace(txtName.Text) ||
-                string.IsNullOrWhiteSpace(txtPath.Text));
+        {
+            bool isValid = true;
+
+            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtName.Text), lblNameValidation);
+            isValid &= ValidateField(cbCategory.SelectedItem == null, lblCategoryValidation);
+            isValid &= ValidateField(!IsValidDecimalInput(txtPrice.Text, out _), lblPriceValidation);
+            isValid &= ValidateField(!IsValidDecimalInput(txtStock.Text, out _), lblStockValidation);
+            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtPath.Text), lblIconValidation);
+
+            return isValid;
+        }
+
+        private bool ValidateField(bool condition, Label label)
+        {
+            label.Visible = condition;
+            return !condition;
+        }
+
+        private bool IsValidDecimalInput(string input, out decimal value)
+        {
+            return decimal.TryParse(input, out value) && value > 0 && input.Length <= 6;
+        }
 
         private Item CreateItemFromInputs()
         {
@@ -134,7 +150,6 @@ namespace LaundryPOS.Forms.Views
             }
 
             HideUnwantedColumns();
-            //HandleImageColumnFormatting();
         }
 
         private void HideUnwantedColumns()
@@ -143,42 +158,6 @@ namespace LaundryPOS.Forms.Views
             itemTable.Columns[nameof(Item.Image)].Visible = false;
             itemTable.Columns[nameof(Item.CategoryId)].Visible = false;
         }
-
-        //private void ConfigureImageColumn()
-        //{
-        //    if (itemTable.Columns["Image"] == null)
-        //    {
-        //        var imageColumn = new DataGridViewImageColumn
-        //        {
-        //            HeaderText = "Image",
-        //            Name = "Image",
-        //            ImageLayout = DataGridViewImageCellLayout.Zoom
-        //        };
-
-        //        itemTable.Columns.Add(imageColumn);
-        //        itemTable.Columns["Image"].DisplayIndex = 0;
-        //    }
-        //}
-
-        //private void HandleImageColumnFormatting()
-        //{
-        //    try
-        //    {
-        //        itemTable.CellFormatting += (sender, e) =>
-        //        {
-        //            if (e.ColumnIndex == itemTable.Columns["Image"].Index && e.RowIndex >= 0)
-        //            {
-        //                var rowData = itemTable.Rows[e.RowIndex].DataBoundItem as Item;
-        //                e.Value = GetImage(rowData);
-        //            }
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("An error occured " + ex.Message, "Error",
-        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         private async Task RefreshData(string query = "")
         {
@@ -309,8 +288,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (!ValidateInputs())
                 {
                     MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
@@ -329,13 +308,13 @@ namespace LaundryPOS.Forms.Views
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+}
 
         private async Task UpdateItem()
         {
@@ -422,6 +401,29 @@ namespace LaundryPOS.Forms.Views
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
+        }
+
+        private void StyleFonts()
+        {
+            StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+                btnAdminProfile, btnAdd, btnSave, btnUpdate, btnDelete,
+                btnPrint, btnLogout);
+            StyleFontsLabel(18f, true, lblDetails, lblList);
+            StyleFontsLabel(11.25f, false, lblName, lblCategory, lblPrice, lblStock);
+            StyleFontsButton(11.25f, btnFile, btnSearch);
+            StyleFontsTextBox(11.25f, txtName, txtPrice, txtSearch, txtStock);
+            StyleFontsLabel(8.25f, false, lblNameValidation, lblPriceValidation,
+                lblCategoryValidation, lblIconValidation, lblStockValidation);
+            cbCategory.Font = _themeManager.Helvetica(11.25f);
+        }
+
+        private void textBoxes_Click(object sender, EventArgs e)
+        {
+            lblNameValidation.Visible =
+            lblIconValidation.Visible =
+            lblCategoryValidation.Visible =
+            lblPriceValidation.Visible =
+            lblStockValidation.Visible = false;
         }
     }
 }

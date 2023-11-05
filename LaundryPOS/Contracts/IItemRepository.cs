@@ -10,5 +10,6 @@ namespace LaundryPOS.Contracts
     public interface IItemRepository : IBaseRepository<Item>
     {
         Task<IEnumerable<Item>> GetBoughtItems(int transactionId);
+        void MarkAsModified(Item item);
     }
 }

@@ -146,14 +146,14 @@ namespace LaundryPOS.Helpers
                 var brightness = adjustedColor.GetBrightness();
                 var foreColor = brightness < 0.5 ? Color.White : Color.Black;
 
-                dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Bold);
+                dataGridView.ColumnHeadersDefaultCellStyle.Font = HelveticaBold(11.25f);
                 dataGridView.ColumnHeadersHeight = 30;
                 dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
 
                 if (changeFont)
                 {
-                    dataGridView.DefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Regular);
-                    dataGridView.AlternatingRowsDefaultCellStyle.Font = new Font("Helvetica", 11f, FontStyle.Regular);
+                    dataGridView.DefaultCellStyle.Font = Helvetica(11.25f);
+                    dataGridView.AlternatingRowsDefaultCellStyle.Font = Helvetica(11.25f);
                 }
 
                 dataGridView.RowTemplate.Height = 35;

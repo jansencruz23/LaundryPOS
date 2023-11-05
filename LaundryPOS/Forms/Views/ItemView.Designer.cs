@@ -86,15 +86,20 @@
             this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.itemTable = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblIconValidation = new System.Windows.Forms.Label();
+            this.lblStockValidation = new System.Windows.Forms.Label();
+            this.lblPriceValidation = new System.Windows.Forms.Label();
+            this.lblCategoryValidation = new System.Windows.Forms.Label();
+            this.lblNameValidation = new System.Windows.Forms.Label();
             this.imgIcon = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblDetails = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblList = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
@@ -115,7 +120,6 @@
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelCover = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itemTable)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcon)).BeginInit();
@@ -132,6 +136,7 @@
             // 
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrice.BackColor = System.Drawing.Color.White;
             this.txtPrice.BorderRadius = 5;
             this.txtPrice.BorderThickness = 0;
             this.txtPrice.CustomizableEdges = customizableEdges1;
@@ -146,8 +151,9 @@
             this.txtPrice.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(264, 227);
+            this.txtPrice.Location = new System.Drawing.Point(264, 250);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtPrice.MaxLength = 6;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "eg. 100";
@@ -155,11 +161,13 @@
             this.txtPrice.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.txtPrice.Size = new System.Drawing.Size(217, 40);
             this.txtPrice.TabIndex = 3;
+            this.txtPrice.Click += new System.EventHandler(this.textBoxes_Click);
             // 
             // txtName
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderRadius = 5;
             this.txtName.BorderThickness = 0;
             this.txtName.CustomizableEdges = customizableEdges3;
@@ -183,12 +191,14 @@
             this.txtName.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtName.Size = new System.Drawing.Size(217, 40);
             this.txtName.TabIndex = 2;
+            this.txtName.Click += new System.EventHandler(this.textBoxes_Click);
             // 
             // txtStock
             // 
             this.txtStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtStock.BackColor = System.Drawing.Color.White;
             this.txtStock.BorderRadius = 5;
             this.txtStock.BorderThickness = 0;
             this.txtStock.CustomizableEdges = customizableEdges5;
@@ -203,8 +213,9 @@
             this.txtStock.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtStock.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStock.Location = new System.Drawing.Point(264, 310);
+            this.txtStock.Location = new System.Drawing.Point(264, 347);
             this.txtStock.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtStock.MaxLength = 6;
             this.txtStock.Name = "txtStock";
             this.txtStock.PasswordChar = '\0';
             this.txtStock.PlaceholderText = "eg. 50";
@@ -212,9 +223,11 @@
             this.txtStock.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.txtStock.Size = new System.Drawing.Size(217, 40);
             this.txtStock.TabIndex = 10;
+            this.txtStock.Click += new System.EventHandler(this.textBoxes_Click);
             // 
             // btnFile
             // 
+            this.btnFile.BackColor = System.Drawing.Color.White;
             this.btnFile.BorderRadius = 7;
             this.btnFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFile.CustomizableEdges = customizableEdges7;
@@ -225,7 +238,7 @@
             this.btnFile.Enabled = false;
             this.btnFile.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFile.ForeColor = System.Drawing.Color.White;
-            this.btnFile.Location = new System.Drawing.Point(37, 303);
+            this.btnFile.Location = new System.Drawing.Point(41, 339);
             this.btnFile.Name = "btnFile";
             this.btnFile.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.btnFile.Size = new System.Drawing.Size(195, 48);
@@ -237,7 +250,7 @@
             // 
             this.cbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategory.BackColor = System.Drawing.Color.White;
             this.cbCategory.BorderRadius = 5;
             this.cbCategory.BorderThickness = 0;
             this.cbCategory.CustomizableEdges = customizableEdges9;
@@ -250,7 +263,7 @@
             this.cbCategory.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbCategory.ItemHeight = 30;
-            this.cbCategory.Location = new System.Drawing.Point(264, 153);
+            this.cbCategory.Location = new System.Drawing.Point(264, 162);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.cbCategory.Size = new System.Drawing.Size(217, 36);
@@ -330,23 +343,27 @@
             this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.label6);
+            this.guna2Panel1.Controls.Add(this.lblIconValidation);
+            this.guna2Panel1.Controls.Add(this.lblStockValidation);
+            this.guna2Panel1.Controls.Add(this.lblPriceValidation);
+            this.guna2Panel1.Controls.Add(this.lblCategoryValidation);
+            this.guna2Panel1.Controls.Add(this.lblNameValidation);
             this.guna2Panel1.Controls.Add(this.imgIcon);
             this.guna2Panel1.Controls.Add(this.btnFile);
             this.guna2Panel1.Controls.Add(this.txtName);
             this.guna2Panel1.Controls.Add(this.cbCategory);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.lblName);
+            this.guna2Panel1.Controls.Add(this.lblDetails);
             this.guna2Panel1.Controls.Add(this.txtStock);
-            this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.lblStock);
+            this.guna2Panel1.Controls.Add(this.lblPrice);
             this.guna2Panel1.Controls.Add(this.txtPrice);
-            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.lblCategory);
             this.guna2Panel1.CustomizableEdges = customizableEdges17;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(297, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(20, 100, 10, 0);
-            this.guna2Panel1.MaximumSize = new System.Drawing.Size(522, 393);
+            this.guna2Panel1.MaximumSize = new System.Drawing.Size(522, 450);
             this.guna2Panel1.MinimumSize = new System.Drawing.Size(432, 393);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
@@ -356,16 +373,77 @@
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(522, 393);
+            this.guna2Panel1.Size = new System.Drawing.Size(522, 450);
             this.guna2Panel1.TabIndex = 15;
+            // 
+            // lblIconValidation
+            // 
+            this.lblIconValidation.BackColor = System.Drawing.Color.White;
+            this.lblIconValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIconValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIconValidation.Location = new System.Drawing.Point(41, 302);
+            this.lblIconValidation.Name = "lblIconValidation";
+            this.lblIconValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblIconValidation.TabIndex = 24;
+            this.lblIconValidation.Text = "Item icon is required";
+            this.lblIconValidation.Visible = false;
+            // 
+            // lblStockValidation
+            // 
+            this.lblStockValidation.BackColor = System.Drawing.Color.White;
+            this.lblStockValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStockValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblStockValidation.Location = new System.Drawing.Point(264, 393);
+            this.lblStockValidation.Name = "lblStockValidation";
+            this.lblStockValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblStockValidation.TabIndex = 23;
+            this.lblStockValidation.Text = "Please enter a valid stock";
+            this.lblStockValidation.Visible = false;
+            // 
+            // lblPriceValidation
+            // 
+            this.lblPriceValidation.BackColor = System.Drawing.Color.White;
+            this.lblPriceValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPriceValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblPriceValidation.Location = new System.Drawing.Point(264, 292);
+            this.lblPriceValidation.Name = "lblPriceValidation";
+            this.lblPriceValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblPriceValidation.TabIndex = 22;
+            this.lblPriceValidation.Text = "Please enter a valid price";
+            this.lblPriceValidation.Visible = false;
+            // 
+            // lblCategoryValidation
+            // 
+            this.lblCategoryValidation.BackColor = System.Drawing.Color.White;
+            this.lblCategoryValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCategoryValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCategoryValidation.Location = new System.Drawing.Point(264, 201);
+            this.lblCategoryValidation.Name = "lblCategoryValidation";
+            this.lblCategoryValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblCategoryValidation.TabIndex = 21;
+            this.lblCategoryValidation.Text = "Category is required";
+            this.lblCategoryValidation.Visible = false;
+            // 
+            // lblNameValidation
+            // 
+            this.lblNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNameValidation.Location = new System.Drawing.Point(264, 114);
+            this.lblNameValidation.Name = "lblNameValidation";
+            this.lblNameValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblNameValidation.TabIndex = 20;
+            this.lblNameValidation.Text = "Name is invalid";
+            this.lblNameValidation.Visible = false;
             // 
             // imgIcon
             // 
+            this.imgIcon.BackColor = System.Drawing.Color.White;
             this.imgIcon.BorderRadius = 5;
             this.imgIcon.CustomizableEdges = customizableEdges15;
             this.imgIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.imgIcon.ImageRotate = 0F;
-            this.imgIcon.Location = new System.Drawing.Point(37, 92);
+            this.imgIcon.Location = new System.Drawing.Point(41, 104);
             this.imgIcon.Name = "imgIcon";
             this.imgIcon.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.imgIcon.Size = new System.Drawing.Size(195, 195);
@@ -373,60 +451,60 @@
             this.imgIcon.TabIndex = 19;
             this.imgIcon.TabStop = false;
             // 
-            // label1
+            // lblName
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(264, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 14);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Item Name";
+            this.lblName.BackColor = System.Drawing.Color.White;
+            this.lblName.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblName.Location = new System.Drawing.Point(264, 49);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(112, 14);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "Item Name";
             // 
-            // label5
+            // lblDetails
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(37, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 43);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "ITEM DETAILS";
+            this.lblDetails.BackColor = System.Drawing.Color.White;
+            this.lblDetails.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblDetails.Location = new System.Drawing.Point(35, 49);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(201, 43);
+            this.lblDetails.TabIndex = 18;
+            this.lblDetails.Text = "ITEM DETAILS";
             // 
-            // label4
+            // lblStock
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(264, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 14);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Item Stock";
+            this.lblStock.BackColor = System.Drawing.Color.White;
+            this.lblStock.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblStock.Location = new System.Drawing.Point(264, 325);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(112, 14);
+            this.lblStock.TabIndex = 17;
+            this.lblStock.Text = "Item Stock";
             // 
-            // label3
+            // lblPrice
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(264, 206);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 14);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Item Price";
+            this.lblPrice.BackColor = System.Drawing.Color.White;
+            this.lblPrice.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblPrice.Location = new System.Drawing.Point(264, 229);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(112, 14);
+            this.lblPrice.TabIndex = 16;
+            this.lblPrice.Text = "Item Price";
             // 
-            // label2
+            // lblCategory
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(264, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 14);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Item Category";
+            this.lblCategory.BackColor = System.Drawing.Color.White;
+            this.lblCategory.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblCategory.Location = new System.Drawing.Point(264, 142);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(112, 25);
+            this.lblCategory.TabIndex = 15;
+            this.lblCategory.Text = "Item Category";
             // 
             // guna2Panel2
             // 
@@ -454,12 +532,13 @@
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.875F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.125F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel5.Controls.Add(this.itemTable, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblList, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtSearch, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnSearch, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -471,22 +550,23 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(541, 552);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
-            // label7
+            // lblList
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label7.Location = new System.Drawing.Point(3, 5);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 50);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "ITEM LIST";
+            this.lblList.BackColor = System.Drawing.Color.White;
+            this.lblList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblList.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lblList.Location = new System.Drawing.Point(3, 5);
+            this.lblList.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.lblList.Name = "lblList";
+            this.lblList.Size = new System.Drawing.Size(200, 50);
+            this.lblList.TabIndex = 20;
+            this.lblList.Text = "ITEM LIST";
             // 
             // txtSearch
             // 
             this.txtSearch.AutoSize = true;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderRadius = 5;
             this.txtSearch.BorderThickness = 0;
             this.txtSearch.CustomizableEdges = customizableEdges11;
@@ -554,7 +634,7 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel9, 0, 2);
@@ -588,7 +668,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.BorderRadius = 5;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges23;
@@ -614,7 +694,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackColor = System.Drawing.Color.White;
             this.btnPrint.BorderRadius = 5;
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.CustomizableEdges = customizableEdges25;
@@ -661,7 +741,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.BorderRadius = 5;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.CustomizableEdges = customizableEdges27;
@@ -686,7 +766,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.BorderRadius = 5;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.CustomizableEdges = customizableEdges29;
@@ -712,7 +792,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BorderRadius = 5;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.CustomizableEdges = customizableEdges31;
@@ -738,7 +818,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.BorderRadius = 5;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.CustomizableEdges = customizableEdges33;
@@ -786,7 +866,7 @@
             // 
             // btnCategory
             // 
-            this.btnCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategory.BackColor = System.Drawing.Color.White;
             this.btnCategory.BorderRadius = 5;
             this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategory.CustomizableEdges = customizableEdges35;
@@ -811,7 +891,7 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployee.BackColor = System.Drawing.Color.White;
             this.btnEmployee.BorderRadius = 5;
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.CustomizableEdges = customizableEdges37;
@@ -836,7 +916,7 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransaction.BackColor = System.Drawing.Color.White;
             this.btnTransaction.BorderRadius = 5;
             this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.CustomizableEdges = customizableEdges39;
@@ -861,7 +941,7 @@
             // 
             // btnAdminProfile
             // 
-            this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdminProfile.BackColor = System.Drawing.Color.White;
             this.btnAdminProfile.BorderRadius = 5;
             this.btnAdminProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfile.CustomizableEdges = customizableEdges41;
@@ -931,15 +1011,6 @@
             this.panelCover.Size = new System.Drawing.Size(243, 37);
             this.panelCover.TabIndex = 25;
             // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(267, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(214, 23);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Name is ";
-            // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -977,13 +1048,13 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
         private Guna.UI2.WinForms.Guna2DataGridView itemTable;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Label label5;
+        private Label lblStock;
+        private Label lblPrice;
+        private Label lblCategory;
+        private Label lblName;
+        private Label lblDetails;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Label label7;
+        private Label lblList;
         private TableLayoutPanel tableLayoutPanel5;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
@@ -1006,6 +1077,10 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2PictureBox imgIcon;
         private Panel panelCover;
-        private Label label6;
+        private Label lblNameValidation;
+        private Label lblIconValidation;
+        private Label lblStockValidation;
+        private Label lblPriceValidation;
+        private Label lblCategoryValidation;
     }
 }

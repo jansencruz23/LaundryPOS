@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using System;
@@ -68,6 +69,32 @@ namespace LaundryPOS.Forms.Views
             string appPath = Application.ExecutablePath;
             System.Diagnostics.Process.Start(appPath);
             Application.Exit();
+        }
+
+        protected void StyleFontsButton(float size, params Guna2Button[] buttons)
+        {
+            Array.ForEach(buttons, btn 
+                => btn.Font = _themeManager.HelveticaBold(size));
+        }
+
+        protected void StyleFontsTextBox(float size, params Guna2TextBox[] textbox)
+        {
+            Array.ForEach(textbox, txt
+                => txt.Font = _themeManager.Helvetica(size));
+        }
+
+        protected void StyleFontsLabel(float size, bool bold, params Label[] labels)
+        {
+            if (bold)
+            {
+                Array.ForEach(labels, lbl
+                    => lbl.Font = _themeManager.HelveticaBold(size));
+            }
+            else
+            {
+                Array.ForEach(labels, lbl
+                    => lbl.Font = _themeManager.Helvetica(size));
+            }
         }
     }
 }

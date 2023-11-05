@@ -2,11 +2,6 @@
 using LaundryPOS.Data;
 using LaundryPOS.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LaundryPOS.Repositories
 {
@@ -22,6 +17,11 @@ namespace LaundryPOS.Repositories
                 .Where(ti => ti.TransactionId == transactionId)
                 .Select(ti => ti.Item)
                 .ToListAsync();
+        }
+
+        public void MarkAsModified(Item item)
+        {
+            _context.Entry(item).State = EntityState.Modified;
         }
     }
 }

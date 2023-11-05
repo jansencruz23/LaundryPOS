@@ -174,10 +174,10 @@ namespace LaundryPOS.Forms.Views
                         item.CategoryId = null;
                         item.Category = null;
 
-                        _unitOfWork.ItemRepo.Update(item);
-                        await _unitOfWork.SaveAsync();
+                        _unitOfWork.ItemRepo.MarkAsModified(item);
                     }
 
+                    await _unitOfWork.SaveAsync();
                     await _unitOfWork.CategoryRepo.Delete(_category.Id);
                     await _unitOfWork.SaveAsync();
 
