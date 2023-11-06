@@ -53,11 +53,14 @@ namespace LaundryPOS.Forms.Views
 
         public async Task DisplayCategory(string query = "")
         {
-            var categories = await _unitOfWork.CategoryRepo
+            var categories = await _unitOfWork.CategoryRepo 
                 .Get(filter: c => c.Name.Contains(query));
 
             categoryTable.DataSource = categories;
+
             HideUnwantedColumns();
+            ConfigureImageColumn(categoryTable);
+            HandleImageColumnFormatting(categoryTable);
         }
 
         private void HideUnwantedColumns()

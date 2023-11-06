@@ -2,16 +2,6 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using LaundryPOS.Forms.Views.BaseViews;
 
 namespace LaundryPOS.Forms.Views
@@ -28,6 +18,7 @@ namespace LaundryPOS.Forms.Views
         {
             InitializeComponent();
             ShowLoadingForm();
+            StyleFonts();
         }
 
         private void ShowLoadingForm()
@@ -81,7 +72,7 @@ namespace LaundryPOS.Forms.Views
         private void HideUnwantedColumns()
         {
             employeeTable.Columns[nameof(Employee.Id)].Visible = false;
-            employeeTable.Columns[nameof(Employee.Image)].Visible = false;
+            //employeeTable.Columns[nameof(Employee.Image)].Visible = false;
             employeeTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
             employeeTable.Columns[nameof(Employee.Salt)].Visible = false;
             employeeTable.Columns[nameof(Employee.IsActive)].Visible = false;
@@ -222,6 +213,16 @@ namespace LaundryPOS.Forms.Views
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
+        }
+
+        private void StyleFonts()
+        {
+            StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+                btnAdminProfile, btnRegister, btnDelete, btnPrint, btnLogout);
+            StyleFontsLabel(18f, true, lblDetails, lblList);
+            StyleFontsLabel(11.25f, false, lblName, lblAge, lblUsername, lblBirthday);
+            StyleFontsButton(11.25f, btnSearch);
+            StyleFontsTextBox(11.25f, txtName, txtSearch);
         }
     }
 }

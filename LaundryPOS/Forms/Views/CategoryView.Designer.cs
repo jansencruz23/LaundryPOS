@@ -236,7 +236,8 @@
             this.categoryTable.Location = new System.Drawing.Point(3, 62);
             this.categoryTable.Name = "categoryTable";
             this.categoryTable.RowHeadersVisible = false;
-            this.categoryTable.RowTemplate.Height = 40;
+            this.categoryTable.RowTemplate.Height = 50;
+            this.categoryTable.RowTemplate.ReadOnly = true;
             this.categoryTable.Size = new System.Drawing.Size(489, 479);
             this.categoryTable.TabIndex = 7;
             this.categoryTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -257,7 +258,7 @@
             this.categoryTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.categoryTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.categoryTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.categoryTable.ThemeStyle.RowsStyle.Height = 40;
+            this.categoryTable.ThemeStyle.RowsStyle.Height = 50;
             this.categoryTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.categoryTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.categoryTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryTable_CellClick);

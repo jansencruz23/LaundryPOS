@@ -142,6 +142,8 @@ namespace LaundryPOS.Forms.Views
             }
 
             HideUnwantedColumns();
+            ConfigureImageColumn(itemTable);
+            HandleImageColumnFormatting(itemTable);
         }
 
         private void HideUnwantedColumns()

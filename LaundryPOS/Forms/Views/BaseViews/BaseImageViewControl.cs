@@ -3,6 +3,7 @@ using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using LaundryPOS.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -63,6 +64,44 @@ namespace LaundryPOS.Forms.Views
             printer.Footer = businessName;
             printer.FooterSpacing = 15;
             printer.PrintDataGridView(table);
+        }
+
+        protected void ConfigureImageColumn(Guna2DataGridView table)
+        {
+            if (table.Columns["Icon"] == null)
+            {
+                var imageColumn = new DataGridViewImageColumn
+                {
+                    HeaderText = "Icon",
+                    Name = "Icon",
+                    ImageLayout = DataGridViewImageCellLayout.Zoom
+                };
+
+                table.Columns.Add(imageColumn);
+                table.Columns["Icon"].DisplayIndex = 0;
+                table.Columns["Icon"].Width = 80;
+                table.Columns["Icon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            }
+        }
+
+        protected void HandleImageColumnFormatting(Guna2DataGridView table)
+        {
+            try
+            {
+                table.CellFormatting += (sender, e) =>
+                {
+                    if (e.ColumnIndex == table.Columns["Icon"].Index && e.RowIndex >= 0)
+                    {
+                        var rowData = table.Rows[e.RowIndex].DataBoundItem as T;
+                        e.Value = GetImage(rowData);
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
