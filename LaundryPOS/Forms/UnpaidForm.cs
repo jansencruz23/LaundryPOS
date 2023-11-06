@@ -1,25 +1,25 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
-using LaundryPOS.Helpers;
 using System.Data;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
     public partial class UnpaidForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
         private readonly List<Employee> _employeeCache;
 
         public UnpaidForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             Employee employee,
             string title)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _employee = employee;
             _employeeCache = new();
 
@@ -45,8 +45,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyLighterThemeToDataGridView(unpaidTable, changeFont: true);
-            await _themeManager.ApplyThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyLighterThemeToDataGridView(unpaidTable, changeFont: true);
+            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
         }
 
         private async Task InitializeTable(string query = "")
@@ -136,7 +136,7 @@ namespace LaundryPOS.Forms.Views
             {
                 var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
                 var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
-                    _unitOfWork, _employee, _themeManager, selectedTransaction.TransactionId);
+                    _unitOfWork, _employee, _styleManager, selectedTransaction.TransactionId);
 
                 paymentForm.ShowDialog();
             }
@@ -162,7 +162,7 @@ namespace LaundryPOS.Forms.Views
         private void btnHome_Click(object sender, EventArgs e)
         {
             Hide();
-            var form = new MainForm(_unitOfWork, _themeManager, _employee);
+            var form = new MainForm(_unitOfWork, _styleManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.Show();
         }
@@ -187,7 +187,7 @@ namespace LaundryPOS.Forms.Views
 
         private void imgPic_Click(object sender, EventArgs e)
         {
-            var form = new ProfileForm(_unitOfWork, _themeManager, _employee);
+            var form = new ProfileForm(_unitOfWork, _styleManager, _employee);
             form.ShowDialog();
         }
     }

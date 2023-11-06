@@ -1,7 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -10,9 +10,9 @@ namespace LaundryPOS.Forms.Views
         private string theme = "#000";
 
         public AppSettingsView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             ChangeAdminViewDelegate changeAdminView)
-            : base (unitOfWork, themeManager, changeAdminView)
+            : base (unitOfWork, styleManager, changeAdminView)
         {
             InitializeComponent();
         }
@@ -90,8 +90,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyOutlineThemeToButton(btnColor);
-            await _themeManager.ApplyThemeToButton(btnSave);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnColor);
+            await _styleManager.Theme.ApplyThemeToButton(btnSave);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

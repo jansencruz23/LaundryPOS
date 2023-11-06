@@ -1,29 +1,20 @@
 ﻿using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using LaundryPOS.Contracts;
 
 namespace LaundryPOS.Forms.Views
 {
     public partial class ItemControl : UserControl
     {
         public event EventHandler<CartItemEventArgs> AddToCartClicked;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         public Item Item { get; set; }
 
         public ItemControl(Item item,
-            ThemeManager themeManager)
+            IStyleManager styleManager)
         {
             Item = item;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             InitializeComponent();
             InitializeItem();
             WireAllControls(this);
@@ -40,7 +31,7 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToLabel(lblPrice);
+            await _styleManager.Theme.ApplyThemeToLabel(lblPrice);
         }
 
         private void InitializeItem()
@@ -85,7 +76,7 @@ namespace LaundryPOS.Forms.Views
         {
             InvokeOnClick(this, EventArgs.Empty);
 
-            var quantityForm = new QuantityForm(_themeManager);
+            var quantityForm = new QuantityForm(_styleManager);
 
             if (quantityForm.ShowDialog() == DialogResult.Cancel)
                 return;

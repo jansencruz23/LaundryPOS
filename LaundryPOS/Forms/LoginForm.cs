@@ -1,20 +1,20 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
     public partial class LoginForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private string _title;
 
         public LoginForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            IStyleManager styleManager)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
 
             InitializeComponent();
             StyleFonts();
@@ -48,8 +48,8 @@ namespace LaundryPOS.Forms
                     Hide();
 
                     Form form = userRole == "admin"
-                        ? new AdminForm(_unitOfWork, _themeManager, _title)
-                        : new MainForm(_unitOfWork, _themeManager, employee);
+                        ? new AdminForm(_unitOfWork, _styleManager, _title)
+                        : new MainForm(_unitOfWork, _styleManager, employee);
                     form.FormClosed += (s, args) => Close();
                     form.Show();
                 }
@@ -83,10 +83,10 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnLogin, true);
-            await _themeManager.ApplyThemeToPanel(panelDrag);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtUsername);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtPassword);
+            await _styleManager.Theme.ApplyThemeToButton(btnLogin, true);
+            await _styleManager.Theme.ApplyThemeToPanel(panelDrag);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtUsername);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtPassword);
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -108,11 +108,11 @@ namespace LaundryPOS.Forms
 
         private void StyleFonts()
         {
-            lblName.Font = lblLogin.Font = _themeManager.Montserrat(21.75f);
+            lblName.Font = lblLogin.Font = _styleManager.Font.Montserrat(21.75f);
             lblDescription.Font = txtUsername.Font = txtUsername.Font
-                = _themeManager.Helvetica(11.25f);
-            cbShowPassword.Font = _themeManager.Helvetica(8.25f);
-            btnLogin.Font = _themeManager.HelveticaBold(12);
+                = _styleManager.Font.Helvetica(11.25f);
+            cbShowPassword.Font = _styleManager.Font.Helvetica(8.25f);
+            btnLogin.Font = _styleManager.Font.HelveticaBold(12);
         }
     }
 }

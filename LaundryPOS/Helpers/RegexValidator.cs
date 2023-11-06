@@ -15,7 +15,6 @@ namespace LaundryPOS.Helpers
 
         public static bool IsValidPersonName(string input)
             => IsValidInput(input, PERSON_NAME_PATTERN);
-        
 
         public static bool IsValidUsername(string input)
             => IsValidInput(input, USERNAME_PATTERN);

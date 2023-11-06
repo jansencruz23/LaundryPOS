@@ -34,8 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminProfileView));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,14 +49,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
@@ -70,15 +68,19 @@
             this.btnTransaction = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.lblConfirmPWValidation = new System.Windows.Forms.Label();
+            this.lblNewPWValidation = new System.Windows.Forms.Label();
+            this.lblOldPWValidation = new System.Windows.Forms.Label();
+            this.lblUsernameValidation = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblConfirmPW = new System.Windows.Forms.Label();
+            this.lblOldPassword = new System.Windows.Forms.Label();
             this.txtOldPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblNewPassword = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -88,6 +90,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BorderRadius = 5;
             this.txtUsername.BorderThickness = 0;
             this.txtUsername.CustomizableEdges = customizableEdges1;
@@ -98,20 +101,22 @@
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUsername.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(37, 134);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
+            this.txtUsername.Location = new System.Drawing.Point(40, 133);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "eg. admin";
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtUsername.Size = new System.Drawing.Size(265, 40);
+            this.txtUsername.Size = new System.Drawing.Size(328, 40);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // txtNewPassword
             // 
+            this.txtNewPassword.BackColor = System.Drawing.Color.White;
             this.txtNewPassword.BorderRadius = 5;
             this.txtNewPassword.BorderThickness = 0;
             this.txtNewPassword.CustomizableEdges = customizableEdges3;
@@ -122,20 +127,22 @@
             this.txtNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtNewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(38, 312);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
+            this.txtNewPassword.Location = new System.Drawing.Point(38, 331);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '•';
             this.txtNewPassword.PlaceholderText = "••••••••";
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtNewPassword.Size = new System.Drawing.Size(264, 40);
-            this.txtNewPassword.TabIndex = 1;
+            this.txtNewPassword.Size = new System.Drawing.Size(330, 40);
+            this.txtNewPassword.TabIndex = 2;
+            this.txtNewPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.BorderRadius = 7;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.CustomizableEdges = customizableEdges5;
@@ -145,12 +152,12 @@
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(40, 471);
+            this.btnSave.Location = new System.Drawing.Point(40, 519);
             this.btnSave.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnSave.Size = new System.Drawing.Size(262, 49);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.Size = new System.Drawing.Size(328, 54);
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Update Account";
             this.btnSave.TextOffset = new System.Drawing.Point(0, 1);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -158,15 +165,14 @@
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.tableLayoutPanel6);
-            this.guna2Panel3.Controls.Add(this.txtPath);
-            this.guna2Panel3.CustomizableEdges = customizableEdges21;
+            this.guna2Panel3.CustomizableEdges = customizableEdges19;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.guna2Panel3.ShadowDecoration.Depth = 10;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
@@ -175,7 +181,7 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel9, 0, 2);
@@ -206,7 +212,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.BorderRadius = 5;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.CustomizableEdges = customizableEdges7;
@@ -253,7 +259,7 @@
             // 
             // btnCategory
             // 
-            this.btnCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategory.BackColor = System.Drawing.Color.White;
             this.btnCategory.BorderRadius = 5;
             this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategory.CustomizableEdges = customizableEdges9;
@@ -278,7 +284,7 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployee.BackColor = System.Drawing.Color.White;
             this.btnEmployee.BorderRadius = 5;
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployee.CustomizableEdges = customizableEdges11;
@@ -303,7 +309,7 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransaction.BackColor = System.Drawing.Color.White;
             this.btnTransaction.BorderRadius = 5;
             this.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransaction.CustomizableEdges = customizableEdges13;
@@ -328,7 +334,7 @@
             // 
             // btnAdminProfile
             // 
-            this.btnAdminProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdminProfile.BackColor = System.Drawing.Color.White;
             this.btnAdminProfile.BorderRadius = 5;
             this.btnAdminProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminProfile.CustomizableEdges = customizableEdges15;
@@ -352,6 +358,7 @@
             // 
             // btnItem
             // 
+            this.btnItem.BackColor = System.Drawing.Color.White;
             this.btnItem.BorderRadius = 5;
             this.btnItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItem.CustomizableEdges = customizableEdges17;
@@ -374,42 +381,26 @@
             this.btnItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
-            // txtPath
-            // 
-            this.txtPath.CustomizableEdges = customizableEdges19;
-            this.txtPath.DefaultText = "";
-            this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPath.Location = new System.Drawing.Point(182, 619);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.PasswordChar = '\0';
-            this.txtPath.PlaceholderText = "";
-            this.txtPath.SelectedText = "";
-            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            this.txtPath.Size = new System.Drawing.Size(21, 45);
-            this.txtPath.TabIndex = 5;
-            this.txtPath.Visible = false;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.cbShowPassword);
+            this.guna2Panel1.Controls.Add(this.lblConfirmPWValidation);
+            this.guna2Panel1.Controls.Add(this.lblNewPWValidation);
+            this.guna2Panel1.Controls.Add(this.lblOldPWValidation);
+            this.guna2Panel1.Controls.Add(this.lblUsernameValidation);
             this.guna2Panel1.Controls.Add(this.txtConfirmPassword);
-            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.lblTitle);
             this.guna2Panel1.Controls.Add(this.btnSave);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.lblUsername);
+            this.guna2Panel1.Controls.Add(this.lblConfirmPW);
             this.guna2Panel1.Controls.Add(this.txtUsername);
-            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.lblOldPassword);
             this.guna2Panel1.Controls.Add(this.txtOldPassword);
             this.guna2Panel1.Controls.Add(this.txtNewPassword);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.CustomizableEdges = customizableEdges27;
+            this.guna2Panel1.Controls.Add(this.lblNewPassword);
+            this.guna2Panel1.CustomizableEdges = customizableEdges25;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(304, 100);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(30, 100, 30, 30);
@@ -417,18 +408,90 @@
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(30);
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.guna2Panel1.ShadowDecoration.Depth = 10;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 2, 8, 8);
-            this.guna2Panel1.Size = new System.Drawing.Size(343, 558);
+            this.guna2Panel1.Size = new System.Drawing.Size(410, 631);
             this.guna2Panel1.TabIndex = 20;
+            // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbShowPassword.CheckedState.BorderRadius = 0;
+            this.cbShowPassword.CheckedState.BorderThickness = 0;
+            this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowPassword.Location = new System.Drawing.Point(265, 476);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(103, 16);
+            this.cbShowPassword.TabIndex = 34;
+            this.cbShowPassword.Text = "Show Password";
+            this.cbShowPassword.UncheckedState.BorderColor = System.Drawing.Color.Black;
+            this.cbShowPassword.UncheckedState.BorderRadius = 0;
+            this.cbShowPassword.UncheckedState.BorderThickness = 0;
+            this.cbShowPassword.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.cbShowPassword.UseVisualStyleBackColor = false;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
+            // lblConfirmPWValidation
+            // 
+            this.lblConfirmPWValidation.BackColor = System.Drawing.Color.White;
+            this.lblConfirmPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblConfirmPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblConfirmPWValidation.Location = new System.Drawing.Point(38, 476);
+            this.lblConfirmPWValidation.Name = "lblConfirmPWValidation";
+            this.lblConfirmPWValidation.Size = new System.Drawing.Size(191, 23);
+            this.lblConfirmPWValidation.TabIndex = 33;
+            this.lblConfirmPWValidation.Text = "Passwords do not match";
+            this.lblConfirmPWValidation.Visible = false;
+            // 
+            // lblNewPWValidation
+            // 
+            this.lblNewPWValidation.BackColor = System.Drawing.Color.White;
+            this.lblNewPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNewPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNewPWValidation.Location = new System.Drawing.Point(38, 375);
+            this.lblNewPWValidation.Name = "lblNewPWValidation";
+            this.lblNewPWValidation.Size = new System.Drawing.Size(360, 23);
+            this.lblNewPWValidation.TabIndex = 32;
+            this.lblNewPWValidation.Text = "Password must contain at least 4 characters";
+            this.lblNewPWValidation.Visible = false;
+            // 
+            // lblOldPWValidation
+            // 
+            this.lblOldPWValidation.BackColor = System.Drawing.Color.White;
+            this.lblOldPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOldPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblOldPWValidation.Location = new System.Drawing.Point(37, 277);
+            this.lblOldPWValidation.Name = "lblOldPWValidation";
+            this.lblOldPWValidation.Size = new System.Drawing.Size(360, 23);
+            this.lblOldPWValidation.TabIndex = 31;
+            this.lblOldPWValidation.Text = "Old admin password is incorrect";
+            this.lblOldPWValidation.Visible = false;
+            // 
+            // lblUsernameValidation
+            // 
+            this.lblUsernameValidation.BackColor = System.Drawing.Color.White;
+            this.lblUsernameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsernameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblUsernameValidation.Location = new System.Drawing.Point(38, 179);
+            this.lblUsernameValidation.Name = "lblUsernameValidation";
+            this.lblUsernameValidation.Size = new System.Drawing.Size(330, 23);
+            this.lblUsernameValidation.TabIndex = 30;
+            this.lblUsernameValidation.Text = "Use letters, numbers, and underscores. 3-20 characters long only";
+            this.lblUsernameValidation.Visible = false;
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
             this.txtConfirmPassword.BorderRadius = 5;
             this.txtConfirmPassword.BorderThickness = 0;
-            this.txtConfirmPassword.CustomizableEdges = customizableEdges23;
+            this.txtConfirmPassword.CustomizableEdges = customizableEdges21;
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -436,65 +499,71 @@
             this.txtConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtConfirmPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(38, 405);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(40, 430);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.PlaceholderText = "••••••••";
             this.txtConfirmPassword.SelectedText = "";
-            this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            this.txtConfirmPassword.Size = new System.Drawing.Size(264, 40);
-            this.txtConfirmPassword.TabIndex = 23;
+            this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.txtConfirmPassword.Size = new System.Drawing.Size(328, 40);
+            this.txtConfirmPassword.TabIndex = 3;
+            this.txtConfirmPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
-            // label5
+            // lblTitle
             // 
-            this.label5.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(33, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(277, 55);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Admin Settings";
+            this.lblTitle.BackColor = System.Drawing.Color.White;
+            this.lblTitle.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(33, 47);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(360, 55);
+            this.lblTitle.TabIndex = 28;
+            this.lblTitle.Text = "Admin Settings";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(37, 95);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 31);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Username";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsername.Location = new System.Drawing.Point(38, 95);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(10, 10, 10, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(207, 31);
+            this.lblUsername.TabIndex = 24;
+            this.lblUsername.Text = "Username";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label4
+            // lblConfirmPW
             // 
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(37, 372);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 25);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Confirm New Password";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblConfirmPW.BackColor = System.Drawing.Color.White;
+            this.lblConfirmPW.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblConfirmPW.Location = new System.Drawing.Point(39, 398);
+            this.lblConfirmPW.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblConfirmPW.Name = "lblConfirmPW";
+            this.lblConfirmPW.Size = new System.Drawing.Size(207, 25);
+            this.lblConfirmPW.TabIndex = 27;
+            this.lblConfirmPW.Text = "Confirm New Password";
+            this.lblConfirmPW.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label2
+            // lblOldPassword
             // 
-            this.label2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(37, 191);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 25);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Old Password";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblOldPassword.BackColor = System.Drawing.Color.White;
+            this.lblOldPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOldPassword.Location = new System.Drawing.Point(38, 202);
+            this.lblOldPassword.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblOldPassword.Name = "lblOldPassword";
+            this.lblOldPassword.Size = new System.Drawing.Size(207, 25);
+            this.lblOldPassword.TabIndex = 25;
+            this.lblOldPassword.Text = "Old Password";
+            this.lblOldPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtOldPassword
             // 
+            this.txtOldPassword.BackColor = System.Drawing.Color.White;
             this.txtOldPassword.BorderRadius = 5;
             this.txtOldPassword.BorderThickness = 0;
-            this.txtOldPassword.CustomizableEdges = customizableEdges25;
+            this.txtOldPassword.CustomizableEdges = customizableEdges23;
             this.txtOldPassword.DefaultText = "";
             this.txtOldPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtOldPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -502,28 +571,30 @@
             this.txtOldPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtOldPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtOldPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOldPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtOldPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOldPassword.Location = new System.Drawing.Point(38, 221);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(11, 5, 11, 5);
+            this.txtOldPassword.Location = new System.Drawing.Point(40, 231);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(14, 6, 14, 6);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '•';
             this.txtOldPassword.PlaceholderText = "••••••••";
             this.txtOldPassword.SelectedText = "";
-            this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            this.txtOldPassword.Size = new System.Drawing.Size(264, 40);
-            this.txtOldPassword.TabIndex = 22;
+            this.txtOldPassword.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.txtOldPassword.Size = new System.Drawing.Size(328, 40);
+            this.txtOldPassword.TabIndex = 1;
+            this.txtOldPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
-            // label3
+            // lblNewPassword
             // 
-            this.label3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(37, 282);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 25);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "New Password";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblNewPassword.BackColor = System.Drawing.Color.White;
+            this.lblNewPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNewPassword.Location = new System.Drawing.Point(37, 300);
+            this.lblNewPassword.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblNewPassword.Name = "lblNewPassword";
+            this.lblNewPassword.Size = new System.Drawing.Size(207, 25);
+            this.lblNewPassword.TabIndex = 26;
+            this.lblNewPassword.Text = "New Password";
+            this.lblNewPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // AdminProfileView
             // 
@@ -539,6 +610,7 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -556,16 +628,20 @@
         private Guna.UI2.WinForms.Guna2Button btnTransaction;
         private Guna.UI2.WinForms.Guna2Button btnAdminProfile;
         private Guna.UI2.WinForms.Guna2Button btnItem;
-        private Guna.UI2.WinForms.Guna2TextBox txtPath;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtOldPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtConfirmPassword;
-        private Label label4;
-        private Label label1;
-        private Label label3;
-        private Label label2;
-        private Label label5;
+        private Label lblConfirmPW;
+        private Label lblUsername;
+        private Label lblNewPassword;
+        private Label lblOldPassword;
+        private Label lblTitle;
         private TableLayoutPanel tableLayoutPanel9;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Label lblUsernameValidation;
+        private Label lblOldPWValidation;
+        private Label lblNewPWValidation;
+        private Label lblConfirmPWValidation;
+        private Guna.UI2.WinForms.Guna2CheckBox cbShowPassword;
     }
 }

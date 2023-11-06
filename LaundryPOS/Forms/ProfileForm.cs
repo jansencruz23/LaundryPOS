@@ -1,20 +1,19 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
 
 namespace LaundryPOS.Forms
 {
     public partial class ProfileForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
 
         public ProfileForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager, Employee employee)
+            IStyleManager styleManager, Employee employee)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _employee = employee;
 
             InitializeComponent();
@@ -38,17 +37,17 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnEdit);
-            await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
-            await _themeManager.ApplyThemeToPanel(bgPanel, 1f);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtName);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtUsername);
+            await _styleManager.Theme.ApplyThemeToButton(btnEdit);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnClose, 1);
+            await _styleManager.Theme.ApplyThemeToPanel(bgPanel, 1f);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtName);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtUsername);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Opacity = 0;
-            var form = new UpdateProfileForm(_unitOfWork, _themeManager, _employee);
+            var form = new UpdateProfileForm(_unitOfWork, _styleManager, _employee);
             form.FormClosed += (s, args) => Close();
             form.ShowDialog();
             Opacity = 100;

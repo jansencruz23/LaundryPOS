@@ -1,31 +1,22 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
     public partial class ChangePassword : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
 
         public ChangePassword(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             Employee employee)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _employee = employee;
 
             InitializeComponent();
@@ -39,9 +30,9 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToPanel(panelBg, 1f);
-            await _themeManager.ApplyThemeToButton(btnSubmit);
-            await _themeManager.ApplyOutlineThemeToButton(btnClose);
+            await _styleManager.Theme.ApplyThemeToPanel(panelBg, 1f);
+            await _styleManager.Theme.ApplyThemeToButton(btnSubmit);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnClose);
         }
 
         private async void btnSubmit_Click(object sender, EventArgs e)

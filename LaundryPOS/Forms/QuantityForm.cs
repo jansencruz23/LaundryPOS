@@ -1,18 +1,17 @@
 ﻿using Guna.UI2.WinForms;
-using LaundryPOS.Forms.Views;
-using LaundryPOS.Models;
-using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
+using LaundryPOS.Contracts;
 
 namespace LaundryPOS.Forms
 {
     public partial class QuantityForm : Form
     {
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         public int Quantity { get; set; }
 
-        public QuantityForm(ThemeManager themeManager)
+        public QuantityForm(IStyleManager styleManager)
         {
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
@@ -35,15 +34,15 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToPanel(panelBg, 1f);
-            await _themeManager.ApplyOutlineThemeToButton(btnClose, 1);
-            await _themeManager.ApplyOutlineThemeToButton(btnMinus, 1);
-            await _themeManager.ApplyOutlineThemeToButton(btnAdd, 1);
-            await _themeManager.ApplyOutlineThemeToButton(btnEnter,1);
-            await _themeManager.ApplyThemeToButton(btn2);
-            await _themeManager.ApplyThemeToButton(btn3);
-            await _themeManager.ApplyThemeToButton(btn5);
-            await _themeManager.ApplyThemeToButton(btn10);
+            await _styleManager.Theme.ApplyThemeToPanel(panelBg, 1f);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnClose, 1);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnMinus, 1);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnAdd, 1);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnEnter,1);
+            await _styleManager.Theme.ApplyThemeToButton(btn2);
+            await _styleManager.Theme.ApplyThemeToButton(btn3);
+            await _styleManager.Theme.ApplyThemeToButton(btn5);
+            await _styleManager.Theme.ApplyThemeToButton(btn10);
         }
 
         private void InitializeQuantity()

@@ -1,21 +1,21 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
     public partial class UpdateProfileForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
 
         public UpdateProfileForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager, 
+            IStyleManager styleManager, 
             Employee employee)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _employee = employee;
 
             InitializeComponent();
@@ -30,11 +30,11 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnUpdate);
-            await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtFirstName);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtLastName);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtPassword);
+            await _styleManager.Theme.ApplyThemeToButton(btnUpdate);
+            await _styleManager.Theme.ApplyThemeToPanel(bgPanel, 1f, true);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtFirstName);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtLastName);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtPassword);
         }
 
         private void InitializeProfile()
@@ -90,7 +90,7 @@ namespace LaundryPOS.Forms
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             Opacity = 0;
-            var form = new ChangePassword(_unitOfWork, _themeManager, _employee);
+            var form = new ChangePassword(_unitOfWork, _styleManager, _employee);
             form.ShowDialog();
             Opacity = 100;
         }

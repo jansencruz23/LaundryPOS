@@ -1,16 +1,6 @@
-﻿using LaundryPOS.CustomEventArgs;
-using LaundryPOS.Forms.Views;
-using LaundryPOS.Helpers;
+﻿using LaundryPOS.Contracts;
+using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LaundryPOS.Forms.CustomControls
 {
@@ -18,13 +8,13 @@ namespace LaundryPOS.Forms.CustomControls
     {
         public event EventHandler<CategoryEventArgs> CategoryClicked;
         private readonly Category _category;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
 
-        public CategoryControl(Category category, 
-            ThemeManager themeManager)
+        public CategoryControl(Category category,
+            IStyleManager styleManager)
         {
             _category = category;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
 
             InitializeComponent();
             InitializeCategory();

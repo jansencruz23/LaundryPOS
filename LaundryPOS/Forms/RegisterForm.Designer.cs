@@ -369,6 +369,7 @@ namespace LaundryPOS
             this.txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges7;
             this.txtFirstName.Size = new System.Drawing.Size(192, 40);
             this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // txtLastName
             // 
@@ -395,6 +396,7 @@ namespace LaundryPOS
             this.txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.txtLastName.Size = new System.Drawing.Size(192, 40);
             this.txtLastName.TabIndex = 1;
+            this.txtLastName.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // lblFirstName
             // 
@@ -524,6 +526,7 @@ namespace LaundryPOS
             this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.txtUsername.Size = new System.Drawing.Size(414, 40);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // lblPassword
             // 
@@ -579,6 +582,7 @@ namespace LaundryPOS
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.txtPassword.Size = new System.Drawing.Size(414, 40);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // lblConfirmPassword
             // 
@@ -614,6 +618,7 @@ namespace LaundryPOS
             this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.txtConfirmPassword.Size = new System.Drawing.Size(414, 40);
             this.txtConfirmPassword.TabIndex = 5;
+            this.txtConfirmPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // bgPanel
             // 
@@ -692,7 +697,7 @@ namespace LaundryPOS
             // 
             // guna2CirclePictureBox2
             // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.White;
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(99, 131);

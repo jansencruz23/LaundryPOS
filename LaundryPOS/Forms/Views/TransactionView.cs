@@ -5,6 +5,7 @@ using LaundryPOS.Helpers;
 using System.Data;
 using LaundryPOS.Delegates;
 using System.Linq.Expressions;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -27,9 +28,9 @@ namespace LaundryPOS.Forms.Views
         #endregion
 
         public TransactionView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             ChangeAdminViewDelegate changeAdminView)
-            : base (unitOfWork, themeManager, changeAdminView)
+            : base (unitOfWork, styleManager, changeAdminView)
         {
             _employeeCache = new();
 
@@ -163,9 +164,9 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnTransaction);
-            await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(transactionTable, 1f, true);
+            await _styleManager.Theme.ApplyThemeToButton(btnTransaction);
+            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyLighterThemeToDataGridView(transactionTable, 1f, true);
         }
 
         private void btnItem_Click(object sender, EventArgs e)
@@ -252,23 +253,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnPrint_Click(object sender, EventArgs e)
         {
-            var printer = new DGVPrinter();
-            var businessName = await GetBusinessName();
-
-            printer.Title = businessName;
-            printer.SubTitle = string.Format("Transaction List", printer.SubTitleColor = Color.Black, printer);
-            printer.SubTitleSpacing = 15;
-            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PorportionalColumns = true;
-            printer.RowHeight = DGVPrinter.RowHeightSetting.CellHeight;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = businessName;
-            printer.FooterSpacing = 15;
-            printer.ColumnWidth = DGVPrinter.ColumnWidthSetting.DataWidth;
-            printer.TableAlignment = DGVPrinter.Alignment.Center;
-            printer.PrintDataGridView(transactionTable);
+            await PrintTable(transactionTable, "Transaction List");
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

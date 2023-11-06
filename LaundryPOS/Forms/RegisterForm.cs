@@ -1,24 +1,21 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
-using System.Xml.Linq;
 using Guna.UI2.WinForms;
-using System.Text.RegularExpressions;
-using LaundryPOS.Migrations;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS
 {
     public partial class RegisterForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
 
         public RegisterForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager)
+            IStyleManager styleManager)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
 
             InitializeComponent();
             StyleFonts();
@@ -34,14 +31,7 @@ namespace LaundryPOS
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid registration. Please make sure all fields are valid.", "Registration failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!txtConfirmPassword.Text.Equals(txtPassword.Text))
-            {
-                MessageBox.Show("Passwords do not match", "Registration failed",
+                MessageBox.Show("Invalid registration. Please make sure all fields are valid.", "Registration Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -51,7 +41,7 @@ namespace LaundryPOS
 
             if (employeeIsExisting)
             {
-                MessageBox.Show("Username already exists.", "Registration failed",
+                MessageBox.Show("Username already exists.", "Registration Failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -141,8 +131,8 @@ namespace LaundryPOS
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnRegister);
-            await _themeManager.ApplyThemeToPanel(bgPanel, 1f, true);
+            await _styleManager.Theme.ApplyThemeToButton(btnRegister);
+            await _styleManager.Theme.ApplyThemeToPanel(bgPanel, 1f, true);
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -170,19 +160,19 @@ namespace LaundryPOS
                 lblLastNameValidation, lblUsernameValidation, lblPasswordValidation,
                 lblConfirmPWValidation);
             StyleFontsLabel(9.75f, false, lblSubDescription);
-            cbShowPassword.Font = _themeManager.Helvetica(11.25f);
+            cbShowPassword.Font = _styleManager.Font.Helvetica(11.25f);
         }
 
         private void StyleFontsButton(float size, params Guna2Button[] buttons)
         {
             Array.ForEach(buttons, btn
-                => btn.Font = _themeManager.HelveticaBold(size));
+                => btn.Font = _styleManager.Font.HelveticaBold(size));
         }
 
         private void StyleFontsTextBox(float size, params Guna2TextBox[] textbox)
         {
             Array.ForEach(textbox, txt
-                => txt.Font = _themeManager.Helvetica(size));
+                => txt.Font = _styleManager.Font.Helvetica(size));
         }
 
         private void StyleFontsLabel(float size, bool bold, params Label[] labels)
@@ -190,13 +180,24 @@ namespace LaundryPOS
             if (bold)
             {
                 Array.ForEach(labels, lbl
-                    => lbl.Font = _themeManager.HelveticaBold(size));
+                    => lbl.Font = _styleManager.Font.HelveticaBold(size));
             }
             else
             {
                 Array.ForEach(labels, lbl
-                    => lbl.Font = _themeManager.Helvetica(size));
+                    => lbl.Font = _styleManager.Font.Helvetica(size));
             }
+        }
+
+        private void TextBox_Click(object sender, EventArgs e)
+        {
+            lblIconValidation.Visible = false;
+            lblFirstNameValidation.Visible = false;
+            lblLastNameValidation.Visible = false;
+            lblUsernameValidation.Visible = false;
+            lblPasswordValidation.Visible = false;
+            lblConfirmPWValidation.Visible = false;
+            lblIconValidation.Visible = false;
         }
     }
 }

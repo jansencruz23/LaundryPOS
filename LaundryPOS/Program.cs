@@ -3,7 +3,6 @@ using LaundryPOS.DAL;
 using LaundryPOS.Data;
 using LaundryPOS.Forms;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System.Configuration;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS
 {
@@ -41,7 +41,9 @@ namespace LaundryPOS
 
                     services.AddMemoryCache();
                     services.AddScoped<ThemeManager>();
+                    services.AddScoped<FontManager>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
+                    services.AddScoped<IStyleManager, StyleManager>();
                     services.AddScoped<LoginForm>();
                 }).Build();
 

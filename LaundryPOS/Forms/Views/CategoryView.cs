@@ -2,6 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -12,9 +13,9 @@ namespace LaundryPOS.Forms.Views
         private const string CATEGORY_FOLDER = "Categories";
 
         public CategoryView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             ChangeAdminViewDelegate changeAdminView)
-            : base (unitOfWork, themeManager, changeAdminView)
+            : base (unitOfWork, styleManager, changeAdminView)
         {
             InitializeComponent();
             ShowLoadingForm();
@@ -124,12 +125,12 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnFile);
-            await _themeManager.ApplyThemeToButton(btnCategory);
-            await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(categoryTable, 1f, true);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtName);
-            await _themeManager.ApplyFocusedThemeToTextBox(txtSearch);
+            await _styleManager.Theme.ApplyThemeToButton(btnFile);
+            await _styleManager.Theme.ApplyThemeToButton(btnCategory);
+            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyLighterThemeToDataGridView(categoryTable, 1f, true);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtName);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtSearch);
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -279,19 +280,18 @@ namespace LaundryPOS.Forms.Views
 
         private void StyleFonts()
         {
-            StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+            _styleManager.Font.StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
                 btnAdminProfile, btnAdd, btnSave, btnUpdate, btnDelete,
                 btnPrint, btnLogout, btnFile, btnSearch);
-            StyleFontsLabel(18f, true, lblDetails, lblList);
-            StyleFontsLabel(11.25f, false, lblName);
-            StyleFontsTextBox(11.25f, txtName, txtSearch);
-            StyleFontsLabel(8.25f, false, lblNameValidation, lblIconValidation);
+            _styleManager.Font.StyleFontsLabel(18f, true, lblDetails, lblList);
+            _styleManager.Font.StyleFontsLabel(11.25f, false, lblName);
+            _styleManager.Font.StyleFontsTextBox(11.25f, txtName, txtSearch);
+            _styleManager.Font.StyleFontsLabel(8.25f, false, lblNameValidation, lblIconValidation);
         }
 
         private void txtName_Click(object sender, EventArgs e)
         {
-            lblIconValidation.Visible =
-            lblNameValidation.Visible = false;
+            HideValidationError(lblIconValidation, lblNameValidation);
         }
     }
 }

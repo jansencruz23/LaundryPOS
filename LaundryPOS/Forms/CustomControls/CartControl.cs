@@ -1,15 +1,5 @@
 ﻿using LaundryPOS.CustomEventArgs;
-using LaundryPOS.Models;
-using LaundryPOS.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using LaundryPOS.Contracts;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -18,13 +8,13 @@ namespace LaundryPOS.Forms.Views
         public event EventHandler<CartItemEventArgs> RemoveFromCartClicked;
         public event EventHandler<CartItemEventArgs> AddToCartClicked;
         public CartItem CartItem { get; }
-        private ThemeManager _themeManager;
+        private IStyleManager _styleManager;
 
         public CartControl(CartItem cartItem,
-            ThemeManager themeManager)
+            IStyleManager styleManager)
         {
             CartItem = cartItem;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
 
             InitializeComponent();
             InitializeCartItem();
@@ -32,7 +22,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void CartControl_Load(object sender, EventArgs e)
         {
-            await _themeManager.ApplyOutlineThemeToButton(btnQuantity);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnQuantity);
         }
 
         public void InitializeCartItem()
@@ -66,7 +56,7 @@ namespace LaundryPOS.Forms.Views
 
         private void btnQuantity_Click(object sender, EventArgs e)
         {
-            var quantityForm = new QuantityForm(_themeManager);
+            var quantityForm = new QuantityForm(_styleManager);
             quantityForm.Quantity = CartItem.Quantity;
             quantityForm.ShowDialog();
             var quantity = quantityForm.Quantity;

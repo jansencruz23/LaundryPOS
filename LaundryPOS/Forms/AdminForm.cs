@@ -1,29 +1,30 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
-using LaundryPOS.Helpers;
+using LaundryPOS.Managers;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 namespace LaundryPOS.Forms
 {
     public partial class AdminForm : Form
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private ChangeAdminViewDelegate changeAdminViewDelegate;
         private readonly string _title;
 
         public AdminForm(IUnitOfWork unitOfWorK,
-            ThemeManager themeManager, string title)
+            IStyleManager styleManager, string title)
         {
             _unitOfWork = unitOfWorK;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _title = title;
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
             InitializeComponent();
             lblTitle.Text = _title;
 
-            var itemView = new ItemView(_unitOfWork, themeManager, changeAdminViewDelegate);
+            var itemView = new ItemView(_unitOfWork, styleManager, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
         }
@@ -37,7 +38,7 @@ namespace LaundryPOS.Forms
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            var settingsView = new AppSettingsView(_unitOfWork, _themeManager, changeAdminViewDelegate);
+            var settingsView = new AppSettingsView(_unitOfWork, _styleManager, changeAdminViewDelegate);
             ChangePanelContent(settingsView);
         }
     }

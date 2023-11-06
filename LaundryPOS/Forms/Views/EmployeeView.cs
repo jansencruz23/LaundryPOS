@@ -1,10 +1,10 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
 using LaundryPOS.Forms.Views.BaseViews;
 using Guna.UI2.WinForms;
 using System.Text.RegularExpressions;
+using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -14,9 +14,9 @@ namespace LaundryPOS.Forms.Views
         private LoadingForm _loadingForm;
 
         public EmployeeView(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             ChangeAdminViewDelegate changeAdminView)
-            : base(unitOfWork, themeManager, changeAdminView)
+            : base(unitOfWork, styleManager, changeAdminView)
         {
             InitializeComponent();
             ShowLoadingForm();
@@ -54,7 +54,7 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-            new RegisterForm(_unitOfWork, _themeManager).ShowDialog();
+            new RegisterForm(_unitOfWork, _styleManager).ShowDialog();
             await RefreshData();
         }
 
@@ -88,16 +88,16 @@ namespace LaundryPOS.Forms.Views
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnEmployee);
-            await _themeManager.ApplyThemeToButton(btnSearch);
-            await _themeManager.ApplyLighterThemeToDataGridView(employeeTable, 1f, true);
+            await _styleManager.Theme.ApplyThemeToButton(btnEmployee);
+            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyLighterThemeToDataGridView(employeeTable, 1f, true);
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, ThemeManager, ChangeAdminViewDelegate, T> createViewFunc)
+        private void ChangeAdminView<T>(Func<IUnitOfWork, IStyleManager, ChangeAdminViewDelegate, T> createViewFunc)
             where T : UserControl
         {
             Dispose();
-            var view = createViewFunc(_unitOfWork, _themeManager, _changeAdminView);
+            var view = createViewFunc(_unitOfWork, _styleManager, _changeAdminView);
             _changeAdminView?.Invoke(view);
         }
 
@@ -189,12 +189,11 @@ namespace LaundryPOS.Forms.Views
 
         private void StyleFonts()
         {
-            StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
-                btnAdminProfile, btnRegister, btnDelete, btnPrint, btnLogout);
-            StyleFontsLabel(18f, true, lblDetails, lblList);
-            StyleFontsLabel(11.25f, false, lblName, lblAge, lblUsername, lblBirthday);
-            StyleFontsButton(11.25f, btnSearch);
-            StyleFontsTextBox(11.25f, txtName, txtSearch);
+            _styleManager.Font.StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+                btnAdminProfile, btnRegister, btnDelete, btnPrint, btnLogout, btnSearch);
+            _styleManager.Font.StyleFontsLabel(18f, true, lblDetails, lblList);
+            _styleManager.Font.StyleFontsLabel(11.25f, false, lblName, lblAge, lblUsername, lblBirthday);
+            _styleManager.Font.StyleFontsTextBox(11.25f, txtName, txtSearch);
         }
     }
 }

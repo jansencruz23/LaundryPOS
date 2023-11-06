@@ -3,8 +3,8 @@ using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
 using System.Data;
+using LaundryPOS.Managers;
 using System.Linq;
 
 namespace LaundryPOS.Forms
@@ -14,7 +14,7 @@ namespace LaundryPOS.Forms
         private LoadingForm _loadingForm;
 
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ThemeManager _themeManager;
+        private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
         private readonly List<ItemControl> itemsControls;
         private readonly Order orders;
@@ -26,11 +26,11 @@ namespace LaundryPOS.Forms
         private decimal Total { get; set; } = default;
 
         public MainForm(IUnitOfWork unitOfWork,
-            ThemeManager themeManager,
+            IStyleManager styleManager,
             Employee employee)
         {
             _unitOfWork = unitOfWork;
-            _themeManager = themeManager;
+            _styleManager = styleManager;
             _employee = employee;
             itemsControls = new();
             orders = new();
@@ -89,7 +89,7 @@ namespace LaundryPOS.Forms
             }
             else
             {
-                var cartItem = new CartControl(e.CartItem, _themeManager);
+                var cartItem = new CartControl(e.CartItem, _styleManager);
 
                 cartItem.RemoveFromCartClicked += CartControl_RemoveFromCartClicked!;
                 cartItem.AddToCartClicked += ItemControl_AddToCartClicked!;
@@ -136,7 +136,7 @@ namespace LaundryPOS.Forms
                 .Get(includeProperties: "Category");
 
             itemsControls.AddRange(allItems
-                .Select(item => new ItemControl(item, _themeManager))
+                .Select(item => new ItemControl(item, _styleManager))
                 .ToList());
 
             foreach (var control in itemsControls)
@@ -190,7 +190,7 @@ namespace LaundryPOS.Forms
             var categories = await _unitOfWork.CategoryRepo.Get();
             var categoryControls = categories.Select(c =>
             {
-                var control = new CategoryControl(c, _themeManager);
+                var control = new CategoryControl(c, _styleManager);
                 control.CategoryClicked += CategoryControl_CategoryClicked!;
                 return control;
             }).ToList();
@@ -242,7 +242,7 @@ namespace LaundryPOS.Forms
                     "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _themeManager);
+            var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _styleManager);
             paymentForm.ShowDialog();
             await RefreshItems();
             ClearCart();
@@ -263,8 +263,8 @@ namespace LaundryPOS.Forms
 
         private async Task ApplyTheme()
         {
-            await _themeManager.ApplyThemeToButton(btnPayNow);
-            await _themeManager.ApplyOutlineThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyThemeToButton(btnPayNow);
+            await _styleManager.Theme.ApplyOutlineThemeToButton(btnSearch);
         }
 
         private async void btnPayLater_Click(object sender, EventArgs e)
@@ -350,7 +350,7 @@ namespace LaundryPOS.Forms
         private void btnPending_Click(object sender, EventArgs e)
         {
             Hide();
-            var form = new UnpaidForm(_unitOfWork, _themeManager, 
+            var form = new UnpaidForm(_unitOfWork, _styleManager, 
                 _employee, _title);
             form.FormClosed += (s, args) => Close();
             form.Show();
@@ -372,7 +372,7 @@ namespace LaundryPOS.Forms
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            var form = new ProfileForm(_unitOfWork, _themeManager, _employee);
+            var form = new ProfileForm(_unitOfWork, _styleManager, _employee);
             form.ShowDialog();
         }
 

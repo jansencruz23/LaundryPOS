@@ -171,3 +171,4 @@ D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\n
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\FreeSansBold.ttf
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\Helvetica.ttf
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Fonts\Montserrat-Bold.ttf
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.BaseViews.BaseEmployeeView.resources
