@@ -660,9 +660,9 @@
             this.lblDetails.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDetails.Location = new System.Drawing.Point(34, 30);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(210, 66);
+            this.lblDetails.Size = new System.Drawing.Size(195, 66);
             this.lblDetails.TabIndex = 23;
-            this.lblDetails.Text = "CATEGORY DETAILS";
+            this.lblDetails.Text = "Category Details";
             // 
             // lblName
             // 
@@ -730,7 +730,7 @@
             this.lblList.Name = "lblList";
             this.lblList.Size = new System.Drawing.Size(161, 59);
             this.lblList.TabIndex = 24;
-            this.lblList.Text = "CATEGORY LIST";
+            this.lblList.Text = "Category List";
             // 
             // txtSearch
             // 

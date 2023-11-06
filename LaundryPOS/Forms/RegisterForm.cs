@@ -1,6 +1,11 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
+using System.Xml.Linq;
+using Guna.UI2.WinForms;
+using System.Text.RegularExpressions;
+using LaundryPOS.Migrations;
 
 namespace LaundryPOS
 {
@@ -16,6 +21,7 @@ namespace LaundryPOS
             _themeManager = themeManager;
 
             InitializeComponent();
+            StyleFonts();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -26,9 +32,9 @@ namespace LaundryPOS
 
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!ValidateInput())
+            if (!ValidateInputs())
             {
-                MessageBox.Show("Please fill all the fields including image.", "Registration failed",
+                MessageBox.Show("Invalid registration. Please make sure all fields are valid.", "Registration failed",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -57,13 +63,29 @@ namespace LaundryPOS
             Close();
         }
 
-        private bool ValidateInput()
-            => !(string.IsNullOrWhiteSpace(txtUsername.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text) ||
-                string.IsNullOrWhiteSpace(txtConfirmPassword.Text) ||
-                string.IsNullOrWhiteSpace(txtFirstName.Text) ||
-                string.IsNullOrWhiteSpace(txtLastName.Text) ||
-                string.IsNullOrWhiteSpace(txtPath.Text));
+        private bool ValidateInputs()
+        {
+            var isValid = true;
+            var isFirstNameValid = RegexValidator.IsValidPersonName(txtFirstName.Text);
+            var isLastNameValid = RegexValidator.IsValidPersonName(txtLastName.Text);
+            var isUsernameValid = RegexValidator.IsValidUsername(txtUsername.Text);
+            var isPasswordValid = RegexValidator.IsValidPassword(txtPassword.Text);
+
+            isValid &= ValidateField(!isFirstNameValid, lblFirstNameValidation);
+            isValid &= ValidateField(!isLastNameValid, lblLastNameValidation);
+            isValid &= ValidateField(!isUsernameValid, lblUsernameValidation);
+            isValid &= ValidateField(!isPasswordValid, lblPasswordValidation);
+            isValid &= ValidateField(!txtConfirmPassword.Text.Equals(txtPassword.Text), lblConfirmPWValidation);
+            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtPath.Text), lblIconValidation);
+
+            return isValid;
+        }
+
+        private bool ValidateField(bool condition, Label label)
+        {
+            label.Visible = condition;
+            return !condition;
+        }
 
         private Employee CreateEmployee()
         {
@@ -134,6 +156,47 @@ namespace LaundryPOS
         private void btnContinue_Click(object sender, EventArgs e)
         {
             txtUsername.Focus();
+        }
+
+        private void StyleFonts()
+        {
+            StyleFontsButton(11.25f, btnRegister);
+            StyleFontsLabel(18f, true, lblTitle, lblDescription);
+            StyleFontsLabel(11.25f, false, lblFirstName, lblLastName,
+                lblBirthday, lblUsername, lblPassword, lblConfirmPassword);
+            StyleFontsTextBox(11.25f, txtFirstName, txtLastName,
+                txtUsername, txtPassword, txtConfirmPassword);
+            StyleFontsLabel(8.25f, false, lblFirstNameValidation, lblIconValidation,
+                lblLastNameValidation, lblUsernameValidation, lblPasswordValidation,
+                lblConfirmPWValidation);
+            StyleFontsLabel(9.75f, false, lblSubDescription);
+            cbShowPassword.Font = _themeManager.Helvetica(11.25f);
+        }
+
+        private void StyleFontsButton(float size, params Guna2Button[] buttons)
+        {
+            Array.ForEach(buttons, btn
+                => btn.Font = _themeManager.HelveticaBold(size));
+        }
+
+        private void StyleFontsTextBox(float size, params Guna2TextBox[] textbox)
+        {
+            Array.ForEach(textbox, txt
+                => txt.Font = _themeManager.Helvetica(size));
+        }
+
+        private void StyleFontsLabel(float size, bool bold, params Label[] labels)
+        {
+            if (bold)
+            {
+                Array.ForEach(labels, lbl
+                    => lbl.Font = _themeManager.HelveticaBold(size));
+            }
+            else
+            {
+                Array.ForEach(labels, lbl
+                    => lbl.Font = _themeManager.Helvetica(size));
+            }
         }
     }
 }

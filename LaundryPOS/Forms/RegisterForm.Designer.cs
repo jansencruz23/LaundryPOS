@@ -41,43 +41,46 @@ namespace LaundryPOS
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges61 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelBorder = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblLastNameValidation = new System.Windows.Forms.Label();
+            this.lblFirstNameValidation = new System.Windows.Forms.Label();
+            this.lblIconValidation = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.imgPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -89,6 +92,9 @@ namespace LaundryPOS
             this.txtLastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblConfirmPWValidation = new System.Windows.Forms.Label();
+            this.lblPasswordValidation = new System.Windows.Forms.Label();
+            this.lblUsernameValidation = new System.Windows.Forms.Label();
             this.cbShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
@@ -103,12 +109,6 @@ namespace LaundryPOS
             this.lblDescription = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblIconValidation = new System.Windows.Forms.Label();
-            this.lblFirstNameValidation = new System.Windows.Forms.Label();
-            this.lblLastNameValidation = new System.Windows.Forms.Label();
-            this.lblUsernameValidation = new System.Windows.Forms.Label();
-            this.lblPasswordValidation = new System.Windows.Forms.Label();
-            this.lblConfirmPWValidation = new System.Windows.Forms.Label();
             this.panelBorder.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -122,13 +122,13 @@ namespace LaundryPOS
             // panelBorder
             // 
             this.panelBorder.Controls.Add(this.guna2Panel1);
-            this.panelBorder.CustomizableEdges = customizableEdges42;
+            this.panelBorder.CustomizableEdges = customizableEdges31;
             this.panelBorder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBorder.FillColor = System.Drawing.Color.White;
             this.panelBorder.Location = new System.Drawing.Point(0, 0);
             this.panelBorder.Name = "panelBorder";
             this.panelBorder.Padding = new System.Windows.Forms.Padding(30);
-            this.panelBorder.ShadowDecoration.CustomizableEdges = customizableEdges43;
+            this.panelBorder.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.panelBorder.Size = new System.Drawing.Size(1076, 700);
             this.panelBorder.TabIndex = 25;
             // 
@@ -138,14 +138,14 @@ namespace LaundryPOS
             this.guna2Panel1.BorderRadius = 12;
             this.guna2Panel1.Controls.Add(this.flowLayoutPanel1);
             this.guna2Panel1.Controls.Add(this.bgPanel);
-            this.guna2Panel1.CustomizableEdges = customizableEdges40;
+            this.guna2Panel1.CustomizableEdges = customizableEdges29;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(30, 30);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges41;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.guna2Panel1.ShadowDecoration.Depth = 5;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
@@ -182,25 +182,61 @@ namespace LaundryPOS
             this.guna2Panel2.Controls.Add(this.txtFirstName);
             this.guna2Panel2.Controls.Add(this.txtLastName);
             this.guna2Panel2.Controls.Add(this.lblFirstName);
-            customizableEdges53.BottomLeft = false;
-            customizableEdges53.TopLeft = false;
-            this.guna2Panel2.CustomizableEdges = customizableEdges53;
+            customizableEdges10.BottomLeft = false;
+            customizableEdges10.TopLeft = false;
+            this.guna2Panel2.CustomizableEdges = customizableEdges10;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges54;
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.guna2Panel2.ShadowDecoration.Depth = 5;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
             this.guna2Panel2.Size = new System.Drawing.Size(584, 438);
             this.guna2Panel2.TabIndex = 25;
             // 
+            // lblLastNameValidation
+            // 
+            this.lblLastNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblLastNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLastNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLastNameValidation.Location = new System.Drawing.Point(320, 335);
+            this.lblLastNameValidation.Name = "lblLastNameValidation";
+            this.lblLastNameValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblLastNameValidation.TabIndex = 31;
+            this.lblLastNameValidation.Text = "Last name is invalid";
+            this.lblLastNameValidation.Visible = false;
+            // 
+            // lblFirstNameValidation
+            // 
+            this.lblFirstNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblFirstNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFirstNameValidation.Location = new System.Drawing.Point(101, 335);
+            this.lblFirstNameValidation.Name = "lblFirstNameValidation";
+            this.lblFirstNameValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblFirstNameValidation.TabIndex = 30;
+            this.lblFirstNameValidation.Text = "First name is invalid";
+            this.lblFirstNameValidation.Visible = false;
+            // 
+            // lblIconValidation
+            // 
+            this.lblIconValidation.BackColor = System.Drawing.Color.White;
+            this.lblIconValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIconValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIconValidation.Location = new System.Drawing.Point(224, 230);
+            this.lblIconValidation.Name = "lblIconValidation";
+            this.lblIconValidation.Size = new System.Drawing.Size(177, 23);
+            this.lblIconValidation.TabIndex = 29;
+            this.lblIconValidation.Text = "Employee picture is required";
+            this.lblIconValidation.Visible = false;
+            // 
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.White;
-            this.lblTitle.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.lblTitle.Location = new System.Drawing.Point(95, 54);
             this.lblTitle.Name = "lblTitle";
@@ -231,7 +267,7 @@ namespace LaundryPOS
             this.imgPic.MaximumSize = new System.Drawing.Size(106, 106);
             this.imgPic.MinimumSize = new System.Drawing.Size(106, 106);
             this.imgPic.Name = "imgPic";
-            this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            this.imgPic.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.imgPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.imgPic.Size = new System.Drawing.Size(106, 106);
             this.imgPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,7 +281,7 @@ namespace LaundryPOS
             this.dtpBirthday.BorderRadius = 5;
             this.dtpBirthday.Checked = true;
             this.dtpBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpBirthday.CustomizableEdges = customizableEdges45;
+            this.dtpBirthday.CustomizableEdges = customizableEdges2;
             this.dtpBirthday.FillColor = System.Drawing.Color.White;
             this.dtpBirthday.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
@@ -254,7 +290,7 @@ namespace LaundryPOS
             this.dtpBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            this.dtpBirthday.ShadowDecoration.CustomizableEdges = customizableEdges3;
             this.dtpBirthday.Size = new System.Drawing.Size(413, 36);
             this.dtpBirthday.TabIndex = 2;
             this.dtpBirthday.Value = new System.DateTime(2023, 9, 30, 20, 20, 28, 206);
@@ -266,7 +302,7 @@ namespace LaundryPOS
             this.btnCancel.BorderRadius = 20;
             this.btnCancel.BorderThickness = 1;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.CustomizableEdges = customizableEdges47;
+            this.btnCancel.CustomizableEdges = customizableEdges4;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -279,7 +315,7 @@ namespace LaundryPOS
             this.btnCancel.Location = new System.Drawing.Point(19, 50);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Color = System.Drawing.Color.LightGray;
-            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            this.btnCancel.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.btnCancel.ShadowDecoration.Depth = 5;
             this.btnCancel.Size = new System.Drawing.Size(40, 40);
             this.btnCancel.TabIndex = 19;
@@ -313,7 +349,7 @@ namespace LaundryPOS
             this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtFirstName.BorderRadius = 5;
-            this.txtFirstName.CustomizableEdges = customizableEdges49;
+            this.txtFirstName.CustomizableEdges = customizableEdges6;
             this.txtFirstName.DefaultText = "";
             this.txtFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -330,7 +366,7 @@ namespace LaundryPOS
             this.txtFirstName.PasswordChar = '\0';
             this.txtFirstName.PlaceholderText = "eg. John";
             this.txtFirstName.SelectedText = "";
-            this.txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges50;
+            this.txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges7;
             this.txtFirstName.Size = new System.Drawing.Size(192, 40);
             this.txtFirstName.TabIndex = 0;
             // 
@@ -339,7 +375,7 @@ namespace LaundryPOS
             this.txtLastName.BackColor = System.Drawing.Color.White;
             this.txtLastName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtLastName.BorderRadius = 5;
-            this.txtLastName.CustomizableEdges = customizableEdges51;
+            this.txtLastName.CustomizableEdges = customizableEdges8;
             this.txtLastName.DefaultText = "";
             this.txtLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtLastName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -356,7 +392,7 @@ namespace LaundryPOS
             this.txtLastName.PasswordChar = '\0';
             this.txtLastName.PlaceholderText = "eg. Doe";
             this.txtLastName.SelectedText = "";
-            this.txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges52;
+            this.txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.txtLastName.Size = new System.Drawing.Size(192, 40);
             this.txtLastName.TabIndex = 1;
             // 
@@ -386,14 +422,50 @@ namespace LaundryPOS
             this.guna2Panel3.Controls.Add(this.txtPassword);
             this.guna2Panel3.Controls.Add(this.lblConfirmPassword);
             this.guna2Panel3.Controls.Add(this.txtConfirmPassword);
-            this.guna2Panel3.CustomizableEdges = customizableEdges63;
+            this.guna2Panel3.CustomizableEdges = customizableEdges20;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 438);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges64;
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.guna2Panel3.Size = new System.Drawing.Size(584, 461);
             this.guna2Panel3.TabIndex = 27;
+            // 
+            // lblConfirmPWValidation
+            // 
+            this.lblConfirmPWValidation.BackColor = System.Drawing.Color.White;
+            this.lblConfirmPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblConfirmPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblConfirmPWValidation.Location = new System.Drawing.Point(99, 294);
+            this.lblConfirmPWValidation.Name = "lblConfirmPWValidation";
+            this.lblConfirmPWValidation.Size = new System.Drawing.Size(285, 23);
+            this.lblConfirmPWValidation.TabIndex = 31;
+            this.lblConfirmPWValidation.Text = "Passwords do not match";
+            this.lblConfirmPWValidation.Visible = false;
+            // 
+            // lblPasswordValidation
+            // 
+            this.lblPasswordValidation.BackColor = System.Drawing.Color.White;
+            this.lblPasswordValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPasswordValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblPasswordValidation.Location = new System.Drawing.Point(99, 190);
+            this.lblPasswordValidation.Name = "lblPasswordValidation";
+            this.lblPasswordValidation.Size = new System.Drawing.Size(285, 23);
+            this.lblPasswordValidation.TabIndex = 30;
+            this.lblPasswordValidation.Text = "Password must contain at least 4 characters";
+            this.lblPasswordValidation.Visible = false;
+            // 
+            // lblUsernameValidation
+            // 
+            this.lblUsernameValidation.BackColor = System.Drawing.Color.White;
+            this.lblUsernameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsernameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblUsernameValidation.Location = new System.Drawing.Point(99, 86);
+            this.lblUsernameValidation.Name = "lblUsernameValidation";
+            this.lblUsernameValidation.Size = new System.Drawing.Size(414, 31);
+            this.lblUsernameValidation.TabIndex = 29;
+            this.lblUsernameValidation.Text = "Use letters, numbers, and underscores. 3-20 characters long only";
+            this.lblUsernameValidation.Visible = false;
             // 
             // cbShowPassword
             // 
@@ -433,7 +505,7 @@ namespace LaundryPOS
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtUsername.BorderRadius = 5;
-            this.txtUsername.CustomizableEdges = customizableEdges55;
+            this.txtUsername.CustomizableEdges = customizableEdges12;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -449,7 +521,7 @@ namespace LaundryPOS
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "eg. JohnDoe23";
             this.txtUsername.SelectedText = "";
-            this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges56;
+            this.txtUsername.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.txtUsername.Size = new System.Drawing.Size(414, 40);
             this.txtUsername.TabIndex = 3;
             // 
@@ -468,7 +540,7 @@ namespace LaundryPOS
             this.btnRegister.BackColor = System.Drawing.Color.White;
             this.btnRegister.BorderRadius = 5;
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.CustomizableEdges = customizableEdges57;
+            this.btnRegister.CustomizableEdges = customizableEdges14;
             this.btnRegister.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRegister.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRegister.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -477,7 +549,7 @@ namespace LaundryPOS
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(95, 346);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges58;
+            this.btnRegister.ShadowDecoration.CustomizableEdges = customizableEdges15;
             this.btnRegister.Size = new System.Drawing.Size(412, 45);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Create Account";
@@ -488,7 +560,7 @@ namespace LaundryPOS
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtPassword.BorderRadius = 5;
-            this.txtPassword.CustomizableEdges = customizableEdges59;
+            this.txtPassword.CustomizableEdges = customizableEdges16;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -504,7 +576,7 @@ namespace LaundryPOS
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.PlaceholderText = "••••••••";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges60;
+            this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.txtPassword.Size = new System.Drawing.Size(414, 40);
             this.txtPassword.TabIndex = 4;
             // 
@@ -523,7 +595,7 @@ namespace LaundryPOS
             this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
             this.txtConfirmPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.txtConfirmPassword.BorderRadius = 5;
-            this.txtConfirmPassword.CustomizableEdges = customizableEdges61;
+            this.txtConfirmPassword.CustomizableEdges = customizableEdges18;
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -539,7 +611,7 @@ namespace LaundryPOS
             this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.PlaceholderText = "••••••••";
             this.txtConfirmPassword.SelectedText = "";
-            this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges62;
+            this.txtConfirmPassword.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.txtConfirmPassword.Size = new System.Drawing.Size(414, 40);
             this.txtConfirmPassword.TabIndex = 5;
             // 
@@ -552,16 +624,16 @@ namespace LaundryPOS
             this.bgPanel.Controls.Add(this.lblDescription);
             this.bgPanel.Controls.Add(this.guna2CirclePictureBox2);
             this.bgPanel.Controls.Add(this.txtPath);
-            customizableEdges38.BottomRight = false;
-            customizableEdges38.TopRight = false;
-            this.bgPanel.CustomizableEdges = customizableEdges38;
+            customizableEdges27.BottomRight = false;
+            customizableEdges27.TopRight = false;
+            this.bgPanel.CustomizableEdges = customizableEdges27;
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.bgPanel.FillColor = System.Drawing.Color.White;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.ShadowDecoration.BorderRadius = 15;
             this.bgPanel.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.bgPanel.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            this.bgPanel.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.bgPanel.ShadowDecoration.Depth = 5;
             this.bgPanel.ShadowDecoration.Enabled = true;
             this.bgPanel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
@@ -575,7 +647,7 @@ namespace LaundryPOS
             this.btnContinue.BorderRadius = 20;
             this.btnContinue.BorderThickness = 1;
             this.btnContinue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContinue.CustomizableEdges = customizableEdges33;
+            this.btnContinue.CustomizableEdges = customizableEdges22;
             this.btnContinue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnContinue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnContinue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -589,7 +661,7 @@ namespace LaundryPOS
             this.btnContinue.Location = new System.Drawing.Point(184, 430);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.ShadowDecoration.Color = System.Drawing.Color.LightGray;
-            this.btnContinue.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            this.btnContinue.ShadowDecoration.CustomizableEdges = customizableEdges23;
             this.btnContinue.ShadowDecoration.Depth = 5;
             this.btnContinue.Size = new System.Drawing.Size(40, 40);
             this.btnContinue.TabIndex = 23;
@@ -625,7 +697,7 @@ namespace LaundryPOS
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(99, 131);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            this.guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox2.Size = new System.Drawing.Size(214, 227);
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -635,7 +707,7 @@ namespace LaundryPOS
             // txtPath
             // 
             this.txtPath.BorderRadius = 7;
-            this.txtPath.CustomizableEdges = customizableEdges36;
+            this.txtPath.CustomizableEdges = customizableEdges25;
             this.txtPath.DefaultText = "";
             this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -649,82 +721,10 @@ namespace LaundryPOS
             this.txtPath.PasswordChar = '\0';
             this.txtPath.PlaceholderText = "";
             this.txtPath.SelectedText = "";
-            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            this.txtPath.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.txtPath.Size = new System.Drawing.Size(23, 36);
             this.txtPath.TabIndex = 4;
             this.txtPath.Visible = false;
-            // 
-            // lblIconValidation
-            // 
-            this.lblIconValidation.BackColor = System.Drawing.Color.White;
-            this.lblIconValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIconValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblIconValidation.Location = new System.Drawing.Point(224, 230);
-            this.lblIconValidation.Name = "lblIconValidation";
-            this.lblIconValidation.Size = new System.Drawing.Size(177, 23);
-            this.lblIconValidation.TabIndex = 29;
-            this.lblIconValidation.Text = "Employee picture is required";
-            this.lblIconValidation.Visible = false;
-            // 
-            // lblFirstNameValidation
-            // 
-            this.lblFirstNameValidation.BackColor = System.Drawing.Color.White;
-            this.lblFirstNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFirstNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFirstNameValidation.Location = new System.Drawing.Point(101, 335);
-            this.lblFirstNameValidation.Name = "lblFirstNameValidation";
-            this.lblFirstNameValidation.Size = new System.Drawing.Size(214, 23);
-            this.lblFirstNameValidation.TabIndex = 30;
-            this.lblFirstNameValidation.Text = "First name is invalid";
-            this.lblFirstNameValidation.Visible = false;
-            // 
-            // lblLastNameValidation
-            // 
-            this.lblLastNameValidation.BackColor = System.Drawing.Color.White;
-            this.lblLastNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLastNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLastNameValidation.Location = new System.Drawing.Point(320, 335);
-            this.lblLastNameValidation.Name = "lblLastNameValidation";
-            this.lblLastNameValidation.Size = new System.Drawing.Size(214, 23);
-            this.lblLastNameValidation.TabIndex = 31;
-            this.lblLastNameValidation.Text = "Last name is invalid";
-            this.lblLastNameValidation.Visible = false;
-            // 
-            // lblUsernameValidation
-            // 
-            this.lblUsernameValidation.BackColor = System.Drawing.Color.White;
-            this.lblUsernameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUsernameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblUsernameValidation.Location = new System.Drawing.Point(99, 86);
-            this.lblUsernameValidation.Name = "lblUsernameValidation";
-            this.lblUsernameValidation.Size = new System.Drawing.Size(302, 23);
-            this.lblUsernameValidation.TabIndex = 29;
-            this.lblUsernameValidation.Text = "Username is invalid. Please use letters or numbers only";
-            this.lblUsernameValidation.Visible = false;
-            // 
-            // lblPasswordValidation
-            // 
-            this.lblPasswordValidation.BackColor = System.Drawing.Color.White;
-            this.lblPasswordValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPasswordValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPasswordValidation.Location = new System.Drawing.Point(99, 190);
-            this.lblPasswordValidation.Name = "lblPasswordValidation";
-            this.lblPasswordValidation.Size = new System.Drawing.Size(285, 23);
-            this.lblPasswordValidation.TabIndex = 30;
-            this.lblPasswordValidation.Text = "Password must contain at least 4 characters";
-            this.lblPasswordValidation.Visible = false;
-            // 
-            // lblConfirmPWValidation
-            // 
-            this.lblConfirmPWValidation.BackColor = System.Drawing.Color.White;
-            this.lblConfirmPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblConfirmPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblConfirmPWValidation.Location = new System.Drawing.Point(99, 294);
-            this.lblConfirmPWValidation.Name = "lblConfirmPWValidation";
-            this.lblConfirmPWValidation.Size = new System.Drawing.Size(285, 23);
-            this.lblConfirmPWValidation.TabIndex = 31;
-            this.lblConfirmPWValidation.Text = "Passwords do not match";
-            this.lblConfirmPWValidation.Visible = false;
             // 
             // RegisterForm
             // 

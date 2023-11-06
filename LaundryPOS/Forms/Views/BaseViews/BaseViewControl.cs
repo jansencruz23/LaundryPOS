@@ -109,16 +109,5 @@ namespace LaundryPOS.Forms.Views
         {
             return decimal.TryParse(input, out value) && value > 0 && input.Length <= 6;
         }
-
-        protected bool IsValidName(Guna2TextBox textbox)
-        {
-            if (string.IsNullOrWhiteSpace(textbox.Text))
-            {
-                return false;
-            }
-
-            string pattern = @"^[a-zA-Z0-9!&*()-:',.|\s]*[a-zA-Z0-9]+[a-zA-Z0-9!&*()-:',.|\s]*$";
-            return Regex.IsMatch(textbox.Text, pattern);
-        }
     }
 }

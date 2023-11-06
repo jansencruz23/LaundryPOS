@@ -63,7 +63,7 @@ namespace LaundryPOS.Forms.Views
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please make sure fields are valid.", 
+                MessageBox.Show("Invalid item. Please make sure all fields are valid.", 
                     "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -78,9 +78,10 @@ namespace LaundryPOS.Forms.Views
 
         private bool ValidateInputs()
         {
-            bool isValid = true;
+            var isValid = true;
+            var isNameValid = RegexValidator.IsValidItemName(txtName.Text);
 
-            isValid &= ValidateField(!IsValidName(txtName), lblNameValidation);
+            isValid &= ValidateField(!isNameValid, lblNameValidation);
             isValid &= ValidateField(cbCategory.SelectedItem == null, lblCategoryValidation);
             isValid &= ValidateField(!IsValidDecimalInput(txtPrice.Text, out _), lblPriceValidation);
             isValid &= ValidateField(!IsValidDecimalInput(txtStock.Text, out _), lblStockValidation);
@@ -390,10 +391,9 @@ namespace LaundryPOS.Forms.Views
         {
             StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
                 btnAdminProfile, btnAdd, btnSave, btnUpdate, btnDelete,
-                btnPrint, btnLogout);
+                btnPrint, btnLogout, btnFile, btnSearch);
             StyleFontsLabel(18f, true, lblDetails, lblList);
             StyleFontsLabel(11.25f, false, lblName, lblCategory, lblPrice, lblStock);
-            StyleFontsButton(11.25f, btnFile, btnSearch);
             StyleFontsTextBox(11.25f, txtName, txtPrice, txtSearch, txtStock);
             StyleFontsLabel(8.25f, false, lblNameValidation, lblPriceValidation,
                 lblCategoryValidation, lblIconValidation, lblStockValidation);

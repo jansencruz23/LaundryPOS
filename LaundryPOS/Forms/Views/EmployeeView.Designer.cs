@@ -444,7 +444,7 @@
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(276, 33);
             this.lblDetails.TabIndex = 15;
-            this.lblDetails.Text = "EMPLOYEE DETAILS";
+            this.lblDetails.Text = "Employee Details";
             // 
             // lblName
             // 
@@ -582,7 +582,7 @@
             this.lblList.Name = "lblList";
             this.lblList.Size = new System.Drawing.Size(226, 46);
             this.lblList.TabIndex = 23;
-            this.lblList.Text = "EMPLOYEE LIST";
+            this.lblList.Text = "Employee List";
             // 
             // txtSearch
             // 
@@ -638,7 +638,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
             this.guna2Panel2.Controls.Add(this.tableLayoutPanel4);
             this.guna2Panel2.CustomizableEdges = customizableEdges25;
@@ -660,7 +660,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
             this.guna2Panel1.Controls.Add(this.txtAge);
             this.guna2Panel1.Controls.Add(this.txtBirthday);

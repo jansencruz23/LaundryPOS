@@ -477,7 +477,7 @@
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(201, 43);
             this.lblDetails.TabIndex = 18;
-            this.lblDetails.Text = "ITEM DETAILS";
+            this.lblDetails.Text = "Item Details";
             // 
             // lblStock
             // 
@@ -567,7 +567,7 @@
             this.lblList.Name = "lblList";
             this.lblList.Size = new System.Drawing.Size(200, 50);
             this.lblList.TabIndex = 20;
-            this.lblList.Text = "ITEM LIST";
+            this.lblList.Text = "Item List";
             // 
             // txtSearch
             // 

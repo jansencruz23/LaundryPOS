@@ -3,6 +3,8 @@ using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
 using LaundryPOS.Forms.Views.BaseViews;
+using Guna.UI2.WinForms;
+using System.Text.RegularExpressions;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -65,47 +67,17 @@ namespace LaundryPOS.Forms.Views
             employeeTable.DataSource = employeeList;
 
             HideUnwantedColumns();
-            ConfigureImageColumn();
-            HandleImageColumnFormatting();
+            ConfigureImageColumn(employeeTable);
+            HandleImageColumnFormatting(employeeTable);
         }
 
         private void HideUnwantedColumns()
         {
             employeeTable.Columns[nameof(Employee.Id)].Visible = false;
-            //employeeTable.Columns[nameof(Employee.Image)].Visible = false;
+            employeeTable.Columns[nameof(Employee.Image)].Visible = false;
             employeeTable.Columns[nameof(Employee.HashedPassword)].Visible = false;
             employeeTable.Columns[nameof(Employee.Salt)].Visible = false;
             employeeTable.Columns[nameof(Employee.IsActive)].Visible = false;
-        }
-
-        private void ConfigureImageColumn()
-        {
-            if (employeeTable.Columns["Image"] == null)
-            {
-                var imageColumn = new DataGridViewImageColumn
-                {
-                    HeaderText = "Image",
-                    Name = "Image",
-                    ImageLayout = DataGridViewImageCellLayout.Zoom
-                };
-                employeeTable.Columns.Add(imageColumn);
-                employeeTable.Columns["Image"].DisplayIndex = 0;
-            }
-        }
-
-        private void HandleImageColumnFormatting()
-        {
-            employeeTable.CellFormatting += (sender, e) =>
-            {
-                if (e.ColumnIndex == employeeTable.Columns["Image"].Index && e.RowIndex >= 0)
-                {
-                    var rowData = employeeTable.Rows[e.RowIndex].DataBoundItem as Employee;
-                    var imagePath = rowData?.Image;
-                    e.Value = !string.IsNullOrEmpty(imagePath)
-                        ? Image.FromFile(imagePath)
-                        : null;
-                }
-            };
         }
 
         private async Task RefreshData(string query = "")
