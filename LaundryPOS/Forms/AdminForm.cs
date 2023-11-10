@@ -2,7 +2,6 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Managers;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 namespace LaundryPOS.Forms
 {
@@ -24,7 +23,12 @@ namespace LaundryPOS.Forms
             InitializeComponent();
             lblTitle.Text = _title;
 
-            var itemView = new ItemView(_unitOfWork, styleManager, changeAdminViewDelegate);
+            ShowItemView();
+        }
+
+        private void ShowItemView()
+        {
+            var itemView = new ItemView(_unitOfWork, _styleManager, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
         }

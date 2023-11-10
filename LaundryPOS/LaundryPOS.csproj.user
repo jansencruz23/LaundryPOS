@@ -82,6 +82,9 @@
     <Compile Update="Forms\Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\TransactionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
