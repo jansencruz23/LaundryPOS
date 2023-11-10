@@ -85,6 +85,9 @@
     <Compile Update="Forms\Views\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\PendingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\TransactionView.cs">
       <SubType>UserControl</SubType>
     </Compile>

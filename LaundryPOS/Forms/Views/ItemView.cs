@@ -1,13 +1,9 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Helpers;
 using System.Data;
-using static LaundryPOS.Helpers.DGVPrinter;
 using LaundryPOS.Forms.Views.BaseViews;
-using System.Text.RegularExpressions;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -28,7 +24,7 @@ namespace LaundryPOS.Forms.Views
             StyleFonts();
         }
 
-        private void ShowLoadingForm()
+        public void ShowLoadingForm()
         {
             if (_loadingForm != null && !_loadingForm.IsDisposed)
             {
@@ -75,6 +71,9 @@ namespace LaundryPOS.Forms.Views
             ClearText();
             DisableFields();
             btnSave.Enabled = false;
+
+            MessageBox.Show("Item added successfully!", "Item Created Successfully",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private bool ValidateInputs()
@@ -144,8 +143,8 @@ namespace LaundryPOS.Forms.Views
             }
 
             HideUnwantedColumns();
-            ConfigureImageColumn(itemTable);
-            HandleImageColumnFormatting(itemTable);
+            //ConfigureImageColumn(itemTable);
+            //HandleImageColumnFormatting(itemTable);
         }
 
         private void HideUnwantedColumns()

@@ -7,6 +7,8 @@ namespace LaundryPOS.Forms.Views
 {
     public partial class MainView : UserControl
     {
+        private LoadingForm _loadingForm;
+
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
@@ -14,6 +16,8 @@ namespace LaundryPOS.Forms.Views
         private readonly Order orders;
         private IEnumerable<Item> allItems;
         private string _title;
+
+        private DateTime loadingStartTime;
 
         private decimal Total { get; set; } = default;
 
@@ -29,6 +33,7 @@ namespace LaundryPOS.Forms.Views
 
             InitializeComponent();
             InitializeTimer();
+            ShowLoadingForm();
         }
 
         private async void MainView_Load(object sender, EventArgs e)
@@ -38,6 +43,37 @@ namespace LaundryPOS.Forms.Views
             await DisplayAppInfo();
             await DisplayItems();
         }
+
+        public void ShowLoadingForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            panelCover.Dock = DockStyle.Fill;
+            panelRight.Visible = false;
+            loadingStartTime = DateTime.Now;
+            _loadingForm = new LoadingForm();
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
+
+            panelCover.Dock = DockStyle.None;
+            panelRight.Visible = true;
+            panelCover.Visible = false;
+
+            TimeSpan elapsedTime = DateTime.Now - loadingStartTime;
+            MessageBox.Show("Time elapsed: " + elapsedTime.ToString());
+        }
+
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
         {

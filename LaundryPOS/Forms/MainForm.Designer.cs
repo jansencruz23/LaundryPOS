@@ -47,7 +47,7 @@
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnPending = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMain = new Guna.UI2.WinForms.Guna2Button();
             this.imgPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.bgPanel.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -87,7 +87,7 @@
             this.panelLeft.BackColor = System.Drawing.Color.White;
             this.panelLeft.Controls.Add(this.btnLogout);
             this.panelLeft.Controls.Add(this.btnPending);
-            this.panelLeft.Controls.Add(this.guna2Button1);
+            this.panelLeft.Controls.Add(this.btnMain);
             this.panelLeft.Controls.Add(this.imgPic);
             this.panelLeft.CustomizableEdges = customizableEdges10;
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -154,29 +154,30 @@
             this.btnPending.TextOffset = new System.Drawing.Point(-8, 15);
             this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
             // 
-            // guna2Button1
+            // btnMain
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 12;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomizableEdges = customizableEdges7;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(8, -7);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button1.Location = new System.Drawing.Point(15, 126);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.guna2Button1.Size = new System.Drawing.Size(70, 70);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Home";
-            this.guna2Button1.TextOffset = new System.Drawing.Point(-7, 15);
+            this.btnMain.BackColor = System.Drawing.Color.Transparent;
+            this.btnMain.BorderRadius = 12;
+            this.btnMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMain.CustomizableEdges = customizableEdges7;
+            this.btnMain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.btnMain.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnMain.Image = ((System.Drawing.Image)(resources.GetObject("btnMain.Image")));
+            this.btnMain.ImageOffset = new System.Drawing.Point(8, -7);
+            this.btnMain.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnMain.Location = new System.Drawing.Point(15, 126);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.btnMain.Size = new System.Drawing.Size(70, 70);
+            this.btnMain.TabIndex = 0;
+            this.btnMain.Text = "Home";
+            this.btnMain.TextOffset = new System.Drawing.Point(-7, 15);
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
             // imgPic
             // 
@@ -208,7 +209,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1020, 600);
             this.Name = "MainForm";
-            this.Opacity = 0D;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -224,7 +224,7 @@
         private Guna.UI2.WinForms.Guna2Panel bgPanel;
         private Guna.UI2.WinForms.Guna2CirclePictureBox imgPic;
         private Guna.UI2.WinForms.Guna2Panel panelLeft;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnMain;
         private Guna.UI2.WinForms.Guna2Button btnPending;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Panel panelView;

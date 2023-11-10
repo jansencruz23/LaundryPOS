@@ -14,6 +14,9 @@ namespace LaundryPOS.Forms
 
         private DateTime loadingStartTime;
 
+        private readonly MainView _mainView;
+        private readonly PendingView _pendingView;
+
         public MainForm(IUnitOfWork unitOfWork,
             IStyleManager styleManager,
             Employee employee)
@@ -22,24 +25,29 @@ namespace LaundryPOS.Forms
             _styleManager = styleManager;
             _employee = employee;
 
+            _mainView = new MainView(unitOfWork, styleManager, employee);
+            _pendingView = new PendingView(unitOfWork, styleManager);
+
             InitializeComponent();
-            ShowLoadingForm();
+            //ShowLoadingForm();
             DisplayEmployeeInfo();
             ShowMainView();
         }
 
         private void ShowMainView()
         {
-            var mainView = new MainView(_unitOfWork, _styleManager, _employee);
-            panelView.Controls.Add(mainView);
-            mainView.Dock = DockStyle.Fill;
+            panelView.Controls.Clear();
+            panelView.Controls.Add(_mainView);
+            _mainView.ShowLoadingForm();
+            _mainView.Dock = DockStyle.Fill;
         }
 
-        private void ShowUnpaidView()
+        private void ShowPendingView()
         {
-            var mainView = new MainView(_unitOfWork, _styleManager, _employee);
-            panelView.Controls.Add(mainView);
-            mainView.Dock = DockStyle.Fill;
+            panelView.Controls.Clear();
+            var pendingView = new PendingView(_unitOfWork, _styleManager);
+            panelView.Controls.Add(pendingView);
+            pendingView.Dock = DockStyle.Fill;
         }
 
         private void ShowLoadingForm()
@@ -88,11 +96,7 @@ namespace LaundryPOS.Forms
 
         private void btnPending_Click(object sender, EventArgs e)
         {
-            //Hide();
-            //var form = new UnpaidForm(_unitOfWork, _styleManager,
-            //    _employee, _title);
-            //form.FormClosed += (s, args) => Close();
-            //form.Show();
+            ShowPendingView();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -117,6 +121,11 @@ namespace LaundryPOS.Forms
             string appPath = Application.ExecutablePath;
             System.Diagnostics.Process.Start(appPath);
             Application.Exit();
+        }
+
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            ShowMainView();
         }
     }
 }

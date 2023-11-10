@@ -153,7 +153,7 @@ namespace LaundryPOS.Managers
                     dataGridView.AlternatingRowsDefaultCellStyle.Font = _fontManager.Helvetica(11.25f);
                 }
 
-                dataGridView.RowTemplate.Height = 35;
+                dataGridView.RowTemplate.Height = 50;
                 dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             }
             else

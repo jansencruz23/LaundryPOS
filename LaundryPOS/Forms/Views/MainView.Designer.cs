@@ -55,6 +55,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.tableBody = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -81,6 +83,7 @@
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.panelCart = new System.Windows.Forms.FlowLayoutPanel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
+            this.panelCover = new Guna.UI2.WinForms.Guna2Panel();
             this.panelBody.SuspendLayout();
             this.tableBody.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -503,7 +506,7 @@
             this.panelCart.Location = new System.Drawing.Point(21, 158);
             this.panelCart.Margin = new System.Windows.Forms.Padding(0, 0, 0, 105);
             this.panelCart.Name = "panelCart";
-            this.panelCart.Size = new System.Drawing.Size(591, 1309);
+            this.panelCart.Size = new System.Drawing.Size(385, 548);
             this.panelCart.TabIndex = 7;
             this.panelCart.WrapContents = false;
             // 
@@ -511,10 +514,22 @@
             // 
             this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick);
             // 
+            // panelCover
+            // 
+            this.panelCover.BackColor = System.Drawing.Color.White;
+            this.panelCover.CustomizableEdges = customizableEdges27;
+            this.panelCover.FillColor = System.Drawing.Color.White;
+            this.panelCover.Location = new System.Drawing.Point(897, 129);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.panelCover.Size = new System.Drawing.Size(200, 100);
+            this.panelCover.TabIndex = 26;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelCover);
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelBody);
             this.Name = "MainView";
@@ -563,5 +578,6 @@
         private Guna.UI2.WinForms.Guna2Button btnClear;
         private FlowLayoutPanel panelCart;
         private System.Windows.Forms.Timer timerDate;
+        private Guna.UI2.WinForms.Guna2Panel panelCover;
     }
 }

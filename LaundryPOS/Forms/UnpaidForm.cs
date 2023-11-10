@@ -2,7 +2,6 @@
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Data;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -38,7 +37,6 @@ namespace LaundryPOS.Forms.Views
 
         private async void UnpaidForm_Load(object sender, EventArgs e)
         {
-
             await InitializeTable();
             await ApplyTheme();
         }
