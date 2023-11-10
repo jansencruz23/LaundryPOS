@@ -96,6 +96,9 @@ namespace LaundryPOS.Forms.Views
             txtName.Enabled = false;
             btnFile.Enabled = false;
             btnSave.Enabled = false;
+
+            MessageBox.Show("Category added successfully!", "Category Created Successfully",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private bool ValidateInputs()
