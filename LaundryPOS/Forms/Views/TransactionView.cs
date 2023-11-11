@@ -141,8 +141,8 @@ namespace LaundryPOS.Forms.Views
             viewBtn.DefaultCellStyle.SelectionForeColor = Color.White;
             viewBtn.DefaultCellStyle.SelectionBackColor = Color.Black;
 
-            int columnIndex = 0;
-            if (transactionTable.Columns["Pay Now"] == null)
+            int columnIndex = transactionTable.ColumnCount;
+            if (transactionTable.Columns["View Receipt"] == null)
             {
                 transactionTable.Columns.Insert(columnIndex, viewBtn);
             }
@@ -173,6 +173,7 @@ namespace LaundryPOS.Forms.Views
             if (columnName == "View Receipt")
             {
                 e.CellStyle.BackColor = ColorTranslator.FromHtml("#303030");
+                e.CellStyle.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
             }
         }
 

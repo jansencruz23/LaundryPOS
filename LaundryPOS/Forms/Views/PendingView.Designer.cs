@@ -179,6 +179,8 @@
             // 
             // unpaidTable
             // 
+            this.unpaidTable.AllowUserToAddRows = false;
+            this.unpaidTable.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.unpaidTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.unpaidTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -193,12 +195,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.unpaidTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.unpaidTable.ColumnHeadersHeight = 25;
+            this.unpaidTable.ColumnHeadersHeight = 40;
             this.unpaidTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -206,6 +209,7 @@
             this.unpaidTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.unpaidTable.Location = new System.Drawing.Point(23, 144);
             this.unpaidTable.Name = "unpaidTable";
+            this.unpaidTable.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -215,6 +219,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.unpaidTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.unpaidTable.RowHeadersVisible = false;
+            this.unpaidTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.unpaidTable.RowTemplate.Height = 50;
             this.unpaidTable.Size = new System.Drawing.Size(1183, 657);
             this.unpaidTable.TabIndex = 0;
@@ -230,8 +235,8 @@
             this.unpaidTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.unpaidTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.unpaidTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.unpaidTable.ThemeStyle.HeaderStyle.Height = 25;
-            this.unpaidTable.ThemeStyle.ReadOnly = false;
+            this.unpaidTable.ThemeStyle.HeaderStyle.Height = 40;
+            this.unpaidTable.ThemeStyle.ReadOnly = true;
             this.unpaidTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.unpaidTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.unpaidTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

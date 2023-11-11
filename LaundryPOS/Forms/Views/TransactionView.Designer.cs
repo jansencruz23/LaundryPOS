@@ -110,6 +110,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -118,6 +119,7 @@
             this.transactionTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.transactionTable.Location = new System.Drawing.Point(3, 113);
             this.transactionTable.Name = "transactionTable";
+            this.transactionTable.ReadOnly = true;
             this.transactionTable.RowHeadersVisible = false;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.transactionTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -137,7 +139,7 @@
             this.transactionTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.transactionTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.transactionTable.ThemeStyle.HeaderStyle.Height = 25;
-            this.transactionTable.ThemeStyle.ReadOnly = false;
+            this.transactionTable.ThemeStyle.ReadOnly = true;
             this.transactionTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.transactionTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.transactionTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

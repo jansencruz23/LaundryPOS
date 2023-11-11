@@ -1,7 +1,9 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Linq.Expressions;
+using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LaundryPOS.Forms.Views
@@ -116,9 +118,9 @@ namespace LaundryPOS.Forms.Views
                 payBtn.DefaultCellStyle.SelectionForeColor = Color.White;
                 payBtn.DefaultCellStyle.SelectionBackColor = Color.Black;
 
-                int columnIndex = 0;
+                int columnIndex = unpaidTable.ColumnCount;
                 if (unpaidTable.Columns["Pay Now"] == null)
-                { 
+                {
                     unpaidTable.Columns.Insert(columnIndex, payBtn);
                 }
             }
@@ -235,7 +237,10 @@ namespace LaundryPOS.Forms.Views
 
         private async void unpaidTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            var senderGrid = (Guna2DataGridView) sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
             {
                 var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
                 var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
