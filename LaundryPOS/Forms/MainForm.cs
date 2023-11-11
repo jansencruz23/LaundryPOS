@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Models;
 
@@ -94,11 +95,6 @@ namespace LaundryPOS.Forms
             }
         }
 
-        private void btnPending_Click(object sender, EventArgs e)
-        {
-            ShowPendingView();
-        }
-
         private void btnProfile_Click(object sender, EventArgs e)
         {
             var form = new ProfileForm(_unitOfWork, _styleManager, _employee);
@@ -107,8 +103,8 @@ namespace LaundryPOS.Forms
       
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmResult = MessageBox.Show("Are you sure you want to log out?", 
+                "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmResult == DialogResult.Yes)
             {
@@ -125,7 +121,32 @@ namespace LaundryPOS.Forms
 
         private void btnMain_Click(object sender, EventArgs e)
         {
+            UpdateViewButton(btnMain, "./Icons/homepage (1).png", 
+                Color.FromArgb(248, 248, 248), 
+                Color.FromArgb(30, 30, 30));
+            UpdateViewButton(btnPending, "./Icons/time.png", 
+                Color.White, 
+                Color.FromArgb(204, 204, 204));
             ShowMainView();
+        }
+
+        private void btnPending_Click(object sender, EventArgs e)
+        {
+            UpdateViewButton(btnPending, "./Icons/timeblack.png", 
+                Color.FromArgb(248, 248, 248), 
+                Color.FromArgb(30, 30, 30));
+            UpdateViewButton(btnMain, "./Icons/homepagewhte.png", 
+                Color.White, 
+                Color.FromArgb(204, 204, 204));
+            ShowPendingView();
+        }
+
+        private void UpdateViewButton(Guna2Button button, string imagePath, 
+            Color fillColor, Color foreColor)
+        {
+            button.Image = Image.FromFile(imagePath);
+            button.FillColor = fillColor;
+            button.ForeColor = foreColor;
         }
     }
 }

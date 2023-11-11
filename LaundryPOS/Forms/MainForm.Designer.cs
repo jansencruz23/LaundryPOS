@@ -160,9 +160,9 @@
             this.btnMain.BorderRadius = 12;
             this.btnMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMain.CustomizableEdges = customizableEdges7;
-            this.btnMain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMain.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.btnMain.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.btnMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.btnMain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnMain.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.btnMain.Font = new System.Drawing.Font("Helvetica", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
