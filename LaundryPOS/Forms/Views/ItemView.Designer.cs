@@ -186,6 +186,7 @@
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Location = new System.Drawing.Point(264, 69);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtName.MaxLength = 20;
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "eg. Item";

@@ -54,7 +54,7 @@
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
             this.lblName.Location = new System.Drawing.Point(106, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(129, 18);
+            this.lblName.Size = new System.Drawing.Size(181, 18);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Jollibee";
             // 
@@ -75,7 +75,7 @@
             this.lblSubTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(35)))), ((int)(((byte)(36)))));
             this.lblSubTotal.Location = new System.Drawing.Point(107, 64);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(82, 22);
+            this.lblSubTotal.Size = new System.Drawing.Size(154, 22);
             this.lblSubTotal.TabIndex = 4;
             this.lblSubTotal.Text = "P203.23";
             // 

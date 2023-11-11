@@ -123,7 +123,7 @@ namespace LaundryPOS.Forms
         {
             UpdateViewButton(btnMain, "./Icons/homepage (1).png", 
                 Color.FromArgb(248, 248, 248), 
-                Color.FromArgb(30, 30, 30));
+                Color.FromArgb(48,48,48));
             UpdateViewButton(btnPending, "./Icons/time.png", 
                 Color.White, 
                 Color.FromArgb(204, 204, 204));
@@ -134,7 +134,7 @@ namespace LaundryPOS.Forms
         {
             UpdateViewButton(btnPending, "./Icons/timeblack.png", 
                 Color.FromArgb(248, 248, 248), 
-                Color.FromArgb(30, 30, 30));
+                Color.FromArgb(48,48,48));
             UpdateViewButton(btnMain, "./Icons/homepagewhte.png", 
                 Color.White, 
                 Color.FromArgb(204, 204, 204));

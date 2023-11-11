@@ -519,9 +519,9 @@ namespace LaundryPOS.Forms
             // 
             this.lblTotal.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(135, 116);
+            this.lblTotal.Location = new System.Drawing.Point(54, 123);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(195, 25);
+            this.lblTotal.Size = new System.Drawing.Size(274, 25);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -616,7 +616,7 @@ namespace LaundryPOS.Forms
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(54, 119);
+            this.label3.Location = new System.Drawing.Point(265, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 22);
             this.label3.TabIndex = 21;

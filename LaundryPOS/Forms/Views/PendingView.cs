@@ -92,7 +92,7 @@ namespace LaundryPOS.Forms.Views
                 unpaidTable.Columns["EmployeeId"].Visible = false;
                 unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
                 unpaidTable.Columns["TransactionId"].HeaderText = "Transaction #";
-                
+
                 unpaidTable.Columns.Add("Quantity", "Quantity");
                 unpaidTable.Columns.Add("Item Price", "Item Price");
                 unpaidTable.Columns.Add("SubTotal", "SubTotal");
@@ -101,6 +101,24 @@ namespace LaundryPOS.Forms.Views
                 {
                     DataGridViewColumn totalColumn = unpaidTable.Columns["Total"];
                     totalColumn.DisplayIndex = unpaidTable.ColumnCount - 1;
+                }
+
+                var payBtn = new DataGridViewButtonColumn
+                {
+                    Name = "Pay Now",
+                    Text = "Pay Now",
+                    UseColumnTextForButtonValue = true
+                };
+
+                payBtn.DefaultCellStyle.ForeColor = Color.White;
+                payBtn.FlatStyle = FlatStyle.Flat;
+                payBtn.DefaultCellStyle.SelectionForeColor = Color.White;
+                payBtn.DefaultCellStyle.SelectionBackColor = Color.Black;
+
+                int columnIndex = 0;
+                if (unpaidTable.Columns["Pay Now"] == null)
+                { 
+                    unpaidTable.Columns.Insert(columnIndex, payBtn);
                 }
             }
         }
@@ -125,6 +143,11 @@ namespace LaundryPOS.Forms.Views
 
                 e.Value = string.Join("\n", columnData);
                 e.FormattingApplied = true;
+            }
+
+            if (columnName == "Pay Now")
+            {
+                e.CellStyle.BackColor = ColorTranslator.FromHtml("#303030");
             }
         }
 
@@ -178,7 +201,7 @@ namespace LaundryPOS.Forms.Views
         {
             DateTime startDate = default;
             DateTime endDate = default;
-            Expression<Func<TransactionItem, bool>> filterPredicate = ti => ti.Transaction.IsCompleted;
+            Expression<Func<TransactionItem, bool>> filterPredicate = ti => !ti.Transaction.IsCompleted;
 
             switch (filter)
             {
@@ -219,6 +242,18 @@ namespace LaundryPOS.Forms.Views
             }
 
             return filterPredicate;
+        }
+
+        private void unpaidTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
+                var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
+                    _unitOfWork, _employee, _styleManager, selectedTransaction.TransactionId);
+
+                paymentForm.ShowDialog();
+            }
         }
     }
 }

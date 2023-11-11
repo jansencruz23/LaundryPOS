@@ -239,7 +239,7 @@
             this.unpaidTable.ThemeStyle.RowsStyle.Height = 50;
             this.unpaidTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.unpaidTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.unpaidTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.unpaidTable_CellContentDoubleClick);
+            this.unpaidTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.unpaidTable_CellClick);
             this.unpaidTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.unpaidTable_CellFormatting);
             // 
             // PendingView
