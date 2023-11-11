@@ -81,8 +81,18 @@ namespace LaundryPOS.Forms.Views
                 .OfType<CartControl>()
                 .FirstOrDefault(cart => cart.CartItem.Item.Id == e.CartItem.Item.Id);
 
+            var item = allItems.FirstOrDefault(i => i.Id == e.CartItem.Item.Id);
+
             if (existingCartItem != null)
             {
+                if (e.CartItem.Quantity + existingCartItem.CartItem.Quantity > item.Stock)
+                {
+                    MessageBox.Show($"{item.Name} - Not enought stocks.",
+                        "Insufficient Stocks", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+
                 existingCartItem.CartItem.Quantity = (sender is ItemControl)
                     ? existingCartItem.CartItem.Quantity + e.CartItem.Quantity
                     : e.CartItem.Quantity;

@@ -214,7 +214,7 @@ namespace LaundryPOS.Forms.Views
             {
                 return ti => ti.Transaction.TransactionDate >= startDate
                     && ti.Transaction.TransactionDate <= endDate
-                    && ti.Transaction.IsCompleted;
+                    && !ti.Transaction.IsCompleted;
             }
 
             return filterPredicate;
