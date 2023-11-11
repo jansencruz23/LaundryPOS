@@ -2,6 +2,7 @@
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Linq.Expressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -159,18 +160,6 @@ namespace LaundryPOS.Forms.Views
             { "SubTotal", vm => vm.Order.Items.Select(s => (object)s.SubTotal) },
         };
 
-        private void unpaidTable_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var selectedTransaction = (GroupedTransactionViewModel)unpaidTable.Rows[e.RowIndex].DataBoundItem;
-                var paymentForm = new PaymentForm(selectedTransaction.Order, selectedTransaction.Total,
-                    _unitOfWork, _employee, _styleManager, selectedTransaction.TransactionId);
-
-                paymentForm.ShowDialog();
-            }
-        }
-
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
@@ -178,8 +167,8 @@ namespace LaundryPOS.Forms.Views
 
         private async Task RefreshData(string query = "")
         {
-            await DisplayPending(ti => !ti.Transaction.IsCompleted
-                    && ti.TransactionId.ToString().Contains(query));
+            await DisplayPending(ti => !ti.Transaction.IsCompleted 
+                && ti.TransactionId.ToString().Contains(query));
         }
 
         private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,7 +233,7 @@ namespace LaundryPOS.Forms.Views
             return filterPredicate;
         }
 
-        private void unpaidTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void unpaidTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -253,7 +242,18 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork, _employee, _styleManager, selectedTransaction.TransactionId);
 
                 paymentForm.ShowDialog();
+                await RefreshDataDaily();
             }
+        }
+
+        private async Task RefreshDataDaily()
+        {
+            var startDate = DateTime.Today;
+            var endDate = startDate.AddDays(NEXT_DAY);
+
+            await DisplayPending(ti => !ti.Transaction.IsCompleted
+                && ti.Transaction.TransactionDate >= startDate
+                && ti.Transaction.TransactionDate <= endDate);
         }
     }
 }

@@ -128,6 +128,24 @@ namespace LaundryPOS.Forms.Views
                 DataGridViewColumn totalColumn = transactionTable.Columns["Total"];
                 totalColumn.DisplayIndex = transactionTable.ColumnCount - 1;
             }
+
+            var viewBtn = new DataGridViewButtonColumn
+            {
+                Name = "View Receipt",
+                Text = "View Receipt",
+                UseColumnTextForButtonValue = true
+            };
+
+            viewBtn.DefaultCellStyle.ForeColor = Color.White;
+            viewBtn.FlatStyle = FlatStyle.Flat;
+            viewBtn.DefaultCellStyle.SelectionForeColor = Color.White;
+            viewBtn.DefaultCellStyle.SelectionBackColor = Color.Black;
+
+            int columnIndex = 0;
+            if (transactionTable.Columns["Pay Now"] == null)
+            {
+                transactionTable.Columns.Insert(columnIndex, viewBtn);
+            }
         }
 
         private void transactionTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -150,6 +168,11 @@ namespace LaundryPOS.Forms.Views
 
                 e.Value = string.Join("\n", columnData);
                 e.FormattingApplied = true;
+            }
+
+            if (columnName == "View Receipt")
+            {
+                e.CellStyle.BackColor = ColorTranslator.FromHtml("#303030");
             }
         }
 
