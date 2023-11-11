@@ -1,11 +1,9 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models.ViewModels;
 using LaundryPOS.Models;
-using LaundryPOS.Helpers;
 using System.Data;
 using LaundryPOS.Delegates;
 using System.Linq.Expressions;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -14,7 +12,7 @@ namespace LaundryPOS.Forms.Views
         private LoadingForm _loadingForm;
         private readonly List<Employee> _employeeCache;
 
-        #region -- CONSTANTS --
+        #region -- TIME CONSTANTS --
         private const int DAYS_IN_WEEK = 7;
         private const int NEXT_DAY = 1;
         private const int NEXT_MONTH = 1;

@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PendingView));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PendingView));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,13 +64,13 @@
             this.guna2Panel2.BorderRadius = 15;
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.unpaidTable);
-            this.guna2Panel2.CustomizableEdges = customizableEdges7;
+            this.guna2Panel2.CustomizableEdges = customizableEdges9;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(30, 29);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 15;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.Gray;
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.guna2Panel2.ShadowDecoration.Depth = 10;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(4, 4, 12, 12);
@@ -76,16 +79,47 @@
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Controls.Add(this.cbFilter);
             this.guna2Panel3.Controls.Add(this.label1);
             this.guna2Panel3.Controls.Add(this.btnSearch);
             this.guna2Panel3.Controls.Add(this.txtSearch);
-            this.guna2Panel3.CustomizableEdges = customizableEdges5;
+            this.guna2Panel3.CustomizableEdges = customizableEdges7;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.guna2Panel3.Size = new System.Drawing.Size(1228, 100);
+            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2Panel3.Size = new System.Drawing.Size(1228, 138);
             this.guna2Panel3.TabIndex = 5;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbFilter.BorderRadius = 5;
+            this.cbFilter.BorderThickness = 0;
+            this.cbFilter.CustomizableEdges = customizableEdges1;
+            this.cbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.cbFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFilter.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbFilter.ItemHeight = 30;
+            this.cbFilter.Items.AddRange(new object[] {
+            "All",
+            "Daily",
+            "Weekly",
+            "Monthly",
+            "Yearly"});
+            this.cbFilter.Location = new System.Drawing.Point(875, 83);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(14, 10, 0, 10);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.cbFilter.Size = new System.Drawing.Size(321, 36);
+            this.cbFilter.StartIndex = 1;
+            this.cbFilter.TabIndex = 26;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -101,16 +135,16 @@
             // 
             this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSearch.BorderRadius = 7;
-            this.btnSearch.CustomizableEdges = customizableEdges1;
+            this.btnSearch.CustomizableEdges = customizableEdges3;
             this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSearch.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1057, 30);
+            this.btnSearch.Location = new System.Drawing.Point(1055, 30);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.btnSearch.Size = new System.Drawing.Size(141, 40);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
@@ -120,7 +154,7 @@
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSearch.BorderRadius = 7;
-            this.txtSearch.CustomizableEdges = customizableEdges3;
+            this.txtSearch.CustomizableEdges = customizableEdges5;
             this.txtSearch.DefaultText = "";
             this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -132,13 +166,13 @@
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(15, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.txtSearch.Location = new System.Drawing.Point(691, 30);
+            this.txtSearch.Location = new System.Drawing.Point(692, 30);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search using Employee or TransactionId";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.txtSearch.Size = new System.Drawing.Size(337, 40);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextOffset = new System.Drawing.Point(5, 0);
@@ -170,7 +204,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.unpaidTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.unpaidTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.unpaidTable.Location = new System.Drawing.Point(23, 106);
+            this.unpaidTable.Location = new System.Drawing.Point(23, 144);
             this.unpaidTable.Name = "unpaidTable";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -182,7 +216,7 @@
             this.unpaidTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.unpaidTable.RowHeadersVisible = false;
             this.unpaidTable.RowTemplate.Height = 50;
-            this.unpaidTable.Size = new System.Drawing.Size(1183, 695);
+            this.unpaidTable.Size = new System.Drawing.Size(1183, 657);
             this.unpaidTable.TabIndex = 0;
             this.unpaidTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.unpaidTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -231,5 +265,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2DataGridView unpaidTable;
+        private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
     }
 }

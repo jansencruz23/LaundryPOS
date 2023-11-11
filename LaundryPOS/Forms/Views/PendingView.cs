@@ -1,6 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
+using System.Linq.Expressions;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -10,6 +11,19 @@ namespace LaundryPOS.Forms.Views
         private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
         private readonly List<Employee> _employeeCache;
+
+        #region -- TIME CONSTANTS --
+        private const int DAYS_IN_WEEK = 7;
+        private const int NEXT_DAY = 1;
+        private const int NEXT_MONTH = 1;
+        private const int FIRST_DAY = 1;
+        private const int FIRST_MONTH = 1;
+        private const int LAST_MONTH = 12;
+        private const int LAST_DAY = 31;
+        private const int LAST_HOUR = 23;
+        private const int LAST_MINUTE = 59;
+        private const int LAST_SECOND = 59;
+        #endregion
 
         public PendingView(IUnitOfWork unitOfWork,
             IStyleManager styleManager)
@@ -31,7 +45,9 @@ namespace LaundryPOS.Forms.Views
 
         private async void PendingView_Load(object sender, EventArgs e)
         {
-            await InitializeTable();
+            var filter = cbFilter.SelectedItem?.ToString()!;
+            var expression = GetDateExpression(filter);
+            await DisplayPending(expression);
             await ApplyTheme();
         }
 
@@ -41,16 +57,13 @@ namespace LaundryPOS.Forms.Views
             await _styleManager.Theme.ApplyThemeToButton(btnSearch);
         }
 
-        private async Task InitializeTable(string query = "")
+        private async Task DisplayPending(Expression<Func<TransactionItem, bool>> filter)
         {
             await LoadEmployeeData();
 
             var transactionItems = await _unitOfWork.TransactionItemRepo
-                .Get(filter: ti => !ti.Transaction.IsCompleted
-                    && (ti.TransactionId.ToString().Contains(query)
-                    || ti.Transaction.Employee.LastName.Contains(query)
-                    || ti.Transaction.Employee.FirstName.Contains(query)),
-                includeProperties: "Item,Transaction");
+                .Get(filter: filter, includeProperties: "Item,Transaction",
+                    orderBy: ti => ti.OrderByDescending(ti => ti.Transaction.TransactionDate));
 
             var groupedTransactions = transactionItems
                 .GroupBy(ti => ti.TransactionId)
@@ -141,7 +154,70 @@ namespace LaundryPOS.Forms.Views
 
         private async Task RefreshData(string query = "")
         {
-            await InitializeTable(query);
+            await DisplayPending(ti => !ti.Transaction.IsCompleted
+                    && ti.TransactionId.ToString().Contains(query));
+        }
+
+        private async void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var filter = cbFilter.SelectedItem?.ToString()!;
+
+            if (string.IsNullOrEmpty(filter))
+            {
+                MessageBox.Show("Invalid filter", "Filter Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var filterPredicate = GetDateExpression(filter);
+            await DisplayPending(filterPredicate);
+        }
+
+        private Expression<Func<TransactionItem, bool>> GetDateExpression(string filter)
+        {
+            DateTime startDate = default;
+            DateTime endDate = default;
+            Expression<Func<TransactionItem, bool>> filterPredicate = ti => ti.Transaction.IsCompleted;
+
+            switch (filter)
+            {
+                case "Daily":
+                    startDate = DateTime.Today;
+                    endDate = startDate.AddDays(NEXT_DAY);
+                    break;
+
+                case "Weekly":
+                    startDate = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+                    endDate = startDate.AddDays(DAYS_IN_WEEK);
+                    break;
+
+                case "Monthly":
+                    startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    endDate = startDate.AddMonths(NEXT_MONTH);
+                    break;
+
+                case "Yearly":
+                    startDate = new DateTime(DateTime.Today.Year, FIRST_MONTH, FIRST_DAY);
+                    endDate = new DateTime(DateTime.Today.Year, LAST_MONTH, LAST_DAY, LAST_HOUR, LAST_MINUTE, LAST_SECOND);
+                    break;
+
+                case "All":
+                    break;
+
+                default:
+                    MessageBox.Show("Invalid filter", "Filter Failed",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+
+            if (filter != "All")
+            {
+                return ti => ti.Transaction.TransactionDate >= startDate
+                    && ti.Transaction.TransactionDate <= endDate
+                    && ti.Transaction.IsCompleted;
+            }
+
+            return filterPredicate;
         }
     }
 }
