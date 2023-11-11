@@ -4,6 +4,9 @@ using LaundryPOS.Models;
 using System.Data;
 using LaundryPOS.Delegates;
 using System.Linq.Expressions;
+using Guna.UI2.WinForms;
+using LaundryPOS.Migrations;
+using System.Xml.Linq;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -287,6 +290,23 @@ namespace LaundryPOS.Forms.Views
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             await RefreshData(txtSearch.Text);
+        }
+
+        private async void transactionTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (Guna2DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                var selectedTransaction = (GroupedTransactionViewModel)transactionTable
+                    .Rows[e.RowIndex].DataBoundItem;
+                var transaction = await _unitOfWork.TransactionRepo
+                    .GetByID(selectedTransaction.TransactionId);
+                var receiptForm = new ReceiptForm(_unitOfWork, transaction);
+
+                receiptForm.ShowDialog();
+            }
         }
     }
 }
