@@ -8,6 +8,7 @@ namespace LaundryPOS.Forms
     {
         private readonly IStyleManager _styleManager;
         public int Quantity { get; set; }
+        private const int MINIMUM_QUANTITY = 1;
 
         public QuantityForm(IStyleManager styleManager)
         {
@@ -65,7 +66,10 @@ namespace LaundryPOS.Forms
         private void btnMinus_Click(object sender, EventArgs e)
         {
             int.TryParse(txtQuantity.Text, out int quantity);
-            txtQuantity.Text = (--quantity).ToString();
+            if (quantity > MINIMUM_QUANTITY)
+            {
+                txtQuantity.Text = (--quantity).ToString();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
