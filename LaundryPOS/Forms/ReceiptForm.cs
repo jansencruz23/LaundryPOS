@@ -44,6 +44,7 @@ namespace LaundryPOS.Forms
             reportViewer.LocalReport.DataSources.Add(transactionItemDataSource);
             reportViewer.LocalReport.DataSources.Add(transactionDataSource);
             reportViewer.LocalReport.DataSources.Add(employeeDataSource);
+            reportViewer.ZoomPercent = 150;
 
             reportViewer.RefreshReport();
         }
