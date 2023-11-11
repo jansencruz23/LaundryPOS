@@ -117,6 +117,7 @@ namespace LaundryPOS.Forms.Views
 
             transactionTable.Columns["EmployeeId"].Visible = false;
             transactionTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
+            transactionTable.Columns["TransactionId"].HeaderText = "Transaction #";
 
             transactionTable.Columns.Add("Quantity", "Quantity");
             transactionTable.Columns.Add("Item Price", "Item Price");

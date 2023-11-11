@@ -91,7 +91,8 @@ namespace LaundryPOS.Forms.Views
 
                 unpaidTable.Columns["EmployeeId"].Visible = false;
                 unpaidTable.Columns["TransactionDateTime"].HeaderText = "Transaction Date";
-
+                unpaidTable.Columns["TransactionId"].HeaderText = "Transaction #";
+                
                 unpaidTable.Columns.Add("Quantity", "Quantity");
                 unpaidTable.Columns.Add("Item Price", "Item Price");
                 unpaidTable.Columns.Add("SubTotal", "SubTotal");
