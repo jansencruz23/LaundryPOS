@@ -46,13 +46,25 @@
     <Compile Update="Forms\UpdateProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Views\AdminProfileView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Forms\CustomControls\ItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\AppSettingsView.cs">
+    <Compile Update="Forms\Views\AdminViews\AdminProfileView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\AdminViews\AppSettingsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\AdminViews\CategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\AdminViews\EmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\AdminViews\ItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Views\AdminViews\TransactionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\UnpaidForm.cs">
@@ -73,22 +85,10 @@
     <Compile Update="Forms\Views\BaseViews\BaseViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\CategoryView.cs">
+    <Compile Update="Forms\Views\MainViews\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\Views\EmployeeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Forms\Views\ItemView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Forms\Views\MainView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Forms\Views\PendingView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Forms\Views\TransactionView.cs">
+    <Compile Update="Forms\Views\MainViews\PendingView.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
