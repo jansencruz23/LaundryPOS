@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
+using LaundryPOS.Helpers;
 using LaundryPOS.Models;
 
 namespace LaundryPOS.Forms
@@ -56,10 +57,19 @@ namespace LaundryPOS.Forms
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidateInputs())
+            {
+                MessageDialog.Show(this, "Invalid profile update. Please make sure all fields are valid.",
+                    "Update Profile Failed", MessageDialogButtons.OK, MessageDialogIcon.Error,
+                    MessageDialogStyle.Light);
+                return;
+            }
+
             if (!_employee.ValidatePassword(txtPassword.Text))
             {
                 MessageDialog.Show(this, "Incorrect password", "Update failed", MessageDialogButtons.OK, 
                     MessageDialogIcon.Error, MessageDialogStyle.Light);
+                lblPasswordValidation.Visible = true;
                 return;
             }
 
@@ -71,6 +81,27 @@ namespace LaundryPOS.Forms
 
             _unitOfWork.EmployeeRepo.Update(_employee);
             await _unitOfWork.SaveAsync();
+        }
+
+        private bool ValidateInputs()
+        {
+            var isValid = true;
+            var isFirstNameValid = RegexValidator.IsValidPersonName(txtFirstName.Text);
+            var isLastNameValid = RegexValidator.IsValidPersonName(txtLastName.Text);
+            var isPasswordValid = RegexValidator.IsValidPassword(txtPassword.Text);
+
+            isValid &= ValidateField(!isFirstNameValid, lblFirstNameValidation);
+            isValid &= ValidateField(!isLastNameValid, lblLastNameValidation);
+            isValid &= ValidateField(!isPasswordValid, lblPasswordValidation);
+            isValid &= ValidateField(string.IsNullOrWhiteSpace(txtPath.Text), lblIconValidation);
+
+            return isValid;
+        }
+
+        private bool ValidateField(bool condition, Label label)
+        {
+            label.Visible = condition;
+            return !condition;
         }
 
         private void imgPic_Click(object sender, EventArgs e)
@@ -100,6 +131,14 @@ namespace LaundryPOS.Forms
             txtPassword.PasswordChar = cbShowPassword.Checked
                 ? '\0'
                 : '•';
+        }
+
+        private void TextBox_Click(object sender, EventArgs e)
+        {
+            lblFirstNameValidation.Visible = false;
+            lblLastNameValidation.Visible = false;
+            lblIconValidation.Visible = false;
+            lblPasswordValidation.Visible = false;
         }
     }
 }

@@ -87,6 +87,10 @@ namespace LaundryPOS.Forms
             this.panelBorder = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPasswordValidation = new System.Windows.Forms.Label();
+            this.lblLastNameValidation = new System.Windows.Forms.Label();
+            this.lblFirstNameValidation = new System.Windows.Forms.Label();
+            this.lblIconValidation = new System.Windows.Forms.Label();
             this.cbShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -137,7 +141,7 @@ namespace LaundryPOS.Forms
             // 
             this.label6.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label6.Location = new System.Drawing.Point(98, 322);
+            this.label6.Location = new System.Drawing.Point(98, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 18;
@@ -148,7 +152,7 @@ namespace LaundryPOS.Forms
             // 
             this.label4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(98, 400);
+            this.label4.Location = new System.Drawing.Point(98, 409);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 23);
             this.label4.TabIndex = 15;
@@ -179,6 +183,7 @@ namespace LaundryPOS.Forms
             this.txtFirstName.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.txtFirstName.Size = new System.Drawing.Size(192, 40);
             this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // dtpBirthday
             // 
@@ -191,7 +196,7 @@ namespace LaundryPOS.Forms
             this.dtpBirthday.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpBirthday.Location = new System.Drawing.Point(98, 347);
+            this.dtpBirthday.Location = new System.Drawing.Point(98, 367);
             this.dtpBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
@@ -215,7 +220,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(98, 429);
+            this.txtPassword.Location = new System.Drawing.Point(98, 438);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
@@ -224,6 +229,7 @@ namespace LaundryPOS.Forms
             this.txtPassword.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.txtPassword.Size = new System.Drawing.Size(413, 40);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // btnUpdate
             // 
@@ -236,7 +242,7 @@ namespace LaundryPOS.Forms
             this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUpdate.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(99, 526);
+            this.btnUpdate.Location = new System.Drawing.Point(99, 539);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnUpdate.Size = new System.Drawing.Size(412, 45);
@@ -372,6 +378,7 @@ namespace LaundryPOS.Forms
             this.txtLastName.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.txtLastName.Size = new System.Drawing.Size(192, 40);
             this.txtLastName.TabIndex = 8;
+            this.txtLastName.Click += new System.EventHandler(this.TextBox_Click);
             // 
             // imgPic
             // 
@@ -396,7 +403,7 @@ namespace LaundryPOS.Forms
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(417, 407);
+            this.label3.Location = new System.Drawing.Point(417, 416);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 12);
             this.label3.TabIndex = 23;
@@ -440,6 +447,10 @@ namespace LaundryPOS.Forms
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 12;
+            this.guna2Panel2.Controls.Add(this.lblPasswordValidation);
+            this.guna2Panel2.Controls.Add(this.lblLastNameValidation);
+            this.guna2Panel2.Controls.Add(this.lblFirstNameValidation);
+            this.guna2Panel2.Controls.Add(this.lblIconValidation);
             this.guna2Panel2.Controls.Add(this.cbShowPassword);
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.Controls.Add(this.label3);
@@ -468,6 +479,54 @@ namespace LaundryPOS.Forms
             this.guna2Panel2.Size = new System.Drawing.Size(600, 625);
             this.guna2Panel2.TabIndex = 25;
             // 
+            // lblPasswordValidation
+            // 
+            this.lblPasswordValidation.BackColor = System.Drawing.Color.White;
+            this.lblPasswordValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPasswordValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblPasswordValidation.Location = new System.Drawing.Point(99, 482);
+            this.lblPasswordValidation.Name = "lblPasswordValidation";
+            this.lblPasswordValidation.Size = new System.Drawing.Size(285, 23);
+            this.lblPasswordValidation.TabIndex = 33;
+            this.lblPasswordValidation.Text = "Password is incorrect";
+            this.lblPasswordValidation.Visible = false;
+            // 
+            // lblLastNameValidation
+            // 
+            this.lblLastNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblLastNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLastNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblLastNameValidation.Location = new System.Drawing.Point(319, 317);
+            this.lblLastNameValidation.Name = "lblLastNameValidation";
+            this.lblLastNameValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblLastNameValidation.TabIndex = 32;
+            this.lblLastNameValidation.Text = "Last name is invalid";
+            this.lblLastNameValidation.Visible = false;
+            // 
+            // lblFirstNameValidation
+            // 
+            this.lblFirstNameValidation.BackColor = System.Drawing.Color.White;
+            this.lblFirstNameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFirstNameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblFirstNameValidation.Location = new System.Drawing.Point(98, 317);
+            this.lblFirstNameValidation.Name = "lblFirstNameValidation";
+            this.lblFirstNameValidation.Size = new System.Drawing.Size(214, 23);
+            this.lblFirstNameValidation.TabIndex = 31;
+            this.lblFirstNameValidation.Text = "First name is invalid";
+            this.lblFirstNameValidation.Visible = false;
+            // 
+            // lblIconValidation
+            // 
+            this.lblIconValidation.BackColor = System.Drawing.Color.White;
+            this.lblIconValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIconValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblIconValidation.Location = new System.Drawing.Point(223, 221);
+            this.lblIconValidation.Name = "lblIconValidation";
+            this.lblIconValidation.Size = new System.Drawing.Size(177, 23);
+            this.lblIconValidation.TabIndex = 30;
+            this.lblIconValidation.Text = "Employee picture is required";
+            this.lblIconValidation.Visible = false;
+            // 
             // cbShowPassword
             // 
             this.cbShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -479,7 +538,7 @@ namespace LaundryPOS.Forms
             this.cbShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShowPassword.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbShowPassword.Location = new System.Drawing.Point(408, 478);
+            this.cbShowPassword.Location = new System.Drawing.Point(408, 487);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(103, 16);
             this.cbShowPassword.TabIndex = 24;
@@ -539,5 +598,9 @@ namespace LaundryPOS.Forms
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CheckBox cbShowPassword;
+        private Label lblIconValidation;
+        private Label lblFirstNameValidation;
+        private Label lblLastNameValidation;
+        private Label lblPasswordValidation;
     }
 }

@@ -45,6 +45,7 @@ namespace LaundryPOS.Forms.Views
             {
                 MessageDialog.Show(ParentForm, "Old admin password is incorrect.", "Admin Update Failed",
                     MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                lblOldPWValidation.Visible = true;
                 return;
             }
 
