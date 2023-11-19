@@ -4,6 +4,7 @@ using LaundryPOS.Models;
 using LaundryPOS.Helpers;
 using System.Data;
 using LaundryPOS.Forms.Views.BaseViews;
+using Guna.UI2.WinForms;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -60,8 +61,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid item. Please make sure all fields are valid.", 
-                    "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Invalid item. Please make sure all fields are valid.", 
+                    "Item Registration Failed", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
@@ -72,8 +73,8 @@ namespace LaundryPOS.Forms.Views
             DisableFields();
             btnSave.Enabled = false;
 
-            MessageBox.Show("Item added successfully!", "Item Created Successfully",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageDialog.Show(ParentForm, "Item added successfully!", "Item Created Successfully", 
+                MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
         }
 
         private bool ValidateInputs()
@@ -291,16 +292,16 @@ namespace LaundryPOS.Forms.Views
             {
                 if (!ValidateInputs())
                 {
-                    MessageBox.Show("Invalid item. Please fill up all of the fields including the image."
-                        , "Item Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, "Invalid item. Please fill up all of the fields including the image.", "Item Update Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                     return;
                 }
 
                 if (_item != null)
                 {
                     await UpdateItem();
-                    MessageBox.Show("Item updated successfully", "Item Update Successful",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageDialog.Show(ParentForm, "Item updated successfully", "Item Update Successful", 
+                        MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                     await RefreshData();
                     ClearText();
 
@@ -310,8 +311,8 @@ namespace LaundryPOS.Forms.Views
         }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured " + ex.Message, "Item Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "An error occured " + ex.Message, "Item Update Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
 }
 
@@ -347,8 +348,8 @@ namespace LaundryPOS.Forms.Views
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Are you sure you want to delete this item?",
-                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirm = MessageDialog.Show(ParentForm, "Are you sure you want to delete this item?",
+                "Confirmation", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
 
             if (confirm == DialogResult.Yes)
             {
@@ -363,8 +364,8 @@ namespace LaundryPOS.Forms.Views
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error occured: {ex.Message}", "Item Delete Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, $"Error occured: {ex.Message}", "Item Delete Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
             }
         }

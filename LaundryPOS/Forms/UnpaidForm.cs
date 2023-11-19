@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Data;
@@ -167,8 +168,8 @@ namespace LaundryPOS.Forms.Views
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmResult = MessageDialog.Show(this, "Are you sure you want to log out?", "Confirm Logout",
+                MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
 
             if (confirmResult == DialogResult.Yes)
             {

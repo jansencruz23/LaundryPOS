@@ -30,7 +30,6 @@ namespace LaundryPOS.Forms
             _pendingView = new PendingView(unitOfWork, styleManager);
 
             InitializeComponent();
-            //ShowLoadingForm();
             DisplayEmployeeInfo();
             ShowMainView();
         }
@@ -49,21 +48,6 @@ namespace LaundryPOS.Forms
             var pendingView = new PendingView(_unitOfWork, _styleManager);
             panelView.Controls.Add(pendingView);
             pendingView.Dock = DockStyle.Fill;
-        }
-
-        private void ShowLoadingForm()
-        {
-            if (_loadingForm != null && !_loadingForm.IsDisposed)
-            {
-                return;
-            }
-
-            loadingStartTime = DateTime.Now;
-            _loadingForm = new LoadingForm();
-            _loadingForm.Show();
-            _loadingForm.Refresh();
-
-            Application.Idle += OnLoaded;
         }
 
         private void OnLoaded(object sender, EventArgs e)
@@ -103,8 +87,9 @@ namespace LaundryPOS.Forms
       
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure you want to log out?", 
-                "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmResult = MessageDialog.Show(this, "Are you sure you want to log out?", 
+                "Confirm Logout", MessageDialogButtons.YesNo, MessageDialogIcon.Question,
+                MessageDialogStyle.Light);
 
             if (confirmResult == DialogResult.Yes)
             {

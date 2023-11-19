@@ -2,7 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Helpers;
-using LaundryPOS.Managers;
+using Guna.UI2.WinForms;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -74,8 +74,9 @@ namespace LaundryPOS.Forms.Views
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid category. Please make sure all fields are valid.",
-                    "Item Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Invalid category. Please make sure all fields are valid.",
+                    "Item Registration Failed", MessageDialogButtons.OK, MessageDialogIcon.Error,
+                    MessageDialogStyle.Light);
                 return;
             }
 
@@ -97,8 +98,8 @@ namespace LaundryPOS.Forms.Views
             btnFile.Enabled = false;
             btnSave.Enabled = false;
 
-            MessageBox.Show("Category added successfully!", "Category Created Successfully",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageDialog.Show(ParentForm, "Category added successfully!", "Category Created Successfully",
+                MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
         }
 
         private bool ValidateInputs()
@@ -140,8 +141,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (_category != null)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", 
-                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageDialog.Show(ParentForm, "Are you sure you want to delete this employee?", 
+                    "Confirmation", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
 
                 if (result == DialogResult.Yes)
                 {
@@ -160,8 +161,8 @@ namespace LaundryPOS.Forms.Views
                     await _unitOfWork.CategoryRepo.Delete(_category.Id);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Category deleted successfully.", "Success", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageDialog.Show(ParentForm, "Category deleted successfully.", "Success",
+                        MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                     ClearText();
                     await RefreshData();
 
@@ -217,8 +218,8 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.CategoryRepo.Update(_category);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Category updated successfully", "Category Updated Successfully",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageDialog.Show(ParentForm, "Category updated successfully", "Category Updated Successfully", 
+                        MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                     await RefreshData();
                     ClearText();
 
@@ -228,8 +229,8 @@ namespace LaundryPOS.Forms.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured " + ex.Message, "Category Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "An error occured " + ex.Message, "Category Update Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
 

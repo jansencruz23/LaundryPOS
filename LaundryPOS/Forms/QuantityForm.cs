@@ -1,5 +1,4 @@
 ﻿using Guna.UI2.WinForms;
-using LaundryPOS.Managers;
 using LaundryPOS.Contracts;
 
 namespace LaundryPOS.Forms
@@ -88,8 +87,8 @@ namespace LaundryPOS.Forms
             }
             catch
             {
-                MessageBox.Show("Please input valid quantity", "Error Occured",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Please input valid quantity", "Error Occured", 
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
 

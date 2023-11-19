@@ -1,7 +1,7 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Models;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -52,8 +52,8 @@ namespace LaundryPOS.Forms.Views
 
             await _unitOfWork.SaveAsync();
 
-            MessageBox.Show("Restart application to see results. Press OK to restart the application", 
-                "App Restarting", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageDialog.Show(ParentForm, "Restart application to see results. Press OK to restart the application", 
+                "App Restarting", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
             RestartApplication();
         }
 

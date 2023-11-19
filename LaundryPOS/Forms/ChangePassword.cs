@@ -46,22 +46,22 @@ namespace LaundryPOS.Forms
 
             if (!allTextboxesFilled)
             {
-                MessageBox.Show("Please fill all the fields.", "Change password failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Please fill all the fields.", "Change password failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
             if (!_employee.ValidatePassword(oldPassword))
             {
-                MessageBox.Show("Incorrect password", "Change password failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Incorrect password", "Change password failed", 
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
             if (!newPassword.Equals(confirmPassword))
             {
-                MessageBox.Show("Passwords do not match", "Change password failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Passwords do not match", "Change password failed", 
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
@@ -69,8 +69,8 @@ namespace LaundryPOS.Forms
             _unitOfWork.EmployeeRepo.Update(_employee);
             await _unitOfWork.SaveAsync();
 
-            MessageBox.Show("Password updates successfully!", "Password Change Successful",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageDialog.Show(this, "Password updates successfully!", "Password Change Successful",
+                    MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
             Close();
         }
 

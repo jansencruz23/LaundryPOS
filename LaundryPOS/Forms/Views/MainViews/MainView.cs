@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Models;
@@ -87,8 +88,9 @@ namespace LaundryPOS.Forms.Views
             {
                 if (e.CartItem.Quantity + existingCartItem.CartItem.Quantity > item.Stock)
                 {
-                    MessageBox.Show($"{item.Name} - Not enought stocks.",
-                        "Insufficient Stocks", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, $"{item.Name} - Not enought stocks.",
+                        "Insufficient Stocks", MessageDialogButtons.OK, MessageDialogIcon.Error,
+                        MessageDialogStyle.Light);
 
                     return;
                 }
@@ -223,15 +225,15 @@ namespace LaundryPOS.Forms.Views
         {
             if (orders.Items.Count <= 0)
             {
-                MessageBox.Show("Please enter order first", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageDialog.Show(ParentForm, "Please enter order first", "Information",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
             if (!await ValidateStocks())
             {
-                MessageBox.Show("Item quantity cannot exceed item stocks. Please check your order again.",
-                    "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Item quantity cannot exceed item stocks. Please check your order again.",
+                    "Payment Failed", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
             var paymentForm = new PaymentForm(orders, Total, _unitOfWork, _employee, _styleManager);
@@ -263,8 +265,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (orders.Items.Count <= 0)
             {
-                MessageBox.Show("Please enter order first", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageDialog.Show(ParentForm, "Please enter order first", "Information",
+                    MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Light);
                 return;
             }
 
@@ -274,15 +276,15 @@ namespace LaundryPOS.Forms.Views
                 _unitOfWork.TransactionRepo.Insert(transaction);
                 await _unitOfWork.SaveAsync();
 
-                MessageBox.Show("Order added to pay later", "Order Added",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageDialog.Show(ParentForm, "Order added to pay later", "Order Added",
+                    MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                 await RefreshItems();
                 ClearCart();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Order Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "An error occurred: " + ex.Message, "Order Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
 
@@ -333,8 +335,8 @@ namespace LaundryPOS.Forms.Views
                 }
                 else
                 {
-                    MessageBox.Show("Transaction failed.", "Error Occured",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, "Transaction failed.", "Error Occured",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
             }
         }

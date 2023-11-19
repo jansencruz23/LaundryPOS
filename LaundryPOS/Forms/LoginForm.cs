@@ -1,6 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Managers;
+using Guna.UI2.WinForms;
 
 namespace LaundryPOS.Forms
 {
@@ -55,16 +56,16 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password.", "Log in failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(this, "Invalid username or password.", "Log in failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
 
                 txtPassword.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error occurred",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, ex.Message, "Error occurred",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
 

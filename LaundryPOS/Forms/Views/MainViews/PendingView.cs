@@ -3,8 +3,6 @@ using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Linq.Expressions;
-using System.Windows.Forms;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -179,8 +177,8 @@ namespace LaundryPOS.Forms.Views
 
             if (string.IsNullOrEmpty(filter))
             {
-                MessageBox.Show("Invalid filter", "Filter Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Invalid filter", "Filter Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
@@ -220,8 +218,8 @@ namespace LaundryPOS.Forms.Views
                     break;
 
                 default:
-                    MessageBox.Show("Invalid filter", "Filter Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, "Invalid filter", "Filter Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                     break;
             }
 

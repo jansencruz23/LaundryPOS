@@ -3,8 +3,6 @@ using LaundryPOS.Delegates;
 using LaundryPOS.Models;
 using LaundryPOS.Forms.Views.BaseViews;
 using Guna.UI2.WinForms;
-using System.Text.RegularExpressions;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -125,8 +123,8 @@ namespace LaundryPOS.Forms.Views
         {
             if (_employee != null)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this employee?", 
-                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageDialog.Show(ParentForm, "Are you sure you want to delete this employee?", 
+                    "Confirmation", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
 
                 if (result == DialogResult.Yes)
                 {
@@ -134,8 +132,8 @@ namespace LaundryPOS.Forms.Views
                     _unitOfWork.EmployeeRepo.Update(_employee);
                     await _unitOfWork.SaveAsync();
 
-                    MessageBox.Show("Employee deleted successfully.", "Employee Deleted Successfully", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageDialog.Show(ParentForm, "Employee deleted successfully.", "Employee Deleted Successfully", 
+                        MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                     await RefreshData();
                     ClearText();
                     btnDelete.Enabled = false;

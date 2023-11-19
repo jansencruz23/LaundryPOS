@@ -31,8 +31,9 @@ namespace LaundryPOS
         {
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid registration. Please make sure all fields are valid.", "Registration Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Invalid registration. Please make sure all fields are valid.", 
+                    "Registration Failed", MessageDialogButtons.OK, MessageDialogIcon.Error,
+                    MessageDialogStyle.Light);
                 return;
             }
 
@@ -41,8 +42,8 @@ namespace LaundryPOS
 
             if (employeeIsExisting)
             {
-                MessageBox.Show("Username already exists.", "Registration Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Username already exists.", "Registration Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 

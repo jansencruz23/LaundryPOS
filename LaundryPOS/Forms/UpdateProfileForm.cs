@@ -1,6 +1,6 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Models;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
@@ -58,8 +58,8 @@ namespace LaundryPOS.Forms
         {
             if (!_employee.ValidatePassword(txtPassword.Text))
             {
-                MessageBox.Show("Incorrect password", "Update failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Incorrect password", "Update failed", MessageDialogButtons.OK, 
+                    MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 

@@ -2,16 +2,6 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Forms.CustomControls;
 using LaundryPOS.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
@@ -84,20 +74,20 @@ namespace LaundryPOS.Forms
                 }
                     catch (Exception ex)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Payment Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageDialog.Show(this, "An error occurred: " + ex.Message, "Payment Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
             }
                 else
                 {
-                    MessageBox.Show("Insufficient Payment", "Payment Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(this, "Insufficient Payment", "Payment Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
             }
             else
             {
-                MessageBox.Show("Please make sure you enter valid input", "Payment Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(this, "Please make sure you enter valid input", "Payment Failed", 
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
             }
         }
 
@@ -148,8 +138,8 @@ namespace LaundryPOS.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Transaction failed.", "Transaction Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(this, "Transaction failed.", "Transaction Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 }
             }
         }

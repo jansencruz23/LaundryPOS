@@ -5,8 +5,6 @@ using System.Data;
 using LaundryPOS.Delegates;
 using System.Linq.Expressions;
 using Guna.UI2.WinForms;
-using LaundryPOS.Migrations;
-using System.Xml.Linq;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -221,8 +219,8 @@ namespace LaundryPOS.Forms.Views
 
             if (string.IsNullOrEmpty(filter))
             {
-                MessageBox.Show("Invalid filter", "Filter Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Invalid filter", "Filter Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
@@ -262,8 +260,8 @@ namespace LaundryPOS.Forms.Views
                     break;
 
                 default:
-                    MessageBox.Show("Invalid filter", "Filter Failed",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageDialog.Show(ParentForm, "Invalid filter", "Filter Failed",
+                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                     break;
             }
 

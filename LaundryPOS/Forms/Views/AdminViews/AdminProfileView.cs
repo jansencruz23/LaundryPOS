@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using LaundryPOS.Managers;
@@ -27,22 +28,23 @@ namespace LaundryPOS.Forms.Views
 
             if (admin == null)
             {
-                MessageBox.Show("Admin is empty", "Error Occurred",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Admin is empty", "Error Occurred",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
             if (!ValidateInputs())
             {
-                MessageBox.Show("Invalid admin update. Please make sure all fields are valid.", "Admin Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show("Invalid admin update. Please make sure all fields are valid.",
+                    "Admin Update Failed", MessageDialogButtons.OK, MessageDialogIcon.Error,
+                    MessageDialogStyle.Light);
                 return;
             }
 
             if (!admin.ValidatePassword(txtOldPassword.Text))
             {
-                MessageBox.Show("Old admin password is incorrect.", "Admin Update Failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, "Old admin password is incorrect.", "Admin Update Failed",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 
@@ -52,8 +54,8 @@ namespace LaundryPOS.Forms.Views
             _unitOfWork.EmployeeRepo.Update(admin);
             await _unitOfWork.SaveAsync();
 
-            MessageBox.Show("Admin successfully updated!", "Admin Update Successfully",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageDialog.Show(ParentForm, "Admin successfully updated!", "Admin Update Successfully",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
         }
 
         private bool ValidateInputs()
