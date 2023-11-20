@@ -663,7 +663,7 @@ namespace LaundryPOS
             this.btnContinue.Image = ((System.Drawing.Image)(resources.GetObject("btnContinue.Image")));
             this.btnContinue.ImageOffset = new System.Drawing.Point(1, 0);
             this.btnContinue.ImageSize = new System.Drawing.Size(13, 13);
-            this.btnContinue.Location = new System.Drawing.Point(184, 430);
+            this.btnContinue.Location = new System.Drawing.Point(184, 421);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.ShadowDecoration.Color = System.Drawing.Color.LightGray;
             this.btnContinue.ShadowDecoration.CustomizableEdges = customizableEdges23;
@@ -677,7 +677,7 @@ namespace LaundryPOS
             // 
             this.lblSubDescription.BackColor = System.Drawing.Color.Transparent;
             this.lblSubDescription.Font = new System.Drawing.Font("Helvetica", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSubDescription.Location = new System.Drawing.Point(0, 401);
+            this.lblSubDescription.Location = new System.Drawing.Point(0, 393);
             this.lblSubDescription.Name = "lblSubDescription";
             this.lblSubDescription.Size = new System.Drawing.Size(412, 37);
             this.lblSubDescription.TabIndex = 22;
@@ -688,9 +688,9 @@ namespace LaundryPOS
             // 
             this.lblDescription.BackColor = System.Drawing.Color.Transparent;
             this.lblDescription.Font = new System.Drawing.Font("Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(0, 334);
+            this.lblDescription.Location = new System.Drawing.Point(0, 343);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(412, 93);
+            this.lblDescription.Size = new System.Drawing.Size(412, 59);
             this.lblDescription.TabIndex = 22;
             this.lblDescription.Text = "Let\'s get you set up";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -700,7 +700,7 @@ namespace LaundryPOS
             this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(99, 131);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(99, 143);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

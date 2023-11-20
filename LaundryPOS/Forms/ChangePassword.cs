@@ -2,6 +2,7 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.Models;
 using LaundryPOS.Managers;
+using LaundryPOS.Helpers;
 
 namespace LaundryPOS.Forms
 {
@@ -39,14 +40,10 @@ namespace LaundryPOS.Forms
         {
             var oldPassword = txtOldPassword.Text;
             var newPassword = txtNewPassword.Text;
-            var confirmPassword = txtConfirmPassword.Text;
 
-            var allTextboxesFilled = Controls.OfType<Guna2TextBox>()
-                .All(t => !string.IsNullOrEmpty(t.Text));
-
-            if (!allTextboxesFilled)
+            if (!ValidateInputs())
             {
-                MessageDialog.Show(this, "Please fill all the fields.", "Change password failed",
+                MessageDialog.Show(this, "Please make sure all the fields are valid.", "Change password failed",
                     MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
@@ -55,13 +52,7 @@ namespace LaundryPOS.Forms
             {
                 MessageDialog.Show(this, "Incorrect password", "Change password failed", 
                     MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
-                return;
-            }
-
-            if (!newPassword.Equals(confirmPassword))
-            {
-                MessageDialog.Show(this, "Passwords do not match", "Change password failed", 
-                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                lblOldPWValidation.Visible = true;
                 return;
             }
 
@@ -74,6 +65,23 @@ namespace LaundryPOS.Forms
             Close();
         }
 
+        private bool ValidateInputs()
+        {
+            var isValid = true;
+            var isPasswordValid = RegexValidator.IsValidPassword(txtNewPassword.Text);
+
+            isValid &= ValidateField(!isPasswordValid, lblNewPWValidation);
+            isValid &= ValidateField(!txtConfirmPassword.Text.Equals(txtNewPassword.Text), lblConfirmPWValidation);
+
+            return isValid;
+        }
+        
+        private bool ValidateField(bool condition, Label label)
+        {
+            label.Visible = condition;
+            return !condition;
+        }
+
         private void lblBack_Click(object sender, EventArgs e)
         {
             Close();
@@ -82,9 +90,17 @@ namespace LaundryPOS.Forms
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtNewPassword.PasswordChar = txtConfirmPassword.PasswordChar = 
+                txtOldPassword.PasswordChar =
                 cbShowPassword.Checked
                     ? '\0'
                     : '•';
+        }
+
+        private void TextBox_Click(object sender, EventArgs e)
+        {
+            lblOldPWValidation.Visible = false;
+            lblNewPWValidation.Visible = false;
+            lblConfirmPWValidation.Visible = false;
         }
     }
 }

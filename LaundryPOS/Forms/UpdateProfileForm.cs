@@ -140,5 +140,10 @@ namespace LaundryPOS.Forms
             lblIconValidation.Visible = false;
             lblPasswordValidation.Visible = false;
         }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            txtFirstName.Focus();
+        }
     }
 }

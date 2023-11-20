@@ -443,7 +443,7 @@
             this.lblConfirmPWValidation.BackColor = System.Drawing.Color.White;
             this.lblConfirmPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblConfirmPWValidation.Location = new System.Drawing.Point(38, 476);
+            this.lblConfirmPWValidation.Location = new System.Drawing.Point(40, 474);
             this.lblConfirmPWValidation.Name = "lblConfirmPWValidation";
             this.lblConfirmPWValidation.Size = new System.Drawing.Size(191, 23);
             this.lblConfirmPWValidation.TabIndex = 33;
@@ -455,7 +455,7 @@
             this.lblNewPWValidation.BackColor = System.Drawing.Color.White;
             this.lblNewPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNewPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNewPWValidation.Location = new System.Drawing.Point(38, 375);
+            this.lblNewPWValidation.Location = new System.Drawing.Point(40, 375);
             this.lblNewPWValidation.Name = "lblNewPWValidation";
             this.lblNewPWValidation.Size = new System.Drawing.Size(360, 23);
             this.lblNewPWValidation.TabIndex = 32;
@@ -467,11 +467,11 @@
             this.lblOldPWValidation.BackColor = System.Drawing.Color.White;
             this.lblOldPWValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblOldPWValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblOldPWValidation.Location = new System.Drawing.Point(37, 277);
+            this.lblOldPWValidation.Location = new System.Drawing.Point(40, 275);
             this.lblOldPWValidation.Name = "lblOldPWValidation";
-            this.lblOldPWValidation.Size = new System.Drawing.Size(360, 23);
+            this.lblOldPWValidation.Size = new System.Drawing.Size(328, 23);
             this.lblOldPWValidation.TabIndex = 31;
-            this.lblOldPWValidation.Text = "Old admin password is incorrect";
+            this.lblOldPWValidation.Text = "Current admin password is incorrect";
             this.lblOldPWValidation.Visible = false;
             // 
             // lblUsernameValidation
@@ -479,7 +479,7 @@
             this.lblUsernameValidation.BackColor = System.Drawing.Color.White;
             this.lblUsernameValidation.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUsernameValidation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblUsernameValidation.Location = new System.Drawing.Point(38, 179);
+            this.lblUsernameValidation.Location = new System.Drawing.Point(40, 177);
             this.lblUsernameValidation.Name = "lblUsernameValidation";
             this.lblUsernameValidation.Size = new System.Drawing.Size(330, 23);
             this.lblUsernameValidation.TabIndex = 30;
@@ -555,7 +555,7 @@
             this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Size = new System.Drawing.Size(207, 25);
             this.lblOldPassword.TabIndex = 25;
-            this.lblOldPassword.Text = "Old Password";
+            this.lblOldPassword.Text = "Current Password";
             this.lblOldPassword.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // txtOldPassword
