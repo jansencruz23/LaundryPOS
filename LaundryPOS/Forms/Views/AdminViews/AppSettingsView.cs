@@ -78,7 +78,7 @@ namespace LaundryPOS.Forms.Views
             Theme = theme
         };
 
-        private void UpdateAppSettings(AppSettings appSettings)
+        private async Task UpdateAppSettings(AppSettings appSettings)
         {
             appSettings.Name = txtName.Text;
             appSettings.Address = txtAddress.Text;
@@ -86,6 +86,8 @@ namespace LaundryPOS.Forms.Views
             appSettings.PhoneNumber = txtNumber.Text;
             appSettings.Email = txtEmail.Text;
             appSettings.Theme = theme;
+
+            _unitOfWork.AppSettingsRepo.Update(appSettings);
         }
 
         private async Task ApplyTheme()
