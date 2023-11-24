@@ -50,9 +50,9 @@
             // 
             chartFont1.FontName = "Arial";
             this.salesChart.Legend.LabelFont = chartFont1;
-            this.salesChart.Location = new System.Drawing.Point(82, 97);
+            this.salesChart.Location = new System.Drawing.Point(84, 55);
             this.salesChart.Name = "salesChart";
-            this.salesChart.Size = new System.Drawing.Size(664, 366);
+            this.salesChart.Size = new System.Drawing.Size(680, 397);
             this.salesChart.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
