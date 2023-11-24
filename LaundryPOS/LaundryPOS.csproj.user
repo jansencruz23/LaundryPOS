@@ -58,6 +58,9 @@
     <Compile Update="Forms\Views\AdminViews\CategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Views\AdminViews\DashboardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Views\AdminViews\EmployeeView.cs">
       <SubType>UserControl</SubType>
     </Compile>

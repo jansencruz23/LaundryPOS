@@ -178,3 +178,5 @@ D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\n
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Icons\homepagewhte.png
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Icons\time.png
 D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Icons\timeblack.png
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\obj\Debug\net7.0-windows\LaundryPOS.Forms.Views.AdminViews.DashboardView.resources
+D:\User\Jansen\Self Study\2023 - 11 - NOVEMBER\LaundryPOS\LaundryPOS\bin\Debug\net7.0-windows\Guna.Charts.WinForms.dll

@@ -1,6 +1,7 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
+using LaundryPOS.Forms.Views.AdminViews;
 using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
@@ -28,7 +29,7 @@ namespace LaundryPOS.Forms
 
         private void ShowItemView()
         {
-            var itemView = new ItemView(_unitOfWork, _styleManager, changeAdminViewDelegate);
+            var itemView = new DashboardView(_unitOfWork, _styleManager, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
         }

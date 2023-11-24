@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Hlg+uM+oyeETewr2LsQ+IDy0iv0LxrnF5I6sDhCcefmMrIuYclamsDAwjOQZ1WphM6eMjMiqnT0sth3X0p9ZFQ==",
+  "dgSpecHash": "mFBVTDGtjoMViuHNUGGtksMNvHzT5usyLLyeNX8kDkm/VQ9CBhX8ODjJAJD2h0syaCZ5jcni2ajUrX+UK5O/+w==",
   "success": true,
   "projectFilePath": "D:\\User\\Jansen\\Self Study\\2023 - 11 - NOVEMBER\\LaundryPOS\\LaundryPOS\\LaundryPOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\guna.charts.winforms\\1.0.9\\guna.charts.winforms.1.0.9.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.5\\guna.ui2.winforms.2.0.4.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
