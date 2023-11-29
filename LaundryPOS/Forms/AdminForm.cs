@@ -10,14 +10,18 @@ namespace LaundryPOS.Forms
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
+        private readonly ISalesService _salesService;
         private ChangeAdminViewDelegate changeAdminViewDelegate;
         private readonly string _title;
 
         public AdminForm(IUnitOfWork unitOfWorK,
-            IStyleManager styleManager, string title)
+            IStyleManager styleManager,
+            ISalesService salesService, 
+            string title)
         {
             _unitOfWork = unitOfWorK;
             _styleManager = styleManager;
+            _salesService = salesService;
             _title = title;
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
@@ -29,7 +33,7 @@ namespace LaundryPOS.Forms
 
         private void ShowItemView()
         {
-            var itemView = new DashboardView(_unitOfWork, _styleManager, changeAdminViewDelegate);
+            var itemView = new DashboardView(_unitOfWork, _styleManager, _salesService, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
         }

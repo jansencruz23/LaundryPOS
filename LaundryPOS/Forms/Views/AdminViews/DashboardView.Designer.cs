@@ -130,7 +130,7 @@
             // 
             chartFont1.FontName = "Arial";
             this.salesChart.Legend.LabelFont = chartFont1;
-            this.salesChart.Location = new System.Drawing.Point(53, 273);
+            this.salesChart.Location = new System.Drawing.Point(44, 215);
             this.salesChart.Name = "salesChart";
             this.salesChart.Size = new System.Drawing.Size(419, 260);
             this.salesChart.TabIndex = 1;

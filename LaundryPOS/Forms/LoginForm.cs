@@ -2,6 +2,7 @@
 using LaundryPOS.Models;
 using LaundryPOS.Managers;
 using Guna.UI2.WinForms;
+using LaundryPOS.Services;
 
 namespace LaundryPOS.Forms
 {
@@ -9,13 +10,16 @@ namespace LaundryPOS.Forms
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
+        private readonly ISalesService _salesService;
         private string _title;
 
         public LoginForm(IUnitOfWork unitOfWork,
-            IStyleManager styleManager)
+            IStyleManager styleManager,
+            ISalesService salesService)
         {
             _unitOfWork = unitOfWork;
             _styleManager = styleManager;
+            _salesService = salesService;
 
             InitializeComponent();
             StyleFonts();
@@ -49,7 +53,7 @@ namespace LaundryPOS.Forms
                     Hide();
 
                     Form form = userRole == "admin"
-                        ? new AdminForm(_unitOfWork, _styleManager, _title)
+                        ? new AdminForm(_unitOfWork, _styleManager, _salesService, _title)
                         : new MainForm(_unitOfWork, _styleManager, employee);
                     form.FormClosed += (s, args) => Close();
                     form.Show();

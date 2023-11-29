@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using LaundryPOS.Managers;
+using LaundryPOS.Services;
 
 namespace LaundryPOS
 {
@@ -44,6 +45,7 @@ namespace LaundryPOS
                     services.AddScoped<FontManager>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IStyleManager, StyleManager>();
+                    services.AddScoped<ISalesService, SalesService>();
                     services.AddScoped<LoginForm>();
                 }).Build();
 
