@@ -190,9 +190,9 @@
         </Paragraphs>
         <rd:DefaultName>Name1</rd:DefaultName>
         <Top>1.64819in</Top>
-        <Left>0.32388in</Left>
+        <Left>0.31in</Left>
         <Height>0.25in</Height>
-        <Width>0.89884in</Width>
+        <Width>0.81669in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -302,9 +302,9 @@
         </Paragraphs>
         <rd:DefaultName>Price</rd:DefaultName>
         <Top>1.64819in</Top>
-        <Left>1.23661in</Left>
+        <Left>1.14057in</Left>
         <Height>0.25in</Height>
-        <Width>0.35592in</Width>
+        <Width>0.47974in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -334,7 +334,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>1.6343in</Top>
+        <Top>1.64819in</Top>
         <Left>1.62031in</Left>
         <Height>0.25in</Height>
         <Width>0.61802in</Width>
@@ -412,9 +412,9 @@
         </Paragraphs>
         <rd:DefaultName>AmountPaid</rd:DefaultName>
         <Top>2.29084in</Top>
-        <Left>1.62031in</Left>
+        <Left>1.60643in</Left>
         <Height>0.25in</Height>
-        <Width>0.61802in</Width>
+        <Width>0.6319in</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -445,9 +445,9 @@
         </Paragraphs>
         <rd:DefaultName>Change</rd:DefaultName>
         <Top>2.46277in</Top>
-        <Left>1.6342in</Left>
+        <Left>1.60643in</Left>
         <Height>0.25in</Height>
-        <Width>0.60413in</Width>
+        <Width>0.6319in</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -612,9 +612,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>1.37041in</Top>
-        <Left>0.32388in</Left>
+        <Left>0.31in</Left>
         <Height>0.25in</Height>
-        <Width>0.89884in</Width>
+        <Width>0.81669in</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -657,9 +657,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>1.37041in</Top>
-        <Left>1.23661in</Left>
+        <Left>1.14057in</Left>
         <Height>0.25in</Height>
-        <Width>0.36981in</Width>
+        <Width>0.47974in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
