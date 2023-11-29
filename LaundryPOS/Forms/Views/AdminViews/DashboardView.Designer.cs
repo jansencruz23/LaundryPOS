@@ -66,20 +66,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.salesChart = new Guna.Charts.WinForms.GunaChart();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -97,6 +99,7 @@
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelAnnualSales = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAnnualSales = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -119,6 +122,7 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelAnnualSales.SuspendLayout();
             this.panelDailySales.SuspendLayout();
@@ -130,9 +134,9 @@
             // 
             chartFont1.FontName = "Arial";
             this.salesChart.Legend.LabelFont = chartFont1;
-            this.salesChart.Location = new System.Drawing.Point(44, 215);
+            this.salesChart.Location = new System.Drawing.Point(25, 20);
             this.salesChart.Name = "salesChart";
-            this.salesChart.Size = new System.Drawing.Size(419, 260);
+            this.salesChart.Size = new System.Drawing.Size(899, 377);
             this.salesChart.TabIndex = 1;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -509,15 +513,32 @@
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.guna2Panel1.Controls.Add(this.salesChart);
-            this.guna2Panel1.CustomizableEdges = customizableEdges35;
+            this.guna2Panel1.CustomizableEdges = customizableEdges37;
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2Panel1.Location = new System.Drawing.Point(251, 103);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges38;
             this.guna2Panel1.Size = new System.Drawing.Size(1354, 658);
             this.guna2Panel1.TabIndex = 25;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderRadius = 20;
+            this.guna2Panel2.Controls.Add(this.salesChart);
+            this.guna2Panel2.CustomizableEdges = customizableEdges23;
+            this.guna2Panel2.FillColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(42, 192);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.BorderRadius = 20;
+            this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.guna2Panel2.ShadowDecoration.Depth = 10;
+            this.guna2Panel2.ShadowDecoration.Enabled = true;
+            this.guna2Panel2.Size = new System.Drawing.Size(943, 418);
+            this.guna2Panel2.TabIndex = 30;
             // 
             // tableLayoutPanel1
             // 
@@ -546,7 +567,7 @@
             this.panelAnnualSales.Controls.Add(this.btnAnnualSales);
             this.panelAnnualSales.Controls.Add(this.lblAnnualSales);
             this.panelAnnualSales.Controls.Add(this.label1);
-            this.panelAnnualSales.CustomizableEdges = customizableEdges24;
+            this.panelAnnualSales.CustomizableEdges = customizableEdges26;
             this.panelAnnualSales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAnnualSales.FillColor = System.Drawing.Color.White;
             this.panelAnnualSales.Location = new System.Drawing.Point(5, 3);
@@ -555,7 +576,7 @@
             this.panelAnnualSales.Name = "panelAnnualSales";
             this.panelAnnualSales.ShadowDecoration.BorderRadius = 20;
             this.panelAnnualSales.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.panelAnnualSales.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            this.panelAnnualSales.ShadowDecoration.CustomizableEdges = customizableEdges27;
             this.panelAnnualSales.ShadowDecoration.Depth = 10;
             this.panelAnnualSales.ShadowDecoration.Enabled = true;
             this.panelAnnualSales.Size = new System.Drawing.Size(307, 113);
@@ -576,7 +597,7 @@
             this.btnAnnualSales.ImageSize = new System.Drawing.Size(25, 25);
             this.btnAnnualSales.Location = new System.Drawing.Point(219, 22);
             this.btnAnnualSales.Name = "btnAnnualSales";
-            this.btnAnnualSales.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            this.btnAnnualSales.ShadowDecoration.CustomizableEdges = customizableEdges25;
             this.btnAnnualSales.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAnnualSales.Size = new System.Drawing.Size(70, 70);
             this.btnAnnualSales.TabIndex = 2;
@@ -608,7 +629,7 @@
             this.panelDailySales.Controls.Add(this.btnDailySales);
             this.panelDailySales.Controls.Add(this.lblDailySales);
             this.panelDailySales.Controls.Add(this.label6);
-            this.panelDailySales.CustomizableEdges = customizableEdges27;
+            this.panelDailySales.CustomizableEdges = customizableEdges29;
             this.panelDailySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDailySales.FillColor = System.Drawing.Color.White;
             this.panelDailySales.Location = new System.Drawing.Point(956, 3);
@@ -617,7 +638,7 @@
             this.panelDailySales.Name = "panelDailySales";
             this.panelDailySales.ShadowDecoration.BorderRadius = 20;
             this.panelDailySales.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.panelDailySales.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.panelDailySales.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.panelDailySales.ShadowDecoration.Depth = 10;
             this.panelDailySales.ShadowDecoration.Enabled = true;
             this.panelDailySales.Size = new System.Drawing.Size(310, 113);
@@ -638,7 +659,7 @@
             this.btnDailySales.ImageSize = new System.Drawing.Size(25, 25);
             this.btnDailySales.Location = new System.Drawing.Point(221, 22);
             this.btnDailySales.Name = "btnDailySales";
-            this.btnDailySales.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.btnDailySales.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.btnDailySales.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDailySales.Size = new System.Drawing.Size(70, 70);
             this.btnDailySales.TabIndex = 2;
@@ -670,7 +691,7 @@
             this.panelMonthlySales.Controls.Add(this.btnMonthlySales);
             this.panelMonthlySales.Controls.Add(this.lblMonthlySales);
             this.panelMonthlySales.Controls.Add(this.label3);
-            this.panelMonthlySales.CustomizableEdges = customizableEdges30;
+            this.panelMonthlySales.CustomizableEdges = customizableEdges32;
             this.panelMonthlySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonthlySales.FillColor = System.Drawing.Color.White;
             this.panelMonthlySales.Location = new System.Drawing.Point(322, 3);
@@ -679,7 +700,7 @@
             this.panelMonthlySales.Name = "panelMonthlySales";
             this.panelMonthlySales.ShadowDecoration.BorderRadius = 20;
             this.panelMonthlySales.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.panelMonthlySales.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            this.panelMonthlySales.ShadowDecoration.CustomizableEdges = customizableEdges33;
             this.panelMonthlySales.ShadowDecoration.Depth = 10;
             this.panelMonthlySales.ShadowDecoration.Enabled = true;
             this.panelMonthlySales.Size = new System.Drawing.Size(307, 113);
@@ -700,7 +721,7 @@
             this.btnMonthlySales.ImageSize = new System.Drawing.Size(25, 25);
             this.btnMonthlySales.Location = new System.Drawing.Point(220, 22);
             this.btnMonthlySales.Name = "btnMonthlySales";
-            this.btnMonthlySales.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            this.btnMonthlySales.ShadowDecoration.CustomizableEdges = customizableEdges31;
             this.btnMonthlySales.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnMonthlySales.Size = new System.Drawing.Size(70, 70);
             this.btnMonthlySales.TabIndex = 2;
@@ -732,7 +753,7 @@
             this.panelWeeklySales.Controls.Add(this.btnWeeklySales);
             this.panelWeeklySales.Controls.Add(this.lblWeeklySales);
             this.panelWeeklySales.Controls.Add(this.label4);
-            this.panelWeeklySales.CustomizableEdges = customizableEdges33;
+            this.panelWeeklySales.CustomizableEdges = customizableEdges35;
             this.panelWeeklySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWeeklySales.FillColor = System.Drawing.Color.White;
             this.panelWeeklySales.Location = new System.Drawing.Point(639, 3);
@@ -741,7 +762,7 @@
             this.panelWeeklySales.Name = "panelWeeklySales";
             this.panelWeeklySales.ShadowDecoration.BorderRadius = 20;
             this.panelWeeklySales.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.panelWeeklySales.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            this.panelWeeklySales.ShadowDecoration.CustomizableEdges = customizableEdges36;
             this.panelWeeklySales.ShadowDecoration.Depth = 10;
             this.panelWeeklySales.ShadowDecoration.Enabled = true;
             this.panelWeeklySales.Size = new System.Drawing.Size(307, 113);
@@ -762,7 +783,7 @@
             this.btnWeeklySales.ImageSize = new System.Drawing.Size(25, 25);
             this.btnWeeklySales.Location = new System.Drawing.Point(218, 22);
             this.btnWeeklySales.Name = "btnWeeklySales";
-            this.btnWeeklySales.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            this.btnWeeklySales.ShadowDecoration.CustomizableEdges = customizableEdges34;
             this.btnWeeklySales.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnWeeklySales.Size = new System.Drawing.Size(70, 70);
             this.btnWeeklySales.TabIndex = 2;
@@ -801,6 +822,7 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelAnnualSales.ResumeLayout(false);
             this.panelDailySales.ResumeLayout(false);
@@ -846,5 +868,6 @@
         private Label lblWeeklySales;
         private Label label4;
         private TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

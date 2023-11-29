@@ -2,7 +2,6 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Forms.Views.AdminViews;
-using LaundryPOS.Managers;
 
 namespace LaundryPOS.Forms
 {
@@ -11,7 +10,7 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
         private readonly ISalesService _salesService;
-        private ChangeAdminViewDelegate changeAdminViewDelegate;
+        private readonly ChangeAdminViewDelegate changeAdminViewDelegate;
         private readonly string _title;
 
         public AdminForm(IUnitOfWork unitOfWorK,

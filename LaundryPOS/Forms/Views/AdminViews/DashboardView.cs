@@ -1,9 +1,9 @@
-﻿using Guna.Charts.WinForms;
+﻿using Guna.Charts.Interfaces;
+using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
-using LaundryPOS.Services;
 using System.Globalization;
 
 namespace LaundryPOS.Forms.Views.AdminViews
@@ -74,7 +74,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             }
 
             dataset.Label = "Weekly Sales";
-
+            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
             salesChart.Datasets.Add(dataset);
             salesChart.Update();
         }
@@ -90,32 +90,30 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 MessageDialogIcon.Information, MessageDialogStyle.Light);
         }
 
+        private async Task DisplaySales(string interval, Func<Task<decimal>> salesFunc)
+        {
+            var sales = await salesFunc();
+            DisplayTotalSales($"Total {interval.ToLower()} sales: ₱ {sales}", $"Total {interval} Sales");
+        }
+
         private async void btnAnnualSales_Click(object sender, EventArgs e)
         {
-            var annualSales = await _salesService.GetAnnualSales();
-            DisplayTotalSales($"Total annual sales: ₱ {annualSales}",
-                "Total Annual Sales");
+            await DisplaySales("Annual", _salesService.GetAnnualSales);
         }
 
         private async void btnMonthlySales_Click(object sender, EventArgs e)
         {
-            var monthlySales = await _salesService.GetMonthlySales();
-            DisplayTotalSales($"Total monthly sales: ₱ {monthlySales}",
-                "Total Monthly Sales");
+            await DisplaySales("Monthly", _salesService.GetMonthlySales);
         }
 
         private async void btnWeeklySales_Click(object sender, EventArgs e)
         {
-            var weeklySales = await _salesService.GetWeeklySales();
-            DisplayTotalSales($"Total weekly sales: ₱ {weeklySales}",
-                "Total Weekly Sales");
+            await DisplaySales("Weekly", _salesService.GetWeeklySales);
         }
 
         private async void btnDailySales_Click(object sender, EventArgs e)
         {
-            var dailySales = await _salesService.GetDailySales();
-            DisplayTotalSales($"Total daily sales: ₱ {dailySales}",
-                "Total Daily Sales");
+            await DisplaySales("Daily", _salesService.GetDailySales);
         }
     }
 }
