@@ -24,7 +24,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async void DashboardView_Load(object sender, EventArgs e)
         {
-            await InitializeWeeklySalesChart();
+            await InitializeDailySalesChart();
             await InitializeSalesInfo();
         }
 
@@ -38,6 +38,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async Task InitializeWeeklySalesChart()
         {
+            salesChart.Reset();
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
 
@@ -65,11 +66,21 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var currentWeekOfYear = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
                 DateTime.Today, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
 
-            for (int week = currentWeekOfYear - 7; week <= currentWeekOfYear; week++)
+            for (int i = 7; i >= 0; i--)
             {
+                int week = currentWeekOfYear - i;
+                if (week <= 0)
+                {
+                    week = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                        DateTime.Today.AddDays(-i * 7), CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
+                }
+
+                var startDateLabel = GetStartWeekDate(DateTime.Today.Year, week);
+                var endDateLabel = GetEndWeekDate(DateTime.Today.Year, week);
+
                 var salesForWeek = salesData.FirstOrDefault(d => d.WeekNumber == week);
                 var salesAmount = (double?)salesForWeek?.TotalSales ?? 0;
-                var formattedDate = $"Week {week}";
+                var formattedDate = $"{startDateLabel:MMM d} - {endDateLabel:MMM d}";
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
             }
@@ -78,11 +89,61 @@ namespace LaundryPOS.Forms.Views.AdminViews
             salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
             salesChart.Datasets.Add(dataset);
             salesChart.Update();
+
+            lblStatsTitle.Text = "Weekly Sales Statistics";
+        }
+
+        private async Task InitializeMonthlySalesChart()
+        {
+            salesChart.Reset();
+            var startDate = DateTime.Today.AddMonths(-12);
+            var endDate = DateTime.Today.AddDays(1);
+
+            var sales = await _unitOfWork.TransactionItemRepo
+                .Get(includeProperties: "Transaction,Item",
+                    filter: ti => ti.Transaction.TransactionDate >= startDate
+                        && ti.Transaction.TransactionDate <= endDate
+                        && ti.Transaction.IsCompleted);
+
+            var salesData = sales
+                .GroupBy(ti => ti.Transaction.TransactionDate.Month)
+                .Select(group => new
+                {
+                    MonthNumber = group.Key,
+                    TotalSales = group.Sum(ti => ti.SubTotal)
+                })
+               .ToList();
+
+            var dataset = new GunaSplineDataset();
+
+            var currentMonth = DateTime.Today.Month;
+
+            for (int i = 7; i >= 0; i--)
+            {
+                int month = currentMonth - i;
+                if (month <= 0)
+                {
+                    month = 12 + month;
+                }
+                var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+                var salesForMonth = salesData.FirstOrDefault(d => d.MonthNumber == month);
+                var salesAmount = (double?)salesForMonth?.TotalSales ?? 0;
+                var formattedDate = $"{monthName}";
+
+                dataset.DataPoints.Add(formattedDate, salesAmount);
+            }
+
+            dataset.Label = "Monthly Sales";
+            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
+            salesChart.Datasets.Add(dataset);
+            salesChart.Update();
+
+            lblStatsTitle.Text = "Monthly Sales Statistics";
         }
 
         private async Task InitializeDailySalesChart()
         {
-            salesChart.YAxes.GridLines.Display = false;
+            salesChart.Reset(); 
 
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
@@ -117,10 +178,12 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 dataset.YFormat = $"₱{salesAmount:N2}";
             }
 
-            dataset.Label = "Weekly Sales";
+            dataset.Label = "Daily Sales";
             salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
             salesChart.Datasets.Add(dataset);
             salesChart.Update();
+
+            lblStatsTitle.Text = "Daily Sales Statistics";
         }
 
         public string FormatNumber(decimal number)
@@ -158,6 +221,47 @@ namespace LaundryPOS.Forms.Views.AdminViews
         private async void btnDailySales_Click(object sender, EventArgs e)
         {
             await DisplaySales("Daily", _salesService.GetDailySales);
+        }
+
+        private async void cbSalesChart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var chartText = cbSalesChart.SelectedItem.ToString();
+
+            switch (chartText)
+            {
+                case "Daily":
+                    await InitializeDailySalesChart();
+                    break;
+                case "Weekly":
+                    await InitializeWeeklySalesChart();
+                    break;
+                case "Monthly":
+                    await InitializeMonthlySalesChart();
+                    break;
+            }
+        }
+
+        private DateTime GetStartWeekDate(int year, int weekNumber)
+        {
+            var jan1 = new DateTime(year, 1, 1);
+            var daysOffset = DayOfWeek.Monday - jan1.DayOfWeek + 1;
+            var firstMonday = jan1.AddDays(daysOffset);
+
+            var cal = CultureInfo.CurrentCulture.Calendar;
+            var firstWeek = cal.GetWeekOfYear(firstMonday, 
+                CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+            if (firstWeek <= 1)
+            {
+                weekNumber -= 1;
+            }
+
+            return firstMonday.AddDays(weekNumber * 7);
+        }
+
+        private DateTime GetEndWeekDate(int year, int weekNumber)
+        {
+            return GetStartWeekDate(year, weekNumber).AddDays(6);
         }
     }
 }

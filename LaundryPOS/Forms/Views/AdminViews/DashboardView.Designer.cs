@@ -569,9 +569,10 @@
             this.cbSalesChart.Name = "cbSalesChart";
             this.cbSalesChart.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.cbSalesChart.Size = new System.Drawing.Size(140, 36);
-            this.cbSalesChart.StartIndex = 1;
+            this.cbSalesChart.StartIndex = 0;
             this.cbSalesChart.TabIndex = 3;
             this.cbSalesChart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cbSalesChart.SelectedIndexChanged += new System.EventHandler(this.cbSalesChart_SelectedIndexChanged);
             // 
             // lblStatsTitle
             // 
