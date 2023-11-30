@@ -12,5 +12,6 @@
         public const int LAST_HOUR = 23;
         public const int LAST_MINUTE = 59;
         public const int LAST_SECOND = 59;
+        public const int WEEKS_IN_MONTHS = 4;
     }
 }

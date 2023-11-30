@@ -24,7 +24,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async void DashboardView_Load(object sender, EventArgs e)
         {
-            await InitializeSalesChart();
+            await InitializeWeeklySalesChart();
             await InitializeSalesInfo();
         }
 
@@ -36,7 +36,51 @@ namespace LaundryPOS.Forms.Views.AdminViews
             lblDailySales.Text = $"₱ {FormatNumber(await _salesService.GetDailySales())}";
         }
 
-        private async Task InitializeSalesChart()
+        private async Task InitializeWeeklySalesChart()
+        {
+            var startDate = DateTime.Today.AddMonths(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            var sales = await _unitOfWork.TransactionItemRepo
+                .Get(includeProperties: "Transaction,Item",
+                    filter: ti => ti.Transaction.TransactionDate >= startDate
+                        && ti.Transaction.TransactionDate <= endDate
+                        && ti.Transaction.IsCompleted);
+
+            var salesData = sales
+                .GroupBy(ti => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                    ti.Transaction.TransactionDate,
+                    CalendarWeekRule.FirstFourDayWeek,
+                    DayOfWeek.Sunday
+                ))
+                .Select(group => new
+                {
+                    WeekNumber = group.Key,
+                    TotalSales = group.Sum(ti => ti.SubTotal)
+                })
+               .ToList();
+
+            var dataset = new GunaSplineDataset();
+
+            var currentWeekOfYear = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                DateTime.Today, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
+
+            for (int week = currentWeekOfYear - 7; week <= currentWeekOfYear; week++)
+            {
+                var salesForWeek = salesData.FirstOrDefault(d => d.WeekNumber == week);
+                var salesAmount = (double?)salesForWeek?.TotalSales ?? 0;
+                var formattedDate = $"Week {week}";
+
+                dataset.DataPoints.Add(formattedDate, salesAmount);
+            }
+
+            dataset.Label = "Weekly Sales";
+            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
+            salesChart.Datasets.Add(dataset);
+            salesChart.Update();
+        }
+
+        private async Task InitializeDailySalesChart()
         {
             salesChart.YAxes.GridLines.Display = false;
 
@@ -80,7 +124,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
         }
 
         public string FormatNumber(decimal number)
-            => number >= 1000 
+            => number >= 1000
                 ? (number / 1000).ToString("0.0") + "k"
                 : number.ToString();
 
