@@ -21,6 +21,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             _salesService = salesService;
             InitializeComponent();
+            panelBody.VerticalScroll.Value = scrollBar.Value;
         }
 
         private async void DashboardView_Load(object sender, EventArgs e)
@@ -257,7 +258,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var firstMonday = jan1.AddDays(daysOffset);
 
             var cal = CultureInfo.CurrentCulture.Calendar;
-            var firstWeek = cal.GetWeekOfYear(firstMonday, 
+            var firstWeek = cal.GetWeekOfYear(firstMonday,
                 CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
             if (firstWeek <= 1)
@@ -276,35 +277,43 @@ namespace LaundryPOS.Forms.Views.AdminViews
         private async Task InitializeTopItemsChart(DateTime startDate,
             DateTime endDate)
         {
-            var sales = await _salesService.GetSales(startDate, endDate);
-            var topItems = sales
-                .GroupBy(item => item.ItemId)
-                .Select(group => new
-                {
-                    ItemId = group.Key,
-                    Quantity = group.Sum(item => item.Quantity),
-                })
-                .OrderByDescending(item => item.Quantity)
-                .Take(10)
-                .ToList();
-
-            var dataset = new GunaHorizontalBarDataset();
-            var items = await _unitOfWork.ItemRepo.Get();
-
-            foreach (var item in topItems)
+            try
             {
-                var itemName = items.FirstOrDefault(i => i.Id == item.ItemId)?.Name;
-                if (!string.IsNullOrEmpty(itemName))
-                {
-                    dataset.DataPoints.Add(itemName, item.Quantity);
-                }
-            }
+                var sales = await _salesService.GetSales(startDate, endDate);
+                var topItems = sales
+                    .GroupBy(item => item.ItemId)
+                    .Select(group => new
+                    {
+                        ItemId = group.Key,
+                        Quantity = group.Sum(item => item.Quantity),
+                    })
+                    .OrderByDescending(item => item.Quantity)
+                    .Take(10)
+                    .ToList();
 
-            chartTopItems.Reset();
-            dataset.Label = "Most Bought Items";
-            chartTopItems.ApplyConfig(LightChartConfig.Config(), Color.White);
-            chartTopItems.Datasets.Add(dataset);
-            chartTopItems.Update();
+                var dataset = new GunaHorizontalBarDataset();
+                var items = await _unitOfWork.ItemRepo.Get();
+
+                foreach (var item in topItems)
+                {
+                    var itemName = items.FirstOrDefault(i => i.Id == item.ItemId)?.Name;
+                    if (!string.IsNullOrEmpty(itemName))
+                    {
+                        dataset.DataPoints.Add(itemName, item.Quantity);
+                    }
+                }
+
+                chartTopItems.Reset();
+                dataset.Label = "Sold Items";
+                chartTopItems.ApplyConfig(LightChartConfig.Config(), Color.White);
+                chartTopItems.Datasets.Add(dataset);
+                chartTopItems.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show(ParentForm, ex.Message, "An Error Occurred",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
         }
 
         private async void cbTopItems_SelectedIndexChanged(object sender, EventArgs e)
@@ -358,6 +367,11 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var endDate = DateTime.Today.AddDays(1);
 
             await InitializeTopItemsChart(startDate, endDate);
+        }
+
+        private void scrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            panelBody.VerticalScroll.Value = scrollBar.Value;
         }
     }
 }

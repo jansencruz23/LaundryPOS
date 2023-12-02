@@ -119,7 +119,8 @@
             this.btnTransaction = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdminProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnItem = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
+            this.scrollBar = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.chartTopItems = new Guna.Charts.WinForms.GunaChart();
             this.cbTopItems = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -144,12 +145,11 @@
             this.btnWeeklySales = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblWeeklySales = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.panelBody.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,7 +157,6 @@
             this.panelDailySales.SuspendLayout();
             this.panelMonthlySales.SuspendLayout();
             this.panelWeeklySales.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartSales
@@ -540,21 +539,39 @@
             this.btnItem.Text = "Items";
             this.btnItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // guna2Panel1
+            // panelBody
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.guna2Panel1.CustomizableEdges = customizableEdges43;
-            this.guna2Panel1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            this.guna2Panel1.Size = new System.Drawing.Size(1334, 655);
-            this.guna2Panel1.TabIndex = 25;
+            this.panelBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBody.Controls.Add(this.scrollBar);
+            this.panelBody.Controls.Add(this.guna2Panel3);
+            this.panelBody.Controls.Add(this.guna2Panel2);
+            this.panelBody.Controls.Add(this.tableLayoutPanel1);
+            this.panelBody.CustomizableEdges = customizableEdges43;
+            this.panelBody.FillColor = System.Drawing.SystemColors.Control;
+            this.panelBody.Location = new System.Drawing.Point(254, 100);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            this.panelBody.Size = new System.Drawing.Size(1334, 661);
+            this.panelBody.TabIndex = 25;
+            // 
+            // scrollBar
+            // 
+            this.scrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scrollBar.InUpdate = false;
+            this.scrollBar.LargeChange = 10;
+            this.scrollBar.Location = new System.Drawing.Point(1316, 0);
+            this.scrollBar.Name = "scrollBar";
+            this.scrollBar.ScrollbarSize = 18;
+            this.scrollBar.Size = new System.Drawing.Size(18, 655);
+            this.scrollBar.TabIndex = 32;
+            this.scrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollBar_Scroll);
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.Controls.Add(this.chartTopItems);
             this.guna2Panel3.Controls.Add(this.cbTopItems);
@@ -569,6 +586,8 @@
             // 
             // chartTopItems
             // 
+            this.chartTopItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartFont9.FontName = "Arial";
             this.chartTopItems.Legend.LabelFont = chartFont9;
             this.chartTopItems.Location = new System.Drawing.Point(20, 66);
@@ -603,8 +622,7 @@
             // 
             // cbTopItems
             // 
-            this.cbTopItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTopItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTopItems.BackColor = System.Drawing.Color.Transparent;
             this.cbTopItems.BorderThickness = 0;
             this.cbTopItems.CustomizableEdges = customizableEdges23;
@@ -664,8 +682,7 @@
             // 
             // cbSalesChart
             // 
-            this.cbSalesChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSalesChart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSalesChart.BackColor = System.Drawing.Color.Transparent;
             this.cbSalesChart.BorderThickness = 0;
             this.cbSalesChart.CustomizableEdges = customizableEdges27;
@@ -969,19 +986,11 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Weekly Sales";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.guna2Panel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(254, 100);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1337, 661);
-            this.flowLayoutPanel1.TabIndex = 26;
-            // 
             // DashboardView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panelBody);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "DashboardView";
             this.Size = new System.Drawing.Size(1605, 761);
@@ -990,7 +999,7 @@
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
+            this.panelBody.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -998,7 +1007,6 @@
             this.panelDailySales.ResumeLayout(false);
             this.panelMonthlySales.ResumeLayout(false);
             this.panelWeeklySales.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1021,7 +1029,7 @@
         private Guna.UI2.WinForms.Guna2Button btnTransaction;
         private Guna.UI2.WinForms.Guna2Button btnAdminProfile;
         private Guna.UI2.WinForms.Guna2Button btnItem;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel panelBody;
         private Guna.UI2.WinForms.Guna2Panel panelAnnualSales;
         private Guna.UI2.WinForms.Guna2CircleButton btnAnnualSales;
         private Label lblAnnualSales;
@@ -1046,6 +1054,6 @@
         private Guna.Charts.WinForms.GunaChart chartTopItems;
         private Guna.UI2.WinForms.Guna2ComboBox cbTopItems;
         private Label label2;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2VScrollBar scrollBar;
     }
 }
