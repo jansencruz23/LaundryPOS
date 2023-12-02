@@ -9,7 +9,7 @@
       "POS System/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "Guna.Charts.WinForms": "1.0.8",
+          "Guna.Charts.WinForms": "1.0.4",
           "Guna.UI2.WinForms": "2.0.4.5",
           "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.Design": "7.0.10",
@@ -68,14 +68,11 @@
           }
         }
       },
-      "Guna.Charts.WinForms/1.0.8": {
-        "dependencies": {
-          "System.Management": "7.0.0"
-        },
+      "Guna.Charts.WinForms/1.0.4": {
         "runtime": {
-          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {
-            "assemblyVersion": "1.0.8.0",
-            "fileVersion": "1.0.8.0"
+          "lib/net40/Guna.Charts.WinForms.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
           }
         }
       },
@@ -1229,12 +1226,12 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
-    "Guna.Charts.WinForms/1.0.8": {
+    "Guna.Charts.WinForms/1.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QMlyje6VVbov1IqRh/tiGEHq0IsWuj3JXQ5m0bh4qIrm8x4Lf+69AXBc752oDN3GBX2CDKIwn4wBtErkOT9oOg==",
-      "path": "guna.charts.winforms/1.0.8",
-      "hashPath": "guna.charts.winforms.1.0.8.nupkg.sha512"
+      "sha512": "sha512-78Lny2uFqhMROmRJ+4N53f3662ydRRVlRrED0EpucbQROEGMzNJkC34WWXcJPm8dz6+zONr4NkUUPJWO58o04A==",
+      "path": "guna.charts.winforms/1.0.4",
+      "hashPath": "guna.charts.winforms.1.0.4.nupkg.sha512"
     },
     "Guna.UI2.WinForms/2.0.4.5": {
       "type": "package",
