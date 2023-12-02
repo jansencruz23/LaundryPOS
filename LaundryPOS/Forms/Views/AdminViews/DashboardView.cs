@@ -38,16 +38,9 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async Task InitializeWeeklySalesChart()
         {
-            salesChart.Reset();
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
-
-            var sales = await _unitOfWork.TransactionItemRepo
-                .Get(includeProperties: "Transaction,Item",
-                    filter: ti => ti.Transaction.TransactionDate >= startDate
-                        && ti.Transaction.TransactionDate <= endDate
-                        && ti.Transaction.IsCompleted);
-
+            var sales = await _salesService.GetSales(startDate, endDate);
             var salesData = sales
                 .GroupBy(ti => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
                     ti.Transaction.TransactionDate,
@@ -62,7 +55,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
                .ToList();
 
             var dataset = new GunaSplineDataset();
-
             var currentWeekOfYear = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
                 DateTime.Today, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
 
@@ -77,7 +69,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
                 var startDateLabel = GetStartWeekDate(DateTime.Today.Year, week);
                 var endDateLabel = GetEndWeekDate(DateTime.Today.Year, week);
-
                 var salesForWeek = salesData.FirstOrDefault(d => d.WeekNumber == week);
                 var salesAmount = (double?)salesForWeek?.TotalSales ?? 0;
                 var formattedDate = $"{startDateLabel:MMM d} - {endDateLabel:MMM d}";
@@ -85,26 +76,14 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 dataset.DataPoints.Add(formattedDate, salesAmount);
             }
 
-            dataset.Label = "Weekly Sales";
-            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
-            salesChart.Datasets.Add(dataset);
-            salesChart.Update();
-
-            lblStatsTitle.Text = "Weekly Sales Statistics";
+            ApplyChartConfig(dataset, "Weekly");
         }
 
         private async Task InitializeMonthlySalesChart()
         {
-            salesChart.Reset();
             var startDate = DateTime.Today.AddMonths(-12);
             var endDate = DateTime.Today.AddDays(1);
-
-            var sales = await _unitOfWork.TransactionItemRepo
-                .Get(includeProperties: "Transaction,Item",
-                    filter: ti => ti.Transaction.TransactionDate >= startDate
-                        && ti.Transaction.TransactionDate <= endDate
-                        && ti.Transaction.IsCompleted);
-
+            var sales = await _salesService.GetSales(startDate, endDate);
             var salesData = sales
                 .GroupBy(ti => ti.Transaction.TransactionDate.Month)
                 .Select(group => new
@@ -117,7 +96,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var dataset = new GunaSplineDataset();
 
             var currentMonth = DateTime.Today.Month;
-
             for (int i = 7; i >= 0; i--)
             {
                 int month = currentMonth - i;
@@ -133,26 +111,48 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 dataset.DataPoints.Add(formattedDate, salesAmount);
             }
 
-            dataset.Label = "Monthly Sales";
-            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
-            salesChart.Datasets.Add(dataset);
-            salesChart.Update();
+            ApplyChartConfig(dataset, "Monthly");
+        }
 
-            lblStatsTitle.Text = "Monthly Sales Statistics";
+        private async Task InitializeAnnualSalesChart()
+        {
+            var startDate = DateTime.Today.AddYears(-7);
+            var endDate = DateTime.Today.AddDays(1);
+            var sales = await _salesService.GetSales(startDate, endDate);
+            var salesData = sales
+                .GroupBy(ti => ti.Transaction.TransactionDate.Year)
+                .Select(group => new
+                {
+                    Year = group.Key,
+                    TotalSales = group.Sum(ti => ti.SubTotal)
+                })
+               .ToList();
+
+            var dataset = new GunaSplineDataset();
+            var currentYear = DateTime.Today.Year;
+            for (int i = 7; i >= 0; i--)
+            {
+                int year = currentYear - i;
+                if (year <= 0)
+                {
+                    year = 12 + year;
+                }
+
+                var salesForYear = salesData.FirstOrDefault(d => d.Year == year);
+                var salesAmount = (double?)salesForYear?.TotalSales ?? 0;
+                var formattedDate = $"{year}";
+
+                dataset.DataPoints.Add(formattedDate, salesAmount);
+            }
+
+            ApplyChartConfig(dataset, "Annual");
         }
 
         private async Task InitializeDailySalesChart()
         {
-            salesChart.Reset(); 
-
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
-
-            var sales = await _unitOfWork.TransactionItemRepo
-                .Get(includeProperties: "Transaction,Item",
-                    filter: ti => ti.Transaction.TransactionDate >= startDate
-                        && ti.Transaction.TransactionDate <= endDate
-                        && ti.Transaction.IsCompleted);
+            var sales = await _salesService.GetSales(startDate, endDate);
 
             var salesData = sales
                 .GroupBy(ti => new
@@ -167,7 +167,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
                .ToList();
 
             var dataset = new GunaSplineDataset();
-
             for (var date = startDate; date <= endDate; date = date.AddDays(1))
             {
                 var salesForDate = salesData.FirstOrDefault(d => d.Date == date.Date);
@@ -178,12 +177,17 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 dataset.YFormat = $"₱{salesAmount:N2}";
             }
 
-            dataset.Label = "Daily Sales";
+            ApplyChartConfig(dataset, "Daily");
+        }
+
+        private void ApplyChartConfig(GunaSplineDataset dataset, string title)
+        {
+            salesChart.Reset();
+            dataset.Label = $"{title} Sales";
             salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
             salesChart.Datasets.Add(dataset);
             salesChart.Update();
-
-            lblStatsTitle.Text = "Daily Sales Statistics";
+            lblStatsTitle.Text = $"{title} Sales Statistics";
         }
 
         public string FormatNumber(decimal number)
@@ -237,6 +241,9 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     break;
                 case "Monthly":
                     await InitializeMonthlySalesChart();
+                    break;
+                case "Annually":
+                    await InitializeAnnualSalesChart();
                     break;
             }
         }
