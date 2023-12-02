@@ -4,6 +4,7 @@ using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
+using Microsoft.IdentityModel.Tokens;
 using System.Globalization;
 
 namespace LaundryPOS.Forms.Views.AdminViews
@@ -24,8 +25,9 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async void DashboardView_Load(object sender, EventArgs e)
         {
-            await InitializeDailySalesChart();
+            await InitializeWeeklySalesChart();
             await InitializeSalesInfo();
+            await InitializeWeekTopItems();
         }
 
         private async Task InitializeSalesInfo()
@@ -182,11 +184,11 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private void ApplyChartConfig(GunaSplineDataset dataset, string title)
         {
-            salesChart.Reset();
+            chartSales.Reset();
             dataset.Label = $"{title} Sales";
-            salesChart.ApplyConfig(LightChartConfig.Config(), Color.White);
-            salesChart.Datasets.Add(dataset);
-            salesChart.Update();
+            chartSales.ApplyConfig(LightChartConfig.Config(), Color.White);
+            chartSales.Datasets.Add(dataset);
+            chartSales.Update();
             lblStatsTitle.Text = $"{title} Sales Statistics";
         }
 
@@ -269,6 +271,93 @@ namespace LaundryPOS.Forms.Views.AdminViews
         private DateTime GetEndWeekDate(int year, int weekNumber)
         {
             return GetStartWeekDate(year, weekNumber).AddDays(6);
+        }
+
+        private async Task InitializeTopItemsChart(DateTime startDate,
+            DateTime endDate)
+        {
+            var sales = await _salesService.GetSales(startDate, endDate);
+            var topItems = sales
+                .GroupBy(item => item.ItemId)
+                .Select(group => new
+                {
+                    ItemId = group.Key,
+                    Quantity = group.Sum(item => item.Quantity),
+                })
+                .OrderByDescending(item => item.Quantity)
+                .Take(10)
+                .ToList();
+
+            var dataset = new GunaHorizontalBarDataset();
+            var items = await _unitOfWork.ItemRepo.Get();
+
+            foreach (var item in topItems)
+            {
+                var itemName = items.FirstOrDefault(i => i.Id == item.ItemId)?.Name;
+                if (!string.IsNullOrEmpty(itemName))
+                {
+                    dataset.DataPoints.Add(itemName, item.Quantity);
+                }
+            }
+
+            chartTopItems.Reset();
+            dataset.Label = "Most Bought Items";
+            chartTopItems.ApplyConfig(LightChartConfig.Config(), Color.White);
+            chartTopItems.Datasets.Add(dataset);
+            chartTopItems.Update();
+        }
+
+        private async void cbTopItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var chartText = cbTopItems.SelectedItem.ToString();
+
+            switch (chartText)
+            {
+                case "Daily":
+                    await InitializeDayTopItems();
+                    break;
+                case "Weekly":
+                    await InitializeWeekTopItems();
+                    break;
+                case "Monthly":
+                    await InitializeMonthTopItems();
+                    break;
+                case "Annually":
+                    await InitializeAnnualTopItems();
+                    break;
+            }
+        }
+
+        private async Task InitializeDayTopItems()
+        {
+            var startDate = DateTime.Today.AddDays(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeTopItemsChart(startDate, endDate);
+        }
+
+        private async Task InitializeWeekTopItems()
+        {
+            var startDate = DateTime.Today.AddDays(-7);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeTopItemsChart(startDate, endDate);
+        }
+
+        private async Task InitializeMonthTopItems()
+        {
+            var startDate = DateTime.Today.AddMonths(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeTopItemsChart(startDate, endDate);
+        }
+
+        private async Task InitializeAnnualTopItems()
+        {
+            var startDate = DateTime.Today.AddYears(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeTopItemsChart(startDate, endDate);
         }
     }
 }
