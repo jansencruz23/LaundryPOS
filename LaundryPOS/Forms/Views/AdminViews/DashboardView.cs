@@ -4,7 +4,6 @@ using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
-using Microsoft.IdentityModel.Tokens;
 using System.Globalization;
 
 namespace LaundryPOS.Forms.Views.AdminViews
@@ -29,6 +28,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             await InitializeWeeklySalesChart();
             await InitializeSalesInfo();
             await InitializeWeekTopItems();
+            await InitializeWeekTopCategories();
         }
 
         private async Task InitializeSalesInfo()
@@ -177,7 +177,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 var salesAmount = (double?)salesForDate?.TotalSales ?? 0;
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
-                dataset.YFormat = $"₱{salesAmount:N2}";
             }
 
             ApplyChartConfig(dataset, "Daily");
@@ -274,7 +273,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             return GetStartWeekDate(year, weekNumber).AddDays(6);
         }
 
-        private async Task InitializeTopItemsChart(DateTime startDate,
+        private async Task InitializeItemsChart(DateTime startDate,
             DateTime endDate)
         {
             try
@@ -342,7 +341,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeTopItemsChart(startDate, endDate);
+            await InitializeItemsChart(startDate, endDate);
         }
 
         private async Task InitializeWeekTopItems()
@@ -350,7 +349,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeTopItemsChart(startDate, endDate);
+            await InitializeItemsChart(startDate, endDate);
         }
 
         private async Task InitializeMonthTopItems()
@@ -358,7 +357,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeTopItemsChart(startDate, endDate);
+            await InitializeItemsChart(startDate, endDate);
         }
 
         private async Task InitializeAnnualTopItems()
@@ -366,12 +365,110 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddYears(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeTopItemsChart(startDate, endDate);
+            await InitializeItemsChart(startDate, endDate);
         }
 
         private void scrollBar_Scroll(object sender, ScrollEventArgs e)
         {
             panelBody.VerticalScroll.Value = scrollBar.Value;
+        }
+
+        private async Task InitializeCategoryChart(DateTime startDate,
+            DateTime endDate)
+        {
+            try
+            {
+                var sales = await _salesService.GetSales(startDate, endDate);
+
+                var categoryQuantities = sales
+                    .GroupBy(item => item.Item.CategoryId)
+                    .Select(group => new
+                    {
+                        Id = group.Key,
+                        Quantity = group.Sum(item => item.Quantity)
+                    })
+                    .OrderByDescending(category => category.Quantity)
+                    .Take(10)
+                    .ToList();
+
+                var dataset = new GunaPieDataset();
+                var categories = await _unitOfWork.CategoryRepo.Get();
+
+                foreach (var category in categoryQuantities)
+                {
+                    var categoryName = categories.FirstOrDefault(i => i.Id == category.Id)?.Name;
+                    if (!string.IsNullOrEmpty(categoryName))
+                    {
+                        dataset.DataPoints.Add(categoryName, category.Quantity);
+                    }
+                }
+
+                chartCategory.Reset();
+                chartCategory.ApplyConfig(LightChartConfig.PieChartConfig(), Color.White);
+                chartCategory.Datasets.Add(dataset);
+                chartCategory.Legend.Position = LegendPosition.Right;
+                chartCategory.XAxes.Display = false;
+                chartCategory.YAxes.Display = false;
+                chartCategory.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show(ParentForm, ex.Message, "An Error Occurred",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
+        }
+
+        private async Task InitializeDayTopCategories()
+        {
+            var startDate = DateTime.Today.AddDays(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeCategoryChart(startDate, endDate);
+        }
+
+        private async Task InitializeWeekTopCategories()
+        {
+            var startDate = DateTime.Today.AddDays(-7);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeCategoryChart(startDate, endDate);
+        }
+
+        private async Task InitializeMonthTopCategories()
+        {
+            var startDate = DateTime.Today.AddMonths(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeCategoryChart(startDate, endDate);
+        }
+
+        private async Task InitializeAnnualTopCategories()
+        {
+            var startDate = DateTime.Today.AddYears(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await InitializeCategoryChart(startDate, endDate);
+        }
+
+        private async void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var chartText = cbCategory.SelectedItem.ToString();
+
+            switch (chartText)
+            {
+                case "Daily":
+                    await InitializeDayTopCategories();
+                    break;
+                case "Weekly":
+                    await InitializeWeekTopCategories();
+                    break;
+                case "Monthly":
+                    await InitializeMonthTopCategories();
+                    break;
+                case "Annually":
+                    await InitializeAnnualTopCategories();
+                    break;
+            }
         }
     }
 }

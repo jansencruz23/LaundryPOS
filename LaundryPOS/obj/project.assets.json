@@ -59,20 +59,16 @@
           }
         }
       },
-      "Guna.Charts.WinForms/1.0.9": {
+      "Guna.Charts.WinForms/1.0.8": {
         "type": "package",
         "dependencies": {
           "System.Management": "7.0.0"
         },
         "compile": {
-          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {
-            "related": ".xml"
-          }
+          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {}
         },
         "runtime": {
-          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {
-            "related": ".xml"
-          }
+          "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -2093,34 +2089,26 @@
         "readme.md"
       ]
     },
-    "Guna.Charts.WinForms/1.0.9": {
-      "sha512": "AT6CUHGi+3fh7ut9tKIW6UB8lwFbpqCibjm4ya5qxLvwQPNjKHr1gSeStf4r+B+asekyiuu8ZCKCVlVugL+lVg==",
+    "Guna.Charts.WinForms/1.0.8": {
+      "sha512": "QMlyje6VVbov1IqRh/tiGEHq0IsWuj3JXQ5m0bh4qIrm8x4Lf+69AXBc752oDN3GBX2CDKIwn4wBtErkOT9oOg==",
       "type": "package",
-      "path": "guna.charts.winforms/1.0.9",
+      "path": "guna.charts.winforms/1.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "README.md",
-        "guna.charts.winforms.1.0.9.nupkg.sha512",
+        "guna.charts.winforms.1.0.8.nupkg.sha512",
         "guna.charts.winforms.nuspec",
         "icon.png",
         "lib/net40/Guna.Charts.WinForms.dll",
-        "lib/net40/Guna.Charts.WinForms.xml",
         "lib/net45/Guna.Charts.WinForms.dll",
-        "lib/net45/Guna.Charts.WinForms.xml",
         "lib/net461/Guna.Charts.WinForms.dll",
-        "lib/net461/Guna.Charts.WinForms.xml",
         "lib/net472/Guna.Charts.WinForms.dll",
-        "lib/net472/Guna.Charts.WinForms.xml",
         "lib/net48/Guna.Charts.WinForms.dll",
-        "lib/net48/Guna.Charts.WinForms.xml",
         "lib/net6.0-windows7.0/Guna.Charts.WinForms.dll",
-        "lib/net6.0-windows7.0/Guna.Charts.WinForms.xml",
         "lib/net7.0-windows7.0/Guna.Charts.WinForms.dll",
-        "lib/net7.0-windows7.0/Guna.Charts.WinForms.xml",
-        "lib/netcoreapp3.1/Guna.Charts.WinForms.dll",
-        "lib/netcoreapp3.1/Guna.Charts.WinForms.xml"
+        "lib/netcoreapp3.1/Guna.Charts.WinForms.dll"
       ]
     },
     "Guna.UI2.WinForms/2.0.4.5": {
@@ -5706,7 +5694,7 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "BCrypt.Net-Next >= 4.0.3",
-      "Guna.Charts.WinForms >= 1.0.9",
+      "Guna.Charts.WinForms >= 1.0.8",
       "Guna.UI2.WinForms >= 2.0.4.5",
       "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
@@ -5772,7 +5760,7 @@
           },
           "Guna.Charts.WinForms": {
             "target": "Package",
-            "version": "[1.0.9, )"
+            "version": "[1.0.8, )"
           },
           "Guna.UI2.WinForms": {
             "target": "Package",
