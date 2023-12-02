@@ -63,7 +63,7 @@ namespace LaundryPOS.Services
             DateTime endDate)
         {
             return await _unitOfWork.TransactionItemRepo
-                .Get(includeProperties: "Transaction,Item",
+                .Get(includeProperties: "Transaction,Item,Transaction.Employee",
                     filter: ti => ti.Transaction.TransactionDate >= startDate
                         && ti.Transaction.TransactionDate <= endDate
                         && ti.Transaction.IsCompleted);

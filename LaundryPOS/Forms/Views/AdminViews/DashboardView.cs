@@ -29,6 +29,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             await InitializeSalesInfo();
             await InitializeWeekTopItems();
             await InitializeWeekTopCategories();
+            await InitializeWeekTopEmployee();
         }
 
         private async Task InitializeSalesInfo()
@@ -273,7 +274,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             return GetStartWeekDate(year, weekNumber).AddDays(6);
         }
 
-        private async Task InitializeItemsChart(DateTime startDate,
+        private async Task ConfigItemsChart(DateTime startDate,
             DateTime endDate)
         {
             try
@@ -306,6 +307,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 dataset.Label = "Sold Items";
                 chartTopItems.ApplyConfig(LightChartConfig.Config(), Color.White);
                 chartTopItems.Datasets.Add(dataset);
+                chartTopItems.Misc.BarCornerRadius = 5;
                 chartTopItems.Update();
             }
             catch (Exception ex)
@@ -341,7 +343,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeItemsChart(startDate, endDate);
+            await ConfigItemsChart(startDate, endDate);
         }
 
         private async Task InitializeWeekTopItems()
@@ -349,7 +351,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeItemsChart(startDate, endDate);
+            await ConfigItemsChart(startDate, endDate);
         }
 
         private async Task InitializeMonthTopItems()
@@ -357,7 +359,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeItemsChart(startDate, endDate);
+            await ConfigItemsChart(startDate, endDate);
         }
 
         private async Task InitializeAnnualTopItems()
@@ -365,7 +367,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddYears(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeItemsChart(startDate, endDate);
+            await ConfigItemsChart(startDate, endDate);
         }
 
         private void scrollBar_Scroll(object sender, ScrollEventArgs e)
@@ -373,7 +375,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             panelBody.VerticalScroll.Value = scrollBar.Value;
         }
 
-        private async Task InitializeCategoryChart(DateTime startDate,
+        private async Task ConfigCategoryChart(DateTime startDate,
             DateTime endDate)
         {
             try
@@ -423,7 +425,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeCategoryChart(startDate, endDate);
+            await ConfigCategoryChart(startDate, endDate);
         }
 
         private async Task InitializeWeekTopCategories()
@@ -431,7 +433,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeCategoryChart(startDate, endDate);
+            await ConfigCategoryChart(startDate, endDate);
         }
 
         private async Task InitializeMonthTopCategories()
@@ -439,7 +441,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeCategoryChart(startDate, endDate);
+            await ConfigCategoryChart(startDate, endDate);
         }
 
         private async Task InitializeAnnualTopCategories()
@@ -447,7 +449,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var startDate = DateTime.Today.AddYears(-1);
             var endDate = DateTime.Today.AddDays(1);
 
-            await InitializeCategoryChart(startDate, endDate);
+            await ConfigCategoryChart(startDate, endDate);
         }
 
         private async void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -469,6 +471,102 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     await InitializeAnnualTopCategories();
                     break;
             }
+        }
+
+        private async Task ConfigEmployeeChart(DateTime startDate,
+            DateTime endDate)
+        {
+            try
+            {
+                var sales = await _salesService.GetSales(startDate, endDate);
+
+                var employeeTransactions = sales
+                    .GroupBy(sale => sale.Transaction.Employee.Id)
+                    .Select(group => new
+                    {
+                        Id = group.Key,
+                        TransactionCount = group.Count()
+                    })
+                    .OrderByDescending(emp => emp.TransactionCount)
+                    .Take(10)
+                    .ToList();
+
+                var dataset = new GunaBarDataset();
+                var employees = await _unitOfWork.EmployeeRepo.Get();
+
+                foreach (var employee in employeeTransactions)
+                {
+                    var employeeName = employees.FirstOrDefault(e => e.Id == employee.Id)?.FullName;
+                    dataset.DataPoints.Add(employeeName, employee.TransactionCount);
+                }
+
+                chartEmployee.Reset();
+                chartEmployee.ApplyConfig(LightChartConfig.PieChartConfig(), Color.White);
+                chartEmployee.Datasets.Add(dataset);
+                chartEmployee.Misc.BarCornerRadius = 2;
+                chartEmployee.YAxes.GridLines.Display = false;
+                chartEmployee.Legend.Position = LegendPosition.Right;
+                chartEmployee.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show(ParentForm, ex.Message, "An Error Occurred",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
+        }
+
+        private async Task InitializeDayTopEmployee()
+        {
+            var startDate = DateTime.Today.AddDays(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await ConfigEmployeeChart(startDate, endDate);
+        }
+
+        private async Task InitializeWeekTopEmployee()
+        {
+            var startDate = DateTime.Today.AddDays(-7);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await ConfigEmployeeChart(startDate, endDate);
+        }
+
+        private async Task InitializeMonthTopEmployee()
+        {
+            var startDate = DateTime.Today.AddMonths(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await ConfigEmployeeChart(startDate, endDate);
+        }
+
+        private async Task InitializeAnnualTopEmployee()
+        {
+            var startDate = DateTime.Today.AddYears(-1);
+            var endDate = DateTime.Today.AddDays(1);
+
+            await ConfigEmployeeChart(startDate, endDate);
+        }
+
+        private async void cbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var chartText = cbCategory.SelectedItem.ToString();
+
+            switch (chartText)
+            {
+                case "Daily":
+                    await InitializeDayTopEmployee();
+                    break;
+                case "Weekly":
+                    await InitializeWeekTopEmployee();
+                    break;
+                case "Monthly":
+                    await InitializeMonthTopEmployee();
+                    break;
+                case "Annually":
+                    await InitializeAnnualTopEmployee();
+                    break;
+            }
+
         }
     }
 }
