@@ -91,14 +91,6 @@ namespace LaundryPOS.Forms.Views
             await _styleManager.Theme.ApplyLighterThemeToDataGridView(employeeTable, 1f, true);
         }
 
-        private void ChangeAdminView<T>(Func<IUnitOfWork, IStyleManager, ChangeAdminViewDelegate, T> createViewFunc)
-            where T : UserControl
-        {
-            Dispose();
-            var view = createViewFunc(_unitOfWork, _styleManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
-        }
-
         private void btnCategory_Click(object sender, EventArgs e)
         {
             ChangeAdminView(CreateView<CategoryView>());

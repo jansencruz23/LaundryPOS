@@ -5,6 +5,7 @@ using LaundryPOS.Helpers;
 using System.Data;
 using LaundryPOS.Forms.Views.BaseViews;
 using Guna.UI2.WinForms;
+using LaundryPOS.Forms.Views.AdminViews;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -211,6 +212,11 @@ namespace LaundryPOS.Forms.Views
                     : string.Empty;
                 e.FormattingApplied = true;
             }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ChangeDashboardView();
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)

@@ -27,18 +27,23 @@ namespace LaundryPOS.Forms
             InitializeComponent();
             lblTitle.Text = _title;
 
-            ShowItemView();
+            ShowDashboardView();
         }
 
-        private void ShowItemView()
+        private void ShowDashboardView()
         {
             var itemView = new DashboardView(_unitOfWork, _styleManager, _salesService, changeAdminViewDelegate);
             viewPanel.Controls.Add(itemView);
             itemView.Dock = DockStyle.Fill;
         }
 
-        private void ChangePanelContent(UserControl newContent)
+        private void ChangePanelContent(UserControl newContent, bool isDashboard)
         {
+            if (isDashboard)
+            {
+                newContent = new DashboardView(_unitOfWork, _styleManager, _salesService, changeAdminViewDelegate);
+            }
+
             viewPanel.Controls.Clear();
             viewPanel.Controls.Add(newContent);
             newContent.Dock = DockStyle.Fill;
@@ -47,7 +52,7 @@ namespace LaundryPOS.Forms
         private void btnSettings_Click(object sender, EventArgs e)
         {
             var settingsView = new AppSettingsView(_unitOfWork, _styleManager, changeAdminViewDelegate);
-            ChangePanelContent(settingsView);
+            ChangePanelContent(settingsView, false);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
+using LaundryPOS.Forms.Views.AdminViews;
 using LaundryPOS.Helpers;
 
 namespace LaundryPOS.Forms.Views
@@ -10,6 +11,7 @@ namespace LaundryPOS.Forms.Views
         protected readonly IUnitOfWork _unitOfWork;
         protected readonly IStyleManager _styleManager;
         protected readonly ChangeAdminViewDelegate _changeAdminView;
+        protected readonly ISalesService _salesService;
 
         public BaseViewControl(IUnitOfWork unitOfWork,
             IStyleManager styleManager,
@@ -29,7 +31,13 @@ namespace LaundryPOS.Forms.Views
         {
             Dispose();
             var view = createViewFunc(_unitOfWork, _styleManager, _changeAdminView);
-            _changeAdminView?.Invoke(view);
+            _changeAdminView?.Invoke(view, false);
+        }
+
+        protected void ChangeDashboardView()
+        {
+            Dispose();
+            _changeAdminView?.Invoke(null, true);
         }
 
         protected Func<IUnitOfWork, IStyleManager, ChangeAdminViewDelegate, T> CreateView<T>()

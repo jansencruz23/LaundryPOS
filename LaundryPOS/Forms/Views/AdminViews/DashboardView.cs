@@ -483,5 +483,35 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     break;
             }
         }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView(CreateView<ItemView>());
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView(CreateView<CategoryView>());
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView(CreateView<EmployeeView>());
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView(CreateView<TransactionView>());
+        }
+
+        private void btnAdminProfile_Click(object sender, EventArgs e)
+        {
+            ChangeAdminView(CreateView<AdminProfileView>());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ConfirmLogout();
+        }
     }
 }
