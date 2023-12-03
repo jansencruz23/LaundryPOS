@@ -50,7 +50,6 @@ namespace LaundryPOS.Forms.Views
             panelCover.Size = new Size(1, 1);
         }
 
-
         private async void ItemView_Load(object sender, EventArgs e)
         {
             await DisplayItems();
@@ -183,18 +182,6 @@ namespace LaundryPOS.Forms.Views
             txtPath.Clear();
             txtStock.Clear();
             imgIcon.Image = null;
-        }
-
-        private async Task ApplyTheme()
-        {
-            await _styleManager.Theme.ApplyThemeToButton(btnFile);
-            await _styleManager.Theme.ApplyThemeToButton(btnItem);
-            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
-            await _styleManager.Theme.ApplyLighterThemeToDataGridView(itemTable, 1f, true);
-            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtName);
-            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtPrice);
-            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtSearch);
-            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtStock);
         }
 
         private void itemTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -394,10 +381,28 @@ namespace LaundryPOS.Forms.Views
             await RefreshData(txtSearch.Text);
         }
 
+        private void textBoxes_Click(object sender, EventArgs e)
+        {
+            HideValidationError(lblNameValidation, lblIconValidation,
+                lblCategoryValidation, lblPriceValidation, lblStockValidation);
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _styleManager.Theme.ApplyThemeToButton(btnFile);
+            await _styleManager.Theme.ApplyThemeToButton(btnItem);
+            await _styleManager.Theme.ApplyThemeToButton(btnSearch);
+            await _styleManager.Theme.ApplyLighterThemeToDataGridView(itemTable, 1f, true);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtName);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtPrice);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtSearch);
+            await _styleManager.Theme.ApplyFocusedThemeToTextBox(txtStock);
+        }
+
         private void StyleFonts()
         {
             _styleManager.Font.StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
-                btnAdminProfile, btnAdd, btnSave, btnUpdate, btnDelete,
+                btnAdminProfile, btnDashboard, btnAdd, btnSave, btnUpdate, btnDelete,
                 btnPrint, btnLogout, btnFile, btnSearch);
             _styleManager.Font.StyleFontsLabel(18f, true, lblDetails, lblList);
             _styleManager.Font.StyleFontsLabel(11.25f, false, lblName, lblCategory, lblPrice, lblStock);
@@ -405,12 +410,6 @@ namespace LaundryPOS.Forms.Views
             _styleManager.Font.StyleFontsLabel(8.25f, false, lblNameValidation, lblPriceValidation,
                 lblCategoryValidation, lblIconValidation, lblStockValidation);
             cbCategory.Font = _styleManager.Font.Helvetica(11.25f);
-        }
-
-        private void textBoxes_Click(object sender, EventArgs e)
-        {
-            HideValidationError(lblNameValidation, lblIconValidation,
-                lblCategoryValidation, lblPriceValidation, lblStockValidation);
         }
     }
 }

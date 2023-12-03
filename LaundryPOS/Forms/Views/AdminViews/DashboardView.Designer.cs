@@ -148,15 +148,15 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.chartEmployee = new Guna.Charts.WinForms.GunaChart();
             this.cbEmployee = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblEmployeeTitle = new System.Windows.Forms.Label();
             this.panelCategory = new Guna.UI2.WinForms.Guna2Panel();
             this.chartCategory = new Guna.Charts.WinForms.GunaChart();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblCategoryTitle = new System.Windows.Forms.Label();
             this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.chartTopItems = new Guna.Charts.WinForms.GunaChart();
             this.cbTopItems = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblItemsTitle = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbSalesChart = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblStatsTitle = new System.Windows.Forms.Label();
@@ -164,19 +164,20 @@
             this.panelAnnualSales = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAnnualSales = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblAnnualSales = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAnnualTitle = new System.Windows.Forms.Label();
             this.panelDailySales = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDailySales = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblDailySales = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblDailyTitle = new System.Windows.Forms.Label();
             this.panelMonthlySales = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMonthlySales = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblMonthlySales = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMonthlyTitle = new System.Windows.Forms.Label();
             this.panelWeeklySales = new Guna.UI2.WinForms.Guna2Panel();
             this.btnWeeklySales = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblWeeklySales = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblWeeklyTitle = new System.Windows.Forms.Label();
+            this.panelCover = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -484,7 +485,7 @@
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.chartEmployee);
             this.guna2Panel1.Controls.Add(this.cbEmployee);
-            this.guna2Panel1.Controls.Add(this.label7);
+            this.guna2Panel1.Controls.Add(this.lblEmployeeTitle);
             this.guna2Panel1.CustomizableEdges = customizableEdges17;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(444, 637);
@@ -567,22 +568,22 @@
             this.cbEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.cbEmployee_SelectedIndexChanged);
             // 
-            // label7
+            // lblEmployeeTitle
             // 
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(42, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(251, 27);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Sales per Employee";
+            this.lblEmployeeTitle.BackColor = System.Drawing.Color.White;
+            this.lblEmployeeTitle.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEmployeeTitle.Location = new System.Drawing.Point(42, 30);
+            this.lblEmployeeTitle.Name = "lblEmployeeTitle";
+            this.lblEmployeeTitle.Size = new System.Drawing.Size(251, 27);
+            this.lblEmployeeTitle.TabIndex = 6;
+            this.lblEmployeeTitle.Text = "Sales per Employee";
             // 
             // panelCategory
             // 
             this.panelCategory.BackColor = System.Drawing.Color.Transparent;
             this.panelCategory.BorderRadius = 20;
             this.panelCategory.Controls.Add(this.chartCategory);
-            this.panelCategory.Controls.Add(this.label5);
+            this.panelCategory.Controls.Add(this.lblCategoryTitle);
             this.panelCategory.Controls.Add(this.cbCategory);
             this.panelCategory.CustomizableEdges = customizableEdges21;
             this.panelCategory.FillColor = System.Drawing.Color.White;
@@ -631,16 +632,16 @@
             tick9.Font = chartFont24;
             this.chartCategory.ZAxes.Ticks = tick9;
             // 
-            // label5
+            // lblCategoryTitle
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(25, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 27);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Top Selling Categories";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCategoryTitle.BackColor = System.Drawing.Color.White;
+            this.lblCategoryTitle.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCategoryTitle.Location = new System.Drawing.Point(25, 28);
+            this.lblCategoryTitle.Name = "lblCategoryTitle";
+            this.lblCategoryTitle.Size = new System.Drawing.Size(194, 27);
+            this.lblCategoryTitle.TabIndex = 5;
+            this.lblCategoryTitle.Text = "Top Selling Categories";
+            this.lblCategoryTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbCategory
             // 
@@ -678,7 +679,7 @@
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.Controls.Add(this.chartTopItems);
             this.guna2Panel3.Controls.Add(this.cbTopItems);
-            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Controls.Add(this.lblItemsTitle);
             this.guna2Panel3.CustomizableEdges = customizableEdges25;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(1002, 151);
@@ -757,15 +758,15 @@
             this.cbTopItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cbTopItems.SelectedIndexChanged += new System.EventHandler(this.cbTopItems_SelectedIndexChanged);
             // 
-            // label2
+            // lblItemsTitle
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(20, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 27);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Top Selling Items";
+            this.lblItemsTitle.BackColor = System.Drawing.Color.White;
+            this.lblItemsTitle.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblItemsTitle.Location = new System.Drawing.Point(20, 30);
+            this.lblItemsTitle.Name = "lblItemsTitle";
+            this.lblItemsTitle.Size = new System.Drawing.Size(152, 27);
+            this.lblItemsTitle.TabIndex = 3;
+            this.lblItemsTitle.Text = "Top Selling Items";
             // 
             // guna2Panel2
             // 
@@ -852,7 +853,7 @@
             this.panelAnnualSales.BorderRadius = 20;
             this.panelAnnualSales.Controls.Add(this.btnAnnualSales);
             this.panelAnnualSales.Controls.Add(this.lblAnnualSales);
-            this.panelAnnualSales.Controls.Add(this.label1);
+            this.panelAnnualSales.Controls.Add(this.lblAnnualTitle);
             this.panelAnnualSales.CustomizableEdges = customizableEdges32;
             this.panelAnnualSales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAnnualSales.FillColor = System.Drawing.Color.White;
@@ -899,14 +900,14 @@
             this.lblAnnualSales.Text = "₱ 8.1k";
             this.lblAnnualSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // lblAnnualTitle
             // 
-            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(27, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Annual Sales";
+            this.lblAnnualTitle.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAnnualTitle.Location = new System.Drawing.Point(27, 29);
+            this.lblAnnualTitle.Name = "lblAnnualTitle";
+            this.lblAnnualTitle.Size = new System.Drawing.Size(125, 23);
+            this.lblAnnualTitle.TabIndex = 0;
+            this.lblAnnualTitle.Text = "Annual Sales";
             // 
             // panelDailySales
             // 
@@ -914,7 +915,7 @@
             this.panelDailySales.BorderRadius = 20;
             this.panelDailySales.Controls.Add(this.btnDailySales);
             this.panelDailySales.Controls.Add(this.lblDailySales);
-            this.panelDailySales.Controls.Add(this.label6);
+            this.panelDailySales.Controls.Add(this.lblDailyTitle);
             this.panelDailySales.CustomizableEdges = customizableEdges35;
             this.panelDailySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDailySales.FillColor = System.Drawing.Color.White;
@@ -961,14 +962,14 @@
             this.lblDailySales.Text = "₱ 8.1k";
             this.lblDailySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lblDailyTitle
             // 
-            this.label6.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(27, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Daily Sales";
+            this.lblDailyTitle.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDailyTitle.Location = new System.Drawing.Point(27, 29);
+            this.lblDailyTitle.Name = "lblDailyTitle";
+            this.lblDailyTitle.Size = new System.Drawing.Size(125, 23);
+            this.lblDailyTitle.TabIndex = 0;
+            this.lblDailyTitle.Text = "Daily Sales";
             // 
             // panelMonthlySales
             // 
@@ -976,7 +977,7 @@
             this.panelMonthlySales.BorderRadius = 20;
             this.panelMonthlySales.Controls.Add(this.btnMonthlySales);
             this.panelMonthlySales.Controls.Add(this.lblMonthlySales);
-            this.panelMonthlySales.Controls.Add(this.label3);
+            this.panelMonthlySales.Controls.Add(this.lblMonthlyTitle);
             this.panelMonthlySales.CustomizableEdges = customizableEdges38;
             this.panelMonthlySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonthlySales.FillColor = System.Drawing.Color.White;
@@ -1023,14 +1024,14 @@
             this.lblMonthlySales.Text = "₱ 8.1k";
             this.lblMonthlySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblMonthlyTitle
             // 
-            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(27, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Monthly Sales";
+            this.lblMonthlyTitle.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonthlyTitle.Location = new System.Drawing.Point(27, 29);
+            this.lblMonthlyTitle.Name = "lblMonthlyTitle";
+            this.lblMonthlyTitle.Size = new System.Drawing.Size(125, 23);
+            this.lblMonthlyTitle.TabIndex = 0;
+            this.lblMonthlyTitle.Text = "Monthly Sales";
             // 
             // panelWeeklySales
             // 
@@ -1038,7 +1039,7 @@
             this.panelWeeklySales.BorderRadius = 20;
             this.panelWeeklySales.Controls.Add(this.btnWeeklySales);
             this.panelWeeklySales.Controls.Add(this.lblWeeklySales);
-            this.panelWeeklySales.Controls.Add(this.label4);
+            this.panelWeeklySales.Controls.Add(this.lblWeeklyTitle);
             this.panelWeeklySales.CustomizableEdges = customizableEdges41;
             this.panelWeeklySales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWeeklySales.FillColor = System.Drawing.Color.White;
@@ -1085,18 +1086,26 @@
             this.lblWeeklySales.Text = "₱ 8.1k";
             this.lblWeeklySales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblWeeklyTitle
             // 
-            this.label4.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(27, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Weekly Sales";
+            this.lblWeeklyTitle.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWeeklyTitle.Location = new System.Drawing.Point(27, 29);
+            this.lblWeeklyTitle.Name = "lblWeeklyTitle";
+            this.lblWeeklyTitle.Size = new System.Drawing.Size(125, 23);
+            this.lblWeeklyTitle.TabIndex = 0;
+            this.lblWeeklyTitle.Text = "Weekly Sales";
+            // 
+            // panelCover
+            // 
+            this.panelCover.Location = new System.Drawing.Point(257, 3);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Size = new System.Drawing.Size(200, 10);
+            this.panelCover.TabIndex = 26;
             // 
             // DashboardView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.panelCover);
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.tableLayoutPanel6);
             this.Name = "DashboardView";
@@ -1135,19 +1144,19 @@
         private Guna.UI2.WinForms.Guna2Panel panelAnnualSales;
         private Guna.UI2.WinForms.Guna2CircleButton btnAnnualSales;
         private Label lblAnnualSales;
-        private Label label1;
+        private Label lblAnnualTitle;
         private Guna.UI2.WinForms.Guna2Panel panelMonthlySales;
         private Guna.UI2.WinForms.Guna2CircleButton btnMonthlySales;
         private Label lblMonthlySales;
-        private Label label3;
+        private Label lblMonthlyTitle;
         private Guna.UI2.WinForms.Guna2Panel panelDailySales;
         private Guna.UI2.WinForms.Guna2CircleButton btnDailySales;
         private Label lblDailySales;
-        private Label label6;
+        private Label lblDailyTitle;
         private Guna.UI2.WinForms.Guna2Panel panelWeeklySales;
         private Guna.UI2.WinForms.Guna2CircleButton btnWeeklySales;
         private Label lblWeeklySales;
-        private Label label4;
+        private Label lblWeeklyTitle;
         private TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Label lblStatsTitle;
@@ -1155,15 +1164,16 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.Charts.WinForms.GunaChart chartTopItems;
         private Guna.UI2.WinForms.Guna2ComboBox cbTopItems;
-        private Label label2;
+        private Label lblItemsTitle;
         private Guna.UI2.WinForms.Guna2Panel panelCategory;
-        private Label label5;
+        private Label lblCategoryTitle;
         private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.Charts.WinForms.GunaChart chartEmployee;
         private Guna.UI2.WinForms.Guna2ComboBox cbEmployee;
-        private Label label7;
+        private Label lblEmployeeTitle;
         private Guna.Charts.WinForms.GunaChart chartCategory;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
+        private Panel panelCover;
     }
 }

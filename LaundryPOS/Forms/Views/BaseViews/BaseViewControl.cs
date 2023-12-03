@@ -11,7 +11,6 @@ namespace LaundryPOS.Forms.Views
         protected readonly IUnitOfWork _unitOfWork;
         protected readonly IStyleManager _styleManager;
         protected readonly ChangeAdminViewDelegate _changeAdminView;
-        protected readonly ISalesService _salesService;
 
         public BaseViewControl(IUnitOfWork unitOfWork,
             IStyleManager styleManager,

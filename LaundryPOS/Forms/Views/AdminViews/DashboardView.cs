@@ -4,12 +4,14 @@ using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace LaundryPOS.Forms.Views.AdminViews
 {
     public partial class DashboardView : BaseViewControl
     {
         private readonly ISalesService _salesService;
+        private LoadingForm _loadingForm;
 
         public DashboardView(IUnitOfWork unitOfWork,
             IStyleManager styleManager,
@@ -19,6 +21,8 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             _salesService = salesService;
             InitializeComponent();
+            ShowLoadingForm();
+            StyleFonts();
             panelBody.AutoScroll = true;
         }
 
@@ -29,6 +33,31 @@ namespace LaundryPOS.Forms.Views.AdminViews
             await ShowWeekTopItems();
             await ShowWeekTopCategories();
             await ShowWeekTopEmployee();
+            await ApplyTheme();
+        }
+
+        public void ShowLoadingForm()
+        {
+            if (_loadingForm != null && !_loadingForm.IsDisposed)
+            {
+                return;
+            }
+
+            panelCover.Dock = DockStyle.Fill;
+            _loadingForm = new LoadingForm();
+            _loadingForm.Show();
+            _loadingForm.Refresh();
+
+            Application.Idle += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, EventArgs e)
+        {
+            Application.Idle -= OnLoaded;
+            _loadingForm.Close();
+
+            panelCover.Dock = DockStyle.None;
+            panelCover.Size = new Size(1, 1);
         }
 
         private async Task InitializeSalesInfo()
@@ -512,6 +541,27 @@ namespace LaundryPOS.Forms.Views.AdminViews
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ConfirmLogout();
+        }
+
+        private void StyleFonts()
+        {
+            _styleManager.Font.StyleFontsButton(11.25f, btnItem, btnCategory, btnEmployee, btnEmployee,
+                btnAdminProfile, btnDashboard, btnLogout);
+            _styleManager.Font.StyleFontsLabel(24.75f, true, lblAnnualSales, lblMonthlySales,
+                lblWeeklySales, lblDailySales);
+            _styleManager.Font.StyleFontsLabel(11.25f, false, lblAnnualTitle, lblMonthlyTitle, 
+                lblWeeklyTitle, lblDailyTitle);
+            _styleManager.Font.StyleFontsLabel(12f, true, lblStatsTitle, lblItemsTitle,
+                lblCategoryTitle, lblEmployeeTitle);
+            cbCategory.Font = _styleManager.Font.Helvetica(11.25f);
+            cbSalesChart.Font = _styleManager.Font.Helvetica(11.25f);
+            cbTopItems.Font = _styleManager.Font.Helvetica(11.25f);
+            cbEmployee.Font = _styleManager.Font.Helvetica(11.25f);
+        }
+
+        private async Task ApplyTheme()
+        {
+            await _styleManager.Theme.ApplyThemeToButton(btnDashboard);
         }
     }
 }
