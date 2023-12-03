@@ -12,6 +12,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using LaundryPOS.Managers;
 using LaundryPOS.Services;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace LaundryPOS
 {
@@ -43,6 +44,7 @@ namespace LaundryPOS
                     services.AddMemoryCache();
                     services.AddScoped<ThemeManager>();
                     services.AddScoped<FontManager>();
+                    services.AddScoped<IMemoryCache, MemoryCache>();
                     services.AddScoped<IUnitOfWork, UnitOfWork>();
                     services.AddScoped<IStyleManager, StyleManager>();
                     services.AddScoped<ISalesService, SalesService>();

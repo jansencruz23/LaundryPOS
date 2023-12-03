@@ -1,10 +1,8 @@
-﻿using Guna.Charts.Interfaces;
-using Guna.Charts.WinForms;
+﻿using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
-using LaundryPOS.Models.ViewModels;
 using System.Globalization;
 
 namespace LaundryPOS.Forms.Views.AdminViews
@@ -167,7 +165,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
                 MessageDialogIcon.Information, MessageDialogStyle.Light);
         }
 
-        private async Task DisplaySales(string interval, Func<Task<decimal>> salesFunc)
+        private async Task ShowSales(string interval, Func<Task<decimal>> salesFunc)
         {
             var sales = await salesFunc();
             DisplayTotalSales($"Total {interval.ToLower()} sales: ₱ {sales}", $"Total {interval} Sales");
@@ -175,22 +173,22 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async void btnAnnualSales_Click(object sender, EventArgs e)
         {
-            await DisplaySales("Annual", _salesService.GetAnnualSales);
+            await ShowSales("Annual", _salesService.GetAnnualSales);
         }
 
         private async void btnMonthlySales_Click(object sender, EventArgs e)
         {
-            await DisplaySales("Monthly", _salesService.GetMonthlySales);
+            await ShowSales("Monthly", _salesService.GetMonthlySales);
         }
 
         private async void btnWeeklySales_Click(object sender, EventArgs e)
         {
-            await DisplaySales("Weekly", _salesService.GetWeeklySales);
+            await ShowSales("Weekly", _salesService.GetWeeklySales);
         }
 
         private async void btnDailySales_Click(object sender, EventArgs e)
         {
-            await DisplaySales("Daily", _salesService.GetDailySales);
+            await ShowSales("Daily", _salesService.GetDailySales);
         }
 
         private async void cbSalesChart_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,24 +240,13 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             try
             {
-                var sales = await _salesService.GetSales(startDate, endDate);
-                var topItems = sales
-                    .GroupBy(item => item.ItemId)
-                    .Select(group => new
-                    {
-                        ItemId = group.Key,
-                        Quantity = group.Sum(item => item.Quantity),
-                    })
-                    .OrderByDescending(item => item.Quantity)
-                    .Take(10)
-                    .ToList();
-
+                var topItems = await _salesService.GetChartItemData(startDate, endDate);
                 var dataset = new GunaHorizontalBarDataset();
                 var items = await _unitOfWork.ItemRepo.Get();
 
                 foreach (var item in topItems)
                 {
-                    var itemName = items.FirstOrDefault(i => i.Id == item.ItemId)?.Name;
+                    var itemName = items.FirstOrDefault(i => i.Id == item.Id)?.Name;
                     if (!string.IsNullOrEmpty(itemName))
                     {
                         dataset.DataPoints.Add(itemName, item.Quantity);
@@ -302,7 +289,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async Task InitializeDayTopItems()
         {
-            var startDate = DateTime.Today.AddDays(-1);
+            var startDate = DateTime.Today;
             var endDate = DateTime.Today.AddDays(1);
 
             await ConfigItemsChart(startDate, endDate);
@@ -337,18 +324,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             try
             {
-                var sales = await _salesService.GetSales(startDate, endDate);
-
-                var categoryQuantities = sales
-                    .GroupBy(item => item.Item.CategoryId)
-                    .Select(group => new
-                    {
-                        Id = group.Key,
-                        Quantity = group.Sum(item => item.Quantity)
-                    })
-                    .OrderByDescending(category => category.Quantity)
-                    .ToList();
-
+                var categoryQuantities = await _salesService.GetChartCategoryData(startDate, endDate);
                 var dataset = new GunaPieDataset();
                 var categories = await _unitOfWork.CategoryRepo.Get();
 
@@ -375,7 +351,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async Task ShowDayTopCategories()
         {
-            var startDate = DateTime.Today.AddDays(-1);
+            var startDate = DateTime.Today;
             var endDate = DateTime.Today.AddDays(1);
 
             await ConfigCategoryChart(startDate, endDate);
@@ -431,25 +407,14 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             try
             {
-                var sales = await _salesService.GetSales(startDate, endDate);
-
-                var employeeTransactions = sales
-                    .GroupBy(sale => sale.Transaction.Employee.Id)
-                    .Select(group => new
-                    {
-                        Id = group.Key,
-                        EmployeeSales = group.Sum(t => t.SubTotal)
-                    })
-                    .OrderByDescending(emp => emp.EmployeeSales)
-                    .ToList();
-
+                var employeeTransactions = await _salesService.GetChartEmployeeData(startDate, endDate);
                 var dataset = new GunaBarDataset();
                 var employees = await _unitOfWork.EmployeeRepo.Get();
 
                 foreach (var employee in employeeTransactions)
                 {
                     var employeeName = employees.FirstOrDefault(e => e.Id == employee.Id)?.FullName;
-                    dataset.DataPoints.Add(employeeName, (double) employee.EmployeeSales);
+                    dataset.DataPoints.Add(employeeName, (double) employee.Sales);
                 }
 
                 chartEmployee.Reset();
@@ -468,7 +433,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
         private async Task ShowDayTopEmployee()
         {
-            var startDate = DateTime.Today.AddDays(-1);
+            var startDate = DateTime.Today;
             var endDate = DateTime.Today.AddDays(1);
 
             await ConfigEmployeeChart(startDate, endDate);
