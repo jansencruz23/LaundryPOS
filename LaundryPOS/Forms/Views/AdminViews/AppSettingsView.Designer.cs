@@ -230,6 +230,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
             this.guna2Panel1.Controls.Add(this.btnSave);

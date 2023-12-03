@@ -78,7 +78,7 @@ namespace LaundryPOS.Forms.Views
             Theme = theme
         };
 
-        private async Task UpdateAppSettings(AppSettings appSettings)
+        private void UpdateAppSettings(AppSettings appSettings)
         {
             appSettings.Name = txtName.Text;
             appSettings.Address = txtAddress.Text;
@@ -98,7 +98,7 @@ namespace LaundryPOS.Forms.Views
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ChangeAdminView(CreateView<ItemView>());
+            ChangeDashboardView();
         }
     }
 }

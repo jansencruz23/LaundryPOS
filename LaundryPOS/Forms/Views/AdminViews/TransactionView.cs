@@ -181,6 +181,11 @@ namespace LaundryPOS.Forms.Views
             await _styleManager.Theme.ApplyLighterThemeToDataGridView(transactionTable, 1f, true);
         }
 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ChangeDashboardView();
+        }
+
         private void btnItem_Click(object sender, EventArgs e)
         {
             ChangeAdminView(CreateView<ItemView>());
