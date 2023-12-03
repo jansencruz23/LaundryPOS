@@ -18,6 +18,11 @@ namespace LaundryPOS.Forms.Views
         private IEnumerable<Item> allItems;
         private string _title;
 
+        private List<ItemControl> displayedItems;
+        private int itemsPerPage = 5;
+        private int currentPage = 1;
+        private int totalPages;
+
         private DateTime loadingStartTime;
 
         private decimal Total { get; set; } = default;
@@ -31,6 +36,7 @@ namespace LaundryPOS.Forms.Views
             _employee = employee;
             itemsControls = new();
             orders = new();
+            displayedItems = new();
 
             InitializeComponent();
             InitializeTimer();
@@ -152,12 +158,53 @@ namespace LaundryPOS.Forms.Views
                 .Select(item => new ItemControl(item, _styleManager))
                 .ToList());
 
-            foreach (var control in itemsControls)
+            totalPages = (int)Math.Ceiling((double)itemsControls.Count / itemsPerPage);
+            DisplayCurrentPage();
+        }
+
+        private void DisplayCurrentPage()
+        {
+            panelItems.Controls.Clear();
+            displayedItems = itemsControls.Skip((currentPage - 1) * itemsPerPage)
+                .Take(itemsPerPage)
+                .ToList();
+
+            foreach (var control in displayedItems)
             {
                 control.AddToCartClicked += ItemControl_AddToCartClicked!;
             }
 
-            panelItems.Controls.AddRange(itemsControls.ToArray());
+            panelItems.Controls.AddRange(displayedItems.ToArray());
+
+            UpdateNavigationButtons();
+        }
+
+        private void UpdateNavigationButtons()
+        {
+            panelPage.Controls.Clear();
+            if (currentPage > 1)
+            {
+                Button prevButton = new Button();
+                prevButton.Text = "Previous";
+                prevButton.Click += (sender, e) =>
+                {
+                    currentPage--;
+                    DisplayCurrentPage();
+                };
+                panelPage.Controls.Add(prevButton);
+            }
+
+            if (currentPage < totalPages)
+            {
+                Button nextButton = new Button();
+                nextButton.Text = "Next";
+                nextButton.Click += (sender, e) =>
+                {
+                    currentPage++;
+                    DisplayCurrentPage();
+                };
+                panelPage.Controls.Add(nextButton);
+            }
         }
 
         private async Task RefreshItems()

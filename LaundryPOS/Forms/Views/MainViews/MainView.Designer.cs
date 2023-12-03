@@ -85,6 +85,7 @@
             this.panelCart = new System.Windows.Forms.FlowLayoutPanel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panelCover = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelPage = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBody.SuspendLayout();
             this.tableBody.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.panelPage);
             this.guna2Panel1.Controls.Add(this.flowLeft);
             this.guna2Panel1.Controls.Add(this.panelItems);
             this.guna2Panel1.CustomizableEdges = customizableEdges3;
@@ -195,7 +197,7 @@
             this.panelItems.Margin = new System.Windows.Forms.Padding(0);
             this.panelItems.Name = "panelItems";
             this.panelItems.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.panelItems.Size = new System.Drawing.Size(889, 662);
+            this.panelItems.Size = new System.Drawing.Size(889, 620);
             this.panelItems.TabIndex = 6;
             // 
             // guna2Panel2
@@ -527,6 +529,13 @@
             this.panelCover.Size = new System.Drawing.Size(200, 100);
             this.panelCover.TabIndex = 26;
             // 
+            // panelPage
+            // 
+            this.panelPage.Location = new System.Drawing.Point(228, 691);
+            this.panelPage.Name = "panelPage";
+            this.panelPage.Size = new System.Drawing.Size(385, 36);
+            this.panelPage.TabIndex = 13;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -581,5 +590,6 @@
         private FlowLayoutPanel panelCart;
         private System.Windows.Forms.Timer timerDate;
         private Guna.UI2.WinForms.Guna2Panel panelCover;
+        private FlowLayoutPanel panelPage;
     }
 }
