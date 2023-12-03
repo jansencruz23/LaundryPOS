@@ -189,16 +189,16 @@
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnChUNGQKXNGXxAAACCklEQVRYR+2Xyy5DURSGK4KZKQZi
-        6pKQ0JCoGKmBxGMwQWNG4gF4AknHvTcGQjRh7PIQDMREXdJ6gFLfZi1ONdW923Ni4k/+tF3rrH/9Z52d
-        nr1DilwuN5/NZo/hM6xasgLvYDyVSg2JlDtovonIm4i2yjI6EZG0h9z56w+xVllMJpO9Im0HiszYVeAc
-        jkiqKeLxeBc3sEBNUTUymUxM0nag6OuZp9PpYQk7gaZrqgFzErYDBWYhfRTn8/lOCTsB41HVYCJnErbD
-        vwE/DLAGZlQDHkjYDhS0baBarXZQvwsLTGNMwqFCodDDRAhnr+CkhGtBom0DjUDzJdWGJSYVltQ3SARm
-        gGn0ofuo+rDeBMHADBhgYhztJ+0BX+gzLengDRj8aoIfTga4pptnu8Iot1xITUr7CMvEw84GuG5br/eB
-        N39t4NrZgHkDcu0qI91zITUn2kdYot+Us4FWgPYE9C7CMr1aW4SuQLdxcwMCgRlIJBID6Hqbf47dC4K+
-        GKC2v+bOAM9+WbVhfXMDEm0bkL/csujsSNj7MrqEwb2MaGL2hXqnpxK2AwV+TCCqGpj535I5G/AexazP
-        BF5Qt64aZtFJ2A4UHWkxvGAKo5JqCvlbXqTpg2rwfUPSdqDhHIV+Hc3unY9mBryXYxS3a8Jst2ZF0h2M
-        LoLIIfTu4ZqxQt0tn/s0HxQpB4RC75tZc136B0U5AAAAAElFTkSuQmCC
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnDAMMASbS3I6tAAACBUlEQVRYR+2Xv0rDUBTGg4JuimAX
+        ndyc7AuIOImOKp1FcNBB30A76OADuIlb0z/BxaXOIjipIE6+gYuitIuo1e/Q0+bm5tB7kkZx8IMfSc65
+        59wvyU2aekEQ5KrV6ilogq+UvIGbWq226iUVCmlyqWkqYGKNW+uEoiRn/gACgTr4ADTmBVd1lNu7xUVa
+        WjjDQy6NqFKp7BrjFjjsllGkpVUul6e5vCvEC8aYAofdMoqSsMLlXSH2qwZiE1BMyuNqjeO2zRWLxQEO
+        RWUUJUFtAJPfUQzbMyzOIQ6HMoqSIBnIg08CZz3DYbt/HRrmVFvWAC0xAyTE8+bkJKuOiJoQBmgQDUgS
+        aonQhJDU0K8Bom1CSGiIGMBLaBmxhjXGCRamn4kBHB9beS3PmRjA4zWFq3CCuPQ7IdUT9MSsZ2Kgl4Ra
+        ogW2eg1w0Y+BcHKSldQSM4DbMIj4AdinfQ7b/aOTk6wBWmIGsAYWO3na5zD1f+c43fMNDofiZFJiBigm
+        5fGoHeH4EVv5S8koSoLagFNGURL+DfxJA3tG/kc/Sokr0H3dYoWfY9v5LG+USqURbu8WCuj5tCdIDcxs
+        cmudUHRvN0kB/TW7BrGvZafw1ppH4Ss30qJfZBrh3Z2DkR00vgSaW7LEpdkLZiYdZp583x/j4T8rGJnA
+        otrGpBegif1bGJzldAbyvG9NtxcorjK3JAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

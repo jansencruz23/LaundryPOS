@@ -19,7 +19,7 @@ namespace LaundryPOS.Forms.Views
         private string _title;
 
         private List<ItemControl> displayedItems;
-        private int itemsPerPage = 5;
+        private const int ITEMS_PER_PAGE = 2;
         private int currentPage = 1;
         private int totalPages;
 
@@ -158,15 +158,15 @@ namespace LaundryPOS.Forms.Views
                 .Select(item => new ItemControl(item, _styleManager))
                 .ToList());
 
-            totalPages = (int)Math.Ceiling((double)itemsControls.Count / itemsPerPage);
+            totalPages = (int)Math.Ceiling((double)itemsControls.Count / ITEMS_PER_PAGE);
             DisplayCurrentPage();
         }
 
         private void DisplayCurrentPage()
         {
             panelItems.Controls.Clear();
-            displayedItems = itemsControls.Skip((currentPage - 1) * itemsPerPage)
-                .Take(itemsPerPage)
+            displayedItems = itemsControls.Skip((currentPage - 1) * ITEMS_PER_PAGE)
+                .Take(ITEMS_PER_PAGE)
                 .ToList();
 
             foreach (var control in displayedItems)
@@ -182,29 +182,68 @@ namespace LaundryPOS.Forms.Views
         private void UpdateNavigationButtons()
         {
             panelPage.Controls.Clear();
+
             if (currentPage > 1)
             {
-                Button prevButton = new Button();
-                prevButton.Text = "Previous";
-                prevButton.Click += (sender, e) =>
-                {
-                    currentPage--;
-                    DisplayCurrentPage();
-                };
-                panelPage.Controls.Add(prevButton);
+                AddPageButton("Previous", currentPage - 1);
+            }
+
+            AddPageButton("1", 1);
+
+            var startPage = Math.Max(2, currentPage - 2);
+            var endPage = Math.Min(startPage + 3, totalPages);
+
+            if (startPage > 2)
+            {
+                AddEllipsisButton();
+            }
+
+            for (int i = startPage; i <= endPage; i++)
+            {
+                AddPageButton($"{i}", i);
+            }
+
+            if (endPage < totalPages)
+            {
+                AddEllipsisButton();
+            }
+
+            if (totalPages > 1)
+            {
+                AddPageButton($"Last", totalPages);
             }
 
             if (currentPage < totalPages)
             {
-                Button nextButton = new Button();
-                nextButton.Text = "Next";
-                nextButton.Click += (sender, e) =>
-                {
-                    currentPage++;
-                    DisplayCurrentPage();
-                };
-                panelPage.Controls.Add(nextButton);
+                AddPageButton("Next", currentPage + 1);
             }
+        }
+
+        private void AddPageButton(string text, int pageNum)
+        {
+            var pageButton = new Button();
+            pageButton.Text = text;
+
+            if (pageNum == currentPage)
+            {
+                pageButton.BackColor = Color.Blue;
+                pageButton.ForeColor = Color.White;
+            }
+
+            pageButton.Click += (sender, e) =>
+            {
+                currentPage = pageNum;
+                DisplayCurrentPage();
+            };
+            panelPage.Controls.Add(pageButton);
+        }
+
+        private void AddEllipsisButton()
+        {
+            var ellipsisButton = new Button();
+            ellipsisButton.Text = "...";
+            ellipsisButton.Enabled = false;
+            panelPage.Controls.Add(ellipsisButton);
         }
 
         private async Task RefreshItems()

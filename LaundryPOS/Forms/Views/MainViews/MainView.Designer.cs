@@ -61,6 +61,7 @@
             this.panelBody = new Guna.UI2.WinForms.Guna2Panel();
             this.tableBody = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelPage = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLeft = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAllCategory = new Guna.UI2.WinForms.Guna2Button();
             this.panelItems = new System.Windows.Forms.FlowLayoutPanel();
@@ -85,7 +86,6 @@
             this.panelCart = new System.Windows.Forms.FlowLayoutPanel();
             this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panelCover = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelPage = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBody.SuspendLayout();
             this.tableBody.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -142,6 +142,14 @@
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.guna2Panel1.Size = new System.Drawing.Size(889, 730);
             this.guna2Panel1.TabIndex = 23;
+            // 
+            // panelPage
+            // 
+            this.panelPage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelPage.Location = new System.Drawing.Point(0, 690);
+            this.panelPage.Name = "panelPage";
+            this.panelPage.Size = new System.Drawing.Size(889, 40);
+            this.panelPage.TabIndex = 13;
             // 
             // flowLeft
             // 
@@ -528,13 +536,6 @@
             this.panelCover.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.panelCover.Size = new System.Drawing.Size(200, 100);
             this.panelCover.TabIndex = 26;
-            // 
-            // panelPage
-            // 
-            this.panelPage.Location = new System.Drawing.Point(228, 691);
-            this.panelPage.Name = "panelPage";
-            this.panelPage.Size = new System.Drawing.Size(385, 36);
-            this.panelPage.TabIndex = 13;
             // 
             // MainView
             // 
