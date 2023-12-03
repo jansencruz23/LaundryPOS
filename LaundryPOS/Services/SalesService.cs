@@ -1,6 +1,8 @@
 ﻿using LaundryPOS.Contracts;
 using LaundryPOS.Helpers;
 using LaundryPOS.Models;
+using LaundryPOS.Models.ViewModels;
+using System.Globalization;
 
 namespace LaundryPOS.Services
 {
@@ -61,12 +63,42 @@ namespace LaundryPOS.Services
 
         public async Task<IEnumerable<TransactionItem>> GetSales(DateTime startDate,
             DateTime endDate)
-        {
-            return await _unitOfWork.TransactionItemRepo
+            => await _unitOfWork.TransactionItemRepo
                 .Get(includeProperties: "Transaction,Item,Transaction.Employee",
                     filter: ti => ti.Transaction.TransactionDate >= startDate
                         && ti.Transaction.TransactionDate <= endDate
                         && ti.Transaction.IsCompleted);
+
+        public async Task<List<Sale>> GetWeeklySalesChartData(DateTime startDate,
+            DateTime endDate)
+        {
+            var sales = await GetSales(startDate, endDate);
+            return sales
+                .GroupBy(ti => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                    ti.Transaction.TransactionDate,
+                    CalendarWeekRule.FirstFourDayWeek,
+                    DayOfWeek.Sunday
+                ))
+                .Select(group => new Sale
+                {
+                    Date = group.Key,
+                    Sales = group.Sum(ti => ti.SubTotal)
+                })
+               .ToList();
+        }
+
+        public async Task<List<Sale>> GetMonthlySalesChartData(DateTime startDate,
+            DateTime endDate)
+        {
+            var sales = await GetSales(startDate, endDate);
+            return sales
+                .GroupBy(ti => ti.Transaction.TransactionDate.Month)
+                .Select(group => new Sale
+                {
+                    Date = group.Key,
+                    Sales = group.Sum(ti => ti.SubTotal)
+                })
+               .ToList();
         }
     }
 }

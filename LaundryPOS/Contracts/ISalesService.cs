@@ -1,4 +1,5 @@
 ﻿using LaundryPOS.Models;
+using LaundryPOS.Models.ViewModels;
 
 namespace LaundryPOS.Contracts
 {
@@ -10,5 +11,7 @@ namespace LaundryPOS.Contracts
         Task<decimal> GetWeeklySales();
         Task<decimal> GetDailySales();
         Task<IEnumerable<TransactionItem>> GetSales(DateTime startDate, DateTime endDate);
+        Task<List<Sale>> GetWeeklySalesChartData(DateTime startDate, DateTime endDate);
+        Task<List<Sale>> GetMonthlySalesChartData(DateTime startDate, DateTime endDate);
     }
 }

@@ -4,6 +4,7 @@ using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
+using LaundryPOS.Models.ViewModels;
 using System.Globalization;
 
 namespace LaundryPOS.Forms.Views.AdminViews
@@ -20,7 +21,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             _salesService = salesService;
             InitializeComponent();
-            panelBody.VerticalScroll.Value = scrollBar.Value;
+            panelBody.AutoScroll = true;
         }
 
         private async void DashboardView_Load(object sender, EventArgs e)
@@ -44,20 +45,8 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             var startDate = DateTime.Today.AddMonths(-1);
             var endDate = DateTime.Today.AddDays(1);
-            var sales = await _salesService.GetSales(startDate, endDate);
-            var salesData = sales
-                .GroupBy(ti => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
-                    ti.Transaction.TransactionDate,
-                    CalendarWeekRule.FirstFourDayWeek,
-                    DayOfWeek.Sunday
-                ))
-                .Select(group => new
-                {
-                    WeekNumber = group.Key,
-                    TotalSales = group.Sum(ti => ti.SubTotal)
-                })
-               .ToList();
 
+            var salesData = await _salesService.GetWeeklySalesChartData(startDate, endDate);
             var dataset = new GunaSplineDataset();
             var currentWeekOfYear = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
                 DateTime.Today, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
@@ -73,8 +62,8 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
                 var startDateLabel = GetStartWeekDate(DateTime.Today.Year, week);
                 var endDateLabel = GetEndWeekDate(DateTime.Today.Year, week);
-                var salesForWeek = salesData.FirstOrDefault(d => d.WeekNumber == week);
-                var salesAmount = (double?)salesForWeek?.TotalSales ?? 0;
+                var salesForWeek = salesData.FirstOrDefault(d => d.Date == week);
+                var salesAmount = (double?)salesForWeek?.Sales ?? 0;
                 var formattedDate = $"{startDateLabel:MMM d} - {endDateLabel:MMM d}";
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
@@ -87,18 +76,9 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             var startDate = DateTime.Today.AddMonths(-12);
             var endDate = DateTime.Today.AddDays(1);
-            var sales = await _salesService.GetSales(startDate, endDate);
-            var salesData = sales
-                .GroupBy(ti => ti.Transaction.TransactionDate.Month)
-                .Select(group => new
-                {
-                    MonthNumber = group.Key,
-                    TotalSales = group.Sum(ti => ti.SubTotal)
-                })
-               .ToList();
 
+            var salesData = await _salesService.GetMonthlySalesChartData(startDate, endDate);
             var dataset = new GunaSplineDataset();
-
             var currentMonth = DateTime.Today.Month;
             for (int i = 7; i >= 0; i--)
             {
@@ -108,8 +88,8 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     month = 12 + month;
                 }
                 var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
-                var salesForMonth = salesData.FirstOrDefault(d => d.MonthNumber == month);
-                var salesAmount = (double?)salesForMonth?.TotalSales ?? 0;
+                var salesForMonth = salesData.FirstOrDefault(d => d.Date == month);
+                var salesAmount = (double?)salesForMonth?.Sales ?? 0;
                 var formattedDate = $"{monthName}";
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
@@ -367,11 +347,6 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var endDate = DateTime.Today.AddDays(1);
 
             await ConfigItemsChart(startDate, endDate);
-        }
-
-        private void scrollBar_Scroll(object sender, ScrollEventArgs e)
-        {
-            panelBody.VerticalScroll.Value = scrollBar.Value;
         }
 
         private async Task ConfigCategoryChart(DateTime startDate,
