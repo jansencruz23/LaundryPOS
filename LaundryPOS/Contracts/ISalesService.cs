@@ -13,5 +13,7 @@ namespace LaundryPOS.Contracts
         Task<IEnumerable<TransactionItem>> GetSales(DateTime startDate, DateTime endDate);
         Task<List<Sale>> GetWeeklySalesChartData(DateTime startDate, DateTime endDate);
         Task<List<Sale>> GetMonthlySalesChartData(DateTime startDate, DateTime endDate);
+        Task<List<Sale>> GetAnnualSalesChartData(DateTime startDate, DateTime endDate);
+        Task<List<Sale>> GetDailySalesChartData(DateTime startDate, DateTime endDate);
     }
 }

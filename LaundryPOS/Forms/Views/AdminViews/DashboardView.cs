@@ -62,7 +62,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
 
                 var startDateLabel = GetStartWeekDate(DateTime.Today.Year, week);
                 var endDateLabel = GetEndWeekDate(DateTime.Today.Year, week);
-                var salesForWeek = salesData.FirstOrDefault(d => d.Date == week);
+                var salesForWeek = salesData.FirstOrDefault(d => d.DateNumber == week + 1);
                 var salesAmount = (double?)salesForWeek?.Sales ?? 0;
                 var formattedDate = $"{startDateLabel:MMM d} - {endDateLabel:MMM d}";
 
@@ -80,6 +80,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
             var salesData = await _salesService.GetMonthlySalesChartData(startDate, endDate);
             var dataset = new GunaSplineDataset();
             var currentMonth = DateTime.Today.Month;
+
             for (int i = 7; i >= 0; i--)
             {
                 int month = currentMonth - i;
@@ -88,7 +89,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     month = 12 + month;
                 }
                 var monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
-                var salesForMonth = salesData.FirstOrDefault(d => d.Date == month);
+                var salesForMonth = salesData.FirstOrDefault(d => d.DateNumber == month);
                 var salesAmount = (double?)salesForMonth?.Sales ?? 0;
                 var formattedDate = $"{monthName}";
 
@@ -102,18 +103,11 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             var startDate = DateTime.Today.AddYears(-7);
             var endDate = DateTime.Today.AddDays(1);
-            var sales = await _salesService.GetSales(startDate, endDate);
-            var salesData = sales
-                .GroupBy(ti => ti.Transaction.TransactionDate.Year)
-                .Select(group => new
-                {
-                    Year = group.Key,
-                    TotalSales = group.Sum(ti => ti.SubTotal)
-                })
-               .ToList();
 
+            var salesData = await _salesService.GetAnnualSalesChartData(startDate, endDate);
             var dataset = new GunaSplineDataset();
             var currentYear = DateTime.Today.Year;
+
             for (int i = 7; i >= 0; i--)
             {
                 int year = currentYear - i;
@@ -122,8 +116,8 @@ namespace LaundryPOS.Forms.Views.AdminViews
                     year = 12 + year;
                 }
 
-                var salesForYear = salesData.FirstOrDefault(d => d.Year == year);
-                var salesAmount = (double?)salesForYear?.TotalSales ?? 0;
+                var salesForYear = salesData.FirstOrDefault(d => d.DateNumber == year);
+                var salesAmount = (double?)salesForYear?.Sales ?? 0;
                 var formattedDate = $"{year}";
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
@@ -136,26 +130,15 @@ namespace LaundryPOS.Forms.Views.AdminViews
         {
             var startDate = DateTime.Today.AddDays(-7);
             var endDate = DateTime.Today.AddDays(1);
-            var sales = await _salesService.GetSales(startDate, endDate);
 
-            var salesData = sales
-                .GroupBy(ti => new
-                {
-                    ti.Transaction.TransactionDate.Date
-                })
-                .Select(group => new
-                {
-                    group.Key.Date,
-                    TotalSales = group.Sum(ti => ti.SubTotal)
-                })
-               .ToList();
-
+            var salesData = await _salesService.GetDailySalesChartData(startDate, endDate);
             var dataset = new GunaSplineDataset();
+
             for (var date = startDate; date <= endDate; date = date.AddDays(1))
             {
                 var salesForDate = salesData.FirstOrDefault(d => d.Date == date.Date);
                 var formattedDate = date.ToString("MMM dd", CultureInfo.InvariantCulture);
-                var salesAmount = (double?)salesForDate?.TotalSales ?? 0;
+                var salesAmount = (double?)salesForDate?.Sales ?? 0;
 
                 dataset.DataPoints.Add(formattedDate, salesAmount);
             }
@@ -234,7 +217,7 @@ namespace LaundryPOS.Forms.Views.AdminViews
         private DateTime GetStartWeekDate(int year, int weekNumber)
         {
             var jan1 = new DateTime(year, 1, 1);
-            var daysOffset = DayOfWeek.Monday - jan1.DayOfWeek + 1;
+            var daysOffset = DayOfWeek.Monday - jan1.DayOfWeek - 1;
             var firstMonday = jan1.AddDays(daysOffset);
 
             var cal = CultureInfo.CurrentCulture.Calendar;

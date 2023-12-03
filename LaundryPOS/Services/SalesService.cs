@@ -15,7 +15,7 @@ namespace LaundryPOS.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<decimal> GetSalesTotal(DateTime startDate, 
+        public async Task<decimal> GetSalesTotal(DateTime startDate,
             DateTime endDate)
         {
             var sales = await _unitOfWork.TransactionItemRepo
@@ -69,33 +69,48 @@ namespace LaundryPOS.Services
                         && ti.Transaction.TransactionDate <= endDate
                         && ti.Transaction.IsCompleted);
 
-        public async Task<List<Sale>> GetWeeklySalesChartData(DateTime startDate,
-            DateTime endDate)
+        public async Task<List<Sale>> GetSalesChartData(
+            DateTime startDate, DateTime endDate,
+            Func<Transaction, int> groupSelector)
         {
             var sales = await GetSales(startDate, endDate);
             return sales
-                .GroupBy(ti => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
-                    ti.Transaction.TransactionDate,
-                    CalendarWeekRule.FirstFourDayWeek,
-                    DayOfWeek.Sunday
-                ))
+                .GroupBy(ti => groupSelector(ti.Transaction))
                 .Select(group => new Sale
                 {
-                    Date = group.Key,
+                    DateNumber = group.Key,
                     Sales = group.Sum(ti => ti.SubTotal)
                 })
-               .ToList();
+                .ToList();
         }
 
-        public async Task<List<Sale>> GetMonthlySalesChartData(DateTime startDate,
-            DateTime endDate)
+        public async Task<List<Sale>> GetWeeklySalesChartData(DateTime startDate, DateTime endDate)
+        {
+            return await GetSalesChartData(startDate, endDate, ti =>
+                CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                    ti.TransactionDate,
+                    CalendarWeekRule.FirstFourDayWeek,
+                    DayOfWeek.Sunday));
+        }
+
+        public async Task<List<Sale>> GetMonthlySalesChartData(DateTime startDate, DateTime endDate)
+        {
+            return await GetSalesChartData(startDate, endDate, ti => ti.TransactionDate.Month);
+        }
+
+        public async Task<List<Sale>> GetAnnualSalesChartData(DateTime startDate, DateTime endDate)
+        {
+            return await GetSalesChartData(startDate, endDate, ti => ti.TransactionDate.Year);
+        }
+
+        public async Task<List<Sale>> GetDailySalesChartData(DateTime startDate, DateTime endDate)
         {
             var sales = await GetSales(startDate, endDate);
             return sales
-                .GroupBy(ti => ti.Transaction.TransactionDate.Month)
+                .GroupBy(ti => ti.Transaction.TransactionDate.Date)
                 .Select(group => new Sale
                 {
-                    Date = group.Key,
+                    Date = group.Key.Date,
                     Sales = group.Sum(ti => ti.SubTotal)
                 })
                .ToList();
