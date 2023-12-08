@@ -7,15 +7,14 @@ namespace LaundryPOS.Helpers
     public class PaginationHelper<T>
         where T : Control
     {
+        private const int ITEMS_PER_PAGE = 16;
+        private int totalPages = 1;
+
         public event EventHandler<EventArgs> PageClicked;
         private readonly FlowLayoutPanel panelPage;
         private readonly IStyleManager _styleManager;
 
-        private const int ITEMS_PER_PAGE = 16;
-
         public int CurrentPage { get; set; } = 1;
-        private int totalPages = 1;
-
 
         public PaginationHelper(FlowLayoutPanel pagePanel, IStyleManager styleManager)
         {

@@ -115,10 +115,10 @@
             this.imgLogo.CustomizableEdges = customizableEdges3;
             this.imgLogo.FillColor = System.Drawing.Color.Gainsboro;
             this.imgLogo.ImageRotate = 0F;
-            this.imgLogo.Location = new System.Drawing.Point(21, 22);
+            this.imgLogo.Location = new System.Drawing.Point(17, 22);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.imgLogo.Size = new System.Drawing.Size(60, 53);
+            this.imgLogo.Size = new System.Drawing.Size(66, 53);
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 23;
             this.imgLogo.TabStop = false;

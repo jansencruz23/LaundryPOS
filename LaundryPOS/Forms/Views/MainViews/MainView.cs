@@ -21,8 +21,6 @@ namespace LaundryPOS.Forms.Views
         private IEnumerable<Item> allItems;
         private string _title;
 
-        private DateTime loadingStartTime;
-
         private decimal Total { get; set; } = default;
 
         public MainView(IUnitOfWork unitOfWork,
@@ -60,7 +58,7 @@ namespace LaundryPOS.Forms.Views
 
             panelCover.Dock = DockStyle.Fill;
             panelRight.Visible = false;
-            loadingStartTime = DateTime.Now;
+
             _loadingForm = new LoadingForm();
             _loadingForm.Show();
             _loadingForm.Refresh();
@@ -76,11 +74,7 @@ namespace LaundryPOS.Forms.Views
             panelCover.Dock = DockStyle.None;
             panelRight.Visible = true;
             panelCover.Visible = false;
-
-            TimeSpan elapsedTime = DateTime.Now - loadingStartTime;
-            MessageBox.Show("Time elapsed: " + elapsedTime.ToString());
         }
-
 
         private void ItemControl_AddToCartClicked(object sender, CartItemEventArgs e)
         {
