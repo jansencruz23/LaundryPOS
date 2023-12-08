@@ -2,6 +2,7 @@
 using LaundryPOS.Contracts;
 using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.CustomControls;
+using LaundryPOS.Helpers;
 using LaundryPOS.Models;
 
 namespace LaundryPOS.Forms.Views
@@ -9,18 +10,16 @@ namespace LaundryPOS.Forms.Views
     public partial class MainView : UserControl
     {
         private LoadingForm _loadingForm;
+        private PaginationHelper<ItemControl> _paginationHelper;
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
         private readonly List<ItemControl> itemsControls;
+        private IEnumerable<ItemControl> _filteredItems;
         private readonly Order orders;
         private IEnumerable<Item> allItems;
         private string _title;
-
-        private const int ITEMS_PER_PAGE = 2;
-        private int currentPage = 1;
-        private int totalPages;
 
         private DateTime loadingStartTime;
 
@@ -39,6 +38,9 @@ namespace LaundryPOS.Forms.Views
             InitializeComponent();
             InitializeTimer();
             ShowLoadingForm();
+
+            _paginationHelper = new(panelPage, _styleManager);
+            _paginationHelper.PageClicked += PageClicked;
         }
 
         private async void MainView_Load(object sender, EventArgs e)
@@ -121,7 +123,7 @@ namespace LaundryPOS.Forms.Views
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
         {
-            currentPage = 1;
+            _paginationHelper.CurrentPage = 1;
             var filteredItemControls = itemsControls.Where(i => i.Item.CategoryId == e.Category.Id)
                 .ToList();
 
@@ -148,6 +150,11 @@ namespace LaundryPOS.Forms.Views
             UpdateTotalDisplay();
         }
 
+        private void PageClicked(object? sender, EventArgs e)
+        {
+            DisplayCurrentPage(_filteredItems ?? itemsControls);
+        }
+
         private async Task DisplayItems()
         {
             allItems = await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
@@ -157,7 +164,6 @@ namespace LaundryPOS.Forms.Views
                 .Select(item => new ItemControl(item, _styleManager))
                 .ToList());
 
-            totalPages = (int)Math.Ceiling((double)itemsControls.Count / ITEMS_PER_PAGE);
             DisplayCurrentPage();
         }
 
@@ -165,10 +171,8 @@ namespace LaundryPOS.Forms.Views
         {
             panelItems.Controls.Clear();
 
-            filteredItems = (filteredItems ?? itemsControls)
-                .Skip((currentPage - 1) * ITEMS_PER_PAGE)
-                .Take(ITEMS_PER_PAGE)
-                .ToList();
+            _filteredItems = filteredItems ?? itemsControls;
+            filteredItems = _paginationHelper.GetPagedItems(_filteredItems);
 
             foreach (var control in filteredItems)
             {
@@ -177,84 +181,12 @@ namespace LaundryPOS.Forms.Views
             }
 
             panelItems.Controls.AddRange(filteredItems.ToArray());
-
-            UpdateNavigationButtons();
-        }
-
-        private void UpdateNavigationButtons()
-        {
-            panelPage.Controls.Clear();
-
-            if (currentPage > 1)
-            {
-                AddPageButton("Previous", currentPage - 1);
-            }
-
-            AddPageButton("1", 1);
-
-            var startPage = Math.Max(2, currentPage - 2);
-            var endPage = Math.Min(startPage + 3, totalPages);
-
-            if (startPage > 2)
-            {
-                AddEllipsisButton();
-            }
-
-            for (int i = startPage; i <= endPage; i++)
-            {
-                AddPageButton($"{i}", i);
-            }
-
-            if (endPage < totalPages)
-            {
-                AddEllipsisButton();
-            }
-
-            if (totalPages > 1)
-            {
-                AddPageButton($"Last", totalPages);
-            }
-
-            if (currentPage < totalPages)
-            {
-                AddPageButton("Next", currentPage + 1);
-            }
-        }
-
-        private void AddPageButton(string text, int pageNum)
-        {
-            var pageButton = new Button();
-            pageButton.Text = text;
-
-            if (pageNum == currentPage)
-            {
-                pageButton.BackColor = Color.Blue;
-                pageButton.ForeColor = Color.White;
-            }
-
-            pageButton.Click += (sender, e) =>
-            {
-                currentPage = pageNum;
-                DisplayCurrentPage();
-            };
-            panelPage.Controls.Add(pageButton);
-        }
-
-        private void AddEllipsisButton()
-        {
-            var ellipsisButton = new Button();
-            ellipsisButton.Text = "...";
-            ellipsisButton.Enabled = false;
-            panelPage.Controls.Add(ellipsisButton);
         }
 
         private void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
         {
-            var itemsToDisplay = filteredItems ?? itemsControls;
             panelItems.Controls.Clear();
-
-            totalPages = (int)Math.Ceiling((double)itemsToDisplay.Count() / ITEMS_PER_PAGE);
-            DisplayCurrentPage(itemsToDisplay);
+            DisplayCurrentPage(filteredItems);
         }
 
         private async Task RefreshItems()
@@ -471,6 +403,7 @@ namespace LaundryPOS.Forms.Views
         private void btnSearch_Click(object sender, EventArgs e)
         {
             panelItems.Controls.Clear();
+            panelPage.Controls.Clear();
 
             var query = txtSearch.Text;
             var filteredItems = itemsControls

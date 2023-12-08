@@ -1,82 +1,53 @@
 ﻿using LaundryPOS.Contracts;
-using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Forms.Views;
-using LaundryPOS.Managers;
-using LaundryPOS.Models;
 
 namespace LaundryPOS.Helpers
 {
     public class PaginationHelper<T>
         where T : Control
     {
-        public event EventHandler<CartItemEventArgs> AddToCartClicked;
-        private readonly FlowLayoutPanel panelItems;
+        public event EventHandler<EventArgs> PageClicked;
         private readonly FlowLayoutPanel panelPage;
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
 
         private const int ITEMS_PER_PAGE = 10;
-        private List<ItemControl> itemsControls = new();
-        private IEnumerable<Item> allItems;
 
-        private int currentPage = 1;
+        public int CurrentPage { get; set; } = 1;
         private int totalPages = 1;
 
-        public PaginationHelper(FlowLayoutPanel itemsPanel, FlowLayoutPanel pagePanel, 
-            IUnitOfWork unitOfWork, IStyleManager styleManager)
+
+        public PaginationHelper(FlowLayoutPanel pagePanel, IStyleManager styleManager)
         {
-            panelItems = itemsPanel;
             panelPage = pagePanel;
-            _unitOfWork = unitOfWork;
             _styleManager = styleManager;
         }
 
-        public async Task<IEnumerable<Item>> LoadData()
+        public IEnumerable<ItemControl> GetPagedItems(IEnumerable<ItemControl> filteredItems = null)
         {
-            allItems ??= await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
+            totalPages = (int)Math.Ceiling((double)filteredItems.Count() / ITEMS_PER_PAGE);
 
-            itemsControls.Clear();
-            itemsControls.AddRange(allItems
-                .Select(item => new ItemControl(item, _styleManager))
-                .ToList());
-
-            totalPages = (int)Math.Ceiling((double)itemsControls.Count / ITEMS_PER_PAGE);
-            DisplayCurrentPage();
-
-            return allItems;
-        }
-
-        public void DisplayCurrentPage(IEnumerable<ItemControl> filteredItems = null)
-        {
-            panelItems.Controls.Clear();
-
-            filteredItems = (filteredItems ?? itemsControls)
-                .Skip((currentPage - 1) * ITEMS_PER_PAGE)
+            filteredItems = (filteredItems)
+                .Skip((CurrentPage - 1) * ITEMS_PER_PAGE)
                 .Take(ITEMS_PER_PAGE)
                 .ToList();
 
-            foreach (var control in filteredItems)
-            {
-                control.AddToCartClicked += AddToCartClicked!;
-            }
-
-            panelItems.Controls.AddRange(filteredItems.ToArray());
-
             UpdateNavigationButtons();
+
+            return filteredItems;
         }
 
         private void UpdateNavigationButtons()
         {
-            panelPage.Controls.Clear();
+             panelPage.Controls.Clear();
 
-            if (currentPage > 1)
+            if (CurrentPage > 1)
             {
-                AddPageButton("Previous", currentPage - 1);
+                AddPageButton("Previous", CurrentPage - 1);
             }
 
             AddPageButton("1", 1);
 
-            var startPage = Math.Max(2, currentPage - 2);
+            var startPage = Math.Max(2, CurrentPage - 2);
             var endPage = Math.Min(startPage + 3, totalPages);
 
             if (startPage > 2)
@@ -99,9 +70,9 @@ namespace LaundryPOS.Helpers
                 AddPageButton($"Last", totalPages);
             }
 
-            if (currentPage < totalPages)
+            if (CurrentPage < totalPages)
             {
-                AddPageButton("Next", currentPage + 1);
+                AddPageButton("Next", CurrentPage + 1);
             }
         }
 
@@ -110,7 +81,7 @@ namespace LaundryPOS.Helpers
             var pageButton = new Button();
             pageButton.Text = text;
 
-            if (pageNum == currentPage)
+            if (pageNum == CurrentPage)
             {
                 pageButton.BackColor = Color.Blue;
                 pageButton.ForeColor = Color.White;
@@ -118,8 +89,8 @@ namespace LaundryPOS.Helpers
 
             pageButton.Click += (sender, e) =>
             {
-                currentPage = pageNum;
-                DisplayCurrentPage();
+                CurrentPage = pageNum;
+                PageClicked?.Invoke(this, EventArgs.Empty);
             };
             panelPage.Controls.Add(pageButton);
         }
@@ -130,15 +101,6 @@ namespace LaundryPOS.Helpers
             ellipsisButton.Text = "...";
             ellipsisButton.Enabled = false;
             panelPage.Controls.Add(ellipsisButton);
-        }
-
-        public void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
-        {
-            var itemsToDisplay = filteredItems ?? itemsControls;
-            panelItems.Controls.Clear();
-
-            totalPages = (int)Math.Ceiling((double)itemsToDisplay.Count() / ITEMS_PER_PAGE);
-            DisplayCurrentPage(itemsToDisplay);
         }
     }
 }
