@@ -1,11 +1,12 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
+using LaundryPOS.Forms.Views.BaseViews;
 using LaundryPOS.Models;
 
 namespace LaundryPOS.Forms.Views
 {
-    public partial class AppSettingsView : BaseViewControl
+    public partial class AppSettingsView : BaseAppSettingsView
     {
         private string theme = "#000";
 
@@ -33,6 +34,9 @@ namespace LaundryPOS.Forms.Views
             txtNumber.Text = appData.PhoneNumber;
             txtEmail.Text = appData.Email;
             txtDescription.Text = appData.Description ?? string.Empty;
+            imgPic.Image = GetImage(appData);
+            theme = appData.Theme;
+            
         }
 
         private async void btnSave_Click(object sender, EventArgs e)
@@ -49,7 +53,7 @@ namespace LaundryPOS.Forms.Views
                 appSettings = CreateNewAppSettings();
                 _unitOfWork.AppSettingsRepo.Insert(appSettings);
             }
-
+            
             await _unitOfWork.SaveAsync();
 
             MessageDialog.Show(ParentForm, "Restart application to see results. Press OK to restart the application", 
@@ -75,7 +79,8 @@ namespace LaundryPOS.Forms.Views
             Description = txtDescription.Text,
             PhoneNumber = txtNumber.Text,
             Email = txtEmail.Text,
-            Theme = theme
+            Theme = theme,
+            Image = GetImagePath(SaveToImages(lblPath.Text, "Logo"), "Logo") 
         };
 
         private void UpdateAppSettings(AppSettings appSettings)
@@ -86,6 +91,7 @@ namespace LaundryPOS.Forms.Views
             appSettings.PhoneNumber = txtNumber.Text;
             appSettings.Email = txtEmail.Text;
             appSettings.Theme = theme;
+            appSettings.Image = GetImagePath(SaveToImages(lblPath.Text, "Logo"), "Logo");
 
             _unitOfWork.AppSettingsRepo.Update(appSettings);
         }
@@ -99,6 +105,20 @@ namespace LaundryPOS.Forms.Views
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ChangeDashboardView();
+        }
+
+        private void imgPic_Click(object sender, EventArgs e)
+        {
+            using var file = new OpenFileDialog();
+            file.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico|All Files|*.*";
+            file.FilterIndex = 1;
+            file.RestoreDirectory = true;
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                lblPath.Text = file.FileName;
+                imgPic.Image = Image.FromFile(file.FileName);
+            }
         }
     }
 }

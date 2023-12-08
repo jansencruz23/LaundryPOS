@@ -2,6 +2,7 @@
 using LaundryPOS.Delegates;
 using LaundryPOS.Forms.Views;
 using LaundryPOS.Forms.Views.AdminViews;
+using LaundryPOS.Models;
 
 namespace LaundryPOS.Forms
 {
@@ -11,23 +12,28 @@ namespace LaundryPOS.Forms
         private readonly IStyleManager _styleManager;
         private readonly ISalesService _salesService;
         private readonly ChangeAdminViewDelegate changeAdminViewDelegate;
-        private readonly string _title;
+        private readonly AppSettings _appSettings;
 
         public AdminForm(IUnitOfWork unitOfWorK,
             IStyleManager styleManager,
             ISalesService salesService, 
-            string title)
+            AppSettings appSettings)
         {
             _unitOfWork = unitOfWorK;
             _styleManager = styleManager;
             _salesService = salesService;
-            _title = title;
+            _appSettings = appSettings;
             changeAdminViewDelegate = new ChangeAdminViewDelegate(ChangePanelContent);
 
             InitializeComponent();
-            lblTitle.Text = _title;
-
+            ShowAppInfo();
             ShowDashboardView();
+        }
+
+        private void ShowAppInfo()
+        {
+            lblTitle.Text = _appSettings.Name;
+            imgPic.Image = GetLogo();
         }
 
         private void ShowDashboardView()
@@ -53,6 +59,20 @@ namespace LaundryPOS.Forms
         {
             var settingsView = new AppSettingsView(_unitOfWork, _styleManager, changeAdminViewDelegate);
             ChangePanelContent(settingsView, false);
+        }
+
+        private Image GetLogo()
+        {
+            try
+            {
+                return _appSettings.Image != null
+                ? Image.FromFile(_appSettings.Image)
+                : Image.FromFile("./default.png");
+            }
+            catch
+            {
+                return Image.FromFile("./default.png");
+            }
         }
     }
 }

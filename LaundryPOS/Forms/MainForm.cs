@@ -12,6 +12,7 @@ namespace LaundryPOS.Forms
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
+        private readonly AppSettings _appSettings;
 
         private DateTime loadingStartTime;
 
@@ -20,17 +21,20 @@ namespace LaundryPOS.Forms
 
         public MainForm(IUnitOfWork unitOfWork,
             IStyleManager styleManager,
-            Employee employee)
+            Employee employee,
+            AppSettings appSettings)
         {
             _unitOfWork = unitOfWork;
             _styleManager = styleManager;
             _employee = employee;
+            _appSettings = appSettings;
 
             _mainView = new MainView(unitOfWork, styleManager, employee);
             _pendingView = new PendingView(unitOfWork, styleManager);
 
             InitializeComponent();
             DisplayEmployeeInfo();
+            DisplayAppInfo();
             ShowMainView();
         }
 
@@ -65,7 +69,12 @@ namespace LaundryPOS.Forms
             imgPic.Image = GetImage(_employee);
         }
 
-        private Image GetImage(Employee t)
+        private void DisplayAppInfo()
+        {
+            imgLogo.Image = GetImage(_appSettings);
+        }
+
+        private Image GetImage(ImageEntity t)
         {
             try
             {

@@ -24,11 +24,11 @@ namespace LaundryPOS.Migrations
 
             modelBuilder.Entity("LaundryPOS.Models.AppSettings", b =>
                 {
-                    b.Property<int>("AppSettingsId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppSettingsId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -37,6 +37,9 @@ namespace LaundryPOS.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -50,7 +53,7 @@ namespace LaundryPOS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AppSettingsId");
+                    b.HasKey("Id");
 
                     b.ToTable("AppSettings");
                 });

@@ -70,8 +70,8 @@
     <Compile Update="Forms\Views\AdminViews\TransactionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\UnpaidForm.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Forms\Views\BaseViews\BaseAppSettingsView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\Views\BaseViews\BaseCategoryView.cs">
       <SubType>UserControl</SubType>

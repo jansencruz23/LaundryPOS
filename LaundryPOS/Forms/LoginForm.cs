@@ -47,14 +47,15 @@ namespace LaundryPOS.Forms
                 var password = txtPassword.Text;
 
                 var employee = await _unitOfWork.EmployeeRepo.GetEmployeeByUsername(username);
+                var appSettings = await _unitOfWork.AppSettingsRepo.GetFirstAppSettings();
 
                 if (IsValidUser(employee, password, out string userRole))
                 {
                     Hide();
 
                     Form form = userRole == "admin"
-                        ? new AdminForm(_unitOfWork, _styleManager, _salesService, _title)
-                        : new MainForm(_unitOfWork, _styleManager, employee);
+                        ? new AdminForm(_unitOfWork, _styleManager, _salesService, appSettings)
+                        : new MainForm(_unitOfWork, _styleManager, employee, appSettings);
                     form.FormClosed += (s, args) => Close();
                     form.Show();
                 }

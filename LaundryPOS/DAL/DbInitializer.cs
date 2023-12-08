@@ -18,7 +18,8 @@ namespace LaundryPOS.DAL
                 Email = "eg. name@email.com",
                 Name = "Point-of-Sale System",
                 PhoneNumber = "eg. 09123456789",
-                Theme = "#950426"
+                Theme = "#950426",
+                Image = @"Icons\pos.png"
             };
 
             context.AppSettings.Add(appSettings);

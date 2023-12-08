@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LaundryPOS.Models
+﻿namespace LaundryPOS.Models
 {
-    public class AppSettings
+    public class AppSettings : ImageEntity
     {
-        public int AppSettingsId { get; set; }
-        
         public string Name { get; set; }
 
         public string Theme { get; set; }
