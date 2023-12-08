@@ -231,7 +231,7 @@
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Main Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.bgPanel.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using LaundryPOS.Contracts;
+using LaundryPOS.Helpers;
 using LaundryPOS.Models;
 using LaundryPOS.Models.ViewModels;
 using System.Linq.Expressions;
@@ -12,19 +13,6 @@ namespace LaundryPOS.Forms.Views
         private readonly IStyleManager _styleManager;
         private readonly Employee _employee;
         private readonly List<Employee> _employeeCache;
-
-        #region -- TIME CONSTANTS --
-        private const int DAYS_IN_WEEK = 7;
-        private const int NEXT_DAY = 1;
-        private const int NEXT_MONTH = 1;
-        private const int FIRST_DAY = 1;
-        private const int FIRST_MONTH = 1;
-        private const int LAST_MONTH = 12;
-        private const int LAST_DAY = 31;
-        private const int LAST_HOUR = 23;
-        private const int LAST_MINUTE = 59;
-        private const int LAST_SECOND = 59;
-        #endregion
 
         public PendingView(IUnitOfWork unitOfWork,
             IStyleManager styleManager)
@@ -196,22 +184,24 @@ namespace LaundryPOS.Forms.Views
             {
                 case "Daily":
                     startDate = DateTime.Today;
-                    endDate = startDate.AddDays(NEXT_DAY);
+                    endDate = startDate.AddDays(TimeConstants.NEXT_DAY);
                     break;
 
                 case "Weekly":
                     startDate = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
-                    endDate = startDate.AddDays(DAYS_IN_WEEK);
+                    endDate = startDate.AddDays(TimeConstants.DAYS_IN_WEEK);
                     break;
 
                 case "Monthly":
                     startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-                    endDate = startDate.AddMonths(NEXT_MONTH);
+                    endDate = startDate.AddMonths(TimeConstants.NEXT_MONTH);
                     break;
 
                 case "Yearly":
-                    startDate = new DateTime(DateTime.Today.Year, FIRST_MONTH, FIRST_DAY);
-                    endDate = new DateTime(DateTime.Today.Year, LAST_MONTH, LAST_DAY, LAST_HOUR, LAST_MINUTE, LAST_SECOND);
+                    startDate = new DateTime(DateTime.Today.Year, TimeConstants.FIRST_MONTH, TimeConstants.FIRST_DAY);
+                    endDate = new DateTime(DateTime.Today.Year, TimeConstants.LAST_MONTH,
+                        TimeConstants.LAST_DAY, TimeConstants.LAST_HOUR, TimeConstants.LAST_MINUTE,
+                        TimeConstants.LAST_SECOND);
                     break;
 
                 case "All":
@@ -252,7 +242,7 @@ namespace LaundryPOS.Forms.Views
         private async Task RefreshDataDaily()
         {
             var startDate = DateTime.Today;
-            var endDate = startDate.AddDays(NEXT_DAY);
+            var endDate = startDate.AddDays(TimeConstants.NEXT_DAY);
 
             await DisplayPending(ti => !ti.Transaction.IsCompleted
                 && ti.Transaction.TransactionDate >= startDate

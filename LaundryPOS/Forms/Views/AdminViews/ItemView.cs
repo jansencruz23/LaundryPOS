@@ -332,6 +332,7 @@ namespace LaundryPOS.Forms.Views
             txtPrice.Enabled = false;
             txtStock.Enabled = false;
             cbCategory.Enabled = false;
+            btnFile.Enabled = false;
         }
 
         private async void btnPrint_Click(object sender, EventArgs e)

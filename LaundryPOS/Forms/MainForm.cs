@@ -14,8 +14,6 @@ namespace LaundryPOS.Forms
         private readonly Employee _employee;
         private readonly AppSettings _appSettings;
 
-        private DateTime loadingStartTime;
-
         private readonly MainView _mainView;
         private readonly PendingView _pendingView;
 
@@ -59,14 +57,12 @@ namespace LaundryPOS.Forms
             Application.Idle -= OnLoaded;
             _loadingForm.Close();
             Opacity = 100;
-
-            TimeSpan elapsedTime = DateTime.Now - loadingStartTime;
-            MessageBox.Show("Time elapsed: " + elapsedTime.ToString());
         }
       
         private void DisplayEmployeeInfo()
         {
             imgPic.Image = GetImage(_employee);
+            Text = _appSettings.Name;
         }
 
         private void DisplayAppInfo()

@@ -35,6 +35,7 @@ namespace LaundryPOS.Forms.Views
             lblSubTotal.Text = $"₱{CartItem.SubTotal:#,###.00}";
             imgPic.Image = GetImage();
         }
+
         private Image GetImage()
         {
             try
