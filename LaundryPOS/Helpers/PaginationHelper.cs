@@ -1,4 +1,5 @@
-﻿using LaundryPOS.Contracts;
+﻿using Guna.UI2.WinForms;
+using LaundryPOS.Contracts;
 using LaundryPOS.Forms.Views;
 
 namespace LaundryPOS.Helpers
@@ -10,7 +11,7 @@ namespace LaundryPOS.Helpers
         private readonly FlowLayoutPanel panelPage;
         private readonly IStyleManager _styleManager;
 
-        private const int ITEMS_PER_PAGE = 10;
+        private const int ITEMS_PER_PAGE = 16;
 
         public int CurrentPage { get; set; } = 1;
         private int totalPages = 1;
@@ -78,12 +79,20 @@ namespace LaundryPOS.Helpers
 
         private void AddPageButton(string text, int pageNum)
         {
-            var pageButton = new Button();
-            pageButton.Text = text;
+            var pageButton = new Guna2Button()
+            {
+                Text = text,
+                FillColor = Color.White,
+                ForeColor = Color.FromArgb(48, 48, 48),
+                Size = new Size(90, 30),
+                BorderRadius = 5,
+                BorderThickness = 1,
+                Font = _styleManager.Font.Helvetica(10f),
+            };
 
             if (pageNum == CurrentPage)
             {
-                pageButton.BackColor = Color.Blue;
+                pageButton.FillColor = Color.FromArgb(48, 48, 48);
                 pageButton.ForeColor = Color.White;
             }
 

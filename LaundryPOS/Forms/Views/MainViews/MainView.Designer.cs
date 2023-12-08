@@ -147,7 +147,9 @@
             // 
             this.panelPage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelPage.Location = new System.Drawing.Point(0, 690);
+            this.panelPage.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.panelPage.Name = "panelPage";
+            this.panelPage.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.panelPage.Size = new System.Drawing.Size(889, 40);
             this.panelPage.TabIndex = 13;
             // 
