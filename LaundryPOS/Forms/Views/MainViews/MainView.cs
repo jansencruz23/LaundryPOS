@@ -18,7 +18,6 @@ namespace LaundryPOS.Forms.Views
         private IEnumerable<Item> allItems;
         private string _title;
 
-        private List<ItemControl> displayedItems;
         private const int ITEMS_PER_PAGE = 2;
         private int currentPage = 1;
         private int totalPages;
@@ -36,7 +35,6 @@ namespace LaundryPOS.Forms.Views
             _employee = employee;
             itemsControls = new();
             orders = new();
-            displayedItems = new();
 
             InitializeComponent();
             InitializeTimer();
@@ -123,6 +121,7 @@ namespace LaundryPOS.Forms.Views
 
         private void CategoryControl_CategoryClicked(object sender, CategoryEventArgs e)
         {
+            currentPage = 1;
             var filteredItemControls = itemsControls.Where(i => i.Item.CategoryId == e.Category.Id)
                 .ToList();
 
@@ -151,9 +150,9 @@ namespace LaundryPOS.Forms.Views
 
         private async Task DisplayItems()
         {
-            allItems = await _unitOfWork.ItemRepo
-                .Get(includeProperties: "Category");
+            allItems = await _unitOfWork.ItemRepo.Get(includeProperties: "Category");
 
+            itemsControls.Clear();
             itemsControls.AddRange(allItems
                 .Select(item => new ItemControl(item, _styleManager))
                 .ToList());
@@ -162,19 +161,22 @@ namespace LaundryPOS.Forms.Views
             DisplayCurrentPage();
         }
 
-        private void DisplayCurrentPage()
+        private void DisplayCurrentPage(IEnumerable<ItemControl> filteredItems = null)
         {
             panelItems.Controls.Clear();
-            displayedItems = itemsControls.Skip((currentPage - 1) * ITEMS_PER_PAGE)
+
+            filteredItems = (filteredItems ?? itemsControls)
+                .Skip((currentPage - 1) * ITEMS_PER_PAGE)
                 .Take(ITEMS_PER_PAGE)
                 .ToList();
 
-            foreach (var control in displayedItems)
+            foreach (var control in filteredItems)
             {
+                control.AddToCartClicked -= ItemControl_AddToCartClicked!;
                 control.AddToCartClicked += ItemControl_AddToCartClicked!;
             }
 
-            panelItems.Controls.AddRange(displayedItems.ToArray());
+            panelItems.Controls.AddRange(filteredItems.ToArray());
 
             UpdateNavigationButtons();
         }
@@ -246,23 +248,21 @@ namespace LaundryPOS.Forms.Views
             panelPage.Controls.Add(ellipsisButton);
         }
 
+        private void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
+        {
+            var itemsToDisplay = filteredItems ?? itemsControls;
+            panelItems.Controls.Clear();
+
+            totalPages = (int)Math.Ceiling((double)itemsToDisplay.Count() / ITEMS_PER_PAGE);
+            DisplayCurrentPage(itemsToDisplay);
+        }
+
         private async Task RefreshItems()
         {
             itemsControls.Clear();
             panelItems.Controls.Clear();
             await DisplayItems();
             await DisplayTransactionId();
-        }
-
-        private void DisplayFilteredItems(IEnumerable<ItemControl> filteredItems = null)
-        {
-            var itemsToDisplay = filteredItems ?? itemsControls;
-            panelItems.Controls.Clear();
-
-            foreach (var item in itemsToDisplay)
-            {
-                panelItems.Controls.Add(item);
-            }
         }
 
         private async Task DisplayCategories()
@@ -429,9 +429,8 @@ namespace LaundryPOS.Forms.Views
 
         private void btnAllCategory_Click(object sender, EventArgs e)
         {
-            //itemsControls.Clear();
             panelItems.Controls.Clear();
-            DisplayFilteredItems(itemsControls);
+            DisplayFilteredItems();
 
             btnAllCategory.FillColor = Color.FromArgb(48, 48, 48);
             btnAllCategory.ForeColor = Color.FromArgb(248, 248, 248);
