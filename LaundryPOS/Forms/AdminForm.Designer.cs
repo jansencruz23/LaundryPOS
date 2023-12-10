@@ -58,7 +58,7 @@
             this.viewPanel.Name = "viewPanel";
             this.viewPanel.ShadowColor = System.Drawing.Color.Black;
             this.viewPanel.ShadowDepth = 0;
-            this.viewPanel.Size = new System.Drawing.Size(1117, 819);
+            this.viewPanel.Size = new System.Drawing.Size(1350, 819);
             this.viewPanel.TabIndex = 0;
             // 
             // guna2Panel1
@@ -74,7 +74,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            this.guna2Panel1.Size = new System.Drawing.Size(1117, 75);
+            this.guna2Panel1.Size = new System.Drawing.Size(1350, 75);
             this.guna2Panel1.TabIndex = 0;
             // 
             // imgPic
@@ -134,7 +134,7 @@
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.Location = new System.Drawing.Point(1061, 20);
+            this.btnSettings.Location = new System.Drawing.Point(1294, 20);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.btnSettings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -146,12 +146,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1117, 819);
+            this.ClientSize = new System.Drawing.Size(1350, 819);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.viewPanel);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1133, 708);
+            this.MinimumSize = new System.Drawing.Size(1366, 708);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
