@@ -80,11 +80,11 @@ namespace LaundryPOS
 
         private Employee CreateEmployee()
         {
-            var imagePath = SaveToImages(txtPath.Text);
+            var imagePath = ImageSaveHelper.SaveToImages(txtPath.Text, "Employees");
             var employee = new Employee
             {
                 Username = txtUsername.Text,
-                Image = GetImagePath(imagePath),
+                Image = ImageSaveHelper.GetImagePath(imagePath, "Employees"),
                 BirthDate = dtpBirthday.Value,
                 Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25),
                 FirstName = txtFirstName.Text,
@@ -95,20 +95,6 @@ namespace LaundryPOS
             employee.SetPassword(txtPassword.Text);
 
             return employee;
-        }
-
-        private string GetImagePath(string imagePath)
-            => Path.Combine("Icons", "Images", "Employees", Path.GetFileName(imagePath));
-
-        private string SaveToImages(string imagePath)
-        {
-            string uniqueName = $"{Guid.NewGuid().ToString()[^8..]}_" +
-                $"{Path.GetFileName(imagePath)[Math.Max(0, Path.GetFileName(imagePath).Length - 10)..]}";
-            string destinationPath = Path.Combine(Application.StartupPath, "Icons", "Images", "Employees", uniqueName);
-            Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));
-            File.Copy(imagePath, destinationPath);
-
-            return uniqueName;
         }
 
         private void btnFile_Click(object sender, EventArgs e)

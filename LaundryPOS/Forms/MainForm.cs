@@ -88,6 +88,7 @@ namespace LaundryPOS.Forms
         {
             var form = new ProfileForm(_unitOfWork, _styleManager, _employee);
             form.ShowDialog();
+            DisplayEmployeeInfo();
         }
       
         private void btnLogout_Click(object sender, EventArgs e)

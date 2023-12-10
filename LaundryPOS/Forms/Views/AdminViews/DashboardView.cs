@@ -4,7 +4,6 @@ using LaundryPOS.Contracts;
 using LaundryPOS.Delegates;
 using LaundryPOS.Helpers;
 using System.Globalization;
-using System.Xml.Linq;
 
 namespace LaundryPOS.Forms.Views.AdminViews
 {

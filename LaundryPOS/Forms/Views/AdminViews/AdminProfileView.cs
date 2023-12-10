@@ -34,7 +34,7 @@ namespace LaundryPOS.Forms.Views
 
             if (!ValidateInputs())
             {
-                MessageDialog.Show("Invalid admin update. Please make sure all fields are valid.",
+                MessageDialog.Show(ParentForm, "Invalid admin update. Please make sure all fields are valid.",
                     "Admin Update Failed", MessageDialogButtons.OK, MessageDialogIcon.Error,
                     MessageDialogStyle.Light);
                 return;

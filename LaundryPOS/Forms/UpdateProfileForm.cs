@@ -73,14 +73,24 @@ namespace LaundryPOS.Forms
                 return;
             }
 
+            UpdateProfile();
+            _unitOfWork.EmployeeRepo.Update(_employee);
+            await _unitOfWork.SaveAsync();
+
+            MessageDialog.Show(this, "Profile updated successfully.",
+                "Profile Updated Successfully", MessageDialogButtons.OK, MessageDialogIcon.Information,
+                MessageDialogStyle.Light);
+            Close();
+        }
+
+        private void UpdateProfile()
+        {
+            var imagePath = ImageSaveHelper.SaveToImages(txtPath.Text, "Employees");
             _employee.FirstName = txtFirstName.Text;
             _employee.LastName = txtLastName.Text;
             _employee.BirthDate = dtpBirthday.Value;
-            _employee.Image = txtPath.Text;
+            _employee.Image = ImageSaveHelper.GetImagePath(imagePath, "Employees");
             _employee.Age = (int)(DateTime.Now.Subtract(dtpBirthday.Value).TotalDays / 365.25);
-
-            _unitOfWork.EmployeeRepo.Update(_employee);
-            await _unitOfWork.SaveAsync();
         }
 
         private bool ValidateInputs()
