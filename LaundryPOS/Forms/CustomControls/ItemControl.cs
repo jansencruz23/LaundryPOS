@@ -1,6 +1,7 @@
 ﻿using LaundryPOS.CustomEventArgs;
 using LaundryPOS.Models;
 using LaundryPOS.Contracts;
+using Guna.UI2.WinForms;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -85,8 +86,8 @@ namespace LaundryPOS.Forms.Views
 
             if (quantity > Item.Stock)
             {
-                MessageBox.Show("Not enough stocks", "Insufficient Stocks",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageDialog.Show(ParentForm, $"{Item.Name} - Not enought stocks.","Insufficient Stocks",
+                    MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                 return;
             }
 

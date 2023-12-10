@@ -53,8 +53,8 @@ namespace LaundryPOS.Forms.Views
 
         protected void ConfirmLogout()
         {
-            DialogResult confirm = MessageBox.Show("Are you sure you want to log out?",
-                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirm = MessageDialog.Show(ParentForm, "Are you sure you want to log out?",
+                "Confirmation", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
 
             if (confirm == DialogResult.Yes)
             {
