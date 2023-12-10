@@ -183,5 +183,13 @@ namespace LaundryPOS.Forms
                 txtAmount.Text = txtAmount.Text[..^1];
             }
         }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtAmount.Text, out decimal amount))
+            {
+                lblChange.Text = $"{amount - _total}";
+            }
+        }
     }
 }

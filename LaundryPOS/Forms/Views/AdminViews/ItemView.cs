@@ -5,7 +5,6 @@ using LaundryPOS.Helpers;
 using System.Data;
 using LaundryPOS.Forms.Views.BaseViews;
 using Guna.UI2.WinForms;
-using LaundryPOS.Forms.Views.AdminViews;
 
 namespace LaundryPOS.Forms.Views
 {
@@ -285,8 +284,8 @@ namespace LaundryPOS.Forms.Views
             {
                 if (!ValidateInputs())
                 {
-                    MessageDialog.Show(ParentForm, "Invalid item. Please fill up all of the fields including the image.", "Item Update Failed",
-                        MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                    MessageDialog.Show(ParentForm, "Invalid item. Please fill up all of the fields including the image.", 
+                        "Item Update Failed", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
                     return;
                 }
 

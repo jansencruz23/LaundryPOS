@@ -35,8 +35,8 @@ namespace LaundryPOS.Forms.Views
             txtEmail.Text = appData.Email;
             txtDescription.Text = appData.Description ?? string.Empty;
             imgPic.Image = GetImage(appData);
+            lblPath.Text = appData.Image;
             theme = appData.Theme;
-            
         }
 
         private async void btnSave_Click(object sender, EventArgs e)

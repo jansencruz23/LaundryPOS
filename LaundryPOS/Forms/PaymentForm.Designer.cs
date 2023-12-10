@@ -115,6 +115,8 @@ namespace LaundryPOS.Forms
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -514,14 +516,15 @@ namespace LaundryPOS.Forms
             this.txtAmount.Size = new System.Drawing.Size(185, 55);
             this.txtAmount.TabIndex = 3;
             this.txtAmount.TextOffset = new System.Drawing.Point(5, -1);
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // lblTotal
             // 
-            this.lblTotal.Font = new System.Drawing.Font("Helvetica", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(54, 123);
+            this.lblTotal.Location = new System.Drawing.Point(98, 111);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(274, 25);
+            this.lblTotal.Size = new System.Drawing.Size(230, 25);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -568,6 +571,8 @@ namespace LaundryPOS.Forms
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.lblChange);
             this.guna2Panel2.Controls.Add(this.lblCancel);
             this.guna2Panel2.Controls.Add(this.label3);
             this.guna2Panel2.Controls.Add(this.guna2Panel4);
@@ -615,12 +620,12 @@ namespace LaundryPOS.Forms
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Helvetica", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(265, 89);
+            this.label3.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(54, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 22);
+            this.label3.Size = new System.Drawing.Size(50, 22);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Total:";
+            this.label3.Text = "Total";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel4
@@ -700,6 +705,29 @@ namespace LaundryPOS.Forms
             this.label5.Text = "Total Items";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(54, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Change";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblChange
+            // 
+            this.lblChange.Font = new System.Drawing.Font("Helvetica", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChange.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblChange.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblChange.Location = new System.Drawing.Point(124, 136);
+            this.lblChange.Name = "lblChange";
+            this.lblChange.Size = new System.Drawing.Size(204, 25);
+            this.lblChange.TabIndex = 22;
+            this.lblChange.Text = "0";
+            this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -755,5 +783,7 @@ namespace LaundryPOS.Forms
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Label label5;
+        private Label label1;
+        private Label lblChange;
     }
 }

@@ -57,6 +57,7 @@
             this.btnColor = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPath = new System.Windows.Forms.Label();
             this.imgPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
@@ -67,7 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblPath = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPic)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -269,9 +269,20 @@
             this.guna2Panel1.Size = new System.Drawing.Size(372, 723);
             this.guna2Panel1.TabIndex = 8;
             // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.Location = new System.Drawing.Point(31, 18);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(38, 15);
+            this.lblPath.TabIndex = 18;
+            this.lblPath.Text = "label8";
+            this.lblPath.Visible = false;
+            // 
             // imgPic
             // 
             this.imgPic.BorderRadius = 5;
+            this.imgPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgPic.CustomizableEdges = customizableEdges15;
             this.imgPic.FillColor = System.Drawing.Color.WhiteSmoke;
             this.imgPic.ImageRotate = 0F;
@@ -388,16 +399,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1520, 785);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // lblPath
-            // 
-            this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(31, 18);
-            this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(38, 15);
-            this.lblPath.TabIndex = 18;
-            this.lblPath.Text = "label8";
-            this.lblPath.Visible = false;
             // 
             // AppSettingsView
             // 
